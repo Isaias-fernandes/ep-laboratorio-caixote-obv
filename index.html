@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Laboratório Caixote, Bandeira e OBV</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div><span class="eyebrow">LABORATÓRIO ISOLADO</span><h1>Caixote · Bandeira · OBV</h1>
+    <p>Análise experimental local. Sem Supabase, sem Reversal Gate e sem ligação com os motores oficiais.</p></div>
+    <span class="pill safe">ISOLADO</span>
+  </header>
+  <main>
+    <section class="panel controls">
+      <div><label>Ativo</label><input id="symbol" value="BTCUSDT" maxlength="20"></div>
+      <div><label>Período</label><select id="interval"><option>15m</option><option>30m</option><option selected>1h</option><option>4h</option><option>1d</option></select></div>
+      <div><label>Janela do caixote</label><input id="lookback" type="number" value="20" min="12" max="96"></div>
+      <button id="sample">Carregar exemplo</button>
+      <label class="upload">Importar JSON/CSV<input id="file" type="file" accept=".json,.csv"></label>
+      <button id="analyze" class="primary">Analisar</button>
+    </section>
+    <section id="notice" class="notice">Carregue o exemplo ou importe candles com: time, open, high, low, close, volume.</section>
+    <section class="summary">
+      <article><span>Classificação</span><strong id="classification">—</strong></article>
+      <article><span>Pontuação</span><strong id="score">—</strong></article>
+      <article><span>Caixote</span><strong id="boxState">—</strong></article>
+      <article><span>OBV</span><strong id="obvState">—</strong></article>
+    </section>
+    <section class="grid">
+      <article class="panel"><h2>Leitura técnica</h2><div id="technical" class="facts"></div></article>
+      <article class="panel"><h2>Regras da classificação</h2><div id="reasons" class="facts"></div></article>
+    </section>
+    <section class="panel"><h2>Últimos resultados</h2>
+      <div class="table-wrap"><table><thead><tr><th>Data</th><th>Ativo</th><th>Período</th><th>Classificação</th><th>Score</th><th>Caixote</th><th>OBV</th></tr></thead><tbody id="history"></tbody></table></div>
+      <button id="clear" class="ghost">Limpar histórico local</button>
+    </section>
+  </main>
+  <footer>Pesquisa experimental — não constitui recomendação de investimento.</footer>
+  <script src="engine.js"></script><script src="app.js"></script>
+</body></html>
