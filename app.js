@@ -1,4 +1,4 @@
-let candles=[];const $=id=>document.getElementById(id);const fmt=(v,d=2)=>Number.isFinite(v)?v.toLocaleString("pt-BR",{maximumFractionDigits:d}):"—";
+let candles=[];const $=id=>document.getElementById(id);window.LabData={get candles(){return LabEngine.normalize(candles)},get interval(){return $("interval").value},get symbol(){return $("symbol").value.toUpperCase()}};const fmt=(v,d=2)=>Number.isFinite(v)?v.toLocaleString("pt-BR",{maximumFractionDigits:d}):"—";
 function parseCSV(t){const lines=t.trim().split(/\r?\n/),heads=lines.shift().split(",").map(x=>x.trim().toLowerCase());return lines.map(line=>{const v=line.split(",");return Object.fromEntries(heads.map((h,i)=>[h,v[i]]))})}
 function sample(){let p=100,out=[];for(let i=0;i<60;i++){const box=i>30;const drift=box?(Math.sin(i)*.7):(i<20?1.1:-.25);const o=p,p=box?105+Math.sin(i*1.7)*2:p+drift;out.push({time:Date.now()-(60-i)*3600000,open:o,high:Math.max(o,p)+.6,low:Math.min(o,p)-.6,close:p,volume:900+((i*71)%300)})}const last=out.at(-1);last.close=109;last.high=109.5;last.volume=1900;return out}
 function fact(k,v){return '<div class="fact"><span>'+k+'</span><strong>'+v+'</strong></div>'}
