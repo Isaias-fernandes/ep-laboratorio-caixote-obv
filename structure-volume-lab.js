@@ -83,10 +83,10 @@
     function read() { const data = JSON.parse(localStorage.getItem(KEY) || '[]'); if (!Array.isArray(data)) throw Error('Histórico inválido; não foi sobrescrito.'); return data; }
     panel.querySelector('[data-run]').onclick = () => {
       try {
-        const tf = document.querySelector('#tf')?.value, symbol = document.querySelector('#pair')?.value;
-        const asset = window.CryptoApp?.getData()?.get(symbol);
-        if (!asset?.candles) throw Error('Carregue o ativo no painel Cripto primeiro.');
-        let candles = asset.candles, experimentTf = tf;
+        const tf = window.LabData?.interval, symbol = window.LabData?.symbol;
+        const loadedCandles = window.LabData?.candles;
+        if (!loadedCandles?.length) throw Error('Carregue o exemplo ou importe candles primeiro.');
+        let candles = loadedCandles.map(x => ({ t:+x.time, o:+x.open, h:+x.high, l:+x.low, c:+x.close, v:+x.volume })), experimentTf = tf;
         if (choice.value === '30m') {
           if (tf !== '15m') throw Error('Para M30, carregue M15 no painel Cripto.');
           const aggregated = [];
