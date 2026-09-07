@@ -1,0 +1,43 @@
+name: Backtest Historico 8 Padroes
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'automation/backtest-8-patterns.cjs'
+      - 'structure-volume-lab.js'
+      - '.github/workflows/backtest-8-patterns.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: laboratorio-backtest-8-patterns
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Executar backtest H1 96 score 80
+        run: node automation/backtest-8-patterns.cjs
+      - name: Salvar resultado
+        run: |
+          git config user.name "laboratorio-backtest-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/backtest-8-patterns.json
+          if git diff --cached --quiet; then
+            echo "Sem mudancas."
+            exit 0
+          fi
+          git commit -m "data: resultado historico dos 8 padroes"
+          git push
