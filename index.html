@@ -9,7 +9,7 @@
 <body>
   <header>
     <div><span class="eyebrow">LABORATÓRIO ISOLADO</span><h1>Caixote · Bandeira · OBV</h1>
-    <p>Análise experimental local. Sem Supabase, sem Reversal Gate e sem ligação com os motores oficiais.</p></div>
+    <p>Análise experimental local. Sem Supabase e sem ligação com os motores oficiais.</p></div>
     <span class="pill safe">ISOLADO</span>
   </header>
   <main>
@@ -32,11 +32,24 @@
       <article class="panel"><h2>Leitura técnica</h2><div id="technical" class="facts"></div></article>
       <article class="panel"><h2>Regras da classificação</h2><div id="reasons" class="facts"></div></article>
     </section>
+
+    <section class="panel interpretation-center">
+      <div class="center-title"><div><span class="eyebrow">CENTRAL 1</span><h2>Radar H1 · 96 candles · Score ≥ 80</h2></div><span class="pill safe">EXPERIMENTAL</span></div>
+      <p>Exibe somente sinais confirmados pelo laboratório que atendam simultaneamente H1, pelo menos 96 candles válidos e pontuação mínima 80.</p>
+      <div class="table-wrap"><table><thead><tr><th>Data</th><th>Ativo</th><th>Direção</th><th>Score</th><th>Caixote</th><th>Bandeira</th><th>OBV</th><th>Volume</th></tr></thead><tbody id="radarCenterBody"></tbody></table></div>
+    </section>
+
+    <section class="panel interpretation-center">
+      <div class="center-title"><div><span class="eyebrow">CENTRAL 2</span><h2>Validação e acompanhamento dos sinais</h2></div><span class="pill watch">MONITORAMENTO LOCAL</span></div>
+      <p>Acompanha os sinais da Central 1 e registra excursão favorável/adversa e alvos de +5%, +10%, +20%, +30% e +50%.</p>
+      <div class="table-wrap"><table><thead><tr><th>Ativo</th><th>Direção</th><th>Score</th><th>Entrada</th><th>Melhor</th><th>Pior</th><th>Alvos</th></tr></thead><tbody id="trackingCenterBody"></tbody></table></div>
+    </section>
+
     <section class="panel"><h2>Últimos resultados</h2>
       <div class="table-wrap"><table><thead><tr><th>Data</th><th>Ativo</th><th>Período</th><th>Classificação</th><th>Score</th><th>Caixote</th><th>OBV</th></tr></thead><tbody id="history"></tbody></table></div>
       <button id="clear" class="ghost">Limpar histórico local</button>
     </section>
   </main>
   <footer>Pesquisa experimental — não constitui recomendação de investimento.</footer>
-  <script src="engine.js"></script><script src="app.js"></script><script src="pattern-indicator-lab.js"></script><script src="structure-volume-lab.js"></script>
+  <script src="engine.js"></script><script src="interpretation-centers.js"></script><script src="app.js"></script><script src="pattern-indicator-lab.js"></script><script src="structure-volume-lab.js"></script>
 </body></html>
