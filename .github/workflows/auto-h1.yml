@@ -4,6 +4,10 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '7 * * * *'
+  push:
+    paths:
+      - 'automation/scan-h1.mjs'
+      - '.github/workflows/auto-h1.yml'
 
 permissions:
   contents: write
@@ -24,7 +28,7 @@ jobs:
       - name: Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
       - name: Rodar varredura H1 96/80
         run: node automation/scan-h1.mjs
       - name: Publicar somente se houver mudanca
