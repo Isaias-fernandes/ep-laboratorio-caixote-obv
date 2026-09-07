@@ -1,6 +1,6 @@
 /* Duas centrais exclusivas do laboratorio. Tape Reading e SOMENTE INFORMATIVO. */
 (function(global){
-  const RADAR_KEY="labRadarH1V1",TRACK_KEY="labTrackingH1V1",TARGETS=[5,10,20,30,50];
+  const RADAR_KEY="labRadarH1V1",TRACK_KEY="labTrackingH1V1",TARGETS=[10,20,30,40,50];
   let autoFeed={generatedAt:null,signals:[],stats:{crypto:{ok:0,error:0},b3:{ok:0,error:0}}},tapeRenderTimer=null;
   const load=k=>{try{return JSON.parse(localStorage.getItem(k)||"[]")}catch{return []}},save=(k,v)=>localStorage.setItem(k,JSON.stringify(v.slice(0,200)));
   const esc=s=>String(s??"—").replace(/[&<>\"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m])),pct=(a,b)=>a?((b-a)/a)*100:0;
