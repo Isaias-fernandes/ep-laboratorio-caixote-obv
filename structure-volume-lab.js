@@ -1,15 +1,28 @@
-/* Independent, manual research lab. Never writes official signals or remote data. */
+/* Independent research lab. Never writes official EP Whale signals or remote data. */
 (() => {
   'use strict';
-  const VERSION = 'box-flag-obv-v1';
-  const KEY = 'ep_structure_volume_lab_v1';
+  const VERSION = 'patterns-obv-v2';
+  const KEY = 'ep_structure_volume_lab_v2';
   const TF = { '5m': 300000, '15m': 900000, '30m': 1800000, '1h': 3600000 };
-  const avg = a => a.reduce((s, v) => s + v, 0) / (a.length || 1);
-  function rsi(c) {
+  const TARGETS = [5, 10, 20, 30, 50];
+  const avg = a => a.length ? a.reduce((s, v) => s + v, 0) / a.length : 0;
+  const slope = v => {
+    if (v.length < 3) return 0;
+    const m = avg(v), c = (v.length - 1) / 2;
+    let n = 0, d = 0;
+    v.forEach((x, i) => { const z = i - c; n += z * (x - m); d += z * z; });
+    return d ? n / d : 0;
+  };
+  function rsi(c, p = 14) {
+    if (c.length <= p) return NaN;
     let g = 0, l = 0;
-    for (let i = 1; i <= 14; i++) { const d = c[i].c - c[i - 1].c; g += Math.max(d, 0); l += Math.max(-d, 0); }
-    g /= 14; l /= 14;
-    for (let i = 15; i < c.length; i++) { const d = c[i].c - c[i - 1].c; g = (g * 13 + Math.max(d, 0)) / 14; l = (l * 13 + Math.max(-d, 0)) / 14; }
+    for (let i = 1; i <= p; i++) { const d = c[i].c - c[i - 1].c; g += Math.max(d, 0); l += Math.max(-d, 0); }
+    g /= p; l /= p;
+    for (let i = p + 1; i < c.length; i++) {
+      const d = c[i].c - c[i - 1].c;
+      g = (g * (p - 1) + Math.max(d, 0)) / p;
+      l = (l * (p - 1) + Math.max(-d, 0)) / p;
+    }
     return !g && !l ? 50 : !l ? 100 : 100 - 100 / (1 + g / l);
   }
   function obv(c) {
@@ -17,54 +30,115 @@
     for (let i = 1; i < c.length; i++) out.push(out[i - 1] + Math.sign(c[i].c - c[i - 1].c) * c[i].v);
     return out;
   }
-  function reversal(b, a) {
-    const body = Math.abs(b.c - b.o), range = b.h - b.l;
-    return b.c > b.o && ((range > 0 && body > 0 && Math.min(b.o, b.c) - b.l >= 2 * body && b.h - Math.max(b.o, b.c) <= Math.max(body, range * .12)) || (a.c < a.o && b.o <= a.c && b.c >= a.o));
+  function swings(c, field, high) {
+    const out = [];
+    for (let i = 2; i < c.length - 2; i++) {
+      const x = c[i][field];
+      const ok = high ? x > c[i - 1][field] && x >= c[i + 1][field] : x < c[i - 1][field] && x <= c[i + 1][field];
+      if (ok) out.push({ i, x });
+    }
+    return out;
+  }
+  function candleReversal(b, a) {
+    const body = Math.abs(b.c - b.o), range = Math.max(b.h - b.l, 1e-12);
+    const hammer = b.c >= b.o && Math.min(b.o, b.c) - b.l >= body * 2 && b.h - Math.max(b.o, b.c) <= Math.max(body, range * .12);
+    const engulf = b.c > b.o && a.c < a.o && b.o <= a.c && b.c >= a.o;
+    return { hammer, engulf };
+  }
+  function context(c) {
+    const w = c.slice(-96), b = w.at(-1), prev20 = w.slice(-21, -1), meanVol = avg(prev20.map(x => x.v));
+    const volumeRatio = meanVol > 0 ? b.v / meanVol : 0;
+    const o = obv(w), obvUp = o.length >= 6 && o.at(-1) > o.at(-6), obvDown = o.length >= 6 && o.at(-1) < o.at(-6);
+    return { w, b, prev20, meanVol, volumeRatio, obvUp, obvDown, rv: rsi(w) };
+  }
+  function scoreSignal(base, ctx, direction, breakout, retest, forming = false) {
+    let score = base;
+    const obvOk = direction === 'BUY' ? ctx.obvUp : ctx.obvDown;
+    if (obvOk) score += 8;
+    if (ctx.volumeRatio >= 2) score += 12; else if (ctx.volumeRatio >= 1.5) score += 8; else if (ctx.volumeRatio >= 1.2) score += 4;
+    if (breakout) score += 10;
+    if (retest) score += 6;
+    if (forming) score = Math.min(score, 79);
+    if (ctx.volumeRatio < .8) score = Math.min(score, 69);
+    return Math.max(0, Math.min(100, Math.round(score)));
   }
   function detect(c, tf) {
-    if (c.length < 45) return [];
-    const b = c.at(-1), prev = c.slice(-21, -1), meanVolume = avg(prev.map(x => x.v));
-    const rv = rsi(c), o = obv(c), rising = o.at(-1) > o.at(-6);
-    if (rv > 85 || !rising || meanVolume <= 0) return [];
-    const result = [], high = Math.max(...prev.map(x => x.h)), low = Math.min(...prev.map(x => x.l));
-    if (['15m', '30m', '1h'].includes(tf) && (high - low) / low <= .03 && b.c > high && b.v >= 3 * meanVolume)
-      result.push({ pattern: 'Caixote + volume 3x + OBV', rsi: rv, volumeRatio: b.v / meanVolume, level: high });
-    if (['5m', '15m'].includes(tf)) {
-      // All breakout/retest decisions use only information available at this candle.
-      for (let distance = 1; distance <= 4; distance++) {
-        const j = c.length - 1 - distance, flag = c.slice(j - 8, j), pole = c.slice(j - 16, j - 8);
-        const resistance = Math.max(...flag.map(x => x.h)), floor = Math.min(...flag.map(x => x.l));
-        const impulse = pole.at(-1).c / pole[0].o - 1;
-        const breakout = c[j], baseVolume = avg(c.slice(j - 20, j).map(x => x.v));
-        const anchored = c.slice(j - 16), volume = anchored.reduce((s, x) => s + x.v, 0);
-        const avwap = volume ? anchored.reduce((s, x) => s + (x.h + x.l + x.c) / 3 * x.v, 0) / volume : Infinity;
-        if (impulse >= .10 && (resistance - floor) / floor <= impulse * .5 && flag.at(-1).c <= flag[0].c && avg(flag.map(x => x.v)) < avg(pole.map(x => x.v)) && baseVolume > 0 && breakout.c > resistance && breakout.v >= 2 * baseVolume && c.slice(j + 1).every(x => x.c >= resistance * .995) && b.l <= resistance * 1.005 && b.c >= resistance && b.c > avwap && reversal(b, c.at(-2))) {
-          result.push({ pattern: 'Bandeira + reteste + OBV/VWAP ancorada', rsi: rv, volumeRatio: breakout.v / baseVolume, level: resistance });
-          break;
-        }
+    if (c.length < 60) return [];
+    const ctx = context(c), { w, b, prev20, volumeRatio, obvUp, rv } = ctx;
+    if (!Number.isFinite(rv) || rv > 85) return [];
+    const out = [];
+    const high20 = Math.max(...prev20.map(x => x.h)), low20 = Math.min(...prev20.map(x => x.l));
+    const recent8 = w.slice(-9, -1), prior8 = w.slice(-17, -9);
+    const impulse = prior8.length === 8 ? prior8.at(-1).c / prior8[0].o - 1 : 0;
+    const recentHigh = Math.max(...recent8.map(x => x.h)), recentLow = Math.min(...recent8.map(x => x.l));
+    const consolidation = (recentHigh - recentLow) / Math.max(recentLow, 1e-12);
+    const flagShape = impulse >= .025 && consolidation <= impulse * .7 && slope(recent8.map(x => x.c)) <= 0;
+    const pennantShape = impulse >= .025 && slope(recent8.map(x => x.h)) < 0 && slope(recent8.map(x => x.l)) > 0;
+    const boxRange = (high20 - low20) / Math.max(low20, 1e-12);
+    const boxShape = boxRange <= .035;
+    const highs18 = w.slice(-19, -1).map(x => x.h), lows18 = w.slice(-19, -1).map(x => x.l);
+    const ascTri = Math.abs(slope(highs18)) <= Math.abs(slope(lows18)) * .3 && slope(lows18) > 0;
+    const fallingWedge = slope(highs18) < 0 && slope(lows18) < 0 && Math.abs(slope(highs18)) > Math.abs(slope(lows18));
+    const peaks = swings(w, 'h', true), valleys = swings(w, 'l', false);
+    const v1 = valleys.at(-2), v2 = valleys.at(-1);
+    const tol = b.c * .008;
+    const bottomNeckline = v1 && v2 ? Math.max(...w.slice(v1.i, v2.i + 1).map(x => x.h)) : NaN;
+    const doubleBottom = !!(v1 && v2 && v2.i - v1.i >= 6 && Math.abs(v1.x - v2.x) <= tol && b.c > bottomNeckline);
+    let inverseHns = false, hnsNeck = NaN;
+    if (valleys.length >= 3) {
+      const a = valleys.at(-3), h = valleys.at(-2), r = valleys.at(-1);
+      const shoulders = Math.abs(a.x - r.x) <= tol * 1.5;
+      const headLower = h.x < Math.min(a.x, r.x) - tol * .4;
+      if (shoulders && headLower && r.i - a.i >= 10) {
+        hnsNeck = Math.max(...w.slice(a.i, r.i + 1).map(x => x.h));
+        inverseHns = b.c > hnsNeck;
       }
     }
-    return result;
+    const rev = candleReversal(b, w.at(-2));
+    const retest = level => w.length >= 3 && w.at(-2).l <= level * 1.006 && w.at(-2).c >= level * .995 && b.c >= level;
+    const add = (pattern, base, level, breakout, ret, stage = 'FORMAÇÃO') => {
+      const score = scoreSignal(base, ctx, 'BUY', breakout, ret, !breakout);
+      out.push({ pattern, direction: 'BUY', stage: breakout ? (ret ? 'RETESTE CONFIRMADO' : 'BREAKOUT CONFIRMADO') : stage, score, rsi: rv, volumeRatio, obv: obvUp ? 'ALTA' : 'SEM CONFIRMAÇÃO', breakout: !!breakout, retest: !!ret, level });
+    };
+    if (flagShape) { const br = b.c > recentHigh; add('Bull Flag', 66, recentHigh, br, br && retest(recentHigh)); }
+    if (pennantShape) { const br = b.c > recentHigh; add('Bull Pennant', 66, recentHigh, br, br && retest(recentHigh)); }
+    if (boxShape) { const br = b.c > high20; add('Caixote / Rectangle', 68, high20, br, br && retest(high20)); }
+    if (ascTri) { const level = Math.max(...highs18); const br = b.c > level; add('Triângulo Ascendente', 66, level, br, br && retest(level)); }
+    if (fallingWedge) { const level = Math.max(...w.slice(-9, -1).map(x => x.h)); const br = b.c > level; add('Falling Wedge / Cunha Descendente', 64, level, br, br && retest(level)); }
+    if (doubleBottom) add('Double Bottom / Fundo Duplo', 74, bottomNeckline, true, retest(bottomNeckline));
+    if (inverseHns) add('OCO Invertido', 76, hnsNeck, true, retest(hnsNeck));
+    if (rev.hammer || rev.engulf) {
+      const p = rev.engulf ? 'Bullish Engulfing / Engolfo de Alta' : 'Martelo';
+      const level = Math.max(...w.slice(-6, -1).map(x => x.h));
+      const br = b.c > level;
+      add(p, 62, level, br, br && retest(level), 'REVERSÃO EM FORMAÇÃO');
+    }
+    return out.sort((a, b) => b.score - a.score);
   }
-  function evaluate(input, tf, now = Date.now(), horizon = 48) {
-    if (!TF[tf]) throw Error('Selecione M5, M15, M30 ou H1 no painel Cripto.');
+  function evaluate(input, tf, now = Date.now(), horizon = 48, minimumScore = 80) {
+    if (!TF[tf]) throw Error('Selecione M5, M15, M30 ou H1.');
     const c = input.filter(x => x.t + TF[tf] <= now);
-    if (c.length < 46) throw Error('Histórico insuficiente: mínimo de 46 candles fechados.');
+    if (c.length < 96) throw Error('Histórico insuficiente: mínimo de 96 candles fechados.');
     c.forEach((x, i) => {
       if (![x.t, x.o, x.h, x.l, x.c, x.v].every(Number.isFinite) || x.o <= 0 || x.c <= 0 || x.l <= 0 || x.v < 0 || x.h < Math.max(x.o, x.c) || x.l > Math.min(x.o, x.c) || (i && x.t - c[i - 1].t !== TF[tf])) throw Error('Candles inválidos, incompletos ou de outro intervalo.');
     });
     const rows = [], cooldown = new Map();
-    for (let i = 44; i < c.length - 1; i++) {
+    for (let i = 95; i < c.length - 1; i++) {
       for (const signal of detect(c.slice(0, i + 1), tf)) {
+        if (signal.score < minimumScore || !signal.breakout) continue;
         if (i <= (cooldown.get(signal.pattern) ?? -1)) continue;
-        const future = c.slice(i + 1, i + 1 + horizon), entry = future[0].o;
-        rows.push({ ...signal, time: c[i].t, entryTime: future[0].t, entry, bars: future.length, horizon, status: future.length === horizon ? 'AVALIADO' : 'PARCIAL', mfe: Math.max(0, (Math.max(...future.map(x => x.h)) / entry - 1) * 100), mae: Math.min(0, (Math.min(...future.map(x => x.l)) / entry - 1) * 100) });
-        cooldown.set(signal.pattern, i + horizon);
+        const future = c.slice(i + 1, i + 1 + horizon), entry = future[0]?.o || c[i].c;
+        if (!future.length) continue;
+        const mfe = (Math.max(...future.map(x => x.h)) / entry - 1) * 100;
+        const mae = (Math.min(...future.map(x => x.l)) / entry - 1) * 100;
+        const targets = Object.fromEntries(TARGETS.map(t => [t, mfe >= t]));
+        rows.push({ ...signal, time: c[i].t, entryTime: future[0].t, entry, bars: future.length, horizon, status: future.length === horizon ? 'AVALIADO' : 'PARCIAL', mfe: Math.max(0, mfe), mae: Math.min(0, mae), targets });
+        cooldown.set(signal.pattern, i + Math.max(4, Math.floor(horizon / 4)));
       }
     }
-    return { version: VERSION, timeframe: tf, candles: c.length, horizon, rows };
+    return { version: VERSION, timeframe: tf, candles: c.length, horizon, minimumScore, rows };
   }
-  const api = { detect, evaluate, obv, rsi, reversal, VERSION };
+  const api = { detect, evaluate, obv, rsi, VERSION };
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   if (typeof window === 'undefined') return;
   window.EPStructureVolumeLab = api;
@@ -72,44 +146,26 @@
     const host = document.querySelector('main');
     if (!host || document.getElementById('structureVolumeLab')) return;
     const panel = document.createElement('details'); panel.id = 'structureVolumeLab'; panel.className = 'card';
-    panel.innerHTML = '<summary>Experimento separado — Caixote / Bandeira / OBV</summary><p>Cripto • usa o ativo e intervalo carregados no painel • 48 candles de avaliação • RSI 14 ≤85 • sem ordens reais.</p><button type="button" data-run>Testar candles carregados</button> <button type="button" data-export>Exportar este experimento</button><p data-result>Aguardando teste manual. Nenhum motor ou histórico existente é alterado.</p><small>Resultados brutos, sem taxas ou slippage. Amostra curta: não comprova previsão de 10–50%. Histórico só neste navegador, sem expiração automática. Exporte uma cópia para preservar os dados.</small>';
-    const choice = document.createElement('select');
-    choice.innerHTML = '<option value="loaded">Intervalo carregado</option><option value="30m">M30 agregado de M15</option>';
-    choice.setAttribute('aria-label', 'Intervalo do novo experimento');
-    panel.querySelector('[data-run]').before(choice);
+    panel.innerHTML = '<summary>Experimento expandido — Padrões + OBV + Breakout/Reteste</summary><p><strong>Laboratório isolado.</strong> Prioridade H1 • 96 candles fechados • score ≥80 • 48 candles de avaliação • sem ordens reais e sem acesso aos 5 motores do EP Whale.</p><p>Detectores: Bull Flag • Bull Pennant • Caixote • Triângulo Ascendente • Falling Wedge • Fundo Duplo • OCO Invertido • Martelo/Engolfo.</p><button type="button" data-run>Testar candles carregados</button> <button type="button" data-export>Exportar experimento</button><p data-result>Aguardando teste manual.</p><small>Formação e breakout são separados. Apenas padrões com breakout confirmado e score ≥80 entram no backtest. OBV, volume e reteste funcionam como confirmações experimentais.</small>';
     const central = document.getElementById('decisionCenter')?.closest('section');
     if (central) central.before(panel); else host.prepend(panel);
     const output = panel.querySelector('[data-result]');
-    function read() { const data = JSON.parse(localStorage.getItem(KEY) || '[]'); if (!Array.isArray(data)) throw Error('Histórico inválido; não foi sobrescrito.'); return data; }
+    function read() { const data = JSON.parse(localStorage.getItem(KEY) || '[]'); return Array.isArray(data) ? data : []; }
     panel.querySelector('[data-run]').onclick = () => {
       try {
-        const tf = window.LabData?.interval, symbol = window.LabData?.symbol;
-        const loadedCandles = window.LabData?.candles;
-        if (!loadedCandles?.length) throw Error('Carregue o exemplo ou importe candles primeiro.');
-        let candles = loadedCandles.map(x => ({ t:+x.time, o:+x.open, h:+x.high, l:+x.low, c:+x.close, v:+x.volume })), experimentTf = tf;
-        if (choice.value === '30m') {
-          if (tf !== '15m') throw Error('Para M30, carregue M15 no painel Cripto.');
-          const aggregated = [];
-          for (let i = 0; i < candles.length - 1; i++) {
-            const a = candles[i], b = candles[i + 1];
-            if (a.t % TF['30m'] === 0 && b.t - a.t === TF['15m']) aggregated.push({ t: a.t, o: a.o, h: Math.max(a.h, b.h), l: Math.min(a.l, b.l), c: b.c, v: a.v + b.v });
-          }
-          candles = aggregated; experimentTf = '30m';
-        }
-        const report = { ...evaluate(candles, experimentTf), symbol, testedAt: new Date().toISOString() };
-        const key = `${VERSION}|${symbol}|${experimentTf}|${candles.at(-1).t}`;
-        const history = read(); const old = history.findIndex(x => x.key === key);
-        if (old >= 0) history[old] = { ...report, key }; else history.push({ ...report, key });
-        localStorage.setItem(KEY, JSON.stringify(history));
+        const tf = window.LabData?.interval, symbol = window.LabData?.symbol, loaded = window.LabData?.candles;
+        if (!loaded?.length) throw Error('Carregue ou importe candles primeiro.');
+        const candles = loaded.map(x => ({ t:+x.time, o:+x.open, h:+x.high, l:+x.low, c:+x.close, v:+x.volume }));
+        const report = { ...evaluate(candles, tf, Date.now(), 48, 80), symbol, testedAt: new Date().toISOString() };
+        const history = read(); history.push(report); while (history.length > 100) history.shift(); localStorage.setItem(KEY, JSON.stringify(history));
         const done = report.rows.filter(x => x.status === 'AVALIADO');
-        output.textContent = `${symbol} ${experimentTf} • ${report.candles} candles • ${done.length} avaliados • ${report.rows.length - done.length} parciais • ` + [10, 20, 30, 50].map(t => `≥${t}%: ${done.filter(x => x.mfe >= t).length}`).join(' | ') + ` • ${history.length} testes salvos localmente.`;
+        const counts = TARGETS.map(t => `≥${t}%: ${done.filter(x => x.mfe >= t).length}`).join(' | ');
+        output.textContent = `${symbol} ${tf} • ${report.candles} candles • ${report.rows.length} sinais score≥80 • ${counts}`;
       } catch (e) { output.textContent = `Teste não salvo: ${e.message}`; }
     };
     panel.querySelector('[data-export]').onclick = () => {
-      try {
-        const url = URL.createObjectURL(new Blob([JSON.stringify({ version: VERSION, exportedAt: new Date().toISOString(), tests: read() }, null, 2)], { type: 'application/json' }));
-        const a = document.createElement('a'); a.href = url; a.download = 'ep-caixote-bandeira-obv.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
-      } catch (e) { output.textContent = e.message; }
+      const url = URL.createObjectURL(new Blob([JSON.stringify({ version: VERSION, exportedAt: new Date().toISOString(), tests: read() }, null, 2)], { type: 'application/json' }));
+      const a = document.createElement('a'); a.href = url; a.download = 'ep-laboratorio-padroes-obv-v2.json'; a.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
     };
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount); else mount();
