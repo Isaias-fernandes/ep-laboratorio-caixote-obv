@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const CRYPTO=['BTCUSDT','ETHUSDT','BNBUSDT','SOLUSDT','XRPUSDT','ADAUSDT','DOGEUSDT','AVAXUSDT','LINKUSDT','DOTUSDT','TRXUSDT','LTCUSDT','BCHUSDT','XLMUSDT','UNIUSDT','ATOMUSDT','ETCUSDT','NEARUSDT','APTUSDT','FILUSDT','ICPUSDT','ARBUSDT','OPUSDT','SUIUSDT','AAVEUSDT'];
-const B3=['PETR4','VALE3','ITUB4','BBDC4','BBAS3','WEGE3','ABEV3','B3SA3','RENT3','SUZB3','PRIO3','ELET3','EQTL3','RADL3','GGBR4','CSNA3','MGLU3','LREN3','JBSS3','EMBR3'];
+const B3=['PETR4','VALE3','ITUB4','BBDC4','BBAS3','WEGE3','ABEV3','B3SA3','RENT3','SUZB3','PRIO3','AXIA3','EQTL3','RADL3','GGBR4','CSNA3','MGLU3','LREN3','JBSS32','EMBJ3'];
 const TARGETS=[5,10,20,30,50],OUT=path.resolve('data/auto-signals.json');
 const avg=a=>a.length?a.reduce((s,v)=>s+v,0)/a.length:0,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function normalize(rows){return rows.map((r,i)=>({time:r.time??r.timestamp??i,open:+r.open,high:+r.high,low:+r.low,close:+r.close,volume:+r.volume})).filter(c=>[c.open,c.high,c.low,c.close,c.volume].every(Number.isFinite)&&c.high>=c.low&&c.volume>=0)}
