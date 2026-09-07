@@ -1,0 +1,45 @@
+name: Backtest Candlestick 60
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '35 9 * * *'
+  push:
+    paths:
+      - 'candlestick-patterns-lab.js'
+      - 'automation/backtest-candlestick-60.cjs'
+      - '.github/workflows/backtest-candlestick-60.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: laboratorio-candlestick-60
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Rodar H1 horizonte 96 score 80
+        run: node automation/backtest-candlestick-60.cjs
+      - name: Publicar resultado
+        run: |
+          if git diff --quiet -- data/backtest-candlestick-60.json; then
+            echo "Sem alteracoes no resultado."
+            exit 0
+          fi
+          git config user.name "laboratorio-candlestick-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/backtest-candlestick-60.json
+          git commit -m "data: atualizar estudo dos 60 padroes de candles"
+          git push
