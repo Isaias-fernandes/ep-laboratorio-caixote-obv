@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T20:15:48.571Z",
+  "generatedAt": "2026-09-07T20:38:47.214Z",
   "parameters": {
     "interval": "1h",
     "candles": 96,
@@ -7,13 +7,74 @@
   },
   "stats": {
     "crypto": {
-      "ok": 0,
-      "error": 25
+      "ok": 25,
+      "error": 0
     },
     "b3": {
       "ok": 17,
       "error": 3
     }
+  },
+  "errors": {
+    "crypto": [],
+    "b3": [
+      {
+        "symbol": "ELET3",
+        "error": "query1.finance.yahoo.com:404 | query2.finance.yahoo.com:404"
+      },
+      {
+        "symbol": "JBSS3",
+        "error": "query1.finance.yahoo.com:404 | query2.finance.yahoo.com:404"
+      },
+      {
+        "symbol": "EMBR3",
+        "error": "query1.finance.yahoo.com:404 | query2.finance.yahoo.com:404"
+      }
+    ]
+  },
+  "sources": {
+    "BTCUSDT": "BINANCE_DATA",
+    "ETHUSDT": "BINANCE_DATA",
+    "BNBUSDT": "BINANCE_DATA",
+    "SOLUSDT": "BINANCE_DATA",
+    "XRPUSDT": "BINANCE_DATA",
+    "ADAUSDT": "BINANCE_DATA",
+    "DOGEUSDT": "BINANCE_DATA",
+    "AVAXUSDT": "BINANCE_DATA",
+    "LINKUSDT": "BINANCE_DATA",
+    "DOTUSDT": "BINANCE_DATA",
+    "TRXUSDT": "BINANCE_DATA",
+    "LTCUSDT": "BINANCE_DATA",
+    "BCHUSDT": "BINANCE_DATA",
+    "XLMUSDT": "BINANCE_DATA",
+    "UNIUSDT": "BINANCE_DATA",
+    "ATOMUSDT": "BINANCE_DATA",
+    "ETCUSDT": "BINANCE_DATA",
+    "NEARUSDT": "BINANCE_DATA",
+    "APTUSDT": "BINANCE_DATA",
+    "FILUSDT": "BINANCE_DATA",
+    "ICPUSDT": "BINANCE_DATA",
+    "ARBUSDT": "BINANCE_DATA",
+    "OPUSDT": "BINANCE_DATA",
+    "SUIUSDT": "BINANCE_DATA",
+    "AAVEUSDT": "BINANCE_DATA",
+    "PETR4": "YAHOO1",
+    "VALE3": "YAHOO1",
+    "ITUB4": "YAHOO1",
+    "BBDC4": "YAHOO1",
+    "BBAS3": "YAHOO1",
+    "WEGE3": "YAHOO1",
+    "ABEV3": "YAHOO1",
+    "B3SA3": "YAHOO1",
+    "RENT3": "YAHOO1",
+    "SUZB3": "YAHOO1",
+    "PRIO3": "YAHOO1",
+    "EQTL3": "YAHOO1",
+    "RADL3": "YAHOO1",
+    "GGBR4": "YAHOO1",
+    "CSNA3": "YAHOO1",
+    "MGLU3": "YAHOO1",
+    "LREN3": "YAHOO1"
   },
   "signals": []
 }
