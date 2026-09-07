@@ -26,7 +26,7 @@ jobs:
         run: node automation/backtest-experimental-motors.cjs
       - name: Publicar resultado
         run: |
-          if git diff --quiet -- data/backtest-experimental-motors.json; then
+          if [ -z "$(git status --porcelain -- data/backtest-experimental-motors.json)" ]; then
             echo 'Sem alteração de resultado'
             exit 0
           fi
