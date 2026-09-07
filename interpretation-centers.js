@@ -1,68 +1,21 @@
-/* Duas centrais de interpretação exclusivas do ep-laboratorio-caixote-obv. */
+/* Duas centrais exclusivas do laboratorio. Tape Reading e SOMENTE INFORMATIVO. */
 (function(global){
-  const RADAR_KEY="labRadarH1V1";
-  const TRACK_KEY="labTrackingH1V1";
-  const TARGETS=[5,10,20,30,50];
-  let autoFeed={generatedAt:null,signals:[],stats:{crypto:{ok:0,error:0},b3:{ok:0,error:0}}};
-  const load=k=>{try{return JSON.parse(localStorage.getItem(k)||"[]")}catch{return []}};
-  const save=(k,v)=>localStorage.setItem(k,JSON.stringify(v.slice(0,200)));
-  const esc=s=>String(s??"—").replace(/[&<>\"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m]));
-  const pct=(a,b)=>a?((b-a)/a)*100:0;
+  const RADAR_KEY="labRadarH1V1",TRACK_KEY="labTrackingH1V1",TARGETS=[5,10,20,30,50];
+  let autoFeed={generatedAt:null,signals:[],stats:{crypto:{ok:0,error:0},b3:{ok:0,error:0}}},tapeRenderTimer=null;
+  const load=k=>{try{return JSON.parse(localStorage.getItem(k)||"[]")}catch{return []}},save=(k,v)=>localStorage.setItem(k,JSON.stringify(v.slice(0,200)));
+  const esc=s=>String(s??"—").replace(/[&<>\"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[m])),pct=(a,b)=>a?((b-a)/a)*100:0;
   const unique=rows=>{const seen=new Set();return rows.filter(x=>{const id=x.id||[x.symbol,x.createdAt,x.direction].join('|');if(seen.has(id))return false;seen.add(id);return true})};
-
-  function gate({interval,candles,result}){
-    const reasons=[];
-    if(interval!=="1h") reasons.push("Exige H1");
-    if(candles.length<96) reasons.push("Exige 96 candles");
-    if(result.score<80) reasons.push("Score abaixo de 80");
-    if(!result.countAsSignal) reasons.push("Sem sinal confirmado");
-    return {eligible:reasons.length===0,reasons};
-  }
-
-  function ingest({symbol,interval,candles,result}){
-    const g=gate({interval,candles,result});
-    updateTracking(symbol,candles);
-    if(!g.eligible){render();return g;}
-    const last=candles.at(-1);
-    const direction=result.classification==="SINAL_COMPRA"?"COMPRA":"VENDA";
-    const id=[symbol,last?.time??Date.now(),direction].join("|");
-    const radar=load(RADAR_KEY);
-    if(!radar.some(x=>x.id===id)){
-      const item={id,createdAt:new Date().toISOString(),symbol,interval,direction,score:result.score,entry:+last.close,box:result.box?.state||"—",flag:result.flag?.state||"—",obv:result.obv?.trend||"—",divergence:result.obv?.divergence||"—",volumeRatio:Math.max(result.box?.volumeRatio||0,result.flag?.volumeRatio||0),source:"MANUAL"};
-      radar.unshift(item);save(RADAR_KEY,radar);
-      const tr=load(TRACK_KEY);tr.unshift({...item,best:0,worst:0,lastPrice:+last.close,targets:{}});save(TRACK_KEY,tr);
-    }
-    render();return g;
-  }
-
-  function updateTracking(symbol,candles){
-    if(!candles?.length)return;
-    const last=candles.at(-1),high=Math.max(...candles.slice(-96).map(x=>x.high)),low=Math.min(...candles.slice(-96).map(x=>x.low));
-    const tr=load(TRACK_KEY);let changed=false;
-    for(const x of tr){if(x.symbol!==symbol)continue;const favorable=x.direction==="COMPRA"?pct(x.entry,high):-pct(x.entry,low),adverse=x.direction==="COMPRA"?pct(x.entry,low):-pct(x.entry,high);x.best=Math.max(x.best||0,favorable);x.worst=Math.min(x.worst||0,adverse);x.lastPrice=+last.close;x.targets=x.targets||{};for(const t of TARGETS)if((x.best||0)>=t)x.targets[t]=true;changed=true}
-    if(changed)save(TRACK_KEY,tr);
-  }
-
-  async function loadAutoFeed(){
-    try{
-      const r=await fetch(`data/auto-signals.json?ts=${Date.now()}`,{cache:"no-store"});
-      if(!r.ok)throw Error(`HTTP ${r.status}`);
-      const d=await r.json();
-      autoFeed={generatedAt:d.generatedAt||null,signals:Array.isArray(d.signals)?d.signals:[],stats:d.stats||autoFeed.stats};
-    }catch(e){console.warn("Feed automatico indisponivel:",e.message)}
-    render();
-  }
-
-  function render(){
-    const rBody=document.getElementById("radarCenterBody"),tBody=document.getElementById("trackingCenterBody"),status=document.getElementById("autoStatus");
-    const automatic=(autoFeed.signals||[]).map(x=>({...x,source:"AUTO"}));
-    const radar=unique([...automatic,...load(RADAR_KEY)]).sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
-    const tracking=unique([...automatic,...load(TRACK_KEY)]).sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
-    if(status){const when=autoFeed.generatedAt?new Date(autoFeed.generatedAt).toLocaleString("pt-BR"):"aguardando primeira varredura";const c=autoFeed.stats?.crypto||{},b=autoFeed.stats?.b3||{};status.textContent=`Automático H1 ativo · última varredura: ${when} · Cripto ${c.ok||0} OK/${c.error||0} erro(s) · B3 ${b.ok||0} OK/${b.error||0} erro(s)`;}
-    if(rBody)rBody.innerHTML=radar.map(x=>`<tr><td>${new Date(x.createdAt).toLocaleString("pt-BR")}</td><td>${esc(x.market||"—")}</td><td>${esc(x.symbol)}</td><td>${x.direction}</td><td>${x.score}</td><td>${esc(x.box).replaceAll("_"," ")}</td><td>${esc(x.flag).replaceAll("_"," ")}</td><td>${esc(x.obv)}</td><td>${Number(x.volumeRatio||0).toFixed(2)}x</td><td>${esc(x.source||"LOCAL")}</td></tr>`).join("")||'<tr><td colspan="10">Nenhum sinal H1/96/score ≥ 80 registrado.</td></tr>';
-    if(tBody)tBody.innerHTML=tracking.map(x=>`<tr><td>${esc(x.market||"—")}</td><td>${esc(x.symbol)}</td><td>${x.direction}</td><td>${x.score}</td><td>${Number(x.entry).toFixed(4)}</td><td>${Number(x.best||0).toFixed(2)}%</td><td>${Number(x.worst||0).toFixed(2)}%</td><td>${TARGETS.map(t=>x.targets?.[t]?`✓ ${t}%`:`· ${t}%`).join(" ")}</td><td>${esc(x.source||"LOCAL")}</td></tr>`).join("")||'<tr><td colspan="9">Nenhum sinal em acompanhamento.</td></tr>';
-  }
-
+  function gate({interval,candles,result}){const reasons=[];if(interval!=="1h")reasons.push("Exige H1");if(candles.length<96)reasons.push("Exige 96 candles");if(result.score<80)reasons.push("Score abaixo de 80");if(!result.countAsSignal)reasons.push("Sem sinal confirmado");return{eligible:reasons.length===0,reasons}}
+  function ingest({symbol,interval,candles,result}){const g=gate({interval,candles,result});updateTracking(symbol,candles);if(!g.eligible){render();return g}const last=candles.at(-1),direction=result.classification==="SINAL_COMPRA"?"COMPRA":"VENDA",id=[symbol,last?.time??Date.now(),direction].join("|"),radar=load(RADAR_KEY);if(!radar.some(x=>x.id===id)){const item={id,createdAt:new Date().toISOString(),symbol,interval,direction,score:result.score,entry:+last.close,box:result.box?.state||"—",flag:result.flag?.state||"—",obv:result.obv?.trend||"—",divergence:result.obv?.divergence||"—",volumeRatio:Math.max(result.box?.volumeRatio||0,result.flag?.volumeRatio||0),source:"MANUAL"};radar.unshift(item);save(RADAR_KEY,radar);const tr=load(TRACK_KEY);tr.unshift({...item,best:0,worst:0,lastPrice:+last.close,targets:{}});save(TRACK_KEY,tr)}render();return g}
+  function updateTracking(symbol,candles){if(!candles?.length)return;const last=candles.at(-1),high=Math.max(...candles.slice(-96).map(x=>x.high)),low=Math.min(...candles.slice(-96).map(x=>x.low)),tr=load(TRACK_KEY);let changed=false;for(const x of tr){if(x.symbol!==symbol)continue;const favorable=x.direction==="COMPRA"?pct(x.entry,high):-pct(x.entry,low),adverse=x.direction==="COMPRA"?pct(x.entry,low):-pct(x.entry,high);x.best=Math.max(x.best||0,favorable);x.worst=Math.min(x.worst||0,adverse);x.lastPrice=+last.close;x.targets=x.targets||{};for(const t of TARGETS)if((x.best||0)>=t)x.targets[t]=true;changed=true}if(changed)save(TRACK_KEY,tr)}
+  async function loadAutoFeed(){try{const r=await fetch(`data/auto-signals.json?ts=${Date.now()}`,{cache:"no-store"});if(!r.ok)throw Error(`HTTP ${r.status}`);const d=await r.json();autoFeed={generatedAt:d.generatedAt||null,signals:Array.isArray(d.signals)?d.signals:[],stats:d.stats||autoFeed.stats,errors:d.errors||{},sources:d.sources||{}}}catch(e){console.warn("Feed automatico indisponivel:",e.message)}render()}
+  function tape(x){const t=global.TapeReadingExperimental?.get?.(x.symbol,x.market);return esc(t?.label||"—")}
+  function render(){const rBody=document.getElementById("radarCenterBody"),tBody=document.getElementById("trackingCenterBody"),status=document.getElementById("autoStatus"),automatic=(autoFeed.signals||[]).map(x=>({...x,source:"AUTO"})),radar=unique([...automatic,...load(RADAR_KEY)]).sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt)),tracking=unique([...automatic,...load(TRACK_KEY)]).sort((a,b)=>new Date(b.createdAt)-new Date(a.createdAt));
+    const watch=[document.getElementById('symbol')?.value,...radar.filter(x=>String(x.market||'').toUpperCase()==='CRIPTO').slice(0,7).map(x=>x.symbol)];global.TapeReadingExperimental?.watchMany?.(watch);
+    if(status){const when=autoFeed.generatedAt?new Date(autoFeed.generatedAt).toLocaleString("pt-BR"):"aguardando primeira varredura",c=autoFeed.stats?.crypto||{},b=autoFeed.stats?.b3||{};status.textContent=`Automático H1 ativo · última varredura: ${when} · Cripto ${c.ok||0} OK/${c.error||0} erro(s) · B3 ${b.ok||0} OK/${b.error||0} erro(s)`}
+    if(rBody)rBody.innerHTML=radar.map(x=>`<tr><td>${new Date(x.createdAt).toLocaleString("pt-BR")}</td><td>${esc(x.market||"—")}</td><td>${esc(x.symbol)}</td><td>${x.direction}</td><td>${x.score}</td><td>${esc(x.box).replaceAll("_"," ")}</td><td>${esc(x.flag).replaceAll("_"," ")}</td><td>${esc(x.obv)}</td><td>${Number(x.volumeRatio||0).toFixed(2)}x</td><td>${tape(x)}</td><td>${esc(x.source||"LOCAL")}</td></tr>`).join("")||'<tr><td colspan="11">Nenhum sinal H1/96/score ≥ 80 registrado.</td></tr>';
+    if(tBody)tBody.innerHTML=tracking.map(x=>`<tr><td>${esc(x.market||"—")}</td><td>${esc(x.symbol)}</td><td>${x.direction}</td><td>${x.score}</td><td>${Number(x.entry).toFixed(4)}</td><td>${Number(x.best||0).toFixed(2)}%</td><td>${Number(x.worst||0).toFixed(2)}%</td><td>${TARGETS.map(t=>x.targets?.[t]?`✓ ${t}%`:`· ${t}%`).join(" ")}</td><td>${tape(x)}</td><td>${esc(x.source||"LOCAL")}</td></tr>`).join("")||'<tr><td colspan="10">Nenhum sinal em acompanhamento.</td></tr>'}
   global.InterpretationCenters={ingest,render,loadAutoFeed};
   document.addEventListener("DOMContentLoaded",()=>{render();loadAutoFeed();setInterval(loadAutoFeed,300000)});
+  global.addEventListener('lab-tape-updated',()=>{if(tapeRenderTimer)return;tapeRenderTimer=setTimeout(()=>{tapeRenderTimer=null;render()},1000)});
 })(window);
