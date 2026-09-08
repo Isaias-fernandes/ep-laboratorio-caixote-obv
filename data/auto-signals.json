@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T19:14:35.618Z",
+  "generatedAt": "2026-09-08T20:15:19.647Z",
   "parameters": {
     "interval": "1h",
     "candles": 96,
@@ -83,6 +83,36 @@
   },
   "signals": [
     {
+      "id": "B3|RADL3|1788894000000|VENDA",
+      "market": "B3",
+      "symbol": "RADL3",
+      "interval": "1h",
+      "candles": 96,
+      "direction": "VENDA",
+      "score": 88,
+      "entry": 20.110000610351562,
+      "entryTime": 1788894000000,
+      "createdAt": "2026-09-08T19:00:00.000Z",
+      "pattern": "Estrela da noite",
+      "patternType": "REVERSÃO",
+      "patternConfirmed": false,
+      "rsi": 49.06126450161499,
+      "cci": -79.4621837254225,
+      "macdHistogram": -0.03159774123195727,
+      "momentumAligned": true,
+      "ignition": false,
+      "box": "—",
+      "flag": "—",
+      "obv": "CAINDO",
+      "divergence": "—",
+      "volumeRatio": 2.0842861192478503,
+      "dataSource": "YAHOO1",
+      "best": 0,
+      "worst": 0,
+      "lastPrice": 20.110000610351562,
+      "targets": {}
+    },
+    {
       "id": "CRIPTO|NEARUSDT|1788879600000|COMPRA",
       "market": "CRIPTO",
       "symbol": "NEARUSDT",
@@ -108,8 +138,8 @@
       "volumeRatio": 2.812642336853489,
       "dataSource": "BINANCE_DATA",
       "best": 1.1608623548922068,
-      "worst": -3.524046434494194,
-      "lastPrice": 2.357,
+      "worst": -3.9800995024875654,
+      "lastPrice": 2.339,
       "targets": {}
     },
     {
@@ -139,7 +169,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 3.0162412993039625,
       "worst": -2.5522041763340937,
-      "lastPrice": 8.42,
+      "lastPrice": 8.53,
       "targets": {}
     },
     {
@@ -167,10 +197,12 @@
       "divergence": "—",
       "volumeRatio": 1.7252932607255231,
       "dataSource": "BINANCE_DATA",
-      "best": 7.340241796200362,
+      "best": 10.880829015544052,
       "worst": -3.713298791018992,
-      "lastPrice": 1.222,
-      "targets": {}
+      "lastPrice": 1.276,
+      "targets": {
+        "10": true
+      }
     },
     {
       "id": "CRIPTO|AAVEUSDT|1788868800000|VENDA",
@@ -199,7 +231,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 1.9074203303093693,
       "worst": -1.6127781654648465,
-      "lastPrice": 129.11,
+      "lastPrice": 129.56,
       "targets": {}
     },
     {
@@ -229,7 +261,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 5.14450867052023,
       "worst": -1.9653179190751464,
-      "lastPrice": 1.788,
+      "lastPrice": 1.81,
       "targets": {}
     },
     {
@@ -258,8 +290,8 @@
       "volumeRatio": 1.4663114212696389,
       "dataSource": "BINANCE_DATA",
       "best": 0.42535091450446977,
-      "worst": -3.7714447752729336,
-      "lastPrice": 6.821,
+      "worst": -4.409471147029632,
+      "lastPrice": 6.79,
       "targets": {}
     },
     {
@@ -289,7 +321,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 1.0661453414868225,
       "worst": -0.6857688091243448,
-      "lastPrice": 78481.37,
+      "lastPrice": 78592.01,
       "targets": {}
     }
   ]
