@@ -34,7 +34,7 @@ jobs:
         run: node automation/backtest-candlestick-60.cjs
       - name: Publicar resultado
         run: |
-          if git diff --quiet -- data/backtest-candlestick-60.json; then
+          if [ -z "$(git status --porcelain -- data/backtest-candlestick-60.json)" ]; then
             echo "Sem alteracoes no resultado."
             exit 0
           fi
