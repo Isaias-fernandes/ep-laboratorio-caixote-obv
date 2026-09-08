@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T05:15:26.011Z",
+  "generatedAt": "2026-09-08T06:20:27.843Z",
   "parameters": {
     "interval": "1h",
     "candles": 96,
@@ -81,5 +81,36 @@
     "JBSS32": "YAHOO1",
     "EMBJ3": "YAHOO1"
   },
-  "signals": []
+  "signals": [
+    {
+      "id": "CRIPTO|BTCUSDT|1788847200000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "BTCUSDT",
+      "interval": "1h",
+      "candles": 96,
+      "direction": "VENDA",
+      "score": 100,
+      "entry": 78456.47,
+      "entryTime": 1788847200000,
+      "createdAt": "2026-09-08T06:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "rsi": 32.844061531183485,
+      "cci": -188.24497708937082,
+      "macdHistogram": -54.858072742174755,
+      "momentumAligned": true,
+      "ignition": true,
+      "box": "—",
+      "flag": "—",
+      "obv": "CAINDO",
+      "divergence": "—",
+      "volumeRatio": 1.423018986203278,
+      "dataSource": "BINANCE_DATA",
+      "best": 0,
+      "worst": 0,
+      "lastPrice": 78456.47,
+      "targets": {}
+    }
+  ]
 }
