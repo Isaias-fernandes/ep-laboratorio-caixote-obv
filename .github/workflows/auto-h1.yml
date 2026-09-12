@@ -8,6 +8,7 @@ on:
     paths:
       - 'automation/scan-h1.mjs'
       - 'automation/archive-h1-history.mjs'
+      - 'automation/smart-money-history.mjs'
       - '.github/workflows/auto-h1.yml'
 
 permissions:
@@ -20,7 +21,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -34,6 +35,8 @@ jobs:
         run: node automation/scan-h1.mjs
       - name: Atualizar historico experimental permanente
         run: node automation/archive-h1-history.mjs
+      - name: Enriquecer historico com observador Smart Money
+        run: node automation/smart-money-history.mjs
       - name: Publicar somente se houver mudanca
         run: |
           if [ -z "$(git status --porcelain -- data/auto-signals.json data/h1-history.json)" ]; then
@@ -43,5 +46,5 @@ jobs:
           git config user.name "laboratorio-h1-bot"
           git config user.email "actions@users.noreply.github.com"
           git add data/auto-signals.json data/h1-history.json
-          git commit -m "data: atualizar sinais e historico H1"
+          git commit -m "data: atualizar sinais, historico H1 e observador Smart Money"
           git push
