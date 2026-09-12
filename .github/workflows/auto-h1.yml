@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - 'automation/scan-h1.mjs'
+      - 'automation/archive-h1-history.mjs'
       - '.github/workflows/auto-h1.yml'
 
 permissions:
@@ -19,7 +20,7 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,14 +32,16 @@ jobs:
           node-version: '24'
       - name: Rodar varredura H1 96/80
         run: node automation/scan-h1.mjs
+      - name: Atualizar historico experimental permanente
+        run: node automation/archive-h1-history.mjs
       - name: Publicar somente se houver mudanca
         run: |
-          if git diff --quiet -- data/auto-signals.json; then
-            echo "Sem alteracoes nos sinais."
+          if [ -z "$(git status --porcelain -- data/auto-signals.json data/h1-history.json)" ]; then
+            echo "Sem alteracoes nos sinais ou no historico."
             exit 0
           fi
           git config user.name "laboratorio-h1-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/auto-signals.json
-          git commit -m "data: atualizar sinais automaticos H1"
+          git add data/auto-signals.json data/h1-history.json
+          git commit -m "data: atualizar sinais e historico H1"
           git push
