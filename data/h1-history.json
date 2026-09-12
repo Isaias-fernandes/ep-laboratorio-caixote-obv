@@ -1,0 +1,2502 @@
+{
+  "version": 1,
+  "protocol": {
+    "interval": "1h",
+    "contextCandles": 96,
+    "minScore": 80,
+    "futureHorizonCandles": 96,
+    "favorableThresholdsPct": [
+      0.25,
+      0.5,
+      1,
+      2,
+      5,
+      10,
+      20,
+      30,
+      50
+    ],
+    "adverseThresholdsPct": [
+      0.25,
+      0.5,
+      1,
+      2,
+      5,
+      10
+    ],
+    "note": "Historico independente da retencao da tela/auto-signals. Ordem dentro da mesma vela H1 e indeterminada."
+  },
+  "createdAt": "2026-09-12T11:51:13.214Z",
+  "updatedAt": "2026-09-12T11:51:19.765Z",
+  "records": [
+    {
+      "id": "CRIPTO|SUIUSDT|1789124400000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "SUIUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.714,
+      "entryTime": 1789124400000,
+      "createdAt": "2026-09-11T11:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 21.13781775359442,
+        "cci": -274.4054468738044,
+        "macdHistogram": -0.000013885629615718875,
+        "obv": "CAINDO",
+        "volumeRatio": 2.4426389987534303,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 24,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.7291,
+        "mfe": 0.9523809523809409,
+        "mae": -7.282913165266114,
+        "favorableHits": {
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 0.7072
+          },
+          "0.5": {
+            "candleTime": 1789128000000,
+            "price": 0.7072
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789128000000,
+            "price": 0.7419
+          },
+          "2": {
+            "candleTime": 1789128000000,
+            "price": 0.7419
+          },
+          "5": {
+            "candleTime": 1789131600000,
+            "price": 0.7612
+          },
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 0.7419
+          },
+          "0.5": {
+            "candleTime": 1789128000000,
+            "price": 0.7419
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "2": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|OPUSDT|1789124400000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "OPUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.0929,
+      "entryTime": 1789124400000,
+      "createdAt": "2026-09-11T11:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 30.28297711306878,
+        "cci": -258.5669781931456,
+        "macdHistogram": -0.000010682387321253768,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.311692272328976,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 24,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.0977,
+        "mfe": 0.4305705059203419,
+        "mae": -8.28848223896663,
+        "favorableHits": {
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 0.0925
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789128000000,
+            "price": 0.0961
+          },
+          "2": {
+            "candleTime": 1789128000000,
+            "price": 0.0961
+          },
+          "5": {
+            "candleTime": 1789131600000,
+            "price": 0.0997
+          },
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 0.0961
+          },
+          "0.5": {
+            "candleTime": 1789128000000,
+            "price": 0.0961
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "2": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|FILUSDT|1789124400000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "FILUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.7744,
+      "entryTime": 1789124400000,
+      "createdAt": "2026-09-11T11:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 32.56244932715791,
+        "cci": -154.50597759073605,
+        "macdHistogram": -0.0002448265775322495,
+        "obv": "CAINDO",
+        "volumeRatio": 2.3175277679843016,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 24,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.814,
+        "mfe": 0.02582644628098889,
+        "mae": -6.921487603305783,
+        "favorableHits": {},
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789128000000,
+            "price": 0.8013
+          },
+          "2": {
+            "candleTime": 1789128000000,
+            "price": 0.8013
+          },
+          "5": {
+            "candleTime": 1789131600000,
+            "price": 0.8193
+          },
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 0.8013
+          },
+          "0.5": {
+            "candleTime": 1789128000000,
+            "price": 0.8013
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "2": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|LINKUSDT|1789124400000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "LINKUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 11.31,
+      "entryTime": 1789124400000,
+      "createdAt": "2026-09-11T11:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 28.3760304311065,
+        "cci": -201.10947952357745,
+        "macdHistogram": -0.003895169885412386,
+        "obv": "CAINDO",
+        "volumeRatio": 2.0445707950861105,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 24,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 11.562,
+        "mfe": 0.5039787798408522,
+        "mae": -8.01945181255526,
+        "favorableHits": {
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 11.253
+          },
+          "0.5": {
+            "candleTime": 1789128000000,
+            "price": 11.253
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789128000000,
+            "price": 11.696
+          },
+          "2": {
+            "candleTime": 1789128000000,
+            "price": 11.696
+          },
+          "5": {
+            "candleTime": 1789131600000,
+            "price": 12.1
+          },
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 11.696
+          },
+          "0.5": {
+            "candleTime": 1789128000000,
+            "price": 11.696
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "2": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|AVAXUSDT|1789124400000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "AVAXUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 7.305,
+      "entryTime": 1789124400000,
+      "createdAt": "2026-09-11T11:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 25.729933381831387,
+        "cci": -197.06657314232814,
+        "macdHistogram": -0.007028874576609806,
+        "obv": "CAINDO",
+        "volumeRatio": 1.848163924381325,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 24,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 7.448,
+        "mfe": 0.3969883641341535,
+        "mae": -7.31006160164272,
+        "favorableHits": {
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 7.276
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789128000000,
+            "price": 7.646
+          },
+          "2": {
+            "candleTime": 1789128000000,
+            "price": 7.646
+          },
+          "5": {
+            "candleTime": 1789131600000,
+            "price": 7.783
+          },
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 7.646
+          },
+          "0.5": {
+            "candleTime": 1789128000000,
+            "price": 7.646
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "2": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|ADAUSDT|1789124400000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "ADAUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.2009,
+      "entryTime": 1789124400000,
+      "createdAt": "2026-09-11T11:00:00.000Z",
+      "pattern": "Topo duplo",
+      "patternType": "REVERSÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 28.543717282800188,
+        "cci": -217.3112338858177,
+        "macdHistogram": -0.00044425775598105075,
+        "obv": "CAINDO",
+        "volumeRatio": 1.3193636652016425,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 24,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.2093,
+        "mfe": 0.24888003982080661,
+        "mae": -7.6655052264808345,
+        "favorableHits": {},
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789128000000,
+            "price": 0.2096
+          },
+          "2": {
+            "candleTime": 1789128000000,
+            "price": 0.2096
+          },
+          "5": {
+            "candleTime": 1789131600000,
+            "price": 0.2146
+          },
+          "0.25": {
+            "candleTime": 1789128000000,
+            "price": 0.2096
+          },
+          "0.5": {
+            "candleTime": 1789128000000,
+            "price": 0.2096
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "2": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "B3|LREN3|1789066800000|COMPRA",
+      "market": "B3",
+      "symbol": "LREN3",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 88,
+      "entry": 11.5,
+      "entryTime": 1789066800000,
+      "createdAt": "2026-09-10T19:00:00.000Z",
+      "pattern": "Engolfo de alta",
+      "patternType": "REVERSÃO",
+      "patternConfirmed": false,
+      "indicators": {
+        "rsi": 53.70397108639235,
+        "cci": 8.729742990084825,
+        "macdHistogram": 0.005216113988716192,
+        "obv": "CAINDO",
+        "volumeRatio": 2.0199334199415393,
+        "momentumAligned": true,
+        "ignition": false
+      },
+      "dataSource": "YAHOO1",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 8,
+        "lastProcessedCandleTime": 1789156800000,
+        "lastPrice": 11.329999923706055,
+        "mfe": 1.9130458002505097,
+        "mae": -1.7391287762185803,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789131600000,
+            "price": 11.720000267028809
+          },
+          "0.25": {
+            "candleTime": 1789131600000,
+            "price": 11.720000267028809
+          },
+          "0.5": {
+            "candleTime": 1789131600000,
+            "price": 11.720000267028809
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789146000000,
+            "price": 11.369999885559082
+          },
+          "0.25": {
+            "candleTime": 1789131600000,
+            "price": 11.4399995803833
+          },
+          "0.5": {
+            "candleTime": 1789131600000,
+            "price": 11.4399995803833
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "B3|CSNA3|1789066800000|COMPRA",
+      "market": "B3",
+      "symbol": "CSNA3",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 7.21999979019165,
+      "entryTime": 1789066800000,
+      "createdAt": "2026-09-10T19:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 72.76647636360023,
+        "cci": 157.79535276559153,
+        "macdHistogram": 0.010896564443827306,
+        "obv": "SUBINDO",
+        "volumeRatio": 2.318765098617327,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "YAHOO1",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 8,
+        "lastProcessedCandleTime": 1789156800000,
+        "lastPrice": 6.659999847412109,
+        "mfe": 0,
+        "mae": -8.587256282214165,
+        "favorableHits": {},
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789131600000,
+            "price": 6.730000019073486
+          },
+          "2": {
+            "candleTime": 1789131600000,
+            "price": 6.730000019073486
+          },
+          "5": {
+            "candleTime": 1789131600000,
+            "price": 6.730000019073486
+          },
+          "0.25": {
+            "candleTime": 1789131600000,
+            "price": 6.730000019073486
+          },
+          "0.5": {
+            "candleTime": 1789131600000,
+            "price": 6.730000019073486
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "2": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "B3|GGBR4|1789066800000|COMPRA",
+      "market": "B3",
+      "symbol": "GGBR4",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 25.8700008392334,
+      "entryTime": 1789066800000,
+      "createdAt": "2026-09-10T19:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 63.003881181714654,
+        "cci": 160.67472978293068,
+        "macdHistogram": 0.0025331822993828745,
+        "obv": "SUBINDO",
+        "volumeRatio": 4.982984592935011,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "YAHOO1",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 8,
+        "lastProcessedCandleTime": 1789156800000,
+        "lastPrice": 26.100000381469727,
+        "mfe": 1.4688795842260283,
+        "mae": -1.546198349063368,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789142400000,
+            "price": 26.18000030517578
+          },
+          "0.25": {
+            "candleTime": 1789135200000,
+            "price": 26.049999237060547
+          },
+          "0.5": {
+            "candleTime": 1789135200000,
+            "price": 26.049999237060547
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789131600000,
+            "price": 25.469999313354492
+          },
+          "0.25": {
+            "candleTime": 1789131600000,
+            "price": 25.469999313354492
+          },
+          "0.5": {
+            "candleTime": 1789131600000,
+            "price": 25.469999313354492
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO",
+          "0.25": "ADVERSO_PRIMEIRO",
+          "0.5": "ADVERSO_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "B3|SUZB3|1789066800000|COMPRA",
+      "market": "B3",
+      "symbol": "SUZB3",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 48.029998779296875,
+      "entryTime": 1789066800000,
+      "createdAt": "2026-09-10T19:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 69.76575421605824,
+        "cci": 142.8784919691274,
+        "macdHistogram": 0.06442412498795069,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.9751854853793878,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "YAHOO1",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 8,
+        "lastProcessedCandleTime": 1789156800000,
+        "lastPrice": 47.810001373291016,
+        "mfe": 1.1867576708536471,
+        "mae": -0.7911664856876176,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789131600000,
+            "price": 48.599998474121094
+          },
+          "0.25": {
+            "candleTime": 1789131600000,
+            "price": 48.599998474121094
+          },
+          "0.5": {
+            "candleTime": 1789131600000,
+            "price": 48.599998474121094
+          }
+        },
+        "adverseHits": {
+          "0.25": {
+            "candleTime": 1789131600000,
+            "price": 47.650001525878906
+          },
+          "0.5": {
+            "candleTime": 1789131600000,
+            "price": 47.650001525878906
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|BCHUSDT|1789045200000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "BCHUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 228.1,
+      "entryTime": 1789045200000,
+      "createdAt": "2026-09-10T13:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 14.308052929785916,
+        "cci": -312.91564578229105,
+        "macdHistogram": -1.7666874479177954,
+        "obv": "CAINDO",
+        "volumeRatio": 4.1310393616904895,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 46,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 231,
+        "mfe": 3.5510740903112645,
+        "mae": -4.559403770276197,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789052400000,
+            "price": 222.6
+          },
+          "2": {
+            "candleTime": 1789052400000,
+            "price": 222.6
+          },
+          "0.25": {
+            "candleTime": 1789048800000,
+            "price": 226.4
+          },
+          "0.5": {
+            "candleTime": 1789048800000,
+            "price": 226.4
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789131600000,
+            "price": 236.6
+          },
+          "2": {
+            "candleTime": 1789131600000,
+            "price": 236.6
+          },
+          "0.25": {
+            "candleTime": 1789048800000,
+            "price": 229.4
+          },
+          "0.5": {
+            "candleTime": 1789048800000,
+            "price": 229.4
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO",
+          "2": "FAVORAVEL_PRIMEIRO",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|BCHUSDT|1789041600000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "BCHUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 243.7,
+      "entryTime": 1789041600000,
+      "createdAt": "2026-09-10T12:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 27.35021652905803,
+        "cci": -157.9332195954161,
+        "macdHistogram": -0.5890866740989775,
+        "obv": "CAINDO",
+        "volumeRatio": 2.516627064434277,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 47,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 231,
+        "mfe": 9.725071809601966,
+        "mae": 0,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789045200000,
+            "price": 226.3
+          },
+          "2": {
+            "candleTime": 1789045200000,
+            "price": 226.3
+          },
+          "5": {
+            "candleTime": 1789045200000,
+            "price": 226.3
+          },
+          "0.25": {
+            "candleTime": 1789045200000,
+            "price": 226.3
+          },
+          "0.5": {
+            "candleTime": 1789045200000,
+            "price": 226.3
+          }
+        },
+        "adverseHits": {},
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|FILUSDT|1788991200000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "FILUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.8149,
+      "entryTime": 1788991200000,
+      "createdAt": "2026-09-09T22:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 35.621430886252426,
+        "cci": -233.9877177086457,
+        "macdHistogram": -0.0020999819046066456,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.588824633258699,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 61,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.814,
+        "mfe": 5.203092403975948,
+        "mae": -1.607559209718984,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789005600000,
+            "price": 0.8034
+          },
+          "2": {
+            "candleTime": 1789023600000,
+            "price": 0.7973
+          },
+          "5": {
+            "candleTime": 1789124400000,
+            "price": 0.7725
+          },
+          "0.25": {
+            "candleTime": 1788994800000,
+            "price": 0.8102
+          },
+          "0.5": {
+            "candleTime": 1788994800000,
+            "price": 0.8102
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788998400000,
+            "price": 0.8232
+          },
+          "0.25": {
+            "candleTime": 1788994800000,
+            "price": 0.8228
+          },
+          "0.5": {
+            "candleTime": 1788994800000,
+            "price": 0.8228
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|BCHUSDT|1788991200000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "BCHUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 250.1,
+      "entryTime": 1788991200000,
+      "createdAt": "2026-09-09T22:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 31.162735996188033,
+        "cci": -292.0962199312638,
+        "macdHistogram": -0.8088587033537069,
+        "obv": "CAINDO",
+        "volumeRatio": 2.6191965098782037,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 61,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 231,
+        "mfe": 12.035185925629746,
+        "mae": -0.9596161535385869,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789023600000,
+            "price": 246.8
+          },
+          "2": {
+            "candleTime": 1789034400000,
+            "price": 244.9
+          },
+          "5": {
+            "candleTime": 1789041600000,
+            "price": 237.3
+          },
+          "10": {
+            "candleTime": 1789052400000,
+            "price": 222.6
+          },
+          "0.25": {
+            "candleTime": 1788994800000,
+            "price": 248.6
+          },
+          "0.5": {
+            "candleTime": 1788994800000,
+            "price": 248.6
+          }
+        },
+        "adverseHits": {
+          "0.25": {
+            "candleTime": 1788994800000,
+            "price": 252
+          },
+          "0.5": {
+            "candleTime": 1788994800000,
+            "price": 252
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "10": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|DOGEUSDT|1788991200000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "DOGEUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.08572,
+      "entryTime": 1788991200000,
+      "createdAt": "2026-09-09T22:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 25.944313575472563,
+        "cci": -190.63559394218095,
+        "macdHistogram": -0.0004871432262338244,
+        "obv": "CAINDO",
+        "volumeRatio": 1.3658825950666624,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 61,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.0851,
+        "mfe": 4.001399906672891,
+        "mae": -3.009799346710218,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789023600000,
+            "price": 0.08481
+          },
+          "2": {
+            "candleTime": 1789041600000,
+            "price": 0.08229
+          },
+          "0.25": {
+            "candleTime": 1789002000000,
+            "price": 0.08513
+          },
+          "0.5": {
+            "candleTime": 1789002000000,
+            "price": 0.08513
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789131600000,
+            "price": 0.08752
+          },
+          "2": {
+            "candleTime": 1789131600000,
+            "price": 0.08752
+          },
+          "0.25": {
+            "candleTime": 1788994800000,
+            "price": 0.08627
+          },
+          "0.5": {
+            "candleTime": 1788994800000,
+            "price": 0.08627
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO",
+          "2": "FAVORAVEL_PRIMEIRO",
+          "0.25": "ADVERSO_PRIMEIRO",
+          "0.5": "ADVERSO_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "B3|JBSS32|1788980400000|VENDA",
+      "market": "B3",
+      "symbol": "JBSS32",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 94,
+      "entry": 64.30999755859375,
+      "entryTime": 1788980400000,
+      "createdAt": "2026-09-09T19:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 29.288579164379385,
+        "cci": -92.92127400230211,
+        "macdHistogram": 0.0022462078783018757,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.422195891249694,
+        "momentumAligned": false,
+        "ignition": false
+      },
+      "dataSource": "YAHOO1",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 15,
+        "lastProcessedCandleTime": 1789156800000,
+        "lastPrice": 64.44000244140625,
+        "mfe": 1.741562703161851,
+        "mae": -0.7308369437814086,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789131600000,
+            "price": 63.209999084472656
+          },
+          "0.25": {
+            "candleTime": 1789045200000,
+            "price": 64.0999984741211
+          },
+          "0.5": {
+            "candleTime": 1789059600000,
+            "price": 63.90999984741211
+          }
+        },
+        "adverseHits": {
+          "0.25": {
+            "candleTime": 1789045200000,
+            "price": 64.77999877929688
+          },
+          "0.5": {
+            "candleTime": 1789045200000,
+            "price": 64.77999877929688
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "ADVERSO_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "B3|CSNA3|1788980400000|COMPRA",
+      "market": "B3",
+      "symbol": "CSNA3",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 7.010000228881836,
+      "entryTime": 1788980400000,
+      "createdAt": "2026-09-09T19:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 74.72454978257075,
+        "cci": 151.50952194877772,
+        "macdHistogram": 0.01901847337722104,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.8882105266865186,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "YAHOO1",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 15,
+        "lastProcessedCandleTime": 1789156800000,
+        "lastPrice": 6.659999847412109,
+        "mfe": 3.5663336924009985,
+        "mae": -5.848791881061988,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789066800000,
+            "price": 7.260000228881836
+          },
+          "2": {
+            "candleTime": 1789066800000,
+            "price": 7.260000228881836
+          },
+          "0.25": {
+            "candleTime": 1789066800000,
+            "price": 7.260000228881836
+          },
+          "0.5": {
+            "candleTime": 1789066800000,
+            "price": 7.260000228881836
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789045200000,
+            "price": 6.619999885559082
+          },
+          "2": {
+            "candleTime": 1789045200000,
+            "price": 6.619999885559082
+          },
+          "5": {
+            "candleTime": 1789045200000,
+            "price": 6.619999885559082
+          },
+          "0.25": {
+            "candleTime": 1789045200000,
+            "price": 6.619999885559082
+          },
+          "0.5": {
+            "candleTime": 1789045200000,
+            "price": 6.619999885559082
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO",
+          "2": "ADVERSO_PRIMEIRO",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "ADVERSO_PRIMEIRO",
+          "0.5": "ADVERSO_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "B3|PETR4|1788980400000|COMPRA",
+      "market": "B3",
+      "symbol": "PETR4",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 80,
+      "entry": 48.560001373291016,
+      "entryTime": 1788980400000,
+      "createdAt": "2026-09-09T19:00:00.000Z",
+      "pattern": "Bandeira de alta",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": false,
+      "indicators": {
+        "rsi": 60.327277351627984,
+        "cci": 70.23632952448955,
+        "macdHistogram": -0.013236510197212614,
+        "obv": "SUBINDO",
+        "volumeRatio": 2.546574183923978,
+        "momentumAligned": false,
+        "ignition": false
+      },
+      "dataSource": "YAHOO1",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 15,
+        "lastProcessedCandleTime": 1789156800000,
+        "lastPrice": 49,
+        "mfe": 2.141674364535948,
+        "mae": -0.9678772805011393,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789045200000,
+            "price": 49.25
+          },
+          "2": {
+            "candleTime": 1789052400000,
+            "price": 49.599998474121094
+          },
+          "0.25": {
+            "candleTime": 1789045200000,
+            "price": 49.25
+          },
+          "0.5": {
+            "candleTime": 1789045200000,
+            "price": 49.25
+          }
+        },
+        "adverseHits": {
+          "0.25": {
+            "candleTime": 1789131600000,
+            "price": 48.09000015258789
+          },
+          "0.5": {
+            "candleTime": 1789131600000,
+            "price": 48.09000015258789
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "FAVORAVEL_PRIMEIRO",
+          "0.5": "FAVORAVEL_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|OPUSDT|1788966000000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "OPUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.102,
+      "entryTime": 1788966000000,
+      "createdAt": "2026-09-09T15:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 35.87717975167321,
+        "cci": -185.5139585745532,
+        "macdHistogram": -0.00005850051420588161,
+        "obv": "CAINDO",
+        "volumeRatio": 2.833339227908746,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.0977,
+        "mfe": 9.313725490196074,
+        "mae": -1.6666666666666736,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788969600000,
+            "price": 0.1009
+          },
+          "2": {
+            "candleTime": 1788984000000,
+            "price": 0.0995
+          },
+          "5": {
+            "candleTime": 1789041600000,
+            "price": 0.0951
+          },
+          "0.25": {
+            "candleTime": 1788969600000,
+            "price": 0.1009
+          },
+          "0.5": {
+            "candleTime": 1788969600000,
+            "price": 0.1009
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788973200000,
+            "price": 0.1033
+          },
+          "0.25": {
+            "candleTime": 1788969600000,
+            "price": 0.1027
+          },
+          "0.5": {
+            "candleTime": 1788969600000,
+            "price": 0.1027
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|XLMUSDT|1788966000000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "XLMUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.1855,
+      "entryTime": 1788966000000,
+      "createdAt": "2026-09-09T15:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 37.98785283518015,
+        "cci": -223.14049586776613,
+        "macdHistogram": -0.00023528732717843434,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.5208874110030326,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.1824,
+        "mfe": 6.900269541778979,
+        "mae": -0.16172506738544187,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788980400000,
+            "price": 0.1818
+          },
+          "2": {
+            "candleTime": 1788984000000,
+            "price": 0.1815
+          },
+          "5": {
+            "candleTime": 1789041600000,
+            "price": 0.1756
+          },
+          "0.25": {
+            "candleTime": 1788969600000,
+            "price": 0.1837
+          },
+          "0.5": {
+            "candleTime": 1788969600000,
+            "price": 0.1837
+          }
+        },
+        "adverseHits": {},
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|AVAXUSDT|1788966000000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "AVAXUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 94,
+      "entry": 7.897,
+      "entryTime": 1788966000000,
+      "createdAt": "2026-09-09T15:00:00.000Z",
+      "pattern": "Engolfo de baixa",
+      "patternType": "REVERSÃO",
+      "patternConfirmed": false,
+      "indicators": {
+        "rsi": 40.70932700715909,
+        "cci": -159.11035072712005,
+        "macdHistogram": -0.007431002122543084,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.598364705431631,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 7.448,
+        "mfe": 7.863745726225154,
+        "mae": -0.861086488539947,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788987600000,
+            "price": 7.785
+          },
+          "2": {
+            "candleTime": 1788991200000,
+            "price": 7.685
+          },
+          "5": {
+            "candleTime": 1789081200000,
+            "price": 7.419
+          },
+          "0.25": {
+            "candleTime": 1788980400000,
+            "price": 7.843
+          },
+          "0.5": {
+            "candleTime": 1788980400000,
+            "price": 7.843
+          }
+        },
+        "adverseHits": {
+          "0.25": {
+            "candleTime": 1788969600000,
+            "price": 7.96
+          },
+          "0.5": {
+            "candleTime": 1788969600000,
+            "price": 7.96
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "ADVERSO_PRIMEIRO",
+          "0.5": "ADVERSO_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|DOGEUSDT|1788966000000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "DOGEUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.08924,
+      "entryTime": 1788966000000,
+      "createdAt": "2026-09-09T15:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 42.550352808466315,
+        "cci": -141.7313776243892,
+        "macdHistogram": -0.00010566855581250231,
+        "obv": "CAINDO",
+        "volumeRatio": 1.6937912812033897,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.0851,
+        "mfe": 7.78798744957418,
+        "mae": -0.17929179740026163,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788980400000,
+            "price": 0.08653
+          },
+          "2": {
+            "candleTime": 1788980400000,
+            "price": 0.08653
+          },
+          "5": {
+            "candleTime": 1789041600000,
+            "price": 0.08229
+          },
+          "0.25": {
+            "candleTime": 1788969600000,
+            "price": 0.08854
+          },
+          "0.5": {
+            "candleTime": 1788969600000,
+            "price": 0.08854
+          }
+        },
+        "adverseHits": {},
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|BNBUSDT|1788962400000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "BNBUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 743.73,
+      "entryTime": 1788962400000,
+      "createdAt": "2026-09-09T14:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 39.05822503675152,
+        "cci": -230.8809770030039,
+        "macdHistogram": -1.188318944185248,
+        "obv": "CAINDO",
+        "volumeRatio": 1.3617014154134652,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 69,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 736.3,
+        "mfe": 5.39308620063733,
+        "mae": -0.3334543449907921,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788966000000,
+            "price": 735
+          },
+          "2": {
+            "candleTime": 1788987600000,
+            "price": 722.41
+          },
+          "5": {
+            "candleTime": 1789041600000,
+            "price": 703.62
+          },
+          "0.25": {
+            "candleTime": 1788966000000,
+            "price": 735
+          },
+          "0.5": {
+            "candleTime": 1788966000000,
+            "price": 735
+          }
+        },
+        "adverseHits": {
+          "0.25": {
+            "candleTime": 1788966000000,
+            "price": 746.21
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|APTUSDT|1788958800000|COMPRA",
+      "market": "CRIPTO",
+      "symbol": "APTUSDT",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 0.676,
+      "entryTime": 1788958800000,
+      "createdAt": "2026-09-09T13:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 64.72149643292812,
+        "cci": 344.41741011084224,
+        "macdHistogram": 0.0014090740016346674,
+        "obv": "SUBINDO",
+        "volumeRatio": 4.664392574592002,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 70,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 0.618,
+        "mfe": 1.1834319526627228,
+        "mae": -12.869822485207111,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788962400000,
+            "price": 0.684
+          },
+          "0.25": {
+            "candleTime": 1788962400000,
+            "price": 0.684
+          },
+          "0.5": {
+            "candleTime": 1788962400000,
+            "price": 0.684
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788962400000,
+            "price": 0.667
+          },
+          "2": {
+            "candleTime": 1788966000000,
+            "price": 0.642
+          },
+          "5": {
+            "candleTime": 1788966000000,
+            "price": 0.642
+          },
+          "10": {
+            "candleTime": 1789041600000,
+            "price": 0.606
+          },
+          "0.25": {
+            "candleTime": 1788962400000,
+            "price": 0.667
+          },
+          "0.5": {
+            "candleTime": 1788962400000,
+            "price": 0.667
+          }
+        },
+        "order": {
+          "1": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "2": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "10": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|LINKUSDT|1788948000000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "LINKUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 12.151,
+      "entryTime": 1788948000000,
+      "createdAt": "2026-09-09T10:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 32.01805845499064,
+        "cci": -279.97219579022754,
+        "macdHistogram": -0.023811234010876967,
+        "obv": "CAINDO",
+        "volumeRatio": 2.217767791318737,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 73,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 11.562,
+        "mfe": 7.390338243765942,
+        "mae": -0.6913011274792168,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788951600000,
+            "price": 12.029
+          },
+          "2": {
+            "candleTime": 1788966000000,
+            "price": 11.82
+          },
+          "5": {
+            "candleTime": 1789041600000,
+            "price": 11.5
+          },
+          "0.25": {
+            "candleTime": 1788951600000,
+            "price": 12.029
+          },
+          "0.5": {
+            "candleTime": 1788951600000,
+            "price": 12.029
+          }
+        },
+        "adverseHits": {
+          "0.25": {
+            "candleTime": 1788955200000,
+            "price": 12.233
+          },
+          "0.5": {
+            "candleTime": 1788955200000,
+            "price": 12.233
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "FAVORAVEL_PRIMEIRO",
+          "0.5": "FAVORAVEL_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "B3|RADL3|1788894000000|VENDA",
+      "market": "B3",
+      "symbol": "RADL3",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 88,
+      "entry": 20.110000610351562,
+      "entryTime": 1788894000000,
+      "createdAt": "2026-09-08T19:00:00.000Z",
+      "pattern": "Estrela da noite",
+      "patternType": "REVERSÃO",
+      "patternConfirmed": false,
+      "indicators": {
+        "rsi": 49.06126450161499,
+        "cci": -79.4621837254225,
+        "macdHistogram": -0.03159774123195727,
+        "obv": "CAINDO",
+        "volumeRatio": 2.0842861192478503,
+        "momentumAligned": true,
+        "ignition": false
+      },
+      "dataSource": "YAHOO1",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 22,
+        "lastProcessedCandleTime": 1789156800000,
+        "lastPrice": 19.559999465942383,
+        "mfe": 3.9781259081483147,
+        "mae": -0.19890107888968223,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788958800000,
+            "price": 19.790000915527344
+          },
+          "2": {
+            "candleTime": 1788966000000,
+            "price": 19.610000610351562
+          },
+          "0.25": {
+            "candleTime": 1788958800000,
+            "price": 19.790000915527344
+          },
+          "0.5": {
+            "candleTime": 1788958800000,
+            "price": 19.790000915527344
+          }
+        },
+        "adverseHits": {},
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|NEARUSDT|1788879600000|COMPRA",
+      "market": "CRIPTO",
+      "symbol": "NEARUSDT",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 2.412,
+      "entryTime": 1788879600000,
+      "createdAt": "2026-09-08T15:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 62.27815546789951,
+        "cci": 255.9177337989887,
+        "macdHistogram": 0.010515512033324086,
+        "obv": "SUBINDO",
+        "volumeRatio": 2.812642336853489,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 92,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 2.366,
+        "mfe": 13.101160862354904,
+        "mae": -6.467661691542295,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788937200000,
+            "price": 2.49
+          },
+          "2": {
+            "candleTime": 1788937200000,
+            "price": 2.49
+          },
+          "5": {
+            "candleTime": 1788948000000,
+            "price": 2.555
+          },
+          "10": {
+            "candleTime": 1789131600000,
+            "price": 2.677
+          },
+          "0.25": {
+            "candleTime": 1788883200000,
+            "price": 2.419
+          },
+          "0.5": {
+            "candleTime": 1788937200000,
+            "price": 2.49
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788883200000,
+            "price": 2.366
+          },
+          "2": {
+            "candleTime": 1788886800000,
+            "price": 2.341
+          },
+          "5": {
+            "candleTime": 1788901200000,
+            "price": 2.283
+          },
+          "0.25": {
+            "candleTime": 1788883200000,
+            "price": 2.366
+          },
+          "0.5": {
+            "candleTime": 1788883200000,
+            "price": 2.366
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO",
+          "2": "ADVERSO_PRIMEIRO",
+          "5": "ADVERSO_PRIMEIRO",
+          "10": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "ADVERSO_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|ETCUSDT|1788879600000|COMPRA",
+      "market": "CRIPTO",
+      "symbol": "ETCUSDT",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 8.62,
+      "entryTime": 1788879600000,
+      "createdAt": "2026-09-08T15:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 73.33197734087636,
+        "cci": 230.452674897119,
+        "macdHistogram": 0.0446127771177689,
+        "obv": "SUBINDO",
+        "volumeRatio": 3.034543551107914,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 92,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 7.76,
+        "mfe": 4.872389791183294,
+        "mae": -14.385150812064959,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788883200000,
+            "price": 8.86
+          },
+          "2": {
+            "candleTime": 1788883200000,
+            "price": 8.86
+          },
+          "0.25": {
+            "candleTime": 1788883200000,
+            "price": 8.86
+          },
+          "0.5": {
+            "candleTime": 1788883200000,
+            "price": 8.86
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788890400000,
+            "price": 8.42
+          },
+          "2": {
+            "candleTime": 1788890400000,
+            "price": 8.42
+          },
+          "5": {
+            "candleTime": 1788966000000,
+            "price": 8.12
+          },
+          "10": {
+            "candleTime": 1789041600000,
+            "price": 7.62
+          },
+          "0.25": {
+            "candleTime": 1788883200000,
+            "price": 8.56
+          },
+          "0.5": {
+            "candleTime": 1788883200000,
+            "price": 8.56
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO",
+          "2": "FAVORAVEL_PRIMEIRO",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "10": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|DOTUSDT|1788879600000|COMPRA",
+      "market": "CRIPTO",
+      "symbol": "DOTUSDT",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 1.158,
+      "entryTime": 1788879600000,
+      "createdAt": "2026-09-08T15:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 71.4314004913401,
+        "cci": 324.82598607888445,
+        "macdHistogram": 0.004153789248767956,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.7252932607255231,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 92,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 1.046,
+        "mfe": 10.880829015544052,
+        "mae": -11.053540587219334,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788883200000,
+            "price": 1.2
+          },
+          "2": {
+            "candleTime": 1788883200000,
+            "price": 1.2
+          },
+          "5": {
+            "candleTime": 1788886800000,
+            "price": 1.229
+          },
+          "10": {
+            "candleTime": 1788897600000,
+            "price": 1.284
+          },
+          "0.25": {
+            "candleTime": 1788883200000,
+            "price": 1.2
+          },
+          "0.5": {
+            "candleTime": 1788883200000,
+            "price": 1.2
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788962400000,
+            "price": 1.128
+          },
+          "2": {
+            "candleTime": 1788962400000,
+            "price": 1.128
+          },
+          "5": {
+            "candleTime": 1788991200000,
+            "price": 1.093
+          },
+          "10": {
+            "candleTime": 1789149600000,
+            "price": 1.04
+          },
+          "0.25": {
+            "candleTime": 1788958800000,
+            "price": 1.153
+          },
+          "0.5": {
+            "candleTime": 1788962400000,
+            "price": 1.128
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO",
+          "2": "FAVORAVEL_PRIMEIRO",
+          "5": "FAVORAVEL_PRIMEIRO",
+          "10": "FAVORAVEL_PRIMEIRO",
+          "0.25": "FAVORAVEL_PRIMEIRO",
+          "0.5": "FAVORAVEL_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|AAVEUSDT|1788868800000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "AAVEUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 128.97,
+      "entryTime": 1788868800000,
+      "createdAt": "2026-09-08T12:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 36.382520638546225,
+        "cci": -237.87838672667613,
+        "macdHistogram": -0.14784929677640823,
+        "obv": "CAINDO",
+        "volumeRatio": 3.4953368906066413,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 95,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 127.94,
+        "mfe": 6.73024734434364,
+        "mae": -1.7213305419865075,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788872400000,
+            "price": 126.51
+          },
+          "2": {
+            "candleTime": 1788980400000,
+            "price": 125.89
+          },
+          "5": {
+            "candleTime": 1789041600000,
+            "price": 120.88
+          },
+          "0.25": {
+            "candleTime": 1788872400000,
+            "price": 126.51
+          },
+          "0.5": {
+            "candleTime": 1788872400000,
+            "price": 126.51
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788879600000,
+            "price": 130.99
+          },
+          "0.25": {
+            "candleTime": 1788872400000,
+            "price": 129.51
+          },
+          "0.5": {
+            "candleTime": 1788879600000,
+            "price": 130.99
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "FAVORAVEL_PRIMEIRO"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|ATOMUSDT|1788868800000|COMPRA",
+      "market": "CRIPTO",
+      "symbol": "ATOMUSDT",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 1.73,
+      "entryTime": 1788868800000,
+      "createdAt": "2026-09-08T12:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 74.35111852110728,
+        "cci": 279.97227997227884,
+        "macdHistogram": 0.006581740081142566,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.9993653755681104,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 95,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 1.643,
+        "mfe": 17.398843930635845,
+        "mae": -6.300578034682081,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788872400000,
+            "price": 1.753
+          },
+          "2": {
+            "candleTime": 1788876000000,
+            "price": 1.776
+          },
+          "5": {
+            "candleTime": 1788886800000,
+            "price": 1.819
+          },
+          "10": {
+            "candleTime": 1788940800000,
+            "price": 1.978
+          },
+          "0.25": {
+            "candleTime": 1788872400000,
+            "price": 1.753
+          },
+          "0.5": {
+            "candleTime": 1788872400000,
+            "price": 1.753
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788872400000,
+            "price": 1.708
+          },
+          "2": {
+            "candleTime": 1789128000000,
+            "price": 1.695
+          },
+          "5": {
+            "candleTime": 1789146000000,
+            "price": 1.643
+          },
+          "0.25": {
+            "candleTime": 1788872400000,
+            "price": 1.708
+          },
+          "0.5": {
+            "candleTime": 1788872400000,
+            "price": 1.708
+          }
+        },
+        "order": {
+          "1": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "2": "FAVORAVEL_PRIMEIRO",
+          "5": "FAVORAVEL_PRIMEIRO",
+          "10": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|UNIUSDT|1788868800000|COMPRA",
+      "market": "CRIPTO",
+      "symbol": "UNIUSDT",
+      "direction": "COMPRA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 80,
+      "entry": 7.053,
+      "entryTime": 1788868800000,
+      "createdAt": "2026-09-08T12:00:00.000Z",
+      "pattern": "Engolfo de alta",
+      "patternType": "REVERSÃO",
+      "patternConfirmed": false,
+      "indicators": {
+        "rsi": 52.985317976835134,
+        "cci": 55.35792298570817,
+        "macdHistogram": 0.008688208936398144,
+        "obv": "SUBINDO",
+        "volumeRatio": 1.4663114212696389,
+        "momentumAligned": true,
+        "ignition": false
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "COLETANDO",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 95,
+        "lastProcessedCandleTime": 1789210800000,
+        "lastPrice": 6.373,
+        "mfe": 0,
+        "mae": -17.680419679568978,
+        "favorableHits": {},
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788872400000,
+            "price": 6.827
+          },
+          "2": {
+            "candleTime": 1788872400000,
+            "price": 6.827
+          },
+          "5": {
+            "candleTime": 1788901200000,
+            "price": 6.669
+          },
+          "10": {
+            "candleTime": 1788987600000,
+            "price": 6.268
+          },
+          "0.25": {
+            "candleTime": 1788872400000,
+            "price": 6.827
+          },
+          "0.5": {
+            "candleTime": 1788872400000,
+            "price": 6.827
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "2": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "5": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "10": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
+        },
+        "completedAt": null
+      }
+    },
+    {
+      "id": "CRIPTO|BTCUSDT|1788847200000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "BTCUSDT",
+      "direction": "VENDA",
+      "interval": "1h",
+      "contextCandles": 96,
+      "horizonCandles": 96,
+      "score": 100,
+      "entry": 78456.47,
+      "entryTime": 1788847200000,
+      "createdAt": "2026-09-08T06:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "indicators": {
+        "rsi": 32.844061531183485,
+        "cci": -188.24497708937082,
+        "macdHistogram": -54.858072742174755,
+        "obv": "CAINDO",
+        "volumeRatio": 1.423018986203278,
+        "momentumAligned": true,
+        "ignition": true
+      },
+      "dataSource": "BINANCE_DATA",
+      "tracking": {
+        "status": "CONCLUIDO_96",
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 96,
+        "lastProcessedCandleTime": 1789192800000,
+        "lastPrice": 77289.73,
+        "mfe": 3.0716268524444184,
+        "mae": -1.8271660705611643,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1788872400000,
+            "price": 77620.01
+          },
+          "2": {
+            "candleTime": 1789041600000,
+            "price": 76676.07
+          },
+          "0.25": {
+            "candleTime": 1788850800000,
+            "price": 78179.98
+          },
+          "0.5": {
+            "candleTime": 1788872400000,
+            "price": 77620.01
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1788930000000,
+            "price": 79370.01
+          },
+          "0.25": {
+            "candleTime": 1788858000000,
+            "price": 78800
+          },
+          "0.5": {
+            "candleTime": 1788861600000,
+            "price": 78994.5
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "FAVORAVEL_PRIMEIRO",
+          "0.5": "ADVERSO_PRIMEIRO"
+        },
+        "completedAt": "2026-09-12T06:00:00.000Z"
+      }
+    }
+  ],
+  "summary": {
+    "total": 33,
+    "collecting": 32,
+    "completed96": 1,
+    "completeCoverage": 33,
+    "partialCoverage": 0,
+    "errors": []
+  }
+}
