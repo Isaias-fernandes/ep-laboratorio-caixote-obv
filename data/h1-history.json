@@ -27,7 +27,7 @@
     "note": "Historico independente da retencao da tela/auto-signals. Ordem dentro da mesma vela H1 e indeterminada."
   },
   "createdAt": "2026-09-12T11:51:13.214Z",
-  "updatedAt": "2026-09-12T11:51:19.765Z",
+  "updatedAt": "2026-09-12T12:46:41.536Z",
   "records": [
     {
       "id": "CRIPTO|SUIUSDT|1789124400000|VENDA",
@@ -57,9 +57,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 24,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 0.7291,
+        "candlesObserved": 25,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 0.7289,
         "mfe": 0.9523809523809409,
         "mae": -7.282913165266114,
         "favorableHits": {
@@ -102,6 +102,62 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789124400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 0.7237,
+          "time": 1789124400000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1789124400000,
+          "low": 0.7264,
+          "high": 0.7267,
+          "sizePct": 0.04129955947136109,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 0.793051617733847,
+          "entryDistancePct": -9.968029314376516,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 0.8135333333333333,
+          "pocShare": 17.29543939224552,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -132,8 +188,8 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 24,
-        "lastProcessedCandleTime": 1789210800000,
+        "candlesObserved": 25,
+        "lastProcessedCandleTime": 1789214400000,
         "lastPrice": 0.0977,
         "mfe": 0.4305705059203419,
         "mae": -8.28848223896663,
@@ -173,6 +229,62 @@
           "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789124400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1789124400000,
+          "level": 0.0936,
+          "close": 0.0939
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 0.095,
+          "time": 1789124400000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1789124400000,
+          "low": 0.094,
+          "high": 0.0946,
+          "sizePct": 0.638297872340429,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 0.10364794597318346,
+          "entryDistancePct": -10.369666154275981,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 0.10886458333333333,
+          "pocShare": 11.234081016534589,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -203,9 +315,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 24,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 0.814,
+        "candlesObserved": 25,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 0.8147,
         "mfe": 0.02582644628098889,
         "mae": -6.921487603305783,
         "favorableHits": {},
@@ -239,6 +351,62 @@
           "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789124400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1789124400000,
+          "level": 0.7764,
+          "close": 0.782
+        },
+        "structure": {
+          "type": "NONE",
+          "brokenLevel": null,
+          "time": null,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1789102800000,
+          "low": 0.7892,
+          "high": 0.7927,
+          "sizePct": 0.4434870755195068,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 0.8346835166647103,
+          "entryDistancePct": -7.222320252063397,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 0.8432833333333333,
+          "pocShare": 20.56357644388818,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -269,9 +437,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 24,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 11.562,
+        "candlesObserved": 25,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 11.568,
         "mfe": 0.5039787798408522,
         "mae": -8.01945181255526,
         "favorableHits": {
@@ -314,6 +482,62 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789124400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1789124400000,
+          "level": 11.364,
+          "close": 11.398
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 11.4,
+          "time": 1789124400000,
+          "priorStructure": "BAIXA"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1789102800000,
+          "low": 11.504,
+          "high": 11.518,
+          "sizePct": 0.12169680111266622,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 12.229935268719624,
+          "entryDistancePct": -7.521996220802017,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 12.519770833333332,
+          "pocShare": 12.80234846585095,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -344,9 +568,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 24,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 7.448,
+        "candlesObserved": 25,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 7.454,
         "mfe": 0.3969883641341535,
         "mae": -7.31006160164272,
         "favorableHits": {
@@ -385,6 +609,62 @@
           "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789124400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1789084800000,
+          "level": 7.419,
+          "close": 7.478
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 7.434,
+          "time": 1789124400000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1789124400000,
+          "low": 7.369,
+          "high": 7.373,
+          "sizePct": 0.05428144931470277,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 7.912958656567289,
+          "entryDistancePct": -7.683076368189029,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 8.06875,
+          "pocShare": 17.922417782248807,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -415,9 +695,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 24,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 0.2093,
+        "candlesObserved": 25,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 0.2089,
         "mfe": 0.24888003982080661,
         "mae": -7.6655052264808345,
         "favorableHits": {},
@@ -451,6 +731,62 @@
           "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789124400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1789084800000,
+          "level": 0.2042,
+          "close": 0.2067
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 0.2041,
+          "time": 1789124400000,
+          "priorStructure": "BAIXA"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1789124400000,
+          "low": 0.2028,
+          "high": 0.2037,
+          "sizePct": 0.44378698224851293,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 0.2168553611323812,
+          "entryDistancePct": -7.357605110182695,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 0.21971041666666666,
+          "pocShare": 16.709750232942298,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -520,6 +856,57 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789066800000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1789045200000,
+          "level": 11.210000038146973,
+          "close": 11.260000228881836
+        },
+        "structure": {
+          "type": "NONE",
+          "brokenLevel": null,
+          "time": null,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788969600000,
+          "low": 11.319999694824219,
+          "high": 11.329999923706055,
+          "sizePct": 0.08834124692077763,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 11.159619450815514,
+          "entryDistancePct": 3.05010892785965,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 11.497083206971487,
+          "pocShare": 10.912965770502698,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": null
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -586,6 +973,57 @@
           "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789066800000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BEARISH_SWEEP",
+          "time": 1788976800000,
+          "level": 6.909999847412109,
+          "close": 6.869999885559082
+        },
+        "structure": {
+          "type": "MSB_BULL",
+          "brokenLevel": 7.039999961853027,
+          "time": 1789066800000,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1789066800000,
+          "low": 6.96999979019165,
+          "high": 7,
+          "sizePct": 0.43041909198572165,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 5.970926527962277,
+          "entryDistancePct": 20.919253592886694,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 5.171875089406967,
+          "pocShare": 12.40154496473918,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": null
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -655,6 +1093,57 @@
           "0.5": "ADVERSO_PRIMEIRO"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789066800000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1789045200000,
+          "level": 25.200000762939453,
+          "close": 25.389999389648438
+        },
+        "structure": {
+          "type": "MSB_BULL",
+          "brokenLevel": 25.780000686645508,
+          "time": 1789066800000,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1789066800000,
+          "low": 25.510000228881836,
+          "high": 25.639999389648438,
+          "sizePct": 0.5096007824391138,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 24.070726474824582,
+          "entryDistancePct": 7.474948320694293,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 25.50083355108897,
+          "pocShare": 11.140036721839891,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": null
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -720,6 +1209,57 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789066800000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BEARISH_SWEEP",
+          "time": 1789059600000,
+          "level": 47.86000061035156,
+          "close": 47.810001373291016
+        },
+        "structure": {
+          "type": "MSB_BULL",
+          "brokenLevel": 47.72999954223633,
+          "time": 1789066800000,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1789059600000,
+          "low": 47.650001525878906,
+          "high": 47.709999084472656,
+          "sizePct": 0.12591302554558176,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 46.41079097105463,
+          "entryDistancePct": 3.4888606170321634,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 46.69874962170919,
+          "pocShare": 19.07435469224886,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": null
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -750,9 +1290,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 46,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 231,
+        "candlesObserved": 47,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 231.2,
         "mfe": 3.5510740903112645,
         "mae": -4.559403770276197,
         "favorableHits": {
@@ -798,6 +1338,62 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789045200000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1789038000000,
+          "level": 244.9,
+          "close": 245.2
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 248.9,
+          "time": 1789045200000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1789045200000,
+          "low": 239.5,
+          "high": 243.9,
+          "sizePct": 1.8371607515657644,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 251.11915600868795,
+          "entryDistancePct": -9.166626861350062,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 258.1645833333333,
+          "pocShare": 21.12497362650317,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -828,9 +1424,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 47,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 231,
+        "candlesObserved": 48,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 231.2,
         "mfe": 9.725071809601966,
         "mae": 0,
         "favorableHits": {
@@ -864,6 +1460,62 @@
           "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1789041600000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1789038000000,
+          "level": 244.9,
+          "close": 245.2
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 248.9,
+          "time": 1789041600000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1789038000000,
+          "low": 246,
+          "high": 246.7,
+          "sizePct": 0.28455284552845067,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 254.6763819975959,
+          "entryDistancePct": -4.30993322250806,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 258.41875,
+          "pocShare": 17.024908905745615,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -894,9 +1546,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 61,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 0.814,
+        "candlesObserved": 62,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 0.8147,
         "mfe": 5.203092403975948,
         "mae": -1.607559209718984,
         "favorableHits": {
@@ -943,6 +1595,62 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788991200000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "CHOCH_BEAR",
+          "brokenLevel": 0.8282,
+          "time": 1788991200000,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788984000000,
+          "low": 0.837,
+          "high": 0.8405,
+          "sizePct": 0.41816009557945744,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 0.834246917698751,
+          "entryDistancePct": -2.3190877051268055,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 0.8440625,
+          "pocShare": 17.447473465524403,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -973,9 +1681,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 61,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 231,
+        "candlesObserved": 62,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 231.2,
         "mfe": 12.035185925629746,
         "mae": -0.9596161535385869,
         "favorableHits": {
@@ -1023,6 +1731,62 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788991200000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1788987600000,
+          "level": 253.2,
+          "close": 253.3
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 253.5,
+          "time": 1788991200000,
+          "priorStructure": "BAIXA"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788984000000,
+          "low": 255.7,
+          "high": 257.3,
+          "sizePct": 0.6257332811889021,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 258.6809800656605,
+          "entryDistancePct": -3.3172056420547054,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 258.3333333333333,
+          "pocShare": 18.35689195211405,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1053,9 +1817,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 61,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 0.0851,
+        "candlesObserved": 62,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 0.08507,
         "mfe": 4.001399906672891,
         "mae": -3.009799346710218,
         "favorableHits": {
@@ -1101,6 +1865,62 @@
           "0.5": "ADVERSO_PRIMEIRO"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788991200000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1788984000000,
+          "level": 0.08653,
+          "close": 0.08703
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 0.08811,
+          "time": 1788991200000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788984000000,
+          "low": 0.08713,
+          "high": 0.08856,
+          "sizePct": 1.6412257546195348,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 0.08985454854435625,
+          "entryDistancePct": -4.601379241603159,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 0.08977375,
+          "pocShare": 17.695416697518787,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1166,6 +1986,57 @@
           "0.5": "ADVERSO_PRIMEIRO"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788980400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1788886800000,
+          "level": 64.87999725341797,
+          "close": 65.2300033569336
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 64.66999816894531,
+          "time": 1788980400000,
+          "priorStructure": "BAIXA"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788969600000,
+          "low": 64.95999908447266,
+          "high": 65.0199966430664,
+          "sizePct": 0.09236077499898115,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 68.55858127803764,
+          "entryDistancePct": -6.1970123072031775,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 65.1875,
+          "pocShare": 13.418556748120611,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": null
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1249,6 +2120,57 @@
           "0.5": "ADVERSO_PRIMEIRO"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788980400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BEARISH_SWEEP",
+          "time": 1788976800000,
+          "level": 6.909999847412109,
+          "close": 6.869999885559082
+        },
+        "structure": {
+          "type": "MSB_BULL",
+          "brokenLevel": 6.710000038146973,
+          "time": 1788980400000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1788980400000,
+          "low": 6.860000133514404,
+          "high": 6.869999885559082,
+          "sizePct": 0.14576897740605177,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 5.765665550067058,
+          "entryDistancePct": 21.581804702499706,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 5.150208423535029,
+          "pocShare": 18.37641761834989,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": null
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1319,6 +2241,57 @@
           "0.5": "FAVORAVEL_PRIMEIRO"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788980400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "NONE",
+          "brokenLevel": null,
+          "time": null,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1788962400000,
+          "low": 48.29999923706055,
+          "high": 48.34000015258789,
+          "sizePct": 0.08281763179956964,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 44.3631712611849,
+          "entryDistancePct": 9.460167054779706,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 41.48375105857849,
+          "pocShare": 14.79192348631001,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": null
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1349,8 +2322,8 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 68,
-        "lastProcessedCandleTime": 1789210800000,
+        "candlesObserved": 69,
+        "lastProcessedCandleTime": 1789214400000,
         "lastPrice": 0.0977,
         "mfe": 9.313725490196074,
         "mae": -1.6666666666666736,
@@ -1398,6 +2371,62 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788966000000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1788951600000,
+          "level": 0.1028,
+          "close": 0.1039
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 0.1025,
+          "time": 1788966000000,
+          "priorStructure": "BAIXA"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788948000000,
+          "low": 0.104,
+          "high": 0.1052,
+          "sizePct": 1.1538461538461604,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 0.10868819455573783,
+          "entryDistancePct": -6.1535611876485605,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 0.11032708333333333,
+          "pocShare": 17.01292022962077,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1428,9 +2457,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 68,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 0.1824,
+        "candlesObserved": 69,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 0.1817,
         "mfe": 6.900269541778979,
         "mae": -0.16172506738544187,
         "favorableHits": {
@@ -1464,6 +2493,62 @@
           "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788966000000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 0.1869,
+          "time": 1788966000000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788948000000,
+          "low": 0.1887,
+          "high": 0.1899,
+          "sizePct": 0.6359300476947571,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 0.18911605672120216,
+          "entryDistancePct": -1.9120833967752444,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 0.19041875,
+          "pocShare": 10.317188342337312,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1494,9 +2579,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 68,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 7.448,
+        "candlesObserved": 69,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 7.454,
         "mfe": 7.863745726225154,
         "mae": -0.861086488539947,
         "favorableHits": {
@@ -1539,6 +2624,62 @@
           "0.5": "ADVERSO_PRIMEIRO"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788966000000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "NONE",
+          "brokenLevel": null,
+          "time": null,
+          "priorStructure": "BAIXA"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1788955200000,
+          "low": 7.946,
+          "high": 7.953,
+          "sizePct": 0.08809463881198794,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 7.934665191925736,
+          "entryDistancePct": -0.47469163492951433,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 8.046229166666667,
+          "pocShare": 16.12500492723746,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1569,9 +2710,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 68,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 0.0851,
+        "candlesObserved": 69,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 0.08507,
         "mfe": 7.78798744957418,
         "mae": -0.17929179740026163,
         "favorableHits": {
@@ -1605,6 +2746,62 @@
           "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788966000000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BEARISH_SWEEP",
+          "time": 1788955200000,
+          "level": 0.09149,
+          "close": 0.09134
+        },
+        "structure": {
+          "type": "CHOCH_BEAR",
+          "brokenLevel": 0.09007,
+          "time": 1788966000000,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788962400000,
+          "low": 0.09064,
+          "high": 0.09069,
+          "sizePct": 0.05516328331863236,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 0.090373168877878,
+          "entryDistancePct": -1.253877552317831,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 0.09042541666666667,
+          "pocShare": 17.163700966978507,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1635,9 +2832,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 69,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 736.3,
+        "candlesObserved": 70,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 736.53,
         "mfe": 5.39308620063733,
         "mae": -0.3334543449907921,
         "favorableHits": {
@@ -1676,6 +2873,62 @@
           "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788962400000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 747.12,
+          "time": 1788962400000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788962400000,
+          "low": 746.83,
+          "high": 749.69,
+          "sizePct": 0.38295194354806494,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 753.7441773621623,
+          "entryDistancePct": -1.3285910077883931,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 753.8425,
+          "pocShare": 12.681431543649458,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1706,9 +2959,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 70,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 0.618,
+        "candlesObserved": 71,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 0.617,
         "mfe": 1.1834319526627228,
         "mae": -12.869822485207111,
         "favorableHits": {
@@ -1760,6 +3013,62 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788958800000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BEARISH_SWEEP",
+          "time": 1788955200000,
+          "level": 0.664,
+          "close": 0.663
+        },
+        "structure": {
+          "type": "MSB_BULL",
+          "brokenLevel": 0.66,
+          "time": 1788958800000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1788958800000,
+          "low": 0.653,
+          "high": 0.66,
+          "sizePct": 1.0719754977029106,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 0.637642385072209,
+          "entryDistancePct": 6.015537207967634,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 0.6423541666666667,
+          "pocShare": 10.557143681765842,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1790,9 +3099,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 73,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 11.562,
+        "candlesObserved": 74,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 11.568,
         "mfe": 7.390338243765942,
         "mae": -0.6913011274792168,
         "favorableHits": {
@@ -1835,6 +3144,62 @@
           "0.5": "FAVORAVEL_PRIMEIRO"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788948000000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 12.376,
+          "time": 1788948000000,
+          "priorStructure": "BAIXA"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788948000000,
+          "low": 12.265,
+          "high": 12.459,
+          "sizePct": 1.5817366490012152,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 12.67697225319281,
+          "entryDistancePct": -4.149036873219781,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 12.823125000000001,
+          "pocShare": 11.501682102607964,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1896,6 +3261,57 @@
           "0.5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788894000000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "NONE",
+          "brokenLevel": null,
+          "time": null,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788883200000,
+          "low": 20.260000228881836,
+          "high": 20.309999465942383,
+          "sizePct": 0.2467879392679867,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 19.197294804006628,
+          "entryDistancePct": 4.75434594125442,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 18.440624594688416,
+          "pocShare": 15.882953438738168,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": null
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -1926,9 +3342,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 92,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 2.366,
+        "candlesObserved": 93,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 2.371,
         "mfe": 13.101160862354904,
         "mae": -6.467661691542295,
         "favorableHits": {
@@ -1988,6 +3404,62 @@
           "0.5": "ADVERSO_PRIMEIRO"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788879600000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1788872400000,
+          "level": 2.248,
+          "close": 2.295
+        },
+        "structure": {
+          "type": "CHOCH_BULL",
+          "brokenLevel": 2.356,
+          "time": 1788879600000,
+          "priorStructure": "BAIXA"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1788879600000,
+          "low": 2.308,
+          "high": 2.345,
+          "sizePct": 1.6031195840554753,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 2.2865490053496056,
+          "entryDistancePct": 5.486477410144695,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 2.3236250000000003,
+          "pocShare": 11.429551227207101,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -2018,9 +3490,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 92,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 7.76,
+        "candlesObserved": 93,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 7.78,
         "mfe": 4.872389791183294,
         "mae": -14.385150812064959,
         "favorableHits": {
@@ -2076,6 +3548,62 @@
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788879600000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "MSB_BULL",
+          "brokenLevel": 8.3,
+          "time": 1788879600000,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1788879600000,
+          "low": 8.29,
+          "high": 8.4,
+          "sizePct": 1.3268998793727529,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 7.990514014762927,
+          "entryDistancePct": 7.8779160398700405,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 8.637916666666666,
+          "pocShare": 14.505971018582715,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -2106,8 +3634,8 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 92,
-        "lastProcessedCandleTime": 1789210800000,
+        "candlesObserved": 93,
+        "lastProcessedCandleTime": 1789214400000,
         "lastPrice": 1.046,
         "mfe": 10.880829015544052,
         "mae": -11.053540587219334,
@@ -2172,6 +3700,62 @@
           "0.5": "FAVORAVEL_PRIMEIRO"
         },
         "completedAt": null
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788879600000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "MSB_BULL",
+          "brokenLevel": 1.098,
+          "time": 1788879600000,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1788879600000,
+          "low": 1.09,
+          "high": 1.115,
+          "sizePct": 2.293577981651368,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 1.021832364792365,
+          "entryDistancePct": 13.325829157437575,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 1.0628541666666667,
+          "pocShare": 15.852721286522122,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -2200,11 +3784,11 @@
       },
       "dataSource": "BINANCE_DATA",
       "tracking": {
-        "status": "COLETANDO",
+        "status": "CONCLUIDO_96",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 95,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 127.94,
+        "candlesObserved": 96,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 127.02,
         "mfe": 6.73024734434364,
         "mae": -1.7213305419865075,
         "favorableHits": {
@@ -2250,7 +3834,63 @@
           "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
           "0.5": "FAVORAVEL_PRIMEIRO"
         },
-        "completedAt": null
+        "completedAt": "2026-09-12T12:00:00.000Z"
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788868800000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BULLISH_SWEEP",
+          "time": 1788868800000,
+          "level": 129.4,
+          "close": 129.42
+        },
+        "structure": {
+          "type": "MSB_BEAR",
+          "brokenLevel": 130.31,
+          "time": 1788868800000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788868800000,
+          "low": 129.97,
+          "high": 130.75,
+          "sizePct": 0.6001384934985006,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 133.08917820614877,
+          "entryDistancePct": -3.095051199255558,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 131.194375,
+          "pocShare": 12.35658912721999,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -2279,11 +3919,11 @@
       },
       "dataSource": "BINANCE_DATA",
       "tracking": {
-        "status": "COLETANDO",
+        "status": "CONCLUIDO_96",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 95,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 1.643,
+        "candlesObserved": 96,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 1.64,
         "mfe": 17.398843930635845,
         "mae": -6.300578034682081,
         "favorableHits": {
@@ -2342,7 +3982,63 @@
           "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
-        "completedAt": null
+        "completedAt": "2026-09-12T12:00:00.000Z"
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788868800000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BEARISH_SWEEP",
+          "time": 1788861600000,
+          "level": 1.68,
+          "close": 1.672
+        },
+        "structure": {
+          "type": "MSB_BULL",
+          "brokenLevel": 1.65,
+          "time": 1788868800000,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1788868800000,
+          "low": 1.684,
+          "high": 1.696,
+          "sizePct": 0.7125890736342049,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 1.6115689751030606,
+          "entryDistancePct": 7.348802733644437,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 1.55125,
+          "pocShare": 10.549979528302286,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": true,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -2371,11 +4067,11 @@
       },
       "dataSource": "BINANCE_DATA",
       "tracking": {
-        "status": "COLETANDO",
+        "status": "CONCLUIDO_96",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 95,
-        "lastProcessedCandleTime": 1789210800000,
-        "lastPrice": 6.373,
+        "candlesObserved": 96,
+        "lastProcessedCandleTime": 1789214400000,
+        "lastPrice": 6.444,
         "mfe": 0,
         "mae": -17.680419679568978,
         "favorableHits": {},
@@ -2413,7 +4109,63 @@
           "0.25": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
           "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
         },
-        "completedAt": null
+        "completedAt": "2026-09-12T12:00:00.000Z"
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788868800000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "BEARISH_SWEEP",
+          "time": 1788858000000,
+          "level": 7.171,
+          "close": 7.122
+        },
+        "structure": {
+          "type": "NONE",
+          "brokenLevel": null,
+          "time": null,
+          "priorStructure": "LATERAL"
+        },
+        "fvg": {
+          "type": "BULLISH_FVG",
+          "time": 1788832800000,
+          "low": 6.906,
+          "high": 6.945,
+          "sizePct": 0.5647263249348478,
+          "mitigated": true
+        },
+        "vwap": {
+          "value": 6.877733332860642,
+          "entryDistancePct": 2.5483201900539423,
+          "side": "ABOVE"
+        },
+        "volumeProfile": {
+          "poc": 6.976895833333333,
+          "pocShare": 17.054142746938652,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": false
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     },
     {
@@ -2488,15 +4240,82 @@
           "0.5": "ADVERSO_PRIMEIRO"
         },
         "completedAt": "2026-09-12T06:00:00.000Z"
+      },
+      "smartMoneyObserver": {
+        "version": 1,
+        "capturedForEntryTime": 1788847200000,
+        "contextCandles": 96,
+        "liquiditySweep": {
+          "type": "NONE",
+          "time": null,
+          "level": null,
+          "close": null
+        },
+        "structure": {
+          "type": "CHOCH_BEAR",
+          "brokenLevel": 78781.07,
+          "time": 1788847200000,
+          "priorStructure": "ALTA"
+        },
+        "fvg": {
+          "type": "BEARISH_FVG",
+          "time": 1788847200000,
+          "low": 78632,
+          "high": 78678.7,
+          "sizePct": 0.0593905788991722,
+          "mitigated": false
+        },
+        "vwap": {
+          "value": 79648.29358148188,
+          "entryDistancePct": -1.4963579605916049,
+          "side": "BELOW"
+        },
+        "volumeProfile": {
+          "poc": 79644.73125,
+          "pocShare": 16.20312989771441,
+          "bins": 24,
+          "method": "HLC3_VOLUME_BUCKET_APPROX"
+        },
+        "futures": {
+          "available": false,
+          "source": "BINANCE_USDM_PUBLIC",
+          "openInterest": null,
+          "oiChangePct": null,
+          "fundingRate": null,
+          "takerBuyRatio": null,
+          "aggression": "UNAVAILABLE"
+        },
+        "confluence": {
+          "fullBull": false,
+          "fullBear": false,
+          "fullAny": false,
+          "coreBull": false,
+          "coreBear": true
+        },
+        "notes": [
+          "Volume Profile/POC e aproximacao por volume da vela alocado ao preco tipico; nao e perfil tick-by-tick.",
+          "CHoCH/MSB, Sweep e FVG sao detectores heurísticos experimentais e nao alteram sinais."
+        ]
       }
     }
   ],
   "summary": {
     "total": 33,
-    "collecting": 32,
-    "completed96": 1,
+    "collecting": 29,
+    "completed96": 4,
     "completeCoverage": 33,
     "partialCoverage": 0,
+    "errors": []
+  },
+  "smartMoneySummary": {
+    "version": 1,
+    "updatedAt": "2026-09-12T12:46:50.033Z",
+    "recordsWithObserver": 33,
+    "fullConfluence": 0,
+    "fullAvgAbsMae": null,
+    "baselineAvgAbsMae": 4.61314038185376,
+    "fullFavFirst1Pct": null,
+    "baselineFavFirst1Pct": 57.57575757575758,
     "errors": []
   }
 }
