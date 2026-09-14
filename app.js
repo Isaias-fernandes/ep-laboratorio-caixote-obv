@@ -10,3 +10,4 @@ const h=JSON.parse(localStorage.getItem("labHistory")||"[]");h.unshift({date:new
 $("sample").onclick=()=>{candles=sample();$("notice").textContent=candles.length+" candles de exemplo carregados."};$("analyze").onclick=run;
 $("file").onchange=async e=>{const f=e.target.files[0];if(!f)return;const t=await f.text();candles=f.name.endsWith(".json")?JSON.parse(t):parseCSV(t);$("notice").textContent=candles.length+" registros importados localmente."};
 $("clear").onclick=()=>{localStorage.removeItem("labHistory");renderHistory()};renderHistory();
+(()=>{const s=document.createElement("script");s.src="ema-mtf-experimental-lab.js?v=1";s.defer=true;document.body.appendChild(s)})();
