@@ -253,6 +253,7 @@
       configurations: results.map(result => ({
         config: result.config,
         signals: result.signals.length,
+        signalRows: result.signals,
         targets: result.targets,
         patterns: result.patterns,
         walkForward: walkForwardResults.find(item => item.config === result.config)
@@ -331,10 +332,13 @@
   function exportHistory() {
     const blob = new Blob([JSON.stringify({ version: 2, exportedAt: new Date().toISOString(), signals: readHistory(), backtests: readBacktests() }, null, 2)], { type: 'application/json' });
     const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
+    const url = URL.createObjectURL(blob);
+    link.href = url;
     link.download = `ep-padroes-historico-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.appendChild(link);
     link.click();
-    URL.revokeObjectURL(link.href);
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
   }
   function resultHtml(result) {
     const total = result.signals.length;
@@ -371,10 +375,10 @@
     if (document.querySelector('#patternIndicatorLab')) return;
     const anchor = document.querySelector('main'); if (!anchor) return;
     const section = document.createElement('section'); section.id = 'patternIndicatorLab'; section.className = 'card';
-    section.innerHTML = `<div class="section-head"><h2>TESTE DE INDICADORES + PADRÕES — ALVOS 10% A 50%</h2><span class="signal-badge warn">EXPERIMENTAL • NÃO ALTERA OS 5 MOTORES</span></div><p class="sub">Compara o controle atual com RSI 14, CCI 20 e MACD 12/26/9. Os resultados ficam somente neste navegador.</p><div class="pattern-lab-controls"><label>Mercado<select id="patternLabMarket"><option value="crypto">Cripto</option><option value="b3">B3</option></select></label><label>Ativo<select id="patternLabAsset"></select></label><label>Período<select id="patternLabTf"><option>M5</option><option selected>M15</option><option>M30</option><option>H1</option></select></label><label>Horizonte<select id="patternLabHorizon"><option value="24">24 candles</option><option value="48" selected>48 candles</option><option value="96">96 candles</option></select></label><label>Pontuação mínima<select id="patternLabScore"><option>60</option><option selected>70</option><option>80</option></select></label><button id="patternLabRun">Executar e registrar</button></div><div id="patternLabStatus" class="sub">Aguardando execução manual.</div><div id="patternLabOutput"></div><section class="pattern-lab-result"><div class="section-head"><h3>HISTÓRICO EXPERIMENTAL LOCAL</h3><button id="patternLabExport" class="secondary" style="width:auto">Exportar JSON</button></div><div id="patternLabHistory"></div></section>`;
+    section.innerHTML = `<div class="section-head"><h2>TESTE DE INDICADORES + PADRÕES — ALVOS 10% A 50%</h2><span class="signal-badge warn">EXPERIMENTAL • NÃO ALTERA OS 5 MOTORES</span></div><p class="sub">Compara o controle atual com RSI 14, CCI 20 e MACD 12/26/9. Os resultados ficam somente neste navegador.</p><div class="pattern-lab-controls"><label>Mercado<select id="patternLabMarket"><option value="crypto">Cripto</option><option value="b3">B3</option></select></label><label>Ativo<select id="patternLabAsset"></select></label><label>Período<select id="patternLabTf"><option>M5</option><option selected>M15</option><option>M30</option><option>H1</option></select></label><label>Horizonte<select id="patternLabHorizon"><option value="24">24 candles</option><option value="48" selected>48 candles</option><option value="96">96 candles</option></select></label><label>Pontuação mínima<select id="patternLabScore"><option>60</option><option selected>70</option><option>80</option></select></label><button id="patternLabRun">Executar e registrar</button><button id="patternLabDownload" class="secondary">Baixar resultados JSON</button></div><div id="patternLabStatus" class="sub">Aguardando execução manual.</div><div id="patternLabOutput"></div><section class="pattern-lab-result"><div class="section-head"><h3>HISTÓRICO EXPERIMENTAL LOCAL</h3><button id="patternLabExport" class="secondary" style="width:auto">Exportar JSON</button></div><div id="patternLabHistory"></div></section>`;
     anchor.appendChild(section);
     const style = document.createElement('style'); style.textContent = '.pattern-lab-controls{display:grid;grid-template-columns:repeat(5,minmax(120px,1fr)) 150px;gap:10px;align-items:end}.pattern-lab-result{margin-top:14px;padding:12px;background:#091827;border:1px solid #29415e;border-radius:10px}.pattern-lab-kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:10px 0}.pattern-lab-kpis span{padding:8px;background:#0d1a2b;border-radius:7px;font-size:11px}.pattern-lab-kpis b,.pattern-lab-kpis small{display:block;margin-top:3px}@media(max-width:900px){.pattern-lab-controls,.pattern-lab-kpis{grid-template-columns:repeat(2,1fr)}}'; document.head.appendChild(style);
-    fillAssets(); renderHistory(); document.querySelector('#patternLabMarket').addEventListener('change', fillAssets); document.querySelector('#patternLabRun').addEventListener('click', run); document.querySelector('#patternLabExport').addEventListener('click', exportHistory);
+    fillAssets(); renderHistory(); document.querySelector('#patternLabMarket').addEventListener('change', fillAssets); document.querySelector('#patternLabRun').addEventListener('click', run); document.querySelector('#patternLabExport').addEventListener('click', exportHistory); document.querySelector('#patternLabDownload').addEventListener('click', exportHistory);
   }
   window.EPPatternIndicatorLab = { analyze, classifyPattern, evaluate, walkForward, marketRegime, readHistory, readBacktests, followAndStore, configs: CONFIGS, targets: TARGETS };
   setTimeout(init, 900);
