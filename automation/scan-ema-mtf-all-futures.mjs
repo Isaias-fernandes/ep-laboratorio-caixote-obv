@@ -2,7 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const OUT=path.resolve('data/ema-mtf-auto.json');
-const BASE='https://fapi.binance.com';
+const FUTURES_BASES=['https://fapi.binance.com','https://fapi1.binance.com','https://fapi2.binance.com','https://fapi3.binance.com','https://fapi4.binance.com'];
+const SPOT_BASES=['https://data-api.binance.vision','https://api.binance.com'];
 const INTERVALS=['5m','15m','1h'];
 const LIMIT=260;
 const TARGETS=[5,10,20,30,50];
@@ -32,29 +33,61 @@ function classify(c5,c15,c60){
   return{configA,configB,h1,m15,m5};
 }
 async function j(url){const r=await fetch(url,{headers:{'User-Agent':'ep-laboratorio-caixote-obv/ema-test'}});if(!r.ok)throw Error(`${r.status} ${url}`);return r.json()}
-async function universe(){const x=await j(`${BASE}/fapi/v1/exchangeInfo`);return x.symbols.filter(s=>s.contractType==='PERPETUAL'&&s.quoteAsset==='USDT'&&s.status==='TRADING').map(s=>s.symbol).sort()}
-async function candles(symbol,interval){await sleep(260);const x=await j(`${BASE}/fapi/v1/klines?symbol=${encodeURIComponent(symbol)}&interval=${interval}&limit=${LIMIT}`);return x.map(r=>({t:+r[0],o:+r[1],h:+r[2],l:+r[3],c:+r[4],v:+r[5]})).filter(x=>[x.t,x.o,x.h,x.l,x.c,x.v].every(Number.isFinite))}
+async function firstJson(urls){const errs=[];for(const u of urls){try{return{data:await j(u),url:u}}catch(e){errs.push(e.message)}}throw Error(errs.join(' | '))}
+async function universe(){
+  const futuresUrls=FUTURES_BASES.map(b=>`${b}/fapi/v1/exchangeInfo`);
+  try{
+    const got=await firstJson(futuresUrls);
+    const symbols=(got.data.symbols||[]).filter(s=>s.contractType==='PERPETUAL'&&s.quoteAsset==='USDT'&&s.status==='TRADING').map(s=>s.symbol).sort();
+    if(!symbols.length)throw Error('universo Futures vazio');
+    return{symbols,mode:'FUTURES',source:new URL(got.url).origin};
+  }catch(futuresError){
+    const spotUrls=SPOT_BASES.map(b=>`${b}/api/v3/exchangeInfo`);
+    const got=await firstJson(spotUrls);
+    const symbols=(got.data.symbols||[]).filter(s=>s.quoteAsset==='USDT'&&s.status==='TRADING'&&s.isSpotTradingAllowed!==false).map(s=>s.symbol).sort();
+    if(!symbols.length)throw Error(`Futures indisponível (${futuresError.message}); universo spot também vazio`);
+    console.warn('Futures exchangeInfo bloqueado; usando universo público USDT como fallback:',futuresError.message);
+    return{symbols,mode:'SPOT_FALLBACK',source:new URL(got.url).origin,futuresError:futuresError.message};
+  }
+}
+async function candles(symbol,interval,mode){
+  await sleep(90);
+  const futuresUrls=FUTURES_BASES.map(b=>`${b}/fapi/v1/klines?symbol=${encodeURIComponent(symbol)}&interval=${interval}&limit=${LIMIT}`);
+  if(mode==='FUTURES'){
+    const got=await firstJson(futuresUrls);
+    return{source:new URL(got.url).origin,rows:normalizeKlines(got.data)};
+  }
+  const spotUrls=SPOT_BASES.map(b=>`${b}/api/v3/klines?symbol=${encodeURIComponent(symbol)}&interval=${interval}&limit=${LIMIT}`);
+  const got=await firstJson(spotUrls);
+  return{source:new URL(got.url).origin,rows:normalizeKlines(got.data)};
+}
+function normalizeKlines(x){return (Array.isArray(x)?x:[]).map(r=>({t:+r[0],o:+r[1],h:+r[2],l:+r[3],c:+r[4],v:+r[5]})).filter(x=>[x.t,x.o,x.h,x.l,x.c,x.v].every(Number.isFinite))}
 function load(){try{return JSON.parse(fs.readFileSync(OUT,'utf8'))}catch{return{events:[],latest:[]}}}
 function stateKey(r){return `${r.configA}|${r.configB}`}
 function dirOf(v){return v==='COMPRA'||v==='PREPARAÇÃO_COMPRA'?'BUY':v==='VENDA'||v==='PREPARAÇÃO_VENDA'?'SELL':null}
 function updateEventOutcomes(events,symbol,lastPrice,high,low){for(const e of events){if(e.symbol!==symbol||e.closed)continue;const dir=e.direction;if(dir==='BUY'){e.mfe=Math.max(e.mfe??0,pct(e.entry,high));e.mae=Math.min(e.mae??0,pct(e.entry,low));}else{e.mfe=Math.max(e.mfe??0,-pct(e.entry,low));e.mae=Math.min(e.mae??0,-pct(e.entry,high));}e.lastPrice=lastPrice;e.targets=e.targets||{};for(const t of TARGETS)if((e.mfe??0)>=t)e.targets[t]=true}}
 async function main(){
   const prev=load(),events=Array.isArray(prev.events)?prev.events:[],prevLatest=new Map((prev.latest||[]).map(x=>[x.symbol,x]));
-  const symbols=await universe(),latest=[],errors=[];let ok=0;
+  const u=await universe(),symbols=u.symbols,latest=[],errors=[];let ok=0;
+  console.log(`Universo: ${symbols.length} ativos | modo=${u.mode} | fonte=${u.source}`);
   for(const [i,symbol] of symbols.entries()){
     try{
-      const [c5,c15,c60]=[await candles(symbol,'5m'),await candles(symbol,'15m'),await candles(symbol,'1h')];
+      const k5=await candles(symbol,'5m',u.mode),k15=await candles(symbol,'15m',u.mode),k60=await candles(symbol,'1h',u.mode);
+      const c5=k5.rows,c15=k15.rows,c60=k60.rows;
       if(c5.length<200||c15.length<200||c60.length<200)throw Error('candles insuficientes');
-      const r=classify(c5,c15,c60),last=c5.at(-1),row={symbol,updatedAt:new Date().toISOString(),price:last.c,configA:r.configA,configB:r.configB,h1:r.h1,m15:r.m15,m5:r.m5};
+      const r=classify(c5,c15,c60),last=c5.at(-1),row={symbol,updatedAt:new Date().toISOString(),price:last.c,configA:r.configA,configB:r.configB,h1:r.h1,m15:r.m15,m5:r.m5,marketDataMode:u.mode,source:k5.source};
       latest.push(row);ok++;
       updateEventOutcomes(events,symbol,last.c,last.h,last.l);
       const before=prevLatest.get(symbol);if(!before||stateKey(before)!==stateKey(row)){
-        for(const [config,label] of [['A',r.configA],['B',r.configB]]){const dir=dirOf(label),prevLabel=before?.[`config${config}`];if(dir&&label!==prevLabel){events.unshift({id:`${symbol}|${config}|${last.t}|${label}`,symbol,config,label,direction:dir,entry:last.c,entryTime:last.t,createdAt:new Date(last.t).toISOString(),mfe:0,mae:0,lastPrice:last.c,targets:{},context:{h1:r.h1,m15:r.m15,m5:r.m5}})}}
+        for(const [config,label] of [['A',r.configA],['B',r.configB]]){const dir=dirOf(label),prevLabel=before?.[`config${config}`];if(dir&&label!==prevLabel){events.unshift({id:`${symbol}|${config}|${last.t}|${label}`,symbol,config,label,direction:dir,entry:last.c,entryTime:last.t,createdAt:new Date(last.t).toISOString(),mfe:0,mae:0,lastPrice:last.c,targets:{},marketDataMode:u.mode,source:k5.source,context:{h1:r.h1,m15:r.m15,m5:r.m5}})}}
       }
       if((i+1)%25===0)console.log(`Analisados ${i+1}/${symbols.length}`);
-    }catch(e){errors.push({symbol,error:String(e.message||e)});console.warn(symbol,e.message)}
+    }catch(e){errors.push({symbol,error:String(e.message||e)});if(errors.length<=20)console.warn(symbol,e.message)}
   }
-  const out={schemaVersion:1,updatedAt:new Date().toISOString(),source:'BINANCE_USDT_PERPETUAL_FUTURES',intervals:INTERVALS,universe:{contracts:symbols.length,analyzed:ok,errors:errors.length},rules:{configA:'H1 direção; M15 confirmação EMA 9/21; M5 gatilho/reteste EMA21',configB:'EMA 9/21/50/200 + RSI + OBV + volume',targetsPct:TARGETS},latest,events:events.slice(0,MAX_EVENTS),errors:errors.slice(0,200)};
-  fs.writeFileSync(OUT,JSON.stringify(out,null,2));console.log(`Concluído: ${ok}/${symbols.length} ativos.`)
+  const out={schemaVersion:2,updatedAt:new Date().toISOString(),source:u.mode==='FUTURES'?'BINANCE_USDT_PERPETUAL_FUTURES':'BINANCE_USDT_PUBLIC_MARKET_FALLBACK',marketDataMode:u.mode,sourceHost:u.source,futuresDiscoveryError:u.futuresError||null,intervals:INTERVALS,universe:{contracts:symbols.length,analyzed:ok,errors:errors.length},rules:{configA:'H1 direção; M15 confirmação EMA 9/21; M5 gatilho/reteste EMA21',configB:'EMA 9/21/50/200 + RSI + OBV + volume',targetsPct:TARGETS},latest,events:events.slice(0,MAX_EVENTS),errors:errors.slice(0,200)};
+  fs.mkdirSync(path.dirname(OUT),{recursive:true});
+  fs.writeFileSync(OUT,JSON.stringify(out,null,2));
+  console.log(`Concluído: ${ok}/${symbols.length} ativos | erros=${errors.length} | modo=${u.mode}`);
+  if(ok===0)throw Error('Nenhum ativo pôde ser analisado');
 }
 main().catch(e=>{console.error(e);process.exitCode=1});
