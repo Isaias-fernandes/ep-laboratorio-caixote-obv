@@ -1,0 +1,45 @@
+name: Modelos A-B - Coleta Automatica
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '4,19,34,49 * * * *'
+  push:
+    paths:
+      - 'automation/scan-modelos-ab-all-assets.mjs'
+      - '.github/workflows/modelos-ab-auto.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: modelos-ab-auto
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Analisar 25 criptos e 20 B3 em M1 M5 M15 M30 H1
+        run: node automation/scan-modelos-ab-all-assets.mjs
+      - name: Publicar somente dados dos Modelos A-B
+        run: |
+          if [ -z "$(git status --porcelain -- data/modelos-ab-auto.json)" ]; then
+            echo "Sem alteracoes nos dados A/B."
+            exit 0
+          fi
+          git config user.name "modelos-ab-lab-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/modelos-ab-auto.json
+          git commit -m "data: atualizar Modelos A-B automaticos"
+          git pull --rebase origin main
+          git push
