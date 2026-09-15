@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-14T16:23:49.084Z",
+  "generatedAt": "2026-09-15T15:03:40.020Z",
   "labVersion": "early-warning-patterns-v1",
   "timeframe": "H1",
   "contextCandles": 96,
@@ -22,75 +22,75 @@
     "Double Bottom"
   ],
   "assetsTested": 45,
-  "totalSignals": 4500,
+  "totalSignals": 4497,
   "ranking": [
-    {
-      "market": "B3",
-      "pattern": "Three Rising Valleys",
-      "signals": 117,
-      "breakoutWithin24Pct": 64.1,
-      "avgLeadHours": 6.4,
-      "avgMfePct": 8.227,
-      "avgMaePct": -6.618,
-      "payoffExcursion": 1.24,
-      "leadBuckets": {
-        "<=3h": 38,
-        "4-6h": 12,
-        "7-12h": 12,
-        "13-24h": 13,
-        "NO_BREAKOUT": 42
-      },
-      "hitRates": {
-        "5": 53,
-        "10": 25.6,
-        "20": 5.1,
-        "30": 2.6,
-        "50": 1.7
-      }
-    },
     {
       "market": "CRIPTO",
       "pattern": "Three Rising Valleys",
-      "signals": 911,
-      "breakoutWithin24Pct": 63.4,
-      "avgLeadHours": 6.77,
-      "avgMfePct": 8.277,
-      "avgMaePct": -4.038,
-      "payoffExcursion": 2.05,
+      "signals": 903,
+      "breakoutWithin24Pct": 64.5,
+      "avgLeadHours": 6.75,
+      "avgMfePct": 8.366,
+      "avgMaePct": -4.001,
+      "payoffExcursion": 2.09,
       "leadBuckets": {
-        "<=3h": 231,
-        "4-6h": 109,
+        "<=3h": 235,
+        "4-6h": 108,
         "7-12h": 139,
-        "13-24h": 99,
-        "NO_BREAKOUT": 333
+        "13-24h": 100,
+        "NO_BREAKOUT": 321
       },
       "hitRates": {
-        "5": 41.1,
-        "10": 24.8,
-        "20": 12.4,
-        "30": 6,
+        "5": 41.7,
+        "10": 25,
+        "20": 12.5,
+        "30": 6.1,
         "50": 1.1
       }
     },
     {
       "market": "B3",
-      "pattern": "Rectangle Accumulation",
-      "signals": 129,
-      "breakoutWithin24Pct": 59.7,
-      "avgLeadHours": 9.71,
-      "avgMfePct": 7.085,
-      "avgMaePct": -4.76,
-      "payoffExcursion": 1.49,
+      "pattern": "Three Rising Valleys",
+      "signals": 120,
+      "breakoutWithin24Pct": 64.2,
+      "avgLeadHours": 6.44,
+      "avgMfePct": 8.188,
+      "avgMaePct": -6.707,
+      "payoffExcursion": 1.22,
       "leadBuckets": {
-        "<=3h": 18,
-        "4-6h": 13,
-        "7-12h": 24,
-        "13-24h": 22,
-        "NO_BREAKOUT": 52
+        "<=3h": 39,
+        "4-6h": 12,
+        "7-12h": 12,
+        "13-24h": 14,
+        "NO_BREAKOUT": 43
       },
       "hitRates": {
-        "5": 56.6,
-        "10": 22.5,
+        "5": 54.2,
+        "10": 25,
+        "20": 5,
+        "30": 2.5,
+        "50": 1.7
+      }
+    },
+    {
+      "market": "B3",
+      "pattern": "Rectangle Accumulation",
+      "signals": 130,
+      "breakoutWithin24Pct": 60.8,
+      "avgLeadHours": 9.43,
+      "avgMfePct": 7.089,
+      "avgMaePct": -4.711,
+      "payoffExcursion": 1.5,
+      "leadBuckets": {
+        "<=3h": 20,
+        "4-6h": 14,
+        "7-12h": 22,
+        "13-24h": 23,
+        "NO_BREAKOUT": 51
+      },
+      "hitRates": {
+        "5": 56.9,
+        "10": 22.3,
         "20": 3.1,
         "30": 0,
         "50": 0
@@ -99,71 +99,95 @@
     {
       "market": "CRIPTO",
       "pattern": "Bull Pennant",
-      "signals": 132,
-      "breakoutWithin24Pct": 59.1,
+      "signals": 131,
+      "breakoutWithin24Pct": 59.5,
       "avgLeadHours": 6.67,
-      "avgMfePct": 13.318,
-      "avgMaePct": -4.973,
-      "payoffExcursion": 2.68,
+      "avgMfePct": 13.404,
+      "avgMaePct": -4.97,
+      "payoffExcursion": 2.7,
       "leadBuckets": {
         "<=3h": 25,
         "4-6h": 28,
         "7-12h": 14,
         "13-24h": 11,
-        "NO_BREAKOUT": 54
+        "NO_BREAKOUT": 53
       },
       "hitRates": {
-        "5": 63.6,
-        "10": 47,
-        "20": 24.2,
-        "30": 13.6,
+        "5": 64.1,
+        "10": 47.3,
+        "20": 24.4,
+        "30": 13.7,
         "50": 2.3
       }
     },
     {
       "market": "B3",
       "pattern": "Falling Wedge",
-      "signals": 179,
-      "breakoutWithin24Pct": 57.5,
-      "avgLeadHours": 7.17,
+      "signals": 178,
+      "breakoutWithin24Pct": 57.3,
+      "avgLeadHours": 7.18,
       "avgMfePct": 8.9,
-      "avgMaePct": -5.744,
-      "payoffExcursion": 1.55,
+      "avgMaePct": -5.827,
+      "payoffExcursion": 1.53,
       "leadBuckets": {
-        "<=3h": 46,
+        "<=3h": 45,
         "4-6h": 16,
         "7-12h": 20,
         "13-24h": 21,
         "NO_BREAKOUT": 76
       },
       "hitRates": {
-        "5": 63.7,
-        "10": 29.6,
+        "5": 64.6,
+        "10": 29.2,
         "20": 7.3,
         "30": 2.8,
         "50": 1.7
       }
     },
     {
-      "market": "CRIPTO",
-      "pattern": "Falling Wedge",
-      "signals": 1012,
-      "breakoutWithin24Pct": 55.1,
-      "avgLeadHours": 8.01,
-      "avgMfePct": 6.315,
-      "avgMaePct": -4.222,
-      "payoffExcursion": 1.5,
+      "market": "B3",
+      "pattern": "Bull Pennant",
+      "signals": 21,
+      "breakoutWithin24Pct": 57.1,
+      "avgLeadHours": 11.58,
+      "avgMfePct": 12.236,
+      "avgMaePct": -7.283,
+      "payoffExcursion": 1.68,
       "leadBuckets": {
-        "<=3h": 186,
-        "4-6h": 102,
-        "7-12h": 132,
-        "13-24h": 138,
-        "NO_BREAKOUT": 454
+        "<=3h": 2,
+        "4-6h": 2,
+        "7-12h": 2,
+        "13-24h": 6,
+        "NO_BREAKOUT": 9
       },
       "hitRates": {
-        "5": 32.1,
-        "10": 15.6,
-        "20": 7.4,
+        "5": 66.7,
+        "10": 38.1,
+        "20": 14.3,
+        "30": 9.5,
+        "50": 4.8
+      }
+    },
+    {
+      "market": "CRIPTO",
+      "pattern": "Falling Wedge",
+      "signals": 1020,
+      "breakoutWithin24Pct": 56.2,
+      "avgLeadHours": 8.03,
+      "avgMfePct": 6.398,
+      "avgMaePct": -4.205,
+      "payoffExcursion": 1.52,
+      "leadBuckets": {
+        "<=3h": 189,
+        "4-6h": 104,
+        "7-12h": 139,
+        "13-24h": 141,
+        "NO_BREAKOUT": 447
+      },
+      "hitRates": {
+        "5": 33,
+        "10": 16,
+        "20": 7.5,
         "30": 3.8,
         "50": 0.8
       }
@@ -193,120 +217,96 @@
       }
     },
     {
-      "market": "B3",
-      "pattern": "Bull Pennant",
-      "signals": 18,
-      "breakoutWithin24Pct": 50,
-      "avgLeadHours": 12.67,
-      "avgMfePct": 10.737,
-      "avgMaePct": -8.332,
-      "payoffExcursion": 1.29,
-      "leadBuckets": {
-        "<=3h": 1,
-        "4-6h": 2,
-        "7-12h": 1,
-        "13-24h": 5,
-        "NO_BREAKOUT": 9
-      },
-      "hitRates": {
-        "5": 66.7,
-        "10": 33.3,
-        "20": 11.1,
-        "30": 5.6,
-        "50": 5.6
-      }
-    },
-    {
       "market": "CRIPTO",
       "pattern": "Double Bottom",
-      "signals": 577,
-      "breakoutWithin24Pct": 48.7,
-      "avgLeadHours": 8.01,
-      "avgMfePct": 5.934,
-      "avgMaePct": -3.912,
-      "payoffExcursion": 1.52,
+      "signals": 573,
+      "breakoutWithin24Pct": 49.7,
+      "avgLeadHours": 7.96,
+      "avgMfePct": 6.079,
+      "avgMaePct": -3.862,
+      "payoffExcursion": 1.57,
       "leadBuckets": {
-        "<=3h": 95,
+        "<=3h": 97,
         "4-6h": 53,
-        "7-12h": 65,
+        "7-12h": 67,
         "13-24h": 68,
-        "NO_BREAKOUT": 296
+        "NO_BREAKOUT": 288
       },
       "hitRates": {
-        "5": 29.5,
-        "10": 16.8,
-        "20": 7.3,
-        "30": 3.8,
+        "5": 30.4,
+        "10": 17.1,
+        "20": 7.5,
+        "30": 4,
         "50": 0.5
       }
     },
     {
-      "market": "B3",
-      "pattern": "Bull Flag",
-      "signals": 27,
-      "breakoutWithin24Pct": 48.1,
-      "avgLeadHours": 7.92,
-      "avgMfePct": 4.681,
-      "avgMaePct": -5.929,
-      "payoffExcursion": 0.79,
-      "leadBuckets": {
-        "<=3h": 6,
-        "4-6h": 1,
-        "7-12h": 2,
-        "13-24h": 4,
-        "NO_BREAKOUT": 14
-      },
-      "hitRates": {
-        "5": 33.3,
-        "10": 14.8,
-        "20": 0,
-        "30": 0,
-        "50": 0
-      }
-    },
-    {
       "market": "CRIPTO",
       "pattern": "Bull Flag",
-      "signals": 118,
-      "breakoutWithin24Pct": 47.5,
+      "signals": 116,
+      "breakoutWithin24Pct": 48.3,
       "avgLeadHours": 7.77,
-      "avgMfePct": 10.714,
-      "avgMaePct": -4.506,
-      "payoffExcursion": 2.38,
+      "avgMfePct": 10.877,
+      "avgMaePct": -4.47,
+      "payoffExcursion": 2.43,
       "leadBuckets": {
         "<=3h": 20,
         "4-6h": 11,
         "7-12h": 12,
         "13-24h": 13,
-        "NO_BREAKOUT": 62
+        "NO_BREAKOUT": 60
       },
       "hitRates": {
-        "5": 51.7,
-        "10": 37.3,
-        "20": 22,
-        "30": 9.3,
+        "5": 52.6,
+        "10": 37.9,
+        "20": 22.4,
+        "30": 9.5,
         "50": 1.7
+      }
+    },
+    {
+      "market": "B3",
+      "pattern": "Bull Flag",
+      "signals": 29,
+      "breakoutWithin24Pct": 48.3,
+      "avgLeadHours": 8.21,
+      "avgMfePct": 6.043,
+      "avgMaePct": -5.633,
+      "payoffExcursion": 1.07,
+      "leadBuckets": {
+        "<=3h": 6,
+        "4-6h": 1,
+        "7-12h": 3,
+        "13-24h": 4,
+        "NO_BREAKOUT": 15
+      },
+      "hitRates": {
+        "5": 34.5,
+        "10": 17.2,
+        "20": 3.4,
+        "30": 3.4,
+        "50": 0
       }
     },
     {
       "market": "CRIPTO",
       "pattern": "Rectangle Accumulation",
-      "signals": 1212,
-      "breakoutWithin24Pct": 46.3,
-      "avgLeadHours": 8.33,
-      "avgMfePct": 6.163,
-      "avgMaePct": -3.499,
-      "payoffExcursion": 1.76,
+      "signals": 1208,
+      "breakoutWithin24Pct": 47.5,
+      "avgLeadHours": 8.4,
+      "avgMfePct": 6.253,
+      "avgMaePct": -3.438,
+      "payoffExcursion": 1.82,
       "leadBuckets": {
         "<=3h": 178,
-        "4-6h": 113,
-        "7-12h": 127,
-        "13-24h": 143,
-        "NO_BREAKOUT": 651
+        "4-6h": 116,
+        "7-12h": 132,
+        "13-24h": 148,
+        "NO_BREAKOUT": 634
       },
       "hitRates": {
-        "5": 30.3,
-        "10": 16.3,
+        "5": 31.5,
+        "10": 16.6,
         "20": 8,
         "30": 4.3,
         "50": 0.6
@@ -324,31 +324,31 @@
       "market": "CRIPTO",
       "symbol": "ETHUSDT",
       "candles": 1399,
-      "signals": 182
+      "signals": 183
     },
     {
       "market": "CRIPTO",
       "symbol": "BNBUSDT",
       "candles": 1399,
-      "signals": 194
+      "signals": 196
     },
     {
       "market": "CRIPTO",
       "symbol": "SOLUSDT",
       "candles": 1399,
-      "signals": 165
+      "signals": 164
     },
     {
       "market": "CRIPTO",
       "symbol": "XRPUSDT",
       "candles": 1399,
-      "signals": 162
+      "signals": 160
     },
     {
       "market": "CRIPTO",
       "symbol": "ADAUSDT",
       "candles": 1399,
-      "signals": 151
+      "signals": 150
     },
     {
       "market": "CRIPTO",
@@ -360,31 +360,31 @@
       "market": "CRIPTO",
       "symbol": "AVAXUSDT",
       "candles": 1399,
-      "signals": 173
+      "signals": 172
     },
     {
       "market": "CRIPTO",
       "symbol": "LINKUSDT",
       "candles": 1399,
-      "signals": 156
+      "signals": 157
     },
     {
       "market": "CRIPTO",
       "symbol": "DOTUSDT",
       "candles": 1399,
-      "signals": 153
+      "signals": 151
     },
     {
       "market": "CRIPTO",
       "symbol": "TRXUSDT",
       "candles": 1399,
-      "signals": 206
+      "signals": 209
     },
     {
       "market": "CRIPTO",
       "symbol": "LTCUSDT",
       "candles": 1399,
-      "signals": 176
+      "signals": 174
     },
     {
       "market": "CRIPTO",
@@ -402,19 +402,19 @@
       "market": "CRIPTO",
       "symbol": "UNIUSDT",
       "candles": 1399,
-      "signals": 146
+      "signals": 144
     },
     {
       "market": "CRIPTO",
       "symbol": "ATOMUSDT",
       "candles": 1399,
-      "signals": 155
+      "signals": 154
     },
     {
       "market": "CRIPTO",
       "symbol": "ETCUSDT",
       "candles": 1399,
-      "signals": 153
+      "signals": 152
     },
     {
       "market": "CRIPTO",
@@ -426,19 +426,19 @@
       "market": "CRIPTO",
       "symbol": "APTUSDT",
       "candles": 1399,
-      "signals": 137
+      "signals": 134
     },
     {
       "market": "CRIPTO",
       "symbol": "FILUSDT",
       "candles": 1399,
-      "signals": 148
+      "signals": 146
     },
     {
       "market": "CRIPTO",
       "symbol": "ICPUSDT",
       "candles": 1399,
-      "signals": 143
+      "signals": 142
     },
     {
       "market": "CRIPTO",
@@ -450,7 +450,7 @@
       "market": "CRIPTO",
       "symbol": "OPUSDT",
       "candles": 1399,
-      "signals": 138
+      "signals": 139
     },
     {
       "market": "CRIPTO",
@@ -467,292 +467,126 @@
     {
       "market": "B3",
       "symbol": "PETR4",
-      "candles": 451,
+      "candles": 454,
       "signals": 28
     },
     {
       "market": "B3",
       "symbol": "VALE3",
-      "candles": 451,
-      "signals": 27
+      "candles": 454,
+      "signals": 26
     },
     {
       "market": "B3",
       "symbol": "ITUB4",
-      "candles": 451,
-      "signals": 29
+      "candles": 454,
+      "signals": 28
     },
     {
       "market": "B3",
       "symbol": "BBDC4",
-      "candles": 451,
-      "signals": 30
+      "candles": 454,
+      "signals": 32
     },
     {
       "market": "B3",
       "symbol": "BBAS3",
-      "candles": 451,
-      "signals": 34
+      "candles": 454,
+      "signals": 33
     },
     {
       "market": "B3",
       "symbol": "WEGE3",
-      "candles": 451,
-      "signals": 29
+      "candles": 454,
+      "signals": 31
     },
     {
       "market": "B3",
       "symbol": "ABEV3",
-      "candles": 451,
-      "signals": 36
+      "candles": 454,
+      "signals": 37
     },
     {
       "market": "B3",
       "symbol": "B3SA3",
-      "candles": 451,
+      "candles": 454,
       "signals": 22
     },
     {
       "market": "B3",
       "symbol": "RENT3",
-      "candles": 451,
+      "candles": 454,
       "signals": 25
     },
     {
       "market": "B3",
       "symbol": "SUZB3",
-      "candles": 451,
-      "signals": 32
+      "candles": 454,
+      "signals": 34
     },
     {
       "market": "B3",
       "symbol": "PRIO3",
-      "candles": 451,
+      "candles": 454,
       "signals": 22
     },
     {
       "market": "B3",
       "symbol": "AXIA3",
-      "candles": 451,
-      "signals": 28
+      "candles": 454,
+      "signals": 27
     },
     {
       "market": "B3",
       "symbol": "EQTL3",
-      "candles": 451,
-      "signals": 24
+      "candles": 454,
+      "signals": 26
     },
     {
       "market": "B3",
       "symbol": "RADL3",
-      "candles": 451,
+      "candles": 454,
       "signals": 22
     },
     {
       "market": "B3",
       "symbol": "GGBR4",
-      "candles": 451,
+      "candles": 454,
       "signals": 22
     },
     {
       "market": "B3",
       "symbol": "CSNA3",
-      "candles": 451,
-      "signals": 23
+      "candles": 454,
+      "signals": 25
     },
     {
       "market": "B3",
       "symbol": "MGLU3",
-      "candles": 451,
-      "signals": 23
+      "candles": 454,
+      "signals": 22
     },
     {
       "market": "B3",
       "symbol": "LREN3",
-      "candles": 451,
-      "signals": 21
+      "candles": 454,
+      "signals": 22
     },
     {
       "market": "B3",
       "symbol": "JBSS32",
-      "candles": 451,
+      "candles": 454,
       "signals": 35
     },
     {
       "market": "B3",
       "symbol": "EMBJ3",
-      "candles": 451,
-      "signals": 26
+      "candles": 454,
+      "signals": 27
     }
   ],
   "errors": [],
   "sample": [
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 71,
-      "level": 66739.89,
-      "distanceToBreakoutPct": 1.139,
-      "volumeRatio": 2.153,
-      "obvSlope": -203.58217730769235,
-      "obvConfirm": false,
-      "compression": false,
-      "hiSlope": -34.297729618163174,
-      "loSlope": -31.221940144479248,
-      "time": 1784707200000,
-      "entry": 65987.96,
-      "breakout": false,
-      "breakoutTime": null,
-      "leadHours": null,
-      "horizonBars": 96,
-      "status": "AVALIADO",
-      "mfe": 0.6001700916348884,
-      "mae": -3.4070003073288,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Rectangle Accumulation",
-      "family": "BILATERAL",
-      "direction": "BUY",
-      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
-      "score": 66,
-      "level": 66956.15,
-      "distanceToBreakoutPct": 1.467,
-      "volumeRatio": 2.153,
-      "obvSlope": -203.58217730769235,
-      "obvConfirm": false,
-      "compression": false,
-      "boxRangePct": 1.91,
-      "boxPosition": 0.229,
-      "time": 1784707200000,
-      "entry": 65987.96,
-      "breakout": false,
-      "breakoutTime": null,
-      "leadHours": null,
-      "horizonBars": 96,
-      "status": "AVALIADO",
-      "mfe": 0.6001700916348884,
-      "mae": -3.4070003073288,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Double Bottom",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
-      "score": 72,
-      "level": 66384,
-      "distanceToBreakoutPct": 0.515,
-      "volumeRatio": 0.364,
-      "obvSlope": 10.138556608391587,
-      "obvConfirm": true,
-      "compression": false,
-      "bottomGapPct": 0.21,
-      "time": 1784757600000,
-      "entry": 66044.17,
-      "breakout": false,
-      "breakoutTime": null,
-      "leadHours": null,
-      "horizonBars": 96,
-      "status": "AVALIADO",
-      "mfe": 0.4072577488671625,
-      "mae": -3.48921032696754,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Rectangle Accumulation",
-      "family": "BILATERAL",
-      "direction": "BUY",
-      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
-      "score": 69,
-      "level": 66532.26,
-      "distanceToBreakoutPct": 0.739,
-      "volumeRatio": 0.364,
-      "obvSlope": 10.138556608391587,
-      "obvConfirm": true,
-      "compression": false,
-      "boxRangePct": 1.49,
-      "boxPosition": 0.501,
-      "time": 1784757600000,
-      "entry": 66044.17,
-      "breakout": false,
-      "breakoutTime": null,
-      "leadHours": null,
-      "horizonBars": 96,
-      "status": "AVALIADO",
-      "mfe": 0.4072577488671625,
-      "mae": -3.48921032696754,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Three Rising Valleys",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "PRÉ-ROMPIMENTO",
-      "score": 75,
-      "level": 66138.24,
-      "distanceToBreakoutPct": 0.468,
-      "volumeRatio": 1.216,
-      "obvSlope": -53.022054790209836,
-      "obvConfirm": false,
-      "compression": false,
-      "structure": {
-        "rise1Pct": 0.21,
-        "rise2Pct": 0.23
-      },
-      "time": 1784768400000,
-      "entry": 65830,
-      "breakout": false,
-      "breakoutTime": null,
-      "leadHours": null,
-      "horizonBars": 96,
-      "status": "AVALIADO",
-      "mfe": 0.02012760139753489,
-      "mae": -3.1752240619778216,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "BTCUSDT"
-    },
     {
       "name": "Falling Wedge",
       "family": "REVERSAO",
@@ -793,22 +627,55 @@
       "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
       "score": 66,
       "level": 66384,
-      "distanceToBreakoutPct": 1.867,
-      "volumeRatio": 2.378,
-      "obvSlope": -42.34207919580413,
+      "distanceToBreakoutPct": 1.439,
+      "volumeRatio": 1.185,
+      "obvSlope": -354.4276248951048,
       "obvConfirm": false,
-      "compression": false,
-      "boxRangePct": 1.58,
-      "boxPosition": -0.178,
-      "time": 1784808000000,
-      "entry": 65167.04,
+      "compression": true,
+      "boxRangePct": 1.27,
+      "boxPosition": -0.134,
+      "time": 1784790000000,
+      "entry": 65442.13,
       "breakout": false,
       "breakoutTime": null,
       "leadHours": null,
       "horizonBars": 96,
       "status": "AVALIADO",
-      "mfe": 0.984470063393994,
-      "mae": -2.190202286309151,
+      "mfe": 0.559975660938905,
+      "mae": -2.601351759180204,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Rectangle Accumulation",
+      "family": "BILATERAL",
+      "direction": "BUY",
+      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
+      "score": 77,
+      "level": 65843.25,
+      "distanceToBreakoutPct": 0.994,
+      "volumeRatio": 0.776,
+      "obvSlope": 19.68339951048958,
+      "obvConfirm": true,
+      "compression": false,
+      "boxRangePct": 1.85,
+      "boxPosition": 0.457,
+      "time": 1784844000000,
+      "entry": 65195.43,
+      "breakout": false,
+      "breakoutTime": null,
+      "leadHours": null,
+      "horizonBars": 96,
+      "status": "AVALIADO",
+      "mfe": 0.9404953690772544,
+      "mae": -2.232794537899363,
       "targets": {
         "5": false,
         "10": false,
@@ -853,39 +720,6 @@
       "symbol": "BTCUSDT"
     },
     {
-      "name": "Rectangle Accumulation",
-      "family": "BILATERAL",
-      "direction": "BUY",
-      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
-      "score": 79,
-      "level": 65821.17,
-      "distanceToBreakoutPct": 1.13,
-      "volumeRatio": 1.146,
-      "obvSlope": 17.89261573426571,
-      "obvConfirm": true,
-      "compression": false,
-      "boxRangePct": 1.81,
-      "boxPosition": 0.372,
-      "time": 1784854800000,
-      "entry": 65086,
-      "breakout": false,
-      "breakoutTime": null,
-      "leadHours": null,
-      "horizonBars": 96,
-      "status": "AVALIADO",
-      "mfe": 1.1102080324493668,
-      "mae": -3.113741818517035,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "BTCUSDT"
-    },
-    {
       "name": "Three Rising Valleys",
       "family": "REVERSAO",
       "direction": "BUY",
@@ -910,6 +744,39 @@
       "status": "AVALIADO",
       "mfe": 0.6774965246183262,
       "mae": -3.4344795227356895,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Rectangle Accumulation",
+      "family": "BILATERAL",
+      "direction": "BUY",
+      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
+      "score": 82,
+      "level": 65808.59,
+      "distanceToBreakoutPct": 1.114,
+      "volumeRatio": 1.316,
+      "obvSlope": 267.69057475524477,
+      "obvConfirm": true,
+      "compression": false,
+      "boxRangePct": 1.79,
+      "boxPosition": 0.374,
+      "time": 1784890800000,
+      "entry": 65083.43,
+      "breakout": false,
+      "breakoutTime": null,
+      "leadHours": null,
+      "horizonBars": 96,
+      "status": "AVALIADO",
+      "mfe": 1.0158806934422504,
+      "mae": -3.1099159955153,
       "targets": {
         "5": false,
         "10": false,
@@ -6622,30 +6489,28 @@
       "symbol": "BTCUSDT"
     },
     {
-      "name": "Three Rising Valleys",
+      "name": "Falling Wedge",
       "family": "REVERSAO",
       "direction": "BUY",
-      "stage": "PRÉ-ROMPIMENTO",
-      "score": 66,
-      "level": 1944.68,
-      "distanceToBreakoutPct": 1.216,
-      "volumeRatio": 1.127,
-      "obvSlope": -3024.5156951048966,
+      "stage": "CUNHA EM FORMAÇÃO",
+      "score": 65,
+      "level": 77544,
+      "distanceToBreakoutPct": 1.274,
+      "volumeRatio": 1.225,
+      "obvSlope": -73.48932699300691,
       "obvConfirm": false,
       "compression": false,
-      "structure": {
-        "rise1Pct": 0.09,
-        "rise2Pct": 0.53
-      },
-      "time": 1784707200000,
-      "entry": 1921.32,
+      "hiSlope": -84.32107327141404,
+      "loSlope": -79.86546955624331,
+      "time": 1789081200000,
+      "entry": 76568.72,
       "breakout": true,
-      "breakoutTime": 1784736000000,
-      "leadHours": 8,
+      "breakoutTime": 1789128000000,
+      "leadHours": 13,
       "horizonBars": 96,
       "status": "AVALIADO",
-      "mfe": 1.828430454062846,
-      "mae": -3.811442133533194,
+      "mfe": 4.337645973447124,
+      "mae": -0.6819233754985055,
       "targets": {
         "5": false,
         "10": false,
@@ -6654,66 +6519,31 @@
         "50": false
       },
       "market": "CRIPTO",
-      "symbol": "ETHUSDT"
+      "symbol": "BTCUSDT"
     },
     {
       "name": "Rectangle Accumulation",
       "family": "BILATERAL",
       "direction": "BUY",
       "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
-      "score": 93,
-      "level": 1944.68,
-      "distanceToBreakoutPct": 0.245,
-      "volumeRatio": 1.64,
-      "obvSlope": 94.07179580419604,
-      "obvConfirm": true,
-      "compression": false,
-      "boxRangePct": 1.78,
-      "boxPosition": 0.86,
-      "time": 1784725200000,
-      "entry": 1939.93,
-      "breakout": true,
-      "breakoutTime": 1784736000000,
-      "leadHours": 3,
-      "horizonBars": 96,
-      "status": "AVALIADO",
-      "mfe": 0.8515771187620258,
-      "mae": -4.734191439897328,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "ETHUSDT"
-    },
-    {
-      "name": "Three Rising Valleys",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "PRÉ-ROMPIMENTO",
-      "score": 67,
-      "level": 1956.45,
-      "distanceToBreakoutPct": 0.93,
-      "volumeRatio": 0.688,
-      "obvSlope": -532.9074814685315,
+      "score": 69,
+      "level": 78422.01,
+      "distanceToBreakoutPct": 1.99,
+      "volumeRatio": 1.453,
+      "obvSlope": -70.41173489510479,
       "obvConfirm": false,
-      "compression": false,
-      "structure": {
-        "rise1Pct": 0.14,
-        "rise2Pct": 0.4
-      },
-      "time": 1784757600000,
-      "entry": 1938.42,
-      "breakout": false,
-      "breakoutTime": null,
-      "leadHours": null,
+      "compression": true,
+      "boxRangePct": 2.56,
+      "boxPosition": 0.218,
+      "time": 1789095600000,
+      "entry": 76891.8,
+      "breakout": true,
+      "breakoutTime": 1789131600000,
+      "leadHours": 10,
       "horizonBars": 96,
       "status": "AVALIADO",
-      "mfe": 0.7537066270467685,
-      "mae": -4.659980809112585,
+      "mfe": 3.8992454331931325,
+      "mae": -1.0992329481167018,
       "targets": {
         "5": false,
         "10": false,
@@ -6722,30 +6552,30 @@
         "50": false
       },
       "market": "CRIPTO",
-      "symbol": "ETHUSDT"
+      "symbol": "BTCUSDT"
     },
     {
       "name": "Double Bottom",
       "family": "REVERSAO",
       "direction": "BUY",
       "stage": "FUNDO DUPLO PRÉ-NECKLINE",
-      "score": 65,
-      "level": 1956.45,
-      "distanceToBreakoutPct": 0.93,
-      "volumeRatio": 0.688,
-      "obvSlope": -532.9074814685315,
-      "obvConfirm": false,
+      "score": 82,
+      "level": 77500,
+      "distanceToBreakoutPct": 0.602,
+      "volumeRatio": 0.94,
+      "obvSlope": 127.98738989510498,
+      "obvConfirm": true,
       "compression": false,
-      "bottomGapPct": 0.4,
-      "time": 1784757600000,
-      "entry": 1938.42,
-      "breakout": false,
-      "breakoutTime": null,
-      "leadHours": null,
+      "bottomGapPct": 0.21,
+      "time": 1789124400000,
+      "entry": 77036.12,
+      "breakout": true,
+      "breakoutTime": 1789128000000,
+      "leadHours": 1,
       "horizonBars": 96,
       "status": "AVALIADO",
-      "mfe": 0.7537066270467685,
-      "mae": -4.659980809112585,
+      "mfe": 3.704599868217673,
+      "mae": -1.284514329122488,
       "targets": {
         "5": false,
         "10": false,
@@ -6754,7 +6584,42 @@
         "50": false
       },
       "market": "CRIPTO",
-      "symbol": "ETHUSDT"
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 79,
+      "level": 77500,
+      "distanceToBreakoutPct": 0.602,
+      "volumeRatio": 0.94,
+      "obvSlope": 127.98738989510498,
+      "obvConfirm": true,
+      "compression": false,
+      "structure": {
+        "rise1Pct": 0.31,
+        "rise2Pct": 0.21
+      },
+      "time": 1789124400000,
+      "entry": 77036.12,
+      "breakout": true,
+      "breakoutTime": 1789128000000,
+      "leadHours": 1,
+      "horizonBars": 96,
+      "status": "AVALIADO",
+      "mfe": 3.704599868217673,
+      "mae": -1.284514329122488,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "BTCUSDT"
     },
     {
       "name": "Falling Wedge",
@@ -10546,6 +10411,141 @@
       "status": "AVALIADO",
       "mfe": 4.80252519477975,
       "mae": -1.3998007284844016,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "ETHUSDT"
+    },
+    {
+      "name": "Double Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
+      "score": 94,
+      "level": 2474.09,
+      "distanceToBreakoutPct": 0.361,
+      "volumeRatio": 1.421,
+      "obvSlope": 6281.52856923077,
+      "obvConfirm": true,
+      "compression": true,
+      "bottomGapPct": 0.48,
+      "time": 1787565600000,
+      "entry": 2465.2,
+      "breakout": true,
+      "breakoutTime": 1787569200000,
+      "leadHours": 1,
+      "horizonBars": 96,
+      "status": "AVALIADO",
+      "mfe": 4.110417004705513,
+      "mae": -2.050949213045594,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "ETHUSDT"
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 85,
+      "level": 2509,
+      "distanceToBreakoutPct": 0.844,
+      "volumeRatio": 1.992,
+      "obvSlope": 11854.17397272727,
+      "obvConfirm": true,
+      "compression": false,
+      "structure": {
+        "rise1Pct": 0.48,
+        "rise2Pct": 0.74
+      },
+      "time": 1787583600000,
+      "entry": 2487.99,
+      "breakout": false,
+      "breakoutTime": null,
+      "leadHours": null,
+      "horizonBars": 96,
+      "status": "AVALIADO",
+      "mfe": 3.1567650995381946,
+      "mae": -2.9481629749315674,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "ETHUSDT"
+    },
+    {
+      "name": "Rectangle Accumulation",
+      "family": "BILATERAL",
+      "direction": "BUY",
+      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
+      "score": 90,
+      "level": 2532.95,
+      "distanceToBreakoutPct": 1.007,
+      "volumeRatio": 1.574,
+      "obvSlope": 2216.201679720278,
+      "obvConfirm": true,
+      "compression": false,
+      "boxRangePct": 3.96,
+      "boxPosition": 0.738,
+      "time": 1787623200000,
+      "entry": 2507.69,
+      "breakout": false,
+      "breakoutTime": null,
+      "leadHours": null,
+      "horizonBars": 96,
+      "status": "AVALIADO",
+      "mfe": 2.3463825273458916,
+      "mae": -4.056322751217268,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "ETHUSDT"
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 72,
+      "level": 2532.5,
+      "distanceToBreakoutPct": 1.264,
+      "volumeRatio": 0.376,
+      "obvSlope": 6289.41826083916,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 0.36,
+        "rise2Pct": 0.74
+      },
+      "time": 1787637600000,
+      "entry": 2500.88,
+      "breakout": false,
+      "breakoutTime": null,
+      "leadHours": null,
+      "horizonBars": 96,
+      "status": "AVALIADO",
+      "mfe": 2.625075973257407,
+      "mae": -3.7950641374236427,
       "targets": {
         "5": false,
         "10": false,
