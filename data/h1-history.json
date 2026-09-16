@@ -27,7 +27,7 @@
     "note": "Historico independente da retencao da tela/auto-signals. Ordem dentro da mesma vela H1 e indeterminada."
   },
   "createdAt": "2026-09-12T11:51:13.214Z",
-  "updatedAt": "2026-09-16T00:04:59.214Z",
+  "updatedAt": "2026-09-16T04:39:43.030Z",
   "records": [
     {
       "id": "CRIPTO|ARBUSDT|1789477200000|COMPRA",
@@ -57,10 +57,10 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 11,
-        "lastProcessedCandleTime": 1789516800000,
-        "lastPrice": 0.1528,
-        "mfe": 8.926080892608093,
+        "candlesObserved": 15,
+        "lastProcessedCandleTime": 1789531200000,
+        "lastPrice": 0.1586,
+        "mfe": 11.018131101813117,
         "mae": -5.648535564853554,
         "favorableHits": {
           "1": {
@@ -74,6 +74,10 @@
           "5": {
             "candleTime": 1789484400000,
             "price": 0.1511
+          },
+          "10": {
+            "candleTime": 1789531200000,
+            "price": 0.1592
           },
           "0.25": {
             "candleTime": 1789484400000,
@@ -110,6 +114,7 @@
           "1": "ADVERSO_PRIMEIRO",
           "2": "ADVERSO_PRIMEIRO",
           "5": "ADVERSO_PRIMEIRO",
+          "10": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
           "0.25": "ADVERSO_PRIMEIRO",
           "0.5": "ADVERSO_PRIMEIRO"
         },
@@ -200,11 +205,11 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 36,
-        "lastProcessedCandleTime": 1789516800000,
-        "lastPrice": 7.27,
+        "candlesObserved": 40,
+        "lastProcessedCandleTime": 1789531200000,
+        "lastPrice": 7.333,
         "mfe": 3.488063660477452,
-        "mae": -4.310344827586209,
+        "mae": -4.549071618037135,
         "favorableHits": {
           "1": {
             "candleTime": 1789405200000,
@@ -334,11 +339,11 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 58,
-        "lastProcessedCandleTime": 1789516800000,
-        "lastPrice": 0.0941,
+        "candlesObserved": 62,
+        "lastProcessedCandleTime": 1789531200000,
+        "lastPrice": 0.0945,
         "mfe": 8.102564102564093,
-        "mae": -4.615384615384619,
+        "mae": -5.435897435897434,
         "favorableHits": {
           "1": {
             "candleTime": 1789318800000,
@@ -370,6 +375,10 @@
             "candleTime": 1789336800000,
             "price": 0.0941
           },
+          "5": {
+            "candleTime": 1789520400000,
+            "price": 0.0922
+          },
           "0.25": {
             "candleTime": 1789311600000,
             "price": 0.0963
@@ -382,7 +391,7 @@
         "order": {
           "1": "ADVERSO_PRIMEIRO",
           "2": "ADVERSO_PRIMEIRO",
-          "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "5": "FAVORAVEL_PRIMEIRO",
           "0.25": "ADVERSO_PRIMEIRO",
           "0.5": "ADVERSO_PRIMEIRO"
         },
@@ -473,11 +482,11 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 58,
-        "lastProcessedCandleTime": 1789516800000,
-        "lastPrice": 0.8158,
+        "candlesObserved": 62,
+        "lastProcessedCandleTime": 1789531200000,
+        "lastPrice": 0.8212,
         "mfe": 15.94736255157801,
-        "mae": -10.449425671908108,
+        "mae": -10.828593732575005,
         "favorableHits": {
           "1": {
             "candleTime": 1789311600000,
@@ -4963,11 +4972,11 @@
   },
   "smartMoneySummary": {
     "version": 1,
-    "updatedAt": "2026-09-16T00:04:59.265Z",
+    "updatedAt": "2026-09-16T04:39:43.080Z",
     "recordsWithObserver": 37,
     "fullConfluence": 0,
     "fullAvgAbsMae": null,
-    "baselineAvgAbsMae": 6.941366099518819,
+    "baselineAvgAbsMae": 6.980241982535863,
     "fullFavFirst1Pct": null,
     "baselineFavFirst1Pct": 54.054054054054056,
     "errors": []
