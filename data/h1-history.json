@@ -27,7 +27,7 @@
     "note": "Historico independente da retencao da tela/auto-signals. Ordem dentro da mesma vela H1 e indeterminada."
   },
   "createdAt": "2026-09-12T11:51:13.214Z",
-  "updatedAt": "2026-09-19T10:40:58.239Z",
+  "updatedAt": "2026-09-19T14:16:25.001Z",
   "records": [
     {
       "id": "CRIPTO|SUIUSDT|1789812000000|COMPRA",
@@ -56,15 +56,46 @@
       "dataSource": "BINANCE_DATA",
       "tracking": {
         "status": "COLETANDO",
-        "coverage": "AGUARDANDO",
-        "candlesObserved": 0,
-        "lastProcessedCandleTime": null,
-        "lastPrice": 0.8512,
-        "mfe": 0,
-        "mae": 0,
-        "favorableHits": {},
-        "adverseHits": {},
-        "order": {},
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 4,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 0.8502,
+        "mfe": 2.185150375939857,
+        "mae": -0.7283834586466146,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789815600000,
+            "price": 0.8698
+          },
+          "2": {
+            "candleTime": 1789815600000,
+            "price": 0.8698
+          },
+          "0.25": {
+            "candleTime": 1789815600000,
+            "price": 0.8698
+          },
+          "0.5": {
+            "candleTime": 1789815600000,
+            "price": 0.8698
+          }
+        },
+        "adverseHits": {
+          "0.25": {
+            "candleTime": 1789819200000,
+            "price": 0.848
+          },
+          "0.5": {
+            "candleTime": 1789822800000,
+            "price": 0.845
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "FAVORAVEL_PRIMEIRO",
+          "0.5": "FAVORAVEL_PRIMEIRO"
+        },
         "completedAt": null
       },
       "smartMoneyObserver": {
@@ -151,15 +182,37 @@
       "dataSource": "BINANCE_DATA",
       "tracking": {
         "status": "COLETANDO",
-        "coverage": "AGUARDANDO",
-        "candlesObserved": 0,
-        "lastProcessedCandleTime": null,
-        "lastPrice": 8.54,
-        "mfe": 0,
-        "mae": 0,
-        "favorableHits": {},
-        "adverseHits": {},
-        "order": {},
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 4,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 8.48,
+        "mfe": 0.3512880562061024,
+        "mae": -1.7564402810304285,
+        "favorableHits": {
+          "0.25": {
+            "candleTime": 1789815600000,
+            "price": 8.57
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789815600000,
+            "price": 8.44
+          },
+          "0.25": {
+            "candleTime": 1789815600000,
+            "price": 8.44
+          },
+          "0.5": {
+            "candleTime": 1789815600000,
+            "price": 8.44
+          }
+        },
+        "order": {
+          "1": "ADVERSO_PRIMEIRO_PENDENTE_FAV",
+          "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
+          "0.5": "ADVERSO_PRIMEIRO_PENDENTE_FAV"
+        },
         "completedAt": null
       },
       "smartMoneyObserver": {
@@ -246,15 +299,50 @@
       "dataSource": "BINANCE_DATA",
       "tracking": {
         "status": "COLETANDO",
-        "coverage": "AGUARDANDO",
-        "candlesObserved": 0,
-        "lastProcessedCandleTime": null,
-        "lastPrice": 9.164,
-        "mfe": 0,
-        "mae": 0,
-        "favorableHits": {},
-        "adverseHits": {},
-        "order": {},
+        "coverage": "COMPLETA_DESDE_ENTRADA",
+        "candlesObserved": 4,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 9.312,
+        "mfe": 2.9899607158446195,
+        "mae": -1.2003491924923553,
+        "favorableHits": {
+          "1": {
+            "candleTime": 1789815600000,
+            "price": 9.371
+          },
+          "2": {
+            "candleTime": 1789815600000,
+            "price": 9.371
+          },
+          "0.25": {
+            "candleTime": 1789815600000,
+            "price": 9.371
+          },
+          "0.5": {
+            "candleTime": 1789815600000,
+            "price": 9.371
+          }
+        },
+        "adverseHits": {
+          "1": {
+            "candleTime": 1789819200000,
+            "price": 9.054
+          },
+          "0.25": {
+            "candleTime": 1789819200000,
+            "price": 9.054
+          },
+          "0.5": {
+            "candleTime": 1789819200000,
+            "price": 9.054
+          }
+        },
+        "order": {
+          "1": "FAVORAVEL_PRIMEIRO",
+          "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "0.25": "FAVORAVEL_PRIMEIRO",
+          "0.5": "FAVORAVEL_PRIMEIRO"
+        },
         "completedAt": null
       },
       "smartMoneyObserver": {
@@ -342,10 +430,10 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 22,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 8.54,
-        "mfe": 7.4027603513174505,
+        "candlesObserved": 26,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 8.48,
+        "mfe": 7.528230865746556,
         "mae": -0.5018820577164371,
         "favorableHits": {
           "1": {
@@ -473,9 +561,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 22,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 0.3375,
+        "candlesObserved": 26,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 0.3381,
         "mfe": 0.5918910920390654,
         "mae": -0.2367564368156163,
         "favorableHits": {
@@ -580,10 +668,10 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 22,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 9.162,
-        "mfe": 14.79356367718598,
+        "candlesObserved": 26,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 9.312,
+        "mfe": 17.724834726206826,
         "mae": -0.7484096295372286,
         "favorableHits": {
           "1": {
@@ -716,9 +804,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 27,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 1.731,
+        "candlesObserved": 31,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 1.742,
         "mfe": 8.070388349514564,
         "mae": -0.9708737864077679,
         "favorableHits": {
@@ -847,9 +935,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 36,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 0.734,
+        "candlesObserved": 40,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 0.75,
         "mfe": 33.16326530612246,
         "mae": 0,
         "favorableHits": {
@@ -1452,9 +1540,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 42,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 9.195,
+        "candlesObserved": 46,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 8.973,
         "mfe": 29.52004363239707,
         "mae": 0,
         "favorableHits": {
@@ -1583,10 +1671,10 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 64,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 0.851,
-        "mfe": 22.526134899040525,
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 0.8502,
+        "mfe": 24.559644851782895,
         "mae": -0.9594730058714076,
         "favorableHits": {
           "1": {
@@ -1723,9 +1811,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 64,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 3.729,
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 3.585,
         "mfe": 53.18982387475538,
         "mae": -2.8571428571428554,
         "favorableHits": {
@@ -1879,9 +1967,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 64,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 9.195,
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 8.973,
         "mfe": 49.21457744266417,
         "mae": -2.3405592208608232,
         "favorableHits": {
@@ -2031,10 +2119,10 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 64,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 0.1933,
-        "mfe": 9.232480533926587,
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 0.2008,
+        "mfe": 13.626251390433827,
         "mae": -1.334816462736366,
         "favorableHits": {
           "1": {
@@ -2048,6 +2136,10 @@
           "5": {
             "candleTime": 1789700400000,
             "price": 0.1896
+          },
+          "10": {
+            "candleTime": 1789819200000,
+            "price": 0.1998
           },
           "0.25": {
             "candleTime": 1789585200000,
@@ -2076,6 +2168,7 @@
           "1": "MESMO_CANDLE_ORDEM_INDETERMINADA",
           "2": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
           "5": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
+          "10": "FAVORAVEL_PRIMEIRO_PENDENTE_ADV",
           "0.25": "MESMO_CANDLE_ORDEM_INDETERMINADA",
           "0.5": "MESMO_CANDLE_ORDEM_INDETERMINADA"
         },
@@ -2166,10 +2259,10 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 64,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 9.162,
-        "mfe": 25.809979494190006,
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 9.312,
+        "mfe": 29.022556390977446,
         "mae": -0.9706083390294001,
         "favorableHits": {
           "1": {
@@ -2306,9 +2399,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 64,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 111.98,
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 111.64,
         "mfe": 16.170039662361443,
         "mae": -1.4441167497203313,
         "favorableHits": {
@@ -2446,10 +2539,10 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 64,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 766.28,
-        "mfe": 7.231885470775821,
+        "candlesObserved": 68,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 771.03,
+        "mfe": 7.755511301126622,
         "mae": -0.7394822231815921,
         "favorableHits": {
           "1": {
@@ -2577,9 +2670,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 68,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 9.195,
+        "candlesObserved": 72,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 8.973,
         "mfe": 0,
         "mae": -57.45068788330847,
         "favorableHits": {},
@@ -2704,9 +2797,9 @@
       "tracking": {
         "status": "COLETANDO",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 68,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 57.32,
+        "candlesObserved": 72,
+        "lastProcessedCandleTime": 1789826400000,
+        "lastPrice": 57.82,
         "mfe": 0.5349712700614148,
         "mae": -17.317218149395686,
         "favorableHits": {
@@ -2838,11 +2931,11 @@
       },
       "dataSource": "BINANCE_DATA",
       "tracking": {
-        "status": "COLETANDO",
+        "status": "CONCLUIDO_96",
         "coverage": "COMPLETA_DESDE_ENTRADA",
-        "candlesObserved": 93,
-        "lastProcessedCandleTime": 1789812000000,
-        "lastPrice": 0.2133,
+        "candlesObserved": 96,
+        "lastProcessedCandleTime": 1789822800000,
+        "lastPrice": 0.209,
         "mfe": 60.39051603905161,
         "mae": -5.648535564853554,
         "favorableHits": {
@@ -2913,7 +3006,7 @@
           "0.25": "ADVERSO_PRIMEIRO",
           "0.5": "ADVERSO_PRIMEIRO"
         },
-        "completedAt": null
+        "completedAt": "2026-09-19T13:00:00.000Z"
       },
       "smartMoneyObserver": {
         "version": 1,
@@ -7785,21 +7878,21 @@
   ],
   "summary": {
     "total": 59,
-    "collecting": 31,
-    "completed96": 28,
-    "completeCoverage": 56,
+    "collecting": 30,
+    "completed96": 29,
+    "completeCoverage": 59,
     "partialCoverage": 0,
     "errors": []
   },
   "smartMoneySummary": {
     "version": 1,
-    "updatedAt": "2026-09-19T10:40:59.679Z",
+    "updatedAt": "2026-09-19T14:16:25.045Z",
     "recordsWithObserver": 59,
     "fullConfluence": 0,
     "fullAvgAbsMae": null,
-    "baselineAvgAbsMae": 6.347068171013931,
+    "baselineAvgAbsMae": 6.409528729186294,
     "fullFavFirst1Pct": null,
-    "baselineFavFirst1Pct": 56.36363636363636,
+    "baselineFavFirst1Pct": 56.896551724137936,
     "errors": []
   }
 }
