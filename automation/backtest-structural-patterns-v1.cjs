@@ -3,7 +3,7 @@ const path=require('node:path');
 const lab=require('../structural-pattern-detectors-v1.js');
 
 const CRYPTO=['BTCUSDT','ETHUSDT','BNBUSDT','SOLUSDT','XRPUSDT','ADAUSDT','DOGEUSDT','AVAXUSDT','LINKUSDT','DOTUSDT','TRXUSDT','LTCUSDT','BCHUSDT','XLMUSDT','UNIUSDT','ATOMUSDT','ETCUSDT','NEARUSDT','APTUSDT','FILUSDT','ICPUSDT','ARBUSDT','OPUSDT','SUIUSDT','AAVEUSDT'];
-const B3=['PETR4','VALE3','ITUB4','BBDC4','BBAS3','WEGE3','ABEV3','B3SA3','RENT3','SUZB3','PRIO3','AXIA3','EQTL3','RADL3','GGBR4','CSNA3','MGLU3','LREN3','JBSS32','EMBJ3'];
+const B3=[]; // B3 desativada: foco exclusivo em criptomoedas; motores/regras preservados
 const OUT=path.resolve('data/backtest-structural-patterns-v1.json'),TARGETS=lab.TARGETS,HOUR=3600000,HORIZON=96,MIN_SCORE=80;
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function getJSON(url,headers={}){const r=await fetch(url,{headers:{'User-Agent':'laboratorio-estrutural/1.0',...headers}});if(!r.ok)throw Error(`${r.status} ${r.statusText}`);return r.json()}
