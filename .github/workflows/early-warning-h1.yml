@@ -42,4 +42,13 @@ jobs:
           git config user.email "actions@users.noreply.github.com"
           git add data/early-warning-auto.json
           git commit -m "data: atualizar early warning H1"
-          git push
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Conflito temporario ao publicar; tentativa $attempt/3."
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 3))
+          done
+          echo "Falha ao publicar apos 3 tentativas."
+          exit 1
