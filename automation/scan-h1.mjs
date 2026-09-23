@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const CRYPTO=['BTCUSDT','ETHUSDT','BNBUSDT','SOLUSDT','XRPUSDT','ADAUSDT','DOGEUSDT','AVAXUSDT','LINKUSDT','DOTUSDT','TRXUSDT','LTCUSDT','BCHUSDT','XLMUSDT','UNIUSDT','ATOMUSDT','ETCUSDT','NEARUSDT','APTUSDT','FILUSDT','ICPUSDT','ARBUSDT','OPUSDT','SUIUSDT','AAVEUSDT'];
-const B3=['PETR4','VALE3','ITUB4','BBDC4','BBAS3','WEGE3','ABEV3','B3SA3','RENT3','SUZB3','PRIO3','AXIA3','EQTL3','RADL3','GGBR4','CSNA3','MGLU3','LREN3','JBSS32','EMBJ3'];
+const B3=[]; // B3 desativada: foco exclusivo em criptomoedas; motores/regras preservados
 const TARGETS=[10,20,30,40,50],OUT=path.resolve('data/auto-signals.json');
 const CFG={rsi:14,cci:20,macd:[12,26,9]};
 const avg=a=>a.length?a.reduce((s,v)=>s+v,0)/a.length:0,clamp=(n,a=0,b=100)=>Math.max(a,Math.min(b,n));
