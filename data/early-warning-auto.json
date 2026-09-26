@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2026-09-26T23:42:08.270Z",
+  "generatedAt": "2026-09-26T23:42:37.147Z",
   "version": "early-warning-patterns-v1",
+  "preLegVersion": "pre-leg-score-v1",
   "timeframe": "H1",
   "minimumEarlyScore": 65,
   "signals": [
@@ -649,6 +650,98 @@
           "proximity": 6
         }
       }
+    }
+  ],
+  "preLegRadar": [
+    {
+      "version": "pre-leg-score-v1",
+      "score": 56,
+      "phase": "PREPARAÇÃO",
+      "price": 154.25,
+      "resistance": 156,
+      "support": 151.96,
+      "distanceToBreakoutPct": 1.135,
+      "compressionRatio": 1.065,
+      "volumeAcceleration": 0.688,
+      "obvLead": true,
+      "obvSlope": 1602.946024475525,
+      "attacks": 6,
+      "higherLows": 4,
+      "rsi": 49.71,
+      "move6Pct": -0.59,
+      "penalty": 0,
+      "parts": {
+        "compression": 0,
+        "obv": 20,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "AAVEUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-09-26T22:00:00.000Z"
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 55,
+      "phase": "PREPARAÇÃO",
+      "price": 84276.01,
+      "resistance": 84336.96,
+      "support": 83838,
+      "distanceToBreakoutPct": 0.072,
+      "compressionRatio": 1.148,
+      "volumeAcceleration": 1.193,
+      "obvLead": false,
+      "obvSlope": 98.93825244755244,
+      "attacks": 12,
+      "higherLows": 2,
+      "rsi": 52.2,
+      "move6Pct": 0.19,
+      "penalty": 0,
+      "parts": {
+        "compression": 0,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 10,
+        "structure": 0,
+        "proximity": 15
+      },
+      "market": "CRIPTO",
+      "symbol": "BTCUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-09-26T22:00:00.000Z"
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 51,
+      "phase": "PREPARAÇÃO",
+      "price": 0.761,
+      "resistance": 0.769,
+      "support": 0.651,
+      "distanceToBreakoutPct": 1.051,
+      "compressionRatio": 1.094,
+      "volumeAcceleration": 1.38,
+      "obvLead": false,
+      "obvSlope": 430910.6832167832,
+      "attacks": 3,
+      "higherLows": 4,
+      "rsi": 76.8,
+      "move6Pct": 1.74,
+      "penalty": 8,
+      "parts": {
+        "compression": 0,
+        "obv": 12,
+        "attacks": 14,
+        "volume": 15,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "RUNEUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-09-26T22:00:00.000Z"
     }
   ],
   "stats": {
