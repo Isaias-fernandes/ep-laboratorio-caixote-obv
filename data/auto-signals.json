@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T07:23:37.269Z",
+  "generatedAt": "2026-09-26T12:53:12.028Z",
   "parameters": {
     "interval": "1h",
     "candles": 96,
@@ -88,6 +88,66 @@
   },
   "signals": [
     {
+      "id": "CRIPTO|RUNEUSDT|1790424000000|COMPRA",
+      "market": "CRIPTO",
+      "symbol": "RUNEUSDT",
+      "interval": "1h",
+      "candles": 96,
+      "direction": "COMPRA",
+      "score": 100,
+      "entry": 0.732,
+      "entryTime": 1790424000000,
+      "createdAt": "2026-09-26T12:00:00.000Z",
+      "pattern": "Rompimento da máxima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "rsi": 87.76106036847372,
+      "cci": 192.1907505200834,
+      "macdHistogram": 0.006694150444192252,
+      "momentumAligned": true,
+      "ignition": true,
+      "box": "—",
+      "flag": "—",
+      "obv": "SUBINDO",
+      "divergence": "—",
+      "volumeRatio": 2.6771561702969486,
+      "dataSource": "BINANCE_DATA",
+      "best": 0,
+      "worst": 0,
+      "lastPrice": 0.732,
+      "targets": {}
+    },
+    {
+      "id": "CRIPTO|PEPEUSDT|1790424000000|VENDA",
+      "market": "CRIPTO",
+      "symbol": "PEPEUSDT",
+      "interval": "1h",
+      "candles": 96,
+      "direction": "VENDA",
+      "score": 100,
+      "entry": 0.00000438,
+      "entryTime": 1790424000000,
+      "createdAt": "2026-09-26T12:00:00.000Z",
+      "pattern": "Rompimento da mínima de 20 períodos",
+      "patternType": "CONTINUAÇÃO",
+      "patternConfirmed": true,
+      "rsi": 40.779376435018285,
+      "cci": -195.06517690874992,
+      "macdHistogram": -9.807635499204597e-9,
+      "momentumAligned": true,
+      "ignition": true,
+      "box": "—",
+      "flag": "—",
+      "obv": "CAINDO",
+      "divergence": "—",
+      "volumeRatio": 1.7888400856862323,
+      "dataSource": "BINANCE_DATA",
+      "best": 0,
+      "worst": 0,
+      "lastPrice": 0.00000438,
+      "targets": {}
+    },
+    {
       "id": "CRIPTO|STXUSDT|1790406000000|COMPRA",
       "market": "CRIPTO",
       "symbol": "STXUSDT",
@@ -112,9 +172,9 @@
       "divergence": "—",
       "volumeRatio": 2.667550616662813,
       "dataSource": "BINANCE_DATA",
-      "best": 0,
-      "worst": 0,
-      "lastPrice": 0.3446,
+      "best": 2.9889727219965105,
+      "worst": -4.381892048752177,
+      "lastPrice": 0.3417,
       "targets": {}
     },
     {
@@ -144,7 +204,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 3.151326053042116,
       "worst": -2.1424856994279726,
-      "lastPrice": 0.009677,
+      "lastPrice": 0.009566,
       "targets": {}
     },
     {
@@ -173,8 +233,8 @@
       "volumeRatio": 1.7845199538116416,
       "dataSource": "BINANCE_DATA",
       "best": 0.39999999999999153,
-      "worst": -3.520000000000003,
-      "lastPrice": 1.237,
+      "worst": -4.160000000000004,
+      "lastPrice": 1.227,
       "targets": {}
     },
     {
@@ -204,7 +264,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 2.076502732240436,
       "worst": -2.6229508196721305,
-      "lastPrice": 0.0917,
+      "lastPrice": 0.0914,
       "targets": {}
     },
     {
@@ -234,7 +294,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 8.72424375274002,
       "worst": -3.375712406839105,
-      "lastPrice": 0.04516,
+      "lastPrice": 0.04557,
       "targets": {}
     },
     {
@@ -264,7 +324,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 12.228622064687645,
       "worst": -2.9020824102791316,
-      "lastPrice": 0.4976,
+      "lastPrice": 0.4882,
       "targets": {
         "10": true
       }
@@ -294,9 +354,9 @@
       "divergence": "—",
       "volumeRatio": 1.5581019496436084,
       "dataSource": "BINANCE_DATA",
-      "best": 7.965072133637049,
+      "best": 9.020501138952168,
       "worst": -2.5512528473804124,
-      "lastPrice": 14.124,
+      "lastPrice": 14.17,
       "targets": {}
     },
     {
@@ -324,10 +384,12 @@
       "divergence": "—",
       "volumeRatio": 1.4996028343402312,
       "dataSource": "BINANCE_DATA",
-      "best": 8.797814207650275,
+      "best": 11.092896174863379,
       "worst": -1.5846994535519199,
-      "lastPrice": 1.94,
-      "targets": {}
+      "lastPrice": 1.974,
+      "targets": {
+        "10": true
+      }
     },
     {
       "id": "CRIPTO|FETUSDT|1790254800000|COMPRA",
@@ -356,7 +418,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 20.38834951456311,
       "worst": -2.7669902912621276,
-      "lastPrice": 0.243,
+      "lastPrice": 0.2436,
       "targets": {
         "10": true,
         "20": true
@@ -389,7 +451,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 25.45814759782072,
       "worst": -2.2535908865775127,
-      "lastPrice": 0.4976,
+      "lastPrice": 0.4882,
       "targets": {
         "10": true,
         "20": true
@@ -420,9 +482,9 @@
       "divergence": "—",
       "volumeRatio": 1.3706748705417018,
       "dataSource": "BINANCE_DATA",
-      "best": 8.367110596409962,
+      "best": 8.56977417486972,
       "worst": -3.199189345686152,
-      "lastPrice": 73.49,
+      "lastPrice": 72.83,
       "targets": {}
     },
     {
@@ -452,7 +514,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 2.9953917050691152,
       "worst": -6.451612903225803,
-      "lastPrice": 0.00000447,
+      "lastPrice": 0.00000438,
       "targets": {}
     },
     {
@@ -482,7 +544,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 0.8264462809917266,
       "worst": -1.5348288075560752,
-      "lastPrice": 0.3373,
+      "lastPrice": 0.3368,
       "targets": {}
     },
     {
@@ -512,7 +574,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 1.1742602160638806,
       "worst": -20.00939408172851,
-      "lastPrice": 0.2216,
+      "lastPrice": 0.2218,
       "targets": {}
     },
     {
@@ -542,7 +604,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 1.6968987712112262,
       "worst": -0.9654768870684685,
-      "lastPrice": 0.3373,
+      "lastPrice": 0.3368,
       "targets": {}
     },
     {
@@ -572,7 +634,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 3.4165571616294383,
       "worst": -16.767411300919836,
-      "lastPrice": 0.8462,
+      "lastPrice": 0.8491,
       "targets": {}
     },
     {
@@ -602,7 +664,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 0.6558935361216693,
       "worst": -13.374524714828897,
-      "lastPrice": 0.09773,
+      "lastPrice": 0.0973,
       "targets": {}
     },
     {
@@ -632,7 +694,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 5.990415335463264,
       "worst": -6.988817891373808,
-      "lastPrice": 0.2554,
+      "lastPrice": 0.2558,
       "targets": {}
     },
     {
@@ -662,7 +724,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 11.773584905660364,
       "worst": -7.547169811320761,
-      "lastPrice": 0.8462,
+      "lastPrice": 0.8491,
       "targets": {
         "10": true
       }
@@ -694,7 +756,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 5.826504097541477,
       "worst": -8.92464521287227,
-      "lastPrice": 0.09773,
+      "lastPrice": 0.0973,
       "targets": {}
     },
     {
@@ -724,7 +786,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 8.266405484818794,
       "worst": -5.2105778648384,
-      "lastPrice": 1.5525,
+      "lastPrice": 1.5415,
       "targets": {}
     },
     {
@@ -754,7 +816,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 0.868434195539621,
       "worst": -6.575954756626436,
-      "lastPrice": 2691.13,
+      "lastPrice": 2688.87,
       "targets": {}
     },
     {
@@ -814,7 +876,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 11.252012882447662,
       "worst": -2.59661835748792,
-      "lastPrice": 1.5525,
+      "lastPrice": 1.5415,
       "targets": {
         "10": true
       }
@@ -846,7 +908,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 2.806018706791381,
       "worst": -49.00366002440015,
-      "lastPrice": 338.8,
+      "lastPrice": 335.2,
       "targets": {}
     },
     {
@@ -876,7 +938,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 19.907940161104722,
       "worst": -5.523590333716901,
-      "lastPrice": 9.44,
+      "lastPrice": 9.46,
       "targets": {
         "10": true
       }
@@ -908,7 +970,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 11.976843503843586,
       "worst": -10.448894372212212,
-      "lastPrice": 10.713,
+      "lastPrice": 10.819,
       "targets": {
         "10": true
       }
@@ -940,7 +1002,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 2.7050867391943503,
       "worst": -1.205527785945308,
-      "lastPrice": 0.3373,
+      "lastPrice": 0.3368,
       "targets": {}
     },
     {
@@ -970,7 +1032,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 3.8644688644688654,
       "worst": -16.66666666666667,
-      "lastPrice": 1.0813,
+      "lastPrice": 1.0817,
       "targets": {}
     },
     {
@@ -1000,7 +1062,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 43.08035714285715,
       "worst": -4.981203007518797,
-      "lastPrice": 1.1592,
+      "lastPrice": 1.171,
       "targets": {
         "10": true,
         "20": true,
@@ -1035,7 +1097,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 22.014051522248256,
       "worst": -3.8641686182669597,
-      "lastPrice": 9.44,
+      "lastPrice": 9.46,
       "targets": {
         "10": true,
         "20": true
@@ -1068,7 +1130,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 28.7538192928852,
       "worst": -2.88083806198166,
-      "lastPrice": 10.713,
+      "lastPrice": 10.819,
       "targets": {
         "10": true,
         "20": true
@@ -1101,7 +1163,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 30.740276035131746,
       "worst": -1.3801756587201937,
-      "lastPrice": 9.44,
+      "lastPrice": 9.46,
       "targets": {
         "10": true,
         "20": true,
@@ -1135,7 +1197,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 3.373779224622676,
       "worst": -0.562296537437099,
-      "lastPrice": 0.3373,
+      "lastPrice": 0.3368,
       "targets": {}
     },
     {
@@ -1165,7 +1227,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 47.174753648496946,
       "worst": -1.097667456654599,
-      "lastPrice": 10.713,
+      "lastPrice": 10.819,
       "targets": {
         "10": true,
         "20": true,
@@ -1200,7 +1262,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 13.106796116504867,
       "worst": -0.9708737864077679,
-      "lastPrice": 1.836,
+      "lastPrice": 1.826,
       "targets": {
         "10": true
       }
@@ -1232,7 +1294,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 51.12244897959184,
       "worst": -1.1904761904761916,
-      "lastPrice": 0.8462,
+      "lastPrice": 0.8491,
       "targets": {
         "10": true,
         "20": true,
@@ -1388,7 +1450,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 49.19552767930189,
       "worst": -3.040632669757293,
-      "lastPrice": 9.767,
+      "lastPrice": 9.565,
       "targets": {
         "10": true,
         "20": true,
@@ -1423,7 +1485,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 74.40927967922096,
       "worst": -2.477445224115707,
-      "lastPrice": 1.1592,
+      "lastPrice": 1.171,
       "targets": {
         "10": true,
         "20": true,
@@ -1459,7 +1521,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 103.95303326810176,
       "worst": -4.344422700587092,
-      "lastPrice": 4.947,
+      "lastPrice": 4.834,
       "targets": {
         "10": true,
         "20": true,
@@ -1495,7 +1557,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 71.88187244737671,
       "worst": -3.864278982092359,
-      "lastPrice": 9.767,
+      "lastPrice": 9.565,
       "targets": {
         "10": true,
         "20": true,
@@ -1564,7 +1626,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 61.29870129870129,
       "worst": -1.6131237183868805,
-      "lastPrice": 10.713,
+      "lastPrice": 10.819,
       "targets": {
         "10": true,
         "20": true,
@@ -1600,7 +1662,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 25.0279670497305,
       "worst": -2.0848164344554023,
-      "lastPrice": 120.66,
+      "lastPrice": 121.07,
       "targets": {
         "10": true,
         "20": true
@@ -1633,7 +1695,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 12.4528249335023,
       "worst": -1.0124361134708448,
-      "lastPrice": 773.58,
+      "lastPrice": 774.2,
       "targets": {
         "10": true
       }
@@ -1665,7 +1727,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 0.5469915464942875,
       "worst": -81.36913641637659,
-      "lastPrice": 9.767,
+      "lastPrice": 9.565,
       "targets": {}
     },
     {
@@ -1694,8 +1756,8 @@
       "volumeRatio": 1.6081470561272133,
       "dataSource": "BINANCE_DATA",
       "best": 0.5349712700614148,
-      "worst": -48.32573806221518,
-      "lastPrice": 73.49,
+      "worst": -48.603130572617395,
+      "lastPrice": 72.83,
       "targets": {}
     },
     {
@@ -1725,7 +1787,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 78.17294281729428,
       "worst": -5.648535564853554,
-      "lastPrice": 0.2216,
+      "lastPrice": 0.2218,
       "targets": {
         "10": true,
         "20": true,
@@ -1761,7 +1823,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 56.48541114058355,
       "worst": -4.92042440318303,
-      "lastPrice": 10.713,
+      "lastPrice": 10.819,
       "targets": {
         "10": true,
         "20": true,
@@ -1797,7 +1859,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 53.33333333333332,
       "worst": -7.07692307692308,
-      "lastPrice": 0.1447,
+      "lastPrice": 0.1461,
       "targets": {
         "10": true,
         "20": true,
@@ -1833,7 +1895,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 26.486004237760678,
       "worst": -15.724322515891604,
-      "lastPrice": 1.0813,
+      "lastPrice": 1.0817,
       "targets": {
         "10": true,
         "20": true
@@ -1866,7 +1928,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 5.742296918767497,
       "worst": -70.57422969187675,
-      "lastPrice": 1.1592,
+      "lastPrice": 1.171,
       "targets": {}
     },
     {
@@ -1896,7 +1958,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 2.475780409041977,
       "worst": -60.92572658772875,
-      "lastPrice": 0.1447,
+      "lastPrice": 0.1461,
       "targets": {}
     },
     {
@@ -1926,7 +1988,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 2.4147727272727195,
       "worst": -46.46177685950415,
-      "lastPrice": 1.0813,
+      "lastPrice": 1.0817,
       "targets": {}
     },
     {
@@ -1955,8 +2017,8 @@
       "volumeRatio": 2.0445707950861105,
       "dataSource": "BINANCE_DATA",
       "best": 6.127320954907158,
-      "worst": -25.720601237842605,
-      "lastPrice": 14.124,
+      "worst": -26.949602122015914,
+      "lastPrice": 14.17,
       "targets": {}
     },
     {
@@ -1986,7 +2048,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 1.8617385352498306,
       "worst": -61.51950718685831,
-      "lastPrice": 10.713,
+      "lastPrice": 10.819,
       "targets": {}
     },
     {
@@ -2016,7 +2078,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 5.276256844201095,
       "worst": -32.10552513688404,
-      "lastPrice": 0.2554,
+      "lastPrice": 0.2558,
       "targets": {}
     },
     {
@@ -2166,7 +2228,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 6.707584392810164,
       "worst": -60.63130206049977,
-      "lastPrice": 338.8,
+      "lastPrice": 335.2,
       "targets": {}
     },
     {
@@ -2196,7 +2258,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 12.679524004924078,
       "worst": -50.348789495281075,
-      "lastPrice": 338.8,
+      "lastPrice": 335.2,
       "targets": {
         "10": true
       }
@@ -2228,7 +2290,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 7.264695054607919,
       "worst": -39.18272180635663,
-      "lastPrice": 1.0813,
+      "lastPrice": 1.0817,
       "targets": {}
     },
     {
@@ -2258,7 +2320,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 14.914034386245495,
       "worst": -46.501399440223906,
-      "lastPrice": 338.8,
+      "lastPrice": 335.2,
       "targets": {
         "10": true
       }
@@ -2290,7 +2352,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 8.644423705086327,
       "worst": -23.530097993467095,
-      "lastPrice": 0.09773,
+      "lastPrice": 0.0973,
       "targets": {}
     },
     {
@@ -2410,7 +2472,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 11.17647058823529,
       "worst": -46.568627450980394,
-      "lastPrice": 0.1447,
+      "lastPrice": 0.1461,
       "targets": {
         "10": true
       }
@@ -2472,7 +2534,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 9.218690642015963,
       "worst": -49.411168798277814,
-      "lastPrice": 10.713,
+      "lastPrice": 10.819,
       "targets": {}
     },
     {
@@ -2502,7 +2564,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 12.247870909905867,
       "worst": -18.657552666965486,
-      "lastPrice": 0.09773,
+      "lastPrice": 0.0973,
       "targets": {
         "10": true
       }
@@ -2534,7 +2596,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 5.39308620063733,
       "worst": -8.573003643795463,
-      "lastPrice": 773.58,
+      "lastPrice": 774.2,
       "targets": {}
     },
     {
@@ -2564,7 +2626,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 31.449704142011818,
       "worst": -22.485207100591715,
-      "lastPrice": 0.8462,
+      "lastPrice": 0.8491,
       "targets": {
         "10": true,
         "20": true,
@@ -2597,8 +2659,8 @@
       "volumeRatio": 2.217767791318737,
       "dataSource": "BINANCE_DATA",
       "best": 12.624475351822886,
-      "worst": -17.01917537651222,
-      "lastPrice": 14.124,
+      "worst": -18.163114146983794,
+      "lastPrice": 14.17,
       "targets": {
         "10": true
       }
@@ -2660,7 +2722,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 116.044776119403,
       "worst": -6.467661691542295,
-      "lastPrice": 4.947,
+      "lastPrice": 4.834,
       "targets": {
         "10": true,
         "20": true,
@@ -2696,7 +2758,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 20.8816705336427,
       "worst": -17.86542923433874,
-      "lastPrice": 9.44,
+      "lastPrice": 9.46,
       "targets": {
         "10": true,
         "20": true
@@ -2729,7 +2791,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 10.880829015544052,
       "worst": -19.343696027633843,
-      "lastPrice": 1.237,
+      "lastPrice": 1.227,
       "targets": {
         "10": true
       }
@@ -2761,7 +2823,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 12.235403582228427,
       "worst": -21.508878033651243,
-      "lastPrice": 154.47,
+      "lastPrice": 153.85,
       "targets": {
         "10": true
       }
@@ -2793,7 +2855,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 17.398843930635845,
       "worst": -15.144508670520231,
-      "lastPrice": 1.836,
+      "lastPrice": 1.826,
       "targets": {
         "10": true
       }
@@ -2825,7 +2887,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 55.139656883595634,
       "worst": -17.680419679568978,
-      "lastPrice": 9.767,
+      "lastPrice": 9.565,
       "targets": {
         "10": true,
         "20": true,
@@ -2861,7 +2923,7 @@
       "dataSource": "BINANCE_DATA",
       "best": 4.446414680650302,
       "worst": -11.393834058555013,
-      "lastPrice": 84022,
+      "lastPrice": 84074.01,
       "targets": {}
     }
   ]
