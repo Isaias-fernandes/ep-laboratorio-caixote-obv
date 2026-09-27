@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-27T14:01:10.236Z",
+  "generatedAt": "2026-09-27T14:06:07.920Z",
   "version": "early-warning-patterns-v1",
   "preLegVersion": "pre-leg-score-v1",
   "timeframe": "H1",
@@ -2440,6 +2440,56 @@
           "technical": 52
         }
       }
+    }
+  ],
+  "earlyLegMotorVersion": "early-leg-motor-v1",
+  "earlyLegMotorRadar": [
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 37,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Rectangle Accumulation",
+      "patternScore": 90,
+      "parts": {
+        "pattern": 15,
+        "preLeg": 22,
+        "futures": 0,
+        "obv": 8,
+        "compression": 0,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "BTCUSDT",
+      "timeframe": "H1",
+      "price": 85030.41,
+      "createdAt": "2026-09-27T13:00:00.000Z",
+      "preLeg": {
+        "VERSION": "pre-leg-score-v1"
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 68
+        }
+      },
+      "patterns": [
+        "Rectangle Accumulation"
+      ]
     }
   ],
   "stats": {
