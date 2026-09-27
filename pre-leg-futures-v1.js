@@ -17,14 +17,15 @@ async function fetchMetrics(symbol){
  const oiChangePct=oi0?((oi1-oi0)/oi0)*100:0;
  const tr=taker.at?.(-1)||{},ratio=n(tr.buySellRatio),buy=n(tr.buyVol),sell=n(tr.sellVol);
  const takerImbalance=(buy+sell)?(buy-sell)/(buy+sell):(ratio?((ratio-1)/(ratio+1)):0);
- return{oi:n(oi.openInterest),oiChangePct,fundingPct:n(prem.lastFundingRate)*100,takerBuySellRatio:ratio,takerImbalance,source:'binance-usdm'};
+ const available=!!(oi?.openInterest||prem?.symbol||hist?.length||taker?.length);return{available,oi:oi?.openInterest==null?null:n(oi.openInterest),oiChangePct:hist?.length>1?oiChangePct:null,fundingPct:prem?.lastFundingRate==null?null:n(prem.lastFundingRate)*100,takerBuySellRatio:taker?.length?ratio:null,takerImbalance:taker?.length?takerImbalance:null,source:'binance-usdm'};
 }
 function score(pre,m){
+ if(!m?.available)return{score:null,phase:'DADOS INDISPONÍVEIS',parts:{oi:null,taker:null,funding:null,technical:pre?.score||0}};
  let s=0;const parts={oi:0,taker:0,funding:0,technical:0};const tech=pre?.score||0;
  parts.technical=tech>=80?25:tech>=65?20:tech>=50?12:0;
- parts.oi=m.oiChangePct>=3?30:m.oiChangePct>=1?22:m.oiChangePct>=.25?12:m.oiChangePct< -2?-12:0;
- parts.taker=m.takerImbalance>=.12?25:m.takerImbalance>=.05?18:m.takerImbalance>0?8:m.takerImbalance<=-.12?-18:m.takerImbalance<0?-8:0;
- const f=m.fundingPct;parts.funding=Math.abs(f)<=.03?20:Math.abs(f)<=.06?12:Math.abs(f)<=.10?4:-15;
+ parts.oi=m.oiChangePct==null?0:m.oiChangePct>=3?30:m.oiChangePct>=1?22:m.oiChangePct>=.25?12:m.oiChangePct< -2?-12:0;
+ parts.taker=m.takerImbalance==null?0:m.takerImbalance>=.12?25:m.takerImbalance>=.05?18:m.takerImbalance>0?8:m.takerImbalance<=-.12?-18:m.takerImbalance<0?-8:0;
+ const f=m.fundingPct;parts.funding=f==null?0:Math.abs(f)<=.03?20:Math.abs(f)<=.06?12:Math.abs(f)<=.10?4:-15;
  s=Object.values(parts).reduce((a,v)=>a+v,0);const total=Math.round(clamp(s));
  return{score:total,phase:total>=80?'CONFIRMAÇÃO FORTE':total>=65?'CONFIRMAÇÃO':total>=50?'PARCIAL':'SEM CONFIRMAÇÃO',parts};
 }
