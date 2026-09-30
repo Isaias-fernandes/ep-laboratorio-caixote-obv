@@ -12,6 +12,39 @@ const PLANS=[
   {label:'7D',source:'1d',group:7}
 ];
 const $=id=>document.getElementById(id);
+let supabaseClient=null,lastAnalysis=null;
+const HISTORY_API='https://iayxjarkeefbzjbpfurl.supabase.co/functions/v1/ep-market-cycle-history';
+function authStatus(text){const n=$('marketCycleAuthStatus');if(n)n.textContent=text}
+async function getSession(){if(!supabaseClient)return null;const r=await supabaseClient.auth.getSession();return r.data?.session||null}
+async function syncRemote(symbol,rows){
+ const session=await getSession();
+ if(!session)return 'Histórico salvo neste navegador. Entre na Gestão Farmacêutica para enviar ao histórico remoto.';
+ const payload=rows.filter(x=>x.ready).map(x=>({symbol,timeframe:x.label,phase:x.phase,direction:x.direction,price:x.price,change_pct:x.change,volume_ratio:x.vol,range_pct:x.range,candle_time:new Date(x.time).toISOString()}));
+ if(!payload.length)return 'Sem candles suficientes para registrar.';
+ try{
+  const r=await fetch(HISTORY_API,{method:'POST',headers:{'content-type':'application/json','authorization':'Bearer '+session.access_token},body:JSON.stringify({rows:payload})});
+  const data=await r.json();if(!r.ok)throw Error(data.error||'HTTP '+r.status);
+  return 'Histórico salvo na Gestão Farmacêutica ('+data.saved+' novo(s) período(s)).';
+ }catch(e){return 'Histórico local salvo; falha no remoto: '+(e.message||'conexão indisponível')+'.'}
+}
+async function initAuth(){
+ const cfg=root.APP_CONFIG||{},api=root.supabase;
+ if(!api?.createClient||!cfg.SUPABASE_URL||!cfg.SUPABASE_ANON_KEY){authStatus('Acesso remoto indisponível; a análise continua local.');return}
+ supabaseClient=api.createClient(cfg.SUPABASE_URL,cfg.SUPABASE_ANON_KEY);
+ const login=$('marketCycleLogin'),logout=$('marketCycleLogout'),email=$('marketCycleEmail'),password=$('marketCyclePassword');
+ login?.addEventListener('click',async()=>{
+  login.disabled=true;
+  try{const {error}=await supabaseClient.auth.signInWithPassword({email:email.value.trim(),password:password.value});if(error)throw error;
+   password.value='';authStatus('Conectado ao histórico remoto.');logout?.classList.remove('hidden');
+   if(lastAnalysis){const result=await syncRemote(lastAnalysis.symbol,lastAnalysis.rows);authStatus(result)}
+  }catch(e){authStatus('Não foi possível entrar: '+(e.message||'verifique os dados de acesso')+'.')}
+  finally{login.disabled=false}
+ });
+ logout?.addEventListener('click',async()=>{await supabaseClient.auth.signOut();logout.classList.add('hidden');authStatus('Desconectado. As próximas leituras ficam apenas neste navegador.')});
+ const {data}=await supabaseClient.auth.getSession();
+ if(data?.session){logout?.classList.remove('hidden');authStatus('Conectado ao histórico remoto.')}
+ supabaseClient.auth.onAuthStateChange((_event,session)=>{if(session){logout?.classList.remove('hidden')}else{logout?.classList.add('hidden')}});
+}
 function readHistory(){try{const x=JSON.parse(localStorage.getItem(KEY)||'[]');return Array.isArray(x)?x:[]}catch(_){return[]}}
 function writeHistory(rows){try{localStorage.setItem(KEY,JSON.stringify(rows.slice(-300)));return true}catch(_){return false}}
 function fmt(x,d){return Number.isFinite(x)?x.toFixed(d==null?2:d):'—'}
@@ -103,7 +136,9 @@ async function analyze(){
    return assess(bars,p.label,loadPrior(symbol,p.label));
   });
   const result=record(symbol,rows);
-  render(symbol,rows,'Leitura concluída · '+new Date().toLocaleTimeString('pt-BR')+' · '+result.count+' novo(s) registro(s) · histórico '+(result.saved?'salvo neste navegador':'sem espaço disponível no navegador')+'.');
+  lastAnalysis={symbol:symbol,rows:rows};
+  const remote=await syncRemote(symbol,rows);
+  render(symbol,rows,'Leitura concluída · '+new Date().toLocaleTimeString('pt-BR')+' · '+result.count+' novo(s) registro(s) local(is) · '+(result.saved?'histórico local salvo.':'histórico local sem espaço disponível.')+' '+remote);
  }catch(e){render(symbol,[],'Não foi possível carregar os dados: '+(e?.message||'erro de conexão')+'. Tente novamente.')}
  finally{if(btn)btn.disabled=false}
 }
@@ -116,6 +151,7 @@ function init(){
  $('marketCycleRun').addEventListener('click',analyze);
  $('marketCycleExport').addEventListener('click',exportHistory);
  $('marketCycleSymbol').addEventListener('keydown',e=>{if(e.key==='Enter')analyze()});
+ initAuth().catch(e=>authStatus('Acesso remoto indisponível: '+(e.message||'erro ao iniciar')+'.'));
 }
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
 root.EPMarketCycleExperimental={assess:assess,aggregate:aggregate,aggregateDays:aggregateDays,plans:PLANS,historyKey:KEY};
