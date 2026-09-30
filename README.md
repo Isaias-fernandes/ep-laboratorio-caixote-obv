@@ -5,9 +5,10 @@ Laboratório experimental **totalmente independente** para validar padrões e in
 ## Isolamento
 
 - Não consulta, importa ou altera o `ep-whale-analytics`.
-- Não usa Supabase, Railway, banco remoto, Reversal Gate ou os cinco motores oficiais.
-- Não possui ligação com a Gestão Farmacêutica.
-- Funciona como site estático gratuito; arquivos importados e histórico ficam somente no navegador.
+- As centrais e os motores permanecem independentes; a leitura de ciclo é experimental e não envia sinais aos cinco motores nem ao Reversal Gate.
+- O módulo de ciclo pode gravar seus snapshots em `public.ep_market_cycle_history`, tabela isolada na Gestão Farmacêutica, por meio da Edge Function autenticada `ep-market-cycle-history`.
+- Essa tabela não se relaciona com pacientes, medicamentos, estoque ou dispensações. O histórico local continua disponível no navegador e pode ser exportado em JSON.
+- Os demais módulos e históricos do laboratório não são enviados a esse banco.
 
 ## Lógica implementada
 
