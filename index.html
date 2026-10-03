@@ -10,9 +10,37 @@
   <header>
     <div><span class="eyebrow">LABORATÓRIO ISOLADO</span><h1>Caixote · Bandeira · OBV</h1>
     <p>Laboratório experimental isolado dos cinco motores oficiais.</p></div>
-    <span class="pill safe">ISOLADO</span>
+    <a class="pill safe" href="#signalInterpretationCenter">ABRIR CENTRAL DE INTERPRETAÇÃO</a>
   </header>
   <main>
+    <section class="panel interpretation-center signal-interpretation-center" id="signalInterpretationCenter">
+      <div class="center-title"><div><span class="eyebrow">CENTRAL 3 · HISTÓRICO H1</span><h2>Central de Interpretação dos Sinais</h2></div><span class="pill watch">LEITURA EXPERIMENTAL</span></div>
+      <p>Interpreta os registros permanentes H1/96/score ≥ 80 a partir dos indicadores e do acompanhamento de preço. O score é uma pontuação do modelo, não uma probabilidade nem uma recomendação de compra ou venda.</p>
+      <section id="signalInterpretationStatus" class="notice">Carregando varredura e histórico permanente…</section>
+      <div class="summary signal-summary">
+        <article><span>Sinais arquivados</span><strong id="signalArchivedTotal">—</strong></article>
+        <article><span>Em acompanhamento</span><strong id="signalCollectingTotal">—</strong></article>
+        <article><span>96 velas concluídas</span><strong id="signalCompletedTotal">—</strong></article>
+        <article><span>Primeiro movimento de ±1% nos concluídos</span><strong id="signalOnePctSummary">—</strong></article>
+      </div>
+      <div class="controls signal-filters">
+        <div><label for="signalFilterAsset">Ativo</label><select id="signalFilterAsset"><option value="">Todos os ativos</option></select></div>
+        <div><label for="signalFilterDirection">Direção do modelo</label><select id="signalFilterDirection"><option value="">Todas</option><option value="COMPRA">COMPRA</option><option value="VENDA">VENDA</option></select></div>
+        <div><label for="signalFilterStatus">Acompanhamento</label><select id="signalFilterStatus"><option value="">Todos</option><option value="COLETANDO">Em acompanhamento</option><option value="CONCLUIDO_96">96 velas concluídas</option></select></div>
+        <div><label for="signalFilterText">Buscar ativo ou padrão</label><input id="signalFilterText" type="search" placeholder="Ex.: BTCUSDT, engolfo"></div>
+      </div>
+      <article class="panel signal-reading" aria-live="polite">
+        <span class="eyebrow">LEITURA DO REGISTRO MAIS RECENTE</span>
+        <h3 id="signalReadingTitle">Aguardando histórico…</h3>
+        <p id="signalReadingBody">A central carregará os dados permanentes do laboratório.</p>
+        <div id="signalReadingFacts" class="signal-chips"></div>
+        <p id="signalReadingOutcome" class="signal-outcome"></p>
+      </article>
+      <p id="signalInterpretationCount" class="small">Aguardando registros.</p>
+      <div class="table-wrap"><table class="signal-table"><thead><tr><th>Data</th><th>Ativo</th><th>Direção</th><th>Score</th><th>Padrão</th><th>RSI</th><th>CCI</th><th>MACD hist.</th><th>Volume / OBV</th><th>Acompanhamento / ±1%</th></tr></thead><tbody id="signalInterpretationBody"><tr><td colspan="10">Carregando histórico…</td></tr></tbody></table></div>
+      <small>O resultado de ±1% compara excursões registradas depois da entrada do sinal. A ordem dentro de uma mesma vela H1 pode ser indeterminada. A leitura é experimental e não prevê lucro.</small>
+    </section>
+
     <section class="panel controls">
       <div><label>Ativo</label><input id="symbol" value="BTCUSDT" maxlength="20"></div>
       <div><label>Período</label><select id="interval"><option>15m</option><option>30m</option><option selected>1h</option><option>4h</option><option>1d</option></select></div>
@@ -61,33 +89,7 @@
       <div class="table-wrap"><table><thead><tr><th>Mercado</th><th>Ativo</th><th>Direção</th><th>Score</th><th>Padrão</th><th>RSI</th><th>CCI</th><th>MACD Hist.</th><th>Entrada</th><th>Melhor</th><th>Pior</th><th>Alvos</th><th>Fluxo/Tape</th><th>Origem</th></tr></thead><tbody id="trackingCenterBody"></tbody></table></div>
     </section>
 
-    <section class="panel interpretation-center signal-interpretation-center" id="signalInterpretationCenter">
-      <div class="center-title"><div><span class="eyebrow">CENTRAL 3 · HISTÓRICO H1</span><h2>Interpretação dos Sinais</h2></div><span class="pill watch">LEITURA EXPERIMENTAL</span></div>
-      <p>Interpreta os registros permanentes H1/96/score ≥ 80 a partir dos indicadores e do acompanhamento de preço. O score é uma pontuação do modelo, não uma probabilidade nem uma recomendação de compra ou venda.</p>
-      <section id="signalInterpretationStatus" class="notice">Carregando varredura e histórico permanente…</section>
-      <div class="summary signal-summary">
-        <article><span>Sinais arquivados</span><strong id="signalArchivedTotal">—</strong></article>
-        <article><span>Em acompanhamento</span><strong id="signalCollectingTotal">—</strong></article>
-        <article><span>96 velas concluídas</span><strong id="signalCompletedTotal">—</strong></article>
-        <article><span>Primeiro movimento de ±1% nos concluídos</span><strong id="signalOnePctSummary">—</strong></article>
-      </div>
-      <div class="controls signal-filters">
-        <div><label for="signalFilterAsset">Ativo</label><select id="signalFilterAsset"><option value="">Todos os ativos</option></select></div>
-        <div><label for="signalFilterDirection">Direção do modelo</label><select id="signalFilterDirection"><option value="">Todas</option><option value="COMPRA">COMPRA</option><option value="VENDA">VENDA</option></select></div>
-        <div><label for="signalFilterStatus">Acompanhamento</label><select id="signalFilterStatus"><option value="">Todos</option><option value="COLETANDO">Em acompanhamento</option><option value="CONCLUIDO_96">96 velas concluídas</option></select></div>
-        <div><label for="signalFilterText">Buscar ativo ou padrão</label><input id="signalFilterText" type="search" placeholder="Ex.: BTCUSDT, engolfo"></div>
-      </div>
-      <article class="panel signal-reading" aria-live="polite">
-        <span class="eyebrow">LEITURA DO REGISTRO MAIS RECENTE</span>
-        <h3 id="signalReadingTitle">Aguardando histórico…</h3>
-        <p id="signalReadingBody">A central carregará os dados permanentes do laboratório.</p>
-        <div id="signalReadingFacts" class="signal-chips"></div>
-        <p id="signalReadingOutcome" class="signal-outcome"></p>
-      </article>
-      <p id="signalInterpretationCount" class="small">Aguardando registros.</p>
-      <div class="table-wrap"><table class="signal-table"><thead><tr><th>Data</th><th>Ativo</th><th>Direção</th><th>Score</th><th>Padrão</th><th>RSI</th><th>CCI</th><th>MACD hist.</th><th>Volume / OBV</th><th>Acompanhamento / ±1%</th></tr></thead><tbody id="signalInterpretationBody"><tr><td colspan="10">Carregando histórico…</td></tr></tbody></table></div>
-      <small>O resultado de ±1% compara excursões registradas depois da entrada do sinal. A ordem dentro de uma mesma vela H1 pode ser indeterminada. A leitura é experimental e não prevê lucro.</small>
-    </section>
+
 
     <section class="panel interpretation-center" id="marketCyclePanel">
       <div class="center-title"><div><span class="eyebrow">EXPERIMENTO INDEPENDENTE</span><h2>Leitura de Ciclo do Mercado · Multitemporal</h2></div><span class="pill watch">OBSERVACIONAL · NÃO É SINAL</span></div>
