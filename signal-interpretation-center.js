@@ -2,6 +2,8 @@
   const HISTORY_URL = "data/h1-history.json";
   const SIGNALS_URL = "data/auto-signals.json";
   const state = { records: [], generatedAt: null, historyUpdatedAt: null, errors: [] };
+  let page = 0;
+  const PAGE_SIZE = 10;
   const $ = (id) => document.getElementById(id);
   const fmtNum = (value, digits = 2) => {
     const n = Number(value);
@@ -142,7 +144,15 @@
   function renderTable(records) {
     const body = $("signalInterpretationBody");
     body.replaceChildren();
-    const shown = records.slice(0, 200);
+    const totalPages = Math.max(1, Math.ceil(records.length / PAGE_SIZE));
+    page = Math.min(page, totalPages - 1);
+    const shown = records.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+    $("signalPreviousPage").disabled = page === 0;
+    $("signalNextPage").disabled = page >= totalPages - 1;
+    $("signalPageLabel").textContent = "Página " + (page + 1) + " de " + totalPages;
+    $("signalInterpretationCount").textContent = records.length
+      ? "Exibindo " + (page * PAGE_SIZE + 1) + "–" + (page * PAGE_SIZE + shown.length) + " de " + records.length + " registros."
+      : "Nenhum registro para estes filtros.";
     if (!shown.length) {
       const row = create("tr");
       const cell = create("td", "signal-empty", "Nenhum registro corresponde aos filtros.");
@@ -183,7 +193,7 @@
       });
       body.appendChild(row);
     }
-    $("signalInterpretationCount").textContent = `Exibindo ${shown.length} de ${records.length} registros.`;
+
   }
   function render() {
     updateSummary();
@@ -228,9 +238,21 @@
     render();
   }
   document.addEventListener("DOMContentLoaded", () => {
+    const navigation = create("div", "controls");
+    navigation.setAttribute("aria-label", "Páginas do histórico");
+    const previous = create("button", "ghost", "Anterior");
+    previous.id = "signalPreviousPage"; previous.type = "button";
+    const label = create("span"); label.id = "signalPageLabel"; label.setAttribute("aria-live", "polite");
+    const next = create("button", "ghost", "Próxima");
+    next.id = "signalNextPage"; next.type = "button";
+    previous.addEventListener("click", () => { page = Math.max(0, page - 1); render(); });
+    next.addEventListener("click", () => { page++; render(); });
+    navigation.append(previous, label, next);
+    $("signalInterpretationCount").after(navigation);
+    const changeFilter = () => { page = 0; render(); };
     for (const id of ["signalFilterAsset", "signalFilterDirection", "signalFilterStatus", "signalFilterText"]) {
-      $(id).addEventListener("input", render);
-      $(id).addEventListener("change", render);
+      $(id).addEventListener("input", changeFilter);
+      $(id).addEventListener("change", changeFilter);
     }
     load().catch((error) => {
       $("signalInterpretationStatus").textContent = `Falha ao carregar os registros: ${error.message}`;
