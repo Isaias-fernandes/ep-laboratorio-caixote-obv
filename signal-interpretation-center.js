@@ -146,7 +146,7 @@
     if (!shown.length) {
       const row = create("tr");
       const cell = create("td", "signal-empty", "Nenhum registro corresponde aos filtros.");
-      cell.colSpan = 10;
+      cell.colSpan = 11;
       row.appendChild(cell);
       body.appendChild(row);
       return;
@@ -163,6 +163,15 @@
       addCell(row, fmtNum(record.indicators?.macdHistogram, 5));
       addCell(row, `${fmtNum(record.indicators?.volumeRatio, 2)}× · OBV ${record.indicators?.obv || "—"}`);
       addCell(row, `${record.tracking?.status === "CONCLUIDO_96" ? "Concluído" : `${Number(record.tracking?.candlesObserved) || 0}/96`} · ${orderLabel(record)}`);
+      const monitorCell = create("td");
+      const monitorButton = create("button", "primary", "Monitorar");
+      monitorButton.type = "button";
+      monitorButton.addEventListener("click", (event) => {
+        event.stopPropagation();
+        window.dispatchEvent(new CustomEvent("lab-monitor-signal", { detail: record }));
+      });
+      monitorCell.appendChild(monitorButton);
+      row.appendChild(monitorCell);
       row.tabIndex = 0;
       row.setAttribute("aria-label", `Interpretar ${record.symbol} ${record.direction} ${fmtDate(record.createdAt || record.entryTime)}`);
       row.addEventListener("click", () => renderInterpretation(record));
