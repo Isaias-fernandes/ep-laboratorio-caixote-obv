@@ -4,7 +4,7 @@ import {SYMBOLS} from '../lab-live-core.mjs';
 const HOUR=3600000,OUT='data/auto-signals.json',CHECK='data/h1-checkpoints.json',TARGETS=[10,20,30,40,50];
 function load(path,fallback){try{return JSON.parse(fs.readFileSync(path,'utf8'))}catch{return fallback}}
 const previous=load(OUT,{signals:[]}),signals=previous.signals||[],check=load(CHECK,{version:1,assets:{}}),ids=new Set(signals.map(s=>s.id));
-const stats={crypto:{ok:0,error:0},b3:{ok:0,error:0}},errors={crypto:[],b3:[]},sources={};
+const stats={crypto:{ok:0,error:0}},errors={crypto:[]},sources={};
 async function candles(symbol,limit){
  for(const host of ['https://data-api.binance.vision','https://api.binance.com']){
   const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),10000);

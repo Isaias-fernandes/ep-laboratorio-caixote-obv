@@ -59,20 +59,7 @@ async function cryptoCandles(symbol) {
   throw new Error(errs.join(' | '));
 }
 
-async function b3Candles(symbol) {
-  const errs=[];
-  for (const host of ['query1.finance.yahoo.com','query2.finance.yahoo.com']) {
-    try {
-      const u = `https://${host}/v8/finance/chart/${encodeURIComponent(symbol+'.SA')}?range=3mo&interval=1h&includePrePost=false&events=div%2Csplits`;
-      const j = await json(u, {'User-Agent':'Mozilla/5.0'});
-      const d = j.chart?.result?.[0];
-      if (!d) throw new Error('sem resultado');
-      const q=d.indicators?.quote?.[0], t=d.timestamp||[];
-      return normalize(t.map((ts,i)=>({time:ts*1000,open:q.open[i],high:q.high[i],low:q.low[i],close:q.close[i],volume:q.volume[i]})));
-    } catch(e) { errs.push(`${host}:${e.message}`); }
-  }
-  throw new Error(errs.join(' | '));
-}
+
 
 function compactSignal(s) {
   return {
@@ -214,7 +201,7 @@ async function main() {
   for (const [key, records] of groups) {
     const [market,symbol]=key.split('|');
     try {
-      const candles = market === 'CRIPTO' ? await cryptoCandles(symbol) : await b3Candles(symbol);
+      const candles = await cryptoCandles(symbol);
       for (const r of records) changed = processRecord(r,candles) || changed;
     } catch(e) {
       errors.push({market,symbol,error:e.message});

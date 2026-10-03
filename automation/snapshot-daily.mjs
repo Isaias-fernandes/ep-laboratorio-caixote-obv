@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {gunzipSync} from 'node:zlib';
 
 /*
   SNAPSHOT DIARIO DOS DADOS EXPERIMENTAIS
@@ -15,10 +16,11 @@ const SOURCES = [
 ];
 fs.mkdirSync(DIR,{recursive:true});
 for (const [name,src] of SOURCES) {
-  if (!fs.existsSync(src)) { console.warn('ausente:',src); continue; }
+  if (!fs.existsSync(src) && !fs.existsSync(src+'.gz')) { console.warn('ausente:',src); continue; }
   const dst=path.join(DIR,`${DAY}-${name}.json`);
-  if (!fs.existsSync(dst)) {
-    fs.copyFileSync(src,dst);
+  if (!fs.existsSync(dst) && !fs.existsSync(dst+'.gz')) {
+    if(fs.existsSync(src)) fs.copyFileSync(src,dst);
+    else fs.writeFileSync(dst,gunzipSync(fs.readFileSync(src+'.gz')));
     console.log('snapshot criado:',dst);
   } else console.log('snapshot diario ja existe:',dst);
 }

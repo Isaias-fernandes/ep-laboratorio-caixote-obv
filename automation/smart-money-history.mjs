@@ -21,7 +21,7 @@ function normalize(rows){return (rows||[]).map((r,i)=>({t:+(r.time??r.timestamp?
 async function json(url,headers={}){const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),9000);try{const r=await fetch(url,{headers,signal:ctl.signal});if(!r.ok)throw Error(`HTTP ${r.status}`);return await r.json()}finally{clearTimeout(timer)}}
 
 async function spotCandles(market,symbol){
-  if(market==='CRIPTO'){
+  {
     const errs=[];
     for(const base of ['https://data-api.binance.vision','https://api.binance.com']){
       try{const j=await json(`${base}/api/v3/klines?symbol=${encodeURIComponent(symbol)}&interval=1h&limit=1000`);return normalize(j.map(x=>({time:x[0],open:x[1],high:x[2],low:x[3],close:x[4],volume:x[5]})))}catch(e){errs.push(`${base}:${e.message}`)}
@@ -29,11 +29,7 @@ async function spotCandles(market,symbol){
     try{const pair=symbol.replace(/USDT$/,'-USDT'),j=await json(`https://api.kucoin.com/api/v1/market/candles?type=1hour&symbol=${pair}`);return normalize((j?.data||[]).slice(0,1000).reverse().map(x=>({time:+x[0]*1000,open:x[1],close:x[2],high:x[3],low:x[4],volume:x[5]})))}catch(e){errs.push(`KUCOIN:${e.message}`)}
     throw Error(errs.join(' | '));
   }
-  const errs=[];
-  for(const host of ['query1.finance.yahoo.com','query2.finance.yahoo.com']){
-    try{const u=`https://${host}/v8/finance/chart/${encodeURIComponent(symbol+'.SA')}?range=3mo&interval=1h&includePrePost=false&events=div%2Csplits`,j=await json(u,{'User-Agent':'Mozilla/5.0'}),d=j.chart?.result?.[0];if(!d)throw Error('sem resultado');const q=d.indicators?.quote?.[0],t=d.timestamp||[];return normalize(t.map((ts,i)=>({time:ts*1000,open:q.open[i],high:q.high[i],low:q.low[i],close:q.close[i],volume:q.volume[i]})))}catch(e){errs.push(`${host}:${e.message}`)}
-  }
-  throw Error(errs.join(' | '));
+
 }
 
 function liquiditySweep(c){
@@ -121,7 +117,7 @@ async function main(){
   const todo=h.records.filter(r=>!r.smartMoneyObserver||r.smartMoneyObserver.version!==VERSION),groups=new Map();
   for(const r of todo){const key=`${r.market}|${r.symbol}`;if(!groups.has(key))groups.set(key,[]);groups.get(key).push(r)}
   const errors=[];let updated=0;
-  for(const [key,recs] of groups){const [market,symbol]=key.split('|');try{const candles=await spotCandles(market,symbol);for(const r of recs){let fut={available:false,source:null};if(market==='CRIPTO')fut=await futuresContext(symbol,r.entryTime);const snap=buildSnapshot(r,candles,fut);if(snap){r.smartMoneyObserver=snap;updated++}await sleep(40)}}catch(e){errors.push({market,symbol,error:e.message})}await sleep(80)}
+  for(const [key,recs] of groups){const [market,symbol]=key.split('|');try{const candles=await spotCandles(market,symbol);for(const r of recs){let fut={available:false,source:null};fut=await futuresContext(symbol,r.entryTime);const snap=buildSnapshot(r,candles,fut);if(snap){r.smartMoneyObserver=snap;updated++}await sleep(40)}}catch(e){errors.push({market,symbol,error:e.message})}await sleep(80)}
   const usable=h.records.filter(r=>r.smartMoneyObserver),full=usable.filter(r=>r.smartMoneyObserver?.confluence?.fullAny);
   const mae=a=>avg(a.map(r=>Math.abs(num(r.tracking?.mae)||0))),favFirst=(a,t='1')=>{const done=a.filter(r=>r.tracking?.order?.[t]);return done.length?done.filter(r=>String(r.tracking.order[t]).startsWith('FAVORAVEL_PRIMEIRO')).length/done.length*100:null};
   h.smartMoneySummary={version:VERSION,updatedAt:new Date().toISOString(),recordsWithObserver:usable.length,fullConfluence:full.length,fullAvgAbsMae:mae(full),baselineAvgAbsMae:mae(usable),fullFavFirst1Pct:favFirst(full,'1'),baselineFavFirst1Pct:favFirst(usable,'1'),errors};
