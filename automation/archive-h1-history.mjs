@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import {closedCandles} from '../lab-signal-engine.mjs';
 
 /*
   HISTORICO EXPERIMENTAL H1 96/80
@@ -47,13 +48,13 @@ async function cryptoCandles(symbol) {
   for (const base of ['https://data-api.binance.vision','https://api.binance.com']) {
     try {
       const j = await json(`${base}/api/v3/klines?symbol=${encodeURIComponent(symbol)}&interval=1h&limit=1000`);
-      return normalize(j.map(x => ({time:x[0],open:x[1],high:x[2],low:x[3],close:x[4],volume:x[5]})));
+      return closedCandles(j.map(x => ({time:x[0],open:x[1],high:x[2],low:x[3],close:x[4],volume:x[5]})),3600000);
     } catch(e) { errs.push(`${base}:${e.message}`); }
   }
   try {
     const pair = symbol.replace(/USDT$/,'-USDT');
     const j = await json(`https://api.kucoin.com/api/v1/market/candles?type=1hour&symbol=${pair}`);
-    return normalize((j?.data || []).slice(0,1000).reverse().map(x => ({time:+x[0]*1000,open:x[1],close:x[2],high:x[3],low:x[4],volume:x[5]})));
+    return closedCandles((j?.data || []).slice(0,1000).reverse().map(x => ({time:+x[0]*1000,open:x[1],close:x[2],high:x[3],low:x[4],volume:x[5]})),3600000);
   } catch(e) { errs.push(`KUCOIN:${e.message}`); }
   throw new Error(errs.join(' | '));
 }
@@ -86,6 +87,9 @@ function compactSignal(s) {
     entry: s.entry,
     entryTime: s.entryTime,
     createdAt: s.createdAt,
+    confirmedAt: s.confirmedAt ?? null,
+    detectedAt: s.detectedAt ?? null,
+    retroactive: !!s.retroactive,
     pattern: s.pattern,
     patternType: s.patternType,
     patternConfirmed: !!s.patternConfirmed,
@@ -144,7 +148,7 @@ function processRecord(rec, candles) {
 
   if (tr.lastProcessedCandleTime == null) {
     const hasEntryCandle = candles.some(c => c.t === rec.entryTime);
-    tr.coverage = hasEntryCandle ? 'COMPLETA_DESDE_ENTRADA' : 'PARCIAL_INICIO_NAO_DISPONIVEL';
+    tr.coverage = hasEntryCandle && all[0].t===rec.entryTime+3600000 ? 'COMPLETA_DESDE_ENTRADA' : 'PARCIAL_INICIO_NAO_DISPONIVEL';
   }
 
   const fresh = all.filter(c => tr.lastProcessedCandleTime == null || c.t > tr.lastProcessedCandleTime);
@@ -153,6 +157,8 @@ function processRecord(rec, candles) {
   let changed=false;
   for (const c of fresh) {
     if (tr.candlesObserved >= HORIZON) break;
+    const expected=(tr.lastProcessedCandleTime ?? rec.entryTime)+3600000;
+    if(c.t!==expected)tr.coverage='PARCIAL_LACUNA';
     const fav = rec.direction === 'COMPRA' ? pct(entry,c.h) : -pct(entry,c.l);
     const adv = rec.direction === 'COMPRA' ? pct(entry,c.l) : -pct(entry,c.h);
     tr.mfe = Math.max(num(tr.mfe) || 0, fav);
@@ -223,7 +229,7 @@ async function main() {
     collecting: history.records.filter(r=>r.tracking?.status==='COLETANDO').length,
     completed96: history.records.filter(r=>r.tracking?.status==='CONCLUIDO_96').length,
     completeCoverage: history.records.filter(r=>r.tracking?.coverage==='COMPLETA_DESDE_ENTRADA').length,
-    partialCoverage: history.records.filter(r=>r.tracking?.coverage==='PARCIAL_INICIO_NAO_DISPONIVEL').length,
+    partialCoverage: history.records.filter(r=>String(r.tracking?.coverage||'').startsWith('PARCIAL')).length,
     errors
   };
 

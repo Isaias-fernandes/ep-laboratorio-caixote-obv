@@ -131,7 +131,7 @@
     body.textContent =
       `O modelo classificou este registro como ${direction.toLowerCase()} em ${fmtDate(record.createdAt || record.entryTime)}. ` +
       `Padrão: ${record.pattern || "não informado"} (${record.patternType || "tipo não informado"}).${patternNote} ` +
-      `${confluences} de 4 confirmações auxiliares aparecem no registro.${scoreNote}`;
+      `${confluences} de 4 confirmações auxiliares aparecem no registro.${scoreNote}` + (record.retroactive ? ' Registro recuperado retrospectivamente; não foi um alerta recebido ao vivo.' : '');
     for (const [label, active] of evidence) {
       facts.appendChild(create("span", active ? "signal-chip is-on" : "signal-chip", `${active ? "✓" : "·"} ${label}`));
     }
@@ -163,7 +163,7 @@
     }
     for (const record of shown) {
       const row = create("tr");
-      addCell(row, fmtDate(record.createdAt || record.entryTime));
+      addCell(row, fmtDate(record.confirmedAt || record.createdAt || record.entryTime) + (record.retroactive ? ' · recuperado' : ''));
       addCell(row, record.symbol);
       addCell(row, record.direction, record.direction === "COMPRA" ? "signal-buy" : "signal-sell");
       addCell(row, `${fmtNum(record.score, 0)}/100`);
