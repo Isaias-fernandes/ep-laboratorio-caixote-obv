@@ -69,7 +69,7 @@ async function readNow(){
  }catch(e){if(g===generation){$('labLiveNow').textContent='Falha na leitura atual: '+String(e);$('labLiveContext').textContent='';$('labLiveIntra').textContent='Vela em formação: sem dados.'}}
 }
 function connect(symbol,interval,g){
- socket=new WebSocket(`wss://stream.binance.com:9443/ws/${symbol.toLowerCase()}@kline_${interval}`);
+ socket=new WebSocket(`wss://data-stream.binance.vision/ws/${symbol.toLowerCase()}@kline_${interval}`);
  socket.onmessage=e=>{
   if(g!==generation)return;
   try{const k=JSON.parse(e.data).k;if(!k)return;if(k.x){readNow();return}
