@@ -29,7 +29,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - name: Analisar 25 criptos e 20 B3 em M1 M5 M15 M30 H1
+      - name: Analisar 50 criptos em M1 M5 M15 M30 H1
         run: node automation/scan-modelos-ab-all-assets.mjs
       - name: Publicar somente dados dos Modelos A-B
         run: |
