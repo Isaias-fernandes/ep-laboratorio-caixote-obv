@@ -48,7 +48,7 @@
       project: PROJECT,
       exportedAt,
       scope: 'Dados locais deste projeto e desta origem/navegador',
-      inventory: { keysWithData: inventory.length, approxBytes, entries: inventory },
+      inventory: { keysWithData: inventory.length, approxBytes: bytesApprox, entries: inventory },
       retentionNote: RETENTION_NOTE,
       localStorage: stored
     };
