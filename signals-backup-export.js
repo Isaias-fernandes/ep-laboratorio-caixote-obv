@@ -76,7 +76,7 @@
     section.innerHTML = '<h2>BACKUP LOCAL DE TODOS OS SINAIS</h2>' +
       '<p class="sub">Baixa em um arquivo JSON os históricos e experimentos deste notebook que estão salvos neste navegador. O arquivo não apaga nem envia os dados.</p>' +
       '<button type="button" id="epSignalsBackupButton">Exportar todos os sinais</button>' +
-      '<p id="epSignalsBackupStatus" class="sub" role="status" aria-live="polite">Inclui todos os grupos de dados locais reconhecidos por este projeto. ${RETENTION_NOTE}</p>';
+      '<p id="epSignalsBackupStatus" class="sub" role="status" aria-live="polite">Inclui todos os grupos de dados locais reconhecidos por este projeto. ' + RETENTION_NOTE + '</p>';
     main.prepend(section);
     document.getElementById('epSignalsBackupButton').addEventListener('click', exportBackup);
   }
