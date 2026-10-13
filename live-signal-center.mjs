@@ -9,7 +9,10 @@ panel.innerHTML=`<span class="eyebrow">COLETA M5 · M15 · CONTEXTO H1</span><h2
 <div><label for="labLiveInterval">Período</label><select id="labLiveInterval"><option value="5m">M5</option><option value="15m">M15</option><option value="1h">H1</option></select></div>
 <div><label for="labLiveFilter">Radar</label><select id="labLiveFilter"><option value="active">Sinais e pré-sinais</option><option value="confirmed">Confirmados</option><option value="all">Todos os ativos</option></select></div>
 <button id="labLiveRefresh" class="primary">Atualizar</button></div>
-<article class="panel"><h3 id="labLiveNowTitle">Leitura direta da Binance</h3><p id="labLiveNow" role="status">Aguardando…</p><p id="labLiveContext"></p><button id="labLiveMonitor" disabled>Monitorar sinal confirmado</button></article>
+<article class="panel"><h3 id="labLiveNowTitle">Leitura direta da Binance</h3><p id="labLiveNow" role="status">Aguardando…</p><p id="labLiveContext"></p>
+<div class="notice" id="labLiveFlowInterpretation" role="status">Fluxo comprador/vendedor: aguardando dados ao vivo da Binance.</div>
+<p class="small" id="labLiveFlowDetail">A leitura usa o Tape Reading que já está ativo nesta página; não cria consultas ao Supabase nem altera o score ou o sinal do Motor 6.</p>
+<button id="labLiveMonitor" disabled>Monitorar sinal confirmado</button></article>
 <p id="labLiveIntra" class="small">Vela em formação: conectando…</p>
 <p id="labLiveCount"></p><div class="table-wrap"><table><thead><tr><th>Ativo</th><th>Período</th><th>Estado</th><th>Direção</th><th>Score</th><th>Padrão</th><th>Idade da vela</th></tr></thead><tbody id="labLiveRows"></tbody></table></div>
 <div class="controls"><button id="labLivePrev">Anterior</button><span id="labLivePage"></span><button id="labLiveNext">Próxima</button></div>
@@ -25,6 +28,31 @@ const fmt=n=>Number.isFinite(n)?n.toLocaleString('pt-BR',{maximumFractionDigits:
 const date=t=>t?new Date(t).toLocaleString('pt-BR'):'—';
 let feed=null,page=0,busy=false,selected=null,socket=null,context=[],generation=0;
 function cells(body,values){const tr=document.createElement('tr');for(const v of values){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr);return tr}
+function renderFlow(symbol,directionNow){
+ const headline=$('labLiveFlowInterpretation'),detail=$('labLiveFlowDetail');
+ if(!headline||!detail)return;
+ const tape=window.TapeReadingExperimental?.get?.(symbol,'CRIPTO');
+ if(!tape?.available||!tape.connected||!tape.updatedAt||Date.now()-tape.updatedAt>90000||!tape.trades?.length){
+  headline.textContent='Fluxo '+symbol+': aguardando amostra ao vivo ou reconectando.';
+  detail.textContent='Sem amostra recente, não classifico pressão compradora ou vendedora. O Motor 6 continua usando a leitura já carregada; nenhuma consulta nova ao Supabase é feita.';
+  return;
+ }
+ const buy=Number(tape.buyNotional)||0,sell=Number(tape.sellNotional)||0,total=buy+sell,delta=total?(buy-sell)/total:0,book=tape.bookImbalance;
+ const parts=[
+  delta>.08?'COMPRA':delta<-.08?'VENDA':'NEUTRO',
+  Number.isFinite(book)?(book>.08?'COMPRA':book<-.08?'VENDA':'NEUTRO'):'SEM BOOK',
+  tape.persistence==='COMPRA PERSISTENTE'?'COMPRA':tape.persistence==='VENDA PERSISTENTE'?'VENDA':'NEUTRO'
+ ];
+ const buyVotes=parts.filter(x=>x==='COMPRA').length,sellVotes=parts.filter(x=>x==='VENDA').length;
+ const direction=directionNow==='BUY'||directionNow==='COMPRA'?'COMPRA':directionNow==='SELL'||directionNow==='VENDA'?'VENDA':null;
+ let reading=buyVotes>=2?'PRESSÃO COMPRADORA':sellVotes>=2?'PRESSÃO VENDEDORA':'FLUXO MISTO / SEM CONFLUÊNCIA';
+ if(direction&&((direction==='COMPRA'&&sellVotes>=2)||(direction==='VENDA'&&buyVotes>=2)))reading+=' · DIVERGE DO SINAL';
+ else if(direction&&((direction==='COMPRA'&&buyVotes>=2)||(direction==='VENDA'&&sellVotes>=2)))reading+=' · ALINHADO AO SINAL';
+ headline.textContent=reading+' · '+symbol;
+ const last=tape.largeTrades?.at(-1),large=last?' · último grande negócio: '+last.side+' '+fmt(last.notional)+' USDT':'';
+ const suffix=direction?' Comparado ao sinal de '+direction+'.':' Lado do sinal ainda não definido.';
+ detail.textContent='Agressões em 60s: compra '+fmt(buy)+' USDT / venda '+fmt(sell)+' USDT (delta '+(delta>=0?'+':'')+(delta*100).toFixed(1)+'%). Book top 10: '+(Number.isFinite(book)?(book>=0?'+':'')+(book*100).toFixed(1)+'%':'indisponível')+'; persistência: '+tape.persistence+'; velocidade: '+fmt(tape.speed)+' negócios/s'+large+'.'+suffix+' Book mostra ordens abertas e pode mudar/cancelar; confluência é observacional, não confirma execução futura.';
+}
 function render(){
  const interval=$('labLiveInterval').value,filter=$('labLiveFilter').value;
  const rows=(feed?.state||[]).filter(s=>s.interval===interval&&(filter==='all'||filter==='confirmed'&&s.data.stage==='CONFIRMED'||filter==='active'&&s.data.stage!=='NO_SIGNAL')).sort((a,b)=>b.data.score-a.data.score||a.symbol.localeCompare(b.symbol));
@@ -52,12 +80,15 @@ async function load(){
 }
 async function readNow(){
  const symbol=asset.value,interval=$('labLiveInterval').value,g=++generation;
+ window.TapeReadingExperimental?.watch?.(symbol);
+ renderFlow(symbol,null);
  if(socket){socket.close();socket=null}selected=null;$('labLiveMonitor').disabled=true;context=[];
  $('labLiveNow').textContent='Consultando '+symbol+' '+interval+'…';$('labLiveIntra').textContent='Vela em formação: aguardando conexão.';
  try{
   const raw=await getJson(`https://data-api.binance.vision/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=120`);if(g!==generation)return;
   const now=Date.now(),rows=raw.map(x=>({t:+x[0],o:+x[1],h:+x[2],l:+x[3],c:+x[4],v:+x[5]})),x=reading(rows,interval,now);
   context=rows.filter(c=>c.t+INTERVALS[interval]<=now).slice(-96);
+  renderFlow(symbol,x.direction);
   $('labLiveNowTitle').textContent=symbol+' · '+interval+' · '+labels[x.stage];
   $('labLiveNow').textContent=`${direction(x.direction)} · score ${x.score}/100 · ${x.pattern} · RSI ${fmt(x.indicators.rsi)} · CCI ${fmt(x.indicators.cci)} · MACD ${fmt(x.indicators.macdHistogram)} · volume ${fmt(x.indicators.volumeRatio)}× · OBV ${x.indicators.obv} · vela fechada ${date(x.closedAt)}.`;
   if(x.stage==='CONFIRMED'){selected={id:`LIVE|${symbol}|${interval}|${x.candleTime}|${x.direction}`,market:'CRIPTO',symbol,direction:direction(x.direction),entry:x.price,entryTime:x.candleTime,score:x.score,pattern:x.pattern};$('labLiveMonitor').disabled=false}
@@ -75,6 +106,7 @@ function connect(symbol,interval,g){
   try{const k=JSON.parse(e.data).k;if(!k)return;if(k.x){readNow();return}
    const candle={t:+k.t,o:+k.o,h:+k.h,l:+k.l,c:+k.c,v:+k.v},r=analyze([...context.slice(-95),candle]);
    $('labLiveIntra').textContent=`EM FORMAÇÃO · ${symbol} ${interval} · ${direction(r.pattern.direction)} · score provisório ${r.score}/100 · ${r.pattern.name}. Aguarde o fechamento para confirmação; volume da vela ainda incompleto.`;
+   renderFlow(symbol,r.pattern.direction);
   }catch{}
  };
  socket.onerror=()=>{if(g===generation)$('labLiveIntra').textContent='Fluxo intravela indisponível. Leitura de velas fechadas atualiza a cada minuto.'};
@@ -83,6 +115,7 @@ function connect(symbol,interval,g){
 $('labLiveMonitor').onclick=()=>{if(selected)window.dispatchEvent(new CustomEvent('lab-monitor-signal',{detail:selected}))};
 asset.onchange=readNow;$('labLiveInterval').onchange=()=>{page=0;render();readNow()};$('labLiveFilter').onchange=()=>{page=0;render()};
 $('labLivePrev').onclick=()=>{page--;render()};$('labLiveNext').onclick=()=>{page++;render()};
+window.addEventListener('lab-tape-updated',e=>{if(e.detail?.symbol===asset.value)renderFlow(asset.value,selected?.direction||null)});
 $('labLiveRefresh').onclick=()=>{load();readNow()};
 setInterval(()=>{if(!document.hidden){load();readNow()}},60000);
 document.addEventListener('visibilitychange',()=>{if(document.hidden){generation++;if(socket)socket.close()}else{load();readNow()}});
