@@ -26,7 +26,7 @@ const labels={PRE_SIGNAL:'PRÉ-SINAL',CONFIRMED:'CONFIRMADO',INVALIDATED:'INVALI
 const direction=d=>d==='BUY'?'COMPRA':d==='SELL'?'VENDA':'NEUTRO';
 const fmt=n=>Number.isFinite(n)?n.toLocaleString('pt-BR',{maximumFractionDigits:5}):'—';
 const date=t=>t?new Date(t).toLocaleString('pt-BR'):'—';
-let feed=null,page=0,busy=false,selected=null,socket=null,context=[],generation=0;
+let feed=null,page=0,busy=false,selected=null,socket=null,context=[],generation=0,currentDirection=null;
 function cells(body,values){const tr=document.createElement('tr');for(const v of values){const td=document.createElement('td');td.textContent=v;tr.append(td)}body.append(tr);return tr}
 function renderFlow(symbol,directionNow){
  const headline=$('labLiveFlowInterpretation'),detail=$('labLiveFlowDetail');
@@ -80,6 +80,7 @@ async function load(){
 }
 async function readNow(){
  const symbol=asset.value,interval=$('labLiveInterval').value,g=++generation;
+ currentDirection=null;
  window.TapeReadingExperimental?.watch?.(symbol);
  renderFlow(symbol,null);
  if(socket){socket.close();socket=null}selected=null;$('labLiveMonitor').disabled=true;context=[];
@@ -88,7 +89,8 @@ async function readNow(){
   const raw=await getJson(`https://data-api.binance.vision/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=120`);if(g!==generation)return;
   const now=Date.now(),rows=raw.map(x=>({t:+x[0],o:+x[1],h:+x[2],l:+x[3],c:+x[4],v:+x[5]})),x=reading(rows,interval,now);
   context=rows.filter(c=>c.t+INTERVALS[interval]<=now).slice(-96);
-  renderFlow(symbol,x.direction);
+  currentDirection=x.direction;
+  renderFlow(symbol,currentDirection);
   $('labLiveNowTitle').textContent=symbol+' · '+interval+' · '+labels[x.stage];
   $('labLiveNow').textContent=`${direction(x.direction)} · score ${x.score}/100 · ${x.pattern} · RSI ${fmt(x.indicators.rsi)} · CCI ${fmt(x.indicators.cci)} · MACD ${fmt(x.indicators.macdHistogram)} · volume ${fmt(x.indicators.volumeRatio)}× · OBV ${x.indicators.obv} · vela fechada ${date(x.closedAt)}.`;
   if(x.stage==='CONFIRMED'){selected={id:`LIVE|${symbol}|${interval}|${x.candleTime}|${x.direction}`,market:'CRIPTO',symbol,direction:direction(x.direction),entry:x.price,entryTime:x.candleTime,score:x.score,pattern:x.pattern};$('labLiveMonitor').disabled=false}
@@ -105,6 +107,7 @@ function connect(symbol,interval,g){
   if(g!==generation)return;
   try{const k=JSON.parse(e.data).k;if(!k)return;if(k.x){readNow();return}
    const candle={t:+k.t,o:+k.o,h:+k.h,l:+k.l,c:+k.c,v:+k.v},r=analyze([...context.slice(-95),candle]);
+   currentDirection=r.pattern.direction;
    $('labLiveIntra').textContent=`EM FORMAÇÃO · ${symbol} ${interval} · ${direction(r.pattern.direction)} · score provisório ${r.score}/100 · ${r.pattern.name}. Aguarde o fechamento para confirmação; volume da vela ainda incompleto.`;
    renderFlow(symbol,r.pattern.direction);
   }catch{}
@@ -115,7 +118,7 @@ function connect(symbol,interval,g){
 $('labLiveMonitor').onclick=()=>{if(selected)window.dispatchEvent(new CustomEvent('lab-monitor-signal',{detail:selected}))};
 asset.onchange=readNow;$('labLiveInterval').onchange=()=>{page=0;render();readNow()};$('labLiveFilter').onchange=()=>{page=0;render()};
 $('labLivePrev').onclick=()=>{page--;render()};$('labLiveNext').onclick=()=>{page++;render()};
-window.addEventListener('lab-tape-updated',e=>{if(e.detail?.symbol===asset.value)renderFlow(asset.value,selected?.direction||null)});
+window.addEventListener('lab-tape-updated',e=>{if(e.detail?.symbol===asset.value)renderFlow(asset.value,currentDirection)});
 $('labLiveRefresh').onclick=()=>{load();readNow()};
 setInterval(()=>{if(!document.hidden){load();readNow()}},60000);
 document.addEventListener('visibilitychange',()=>{if(document.hidden){generation++;if(socket)socket.close()}else{load();readNow()}});
