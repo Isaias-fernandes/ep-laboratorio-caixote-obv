@@ -1,61 +1,61 @@
 {
-  "generatedAt": "2026-10-14T18:38:00.196Z",
+  "generatedAt": "2026-10-14T22:18:25.175Z",
   "version": "early-warning-patterns-v1",
   "preLegVersion": "pre-leg-score-v1",
   "timeframe": "H1",
   "minimumEarlyScore": 65,
   "signals": [
     {
-      "name": "Rectangle Accumulation",
-      "family": "BILATERAL",
+      "name": "Falling Wedge",
+      "family": "REVERSAO",
       "direction": "BUY",
-      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
-      "score": 77,
-      "level": 0.3345,
-      "distanceToBreakoutPct": 0.09,
-      "volumeRatio": 0.48,
-      "obvSlope": 847428.2503496506,
+      "stage": "CUNHA EM FORMAÇÃO",
+      "score": 67,
+      "level": 0.56,
+      "distanceToBreakoutPct": 1.229,
+      "volumeRatio": 0.413,
+      "obvSlope": 221293.28902097905,
       "obvConfirm": true,
       "compression": false,
-      "boxRangePct": 2.23,
-      "boxPosition": 0.959,
+      "hiSlope": -0.0015936016511867918,
+      "loSlope": -0.0014997936016511878,
       "market": "CRIPTO",
-      "symbol": "TRXUSDT",
+      "symbol": "TIAUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-10-14T17:00:00.000Z",
+      "createdAt": "2026-10-14T21:00:00.000Z",
       "confluence": 1,
-      "priority": 100,
+      "priority": 91,
       "historical": {
-        "breakout24": 46.4,
-        "avgLead": 8.29,
-        "hit10": 15.9,
-        "hit20": 7.8
+        "breakout24": 56.2,
+        "avgLead": 8.03,
+        "hit10": 15.7,
+        "hit20": 7.5
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
-        "score": 64,
-        "phase": "PREPARAÇÃO",
-        "price": 0.3342,
-        "resistance": 0.3345,
-        "support": 0.3272,
-        "distanceToBreakoutPct": 0.09,
-        "compressionRatio": 0.862,
-        "volumeAcceleration": 0.75,
+        "score": 24,
+        "phase": "OBSERVAÇÃO",
+        "price": 0.5532,
+        "resistance": 0.5825,
+        "support": 0.5295,
+        "distanceToBreakoutPct": 5.296,
+        "compressionRatio": 0.893,
+        "volumeAcceleration": 0.54,
         "obvLead": false,
-        "obvSlope": 847428.2503496506,
-        "attacks": 8,
+        "obvSlope": 221293.28902097905,
+        "attacks": 0,
         "higherLows": 4,
-        "rsi": 68.57,
-        "move6Pct": 0.21,
-        "penalty": 0,
+        "rsi": 46.93,
+        "move6Pct": 3.6,
+        "penalty": 7,
         "parts": {
           "compression": 7,
           "obv": 12,
-          "attacks": 18,
+          "attacks": 0,
           "volume": 0,
           "structure": 12,
-          "proximity": 15
+          "proximity": 0
         }
       },
       "futures": {
@@ -74,62 +74,12 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 64
+          "technical": 24
         }
       }
     }
   ],
-  "preLegRadar": [
-    {
-      "version": "pre-leg-score-v1",
-      "score": 64,
-      "phase": "PREPARAÇÃO",
-      "price": 0.3342,
-      "resistance": 0.3345,
-      "support": 0.3272,
-      "distanceToBreakoutPct": 0.09,
-      "compressionRatio": 0.862,
-      "volumeAcceleration": 0.75,
-      "obvLead": false,
-      "obvSlope": 847428.2503496506,
-      "attacks": 8,
-      "higherLows": 4,
-      "rsi": 68.57,
-      "move6Pct": 0.21,
-      "penalty": 0,
-      "parts": {
-        "compression": 7,
-        "obv": 12,
-        "attacks": 18,
-        "volume": 0,
-        "structure": 12,
-        "proximity": 15
-      },
-      "market": "CRIPTO",
-      "symbol": "TRXUSDT",
-      "timeframe": "H1",
-      "createdAt": "2026-10-14T17:00:00.000Z",
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 64
-        }
-      }
-    }
-  ],
+  "preLegRadar": [],
   "earlyLegMotorVersion": "early-leg-motor-v1",
   "earlyLegMotorRadar": [],
   "stats": {
