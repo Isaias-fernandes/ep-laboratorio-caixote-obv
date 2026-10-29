@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T16:20:57.435Z",
+  "generatedAt": "2026-10-29T16:28:43.006Z",
   "labVersion": "structural-detectors-v1",
   "timeframe": "H1",
   "contextCandles": 96,
@@ -33,22 +33,22 @@
     "Three Falling Peaks"
   ],
   "assetsTested": 50,
-  "totalSignals": 3916,
+  "totalSignals": 3875,
   "ranking": [
     {
       "market": "CRIPTO",
       "pattern": "Three Rising Valleys",
       "family": "REVERSAO",
       "direction": "BUY",
-      "signals": 666,
-      "avgMfePct": 9.722,
-      "avgMaePct": -6.818,
-      "payoffExcursion": 1.43,
-      "retestPct": 65.6,
-      "obvConfirmPct": 89.9,
+      "signals": 659,
+      "avgMfePct": 9.66,
+      "avgMaePct": -6.894,
+      "payoffExcursion": 1.4,
+      "retestPct": 65.1,
+      "obvConfirmPct": 90,
       "hitRates": {
-        "5": 52.7,
-        "10": 33.3,
+        "5": 51.9,
+        "10": 32.6,
         "20": 13.4,
         "30": 5.3,
         "50": 0.9
@@ -59,15 +59,15 @@
       "pattern": "Three Falling Peaks",
       "family": "REVERSAO",
       "direction": "SELL",
-      "signals": 650,
-      "avgMfePct": 7.282,
-      "avgMaePct": -6.879,
-      "payoffExcursion": 1.06,
-      "retestPct": 72.8,
-      "obvConfirmPct": 93.7,
+      "signals": 642,
+      "avgMfePct": 7.343,
+      "avgMaePct": -6.741,
+      "payoffExcursion": 1.09,
+      "retestPct": 73.7,
+      "obvConfirmPct": 93.5,
       "hitRates": {
-        "5": 60.9,
-        "10": 27.1,
+        "5": 61.2,
+        "10": 27.4,
         "20": 2,
         "30": 0.2,
         "50": 0
@@ -78,17 +78,17 @@
       "pattern": "Falling Wedge",
       "family": "REVERSAO",
       "direction": "BUY",
-      "signals": 500,
-      "avgMfePct": 8.076,
-      "avgMaePct": -7.195,
-      "payoffExcursion": 1.12,
-      "retestPct": 52.2,
-      "obvConfirmPct": 97.6,
+      "signals": 490,
+      "avgMfePct": 7.784,
+      "avgMaePct": -7.383,
+      "payoffExcursion": 1.05,
+      "retestPct": 52,
+      "obvConfirmPct": 97.8,
       "hitRates": {
-        "5": 52,
-        "10": 27.8,
-        "20": 8.8,
-        "30": 3,
+        "5": 50,
+        "10": 25.7,
+        "20": 8.4,
+        "30": 3.1,
         "50": 0.4
       }
     },
@@ -97,17 +97,36 @@
       "pattern": "Rectangle / Trading Range",
       "family": "BILATERAL",
       "direction": "SELL",
-      "signals": 451,
-      "avgMfePct": 6.399,
-      "avgMaePct": -4.556,
-      "payoffExcursion": 1.4,
-      "retestPct": 61.2,
-      "obvConfirmPct": 97.6,
+      "signals": 432,
+      "avgMfePct": 6.644,
+      "avgMaePct": -4.324,
+      "payoffExcursion": 1.54,
+      "retestPct": 64.1,
+      "obvConfirmPct": 97.7,
       "hitRates": {
-        "5": 55.7,
-        "10": 22.6,
+        "5": 58.6,
+        "10": 23.6,
         "20": 0.2,
         "30": 0,
+        "50": 0
+      }
+    },
+    {
+      "market": "CRIPTO",
+      "pattern": "Rising Wedge",
+      "family": "REVERSAO",
+      "direction": "SELL",
+      "signals": 417,
+      "avgMfePct": 7.653,
+      "avgMaePct": -6.279,
+      "payoffExcursion": 1.22,
+      "retestPct": 54.9,
+      "obvConfirmPct": 97.4,
+      "hitRates": {
+        "5": 64,
+        "10": 31.2,
+        "20": 1.7,
+        "30": 0.2,
         "50": 0
       }
     },
@@ -117,36 +136,17 @@
       "family": "BILATERAL",
       "direction": "BUY",
       "signals": 406,
-      "avgMfePct": 6.82,
-      "avgMaePct": -6.837,
-      "payoffExcursion": 1,
+      "avgMfePct": 6.787,
+      "avgMaePct": -6.84,
+      "payoffExcursion": 0.99,
       "retestPct": 63.1,
       "obvConfirmPct": 97.5,
       "hitRates": {
-        "5": 38.4,
-        "10": 20.2,
+        "5": 37.9,
+        "10": 20,
         "20": 8.1,
         "30": 3,
         "50": 0.7
-      }
-    },
-    {
-      "market": "CRIPTO",
-      "pattern": "Rising Wedge",
-      "family": "REVERSAO",
-      "direction": "SELL",
-      "signals": 402,
-      "avgMfePct": 7.801,
-      "avgMaePct": -6.302,
-      "payoffExcursion": 1.24,
-      "retestPct": 54.7,
-      "obvConfirmPct": 97.3,
-      "hitRates": {
-        "5": 65.7,
-        "10": 32.3,
-        "20": 1.7,
-        "30": 0.2,
-        "50": 0
       }
     },
     {
@@ -155,14 +155,14 @@
       "family": "REVERSAO",
       "direction": "BUY",
       "signals": 174,
-      "avgMfePct": 8.075,
-      "avgMaePct": -6.671,
-      "payoffExcursion": 1.21,
-      "retestPct": 63.2,
+      "avgMfePct": 7.928,
+      "avgMaePct": -6.743,
+      "payoffExcursion": 1.18,
+      "retestPct": 62.6,
       "obvConfirmPct": 92.5,
       "hitRates": {
-        "5": 41.4,
-        "10": 24.7,
+        "5": 39.7,
+        "10": 24.1,
         "20": 11.5,
         "30": 6.3,
         "50": 1.1
@@ -173,17 +173,36 @@
       "pattern": "Double Top",
       "family": "REVERSAO",
       "direction": "SELL",
-      "signals": 155,
-      "avgMfePct": 5.61,
-      "avgMaePct": -6.777,
-      "payoffExcursion": 0.83,
-      "retestPct": 65.8,
-      "obvConfirmPct": 95.5,
+      "signals": 147,
+      "avgMfePct": 5.835,
+      "avgMaePct": -6.562,
+      "payoffExcursion": 0.89,
+      "retestPct": 68.7,
+      "obvConfirmPct": 95.2,
       "hitRates": {
-        "5": 49,
-        "10": 16.8,
+        "5": 51.7,
+        "10": 17.7,
         "20": 0,
         "30": 0,
+        "50": 0
+      }
+    },
+    {
+      "market": "CRIPTO",
+      "pattern": "Head and Shoulders Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "signals": 63,
+      "avgMfePct": 6.712,
+      "avgMaePct": -7.924,
+      "payoffExcursion": 0.85,
+      "retestPct": 65.1,
+      "obvConfirmPct": 90.5,
+      "hitRates": {
+        "5": 49.2,
+        "10": 17.5,
+        "20": 6.3,
+        "30": 3.2,
         "50": 0
       }
     },
@@ -192,56 +211,18 @@
       "pattern": "Symmetrical Triangle",
       "family": "BILATERAL",
       "direction": "BUY",
-      "signals": 62,
-      "avgMfePct": 9.261,
-      "avgMaePct": -6.462,
-      "payoffExcursion": 1.43,
-      "retestPct": 43.5,
-      "obvConfirmPct": 95.2,
-      "hitRates": {
-        "5": 53.2,
-        "10": 32.3,
-        "20": 9.7,
-        "30": 4.8,
-        "50": 1.6
-      }
-    },
-    {
-      "market": "CRIPTO",
-      "pattern": "Head and Shoulders Bottom",
-      "family": "REVERSAO",
-      "direction": "BUY",
       "signals": 59,
-      "avgMfePct": 6.916,
-      "avgMaePct": -8.165,
-      "payoffExcursion": 0.85,
-      "retestPct": 64.4,
-      "obvConfirmPct": 89.8,
+      "avgMfePct": 8.967,
+      "avgMaePct": -6.643,
+      "payoffExcursion": 1.35,
+      "retestPct": 44.1,
+      "obvConfirmPct": 94.9,
       "hitRates": {
-        "5": 50.8,
-        "10": 18.6,
-        "20": 6.8,
+        "5": 52.5,
+        "10": 30.5,
+        "20": 8.5,
         "30": 3.4,
-        "50": 0
-      }
-    },
-    {
-      "market": "CRIPTO",
-      "pattern": "Head and Shoulders Top",
-      "family": "REVERSAO",
-      "direction": "SELL",
-      "signals": 56,
-      "avgMfePct": 7.409,
-      "avgMaePct": -6.398,
-      "payoffExcursion": 1.16,
-      "retestPct": 64.3,
-      "obvConfirmPct": 91.1,
-      "hitRates": {
-        "5": 57.1,
-        "10": 28.6,
-        "20": 3.6,
-        "30": 0,
-        "50": 0
+        "50": 1.7
       }
     },
     {
@@ -265,18 +246,56 @@
     },
     {
       "market": "CRIPTO",
+      "pattern": "Head and Shoulders Top",
+      "family": "REVERSAO",
+      "direction": "SELL",
+      "signals": 54,
+      "avgMfePct": 7.619,
+      "avgMaePct": -6.326,
+      "payoffExcursion": 1.2,
+      "retestPct": 66.7,
+      "obvConfirmPct": 92.6,
+      "hitRates": {
+        "5": 59.3,
+        "10": 29.6,
+        "20": 3.7,
+        "30": 0,
+        "50": 0
+      }
+    },
+    {
+      "market": "CRIPTO",
       "pattern": "Descending Triangle",
       "family": "CONTINUACAO",
       "direction": "SELL",
-      "signals": 54,
-      "avgMfePct": 7.281,
-      "avgMaePct": -7.401,
-      "payoffExcursion": 0.98,
-      "retestPct": 42.6,
+      "signals": 53,
+      "avgMfePct": 7.507,
+      "avgMaePct": -6.517,
+      "payoffExcursion": 1.15,
+      "retestPct": 43.4,
       "obvConfirmPct": 98.1,
       "hitRates": {
-        "5": 63,
-        "10": 24.1,
+        "5": 66,
+        "10": 24.5,
+        "20": 0,
+        "30": 0,
+        "50": 0
+      }
+    },
+    {
+      "market": "CRIPTO",
+      "pattern": "Triple Top",
+      "family": "REVERSAO",
+      "direction": "SELL",
+      "signals": 45,
+      "avgMfePct": 4.487,
+      "avgMaePct": -6.369,
+      "payoffExcursion": 0.7,
+      "retestPct": 82.2,
+      "obvConfirmPct": 97.8,
+      "hitRates": {
+        "5": 31.1,
+        "10": 13.3,
         "20": 0,
         "30": 0,
         "50": 0
@@ -287,36 +306,17 @@
       "pattern": "Ascending Triangle",
       "family": "CONTINUACAO",
       "direction": "BUY",
-      "signals": 48,
-      "avgMfePct": 9.548,
-      "avgMaePct": -7.15,
-      "payoffExcursion": 1.34,
-      "retestPct": 50,
-      "obvConfirmPct": 95.8,
+      "signals": 45,
+      "avgMfePct": 9.074,
+      "avgMaePct": -7.542,
+      "payoffExcursion": 1.2,
+      "retestPct": 51.1,
+      "obvConfirmPct": 95.6,
       "hitRates": {
-        "5": 45.8,
-        "10": 31.3,
-        "20": 14.6,
-        "30": 8.3,
-        "50": 0
-      }
-    },
-    {
-      "market": "CRIPTO",
-      "pattern": "Triple Top",
-      "family": "REVERSAO",
-      "direction": "SELL",
-      "signals": 47,
-      "avgMfePct": 4.353,
-      "avgMaePct": -6.721,
-      "payoffExcursion": 0.65,
-      "retestPct": 78.7,
-      "obvConfirmPct": 97.9,
-      "hitRates": {
-        "5": 29.8,
-        "10": 12.8,
-        "20": 0,
-        "30": 0,
+        "5": 44.4,
+        "10": 28.9,
+        "20": 13.3,
+        "30": 6.7,
         "50": 0
       }
     },
@@ -325,15 +325,15 @@
       "pattern": "Symmetrical Triangle",
       "family": "BILATERAL",
       "direction": "SELL",
-      "signals": 37,
-      "avgMfePct": 6.309,
-      "avgMaePct": -7.133,
-      "payoffExcursion": 0.88,
-      "retestPct": 18.9,
-      "obvConfirmPct": 97.3,
+      "signals": 41,
+      "avgMfePct": 6.485,
+      "avgMaePct": -6.127,
+      "payoffExcursion": 1.06,
+      "retestPct": 19.5,
+      "obvConfirmPct": 97.6,
       "hitRates": {
-        "5": 54.1,
-        "10": 18.9,
+        "5": 58.5,
+        "10": 19.5,
         "20": 0,
         "30": 0,
         "50": 0
@@ -363,15 +363,15 @@
       "pattern": "Bear Pennant",
       "family": "CONTINUACAO",
       "direction": "SELL",
-      "signals": 24,
-      "avgMfePct": 6.24,
-      "avgMaePct": -6.858,
-      "payoffExcursion": 0.91,
-      "retestPct": 33.3,
-      "obvConfirmPct": 91.7,
+      "signals": 23,
+      "avgMfePct": 6.44,
+      "avgMaePct": -5.872,
+      "payoffExcursion": 1.1,
+      "retestPct": 34.8,
+      "obvConfirmPct": 91.3,
       "hitRates": {
-        "5": 54.2,
-        "10": 16.7,
+        "5": 56.5,
+        "10": 17.4,
         "20": 0,
         "30": 0,
         "50": 0
@@ -421,25 +421,25 @@
       "market": "CRIPTO",
       "symbol": "BTCUSDT",
       "candles": 1399,
-      "signals": 113
+      "signals": 112
     },
     {
       "market": "CRIPTO",
       "symbol": "ETHUSDT",
       "candles": 1399,
-      "signals": 93
+      "signals": 91
     },
     {
       "market": "CRIPTO",
       "symbol": "SOLUSDT",
       "candles": 1399,
-      "signals": 95
+      "signals": 94
     },
     {
       "market": "CRIPTO",
       "symbol": "BNBUSDT",
       "candles": 1399,
-      "signals": 113
+      "signals": 114
     },
     {
       "market": "CRIPTO",
@@ -451,19 +451,19 @@
       "market": "CRIPTO",
       "symbol": "ADAUSDT",
       "candles": 1399,
-      "signals": 91
+      "signals": 90
     },
     {
       "market": "CRIPTO",
       "symbol": "DOGEUSDT",
       "candles": 1399,
-      "signals": 92
+      "signals": 91
     },
     {
       "market": "CRIPTO",
       "symbol": "AVAXUSDT",
       "candles": 1399,
-      "signals": 102
+      "signals": 100
     },
     {
       "market": "CRIPTO",
@@ -481,13 +481,13 @@
       "market": "CRIPTO",
       "symbol": "LTCUSDT",
       "candles": 1399,
-      "signals": 105
+      "signals": 107
     },
     {
       "market": "CRIPTO",
       "symbol": "BCHUSDT",
       "candles": 1399,
-      "signals": 100
+      "signals": 98
     },
     {
       "market": "CRIPTO",
@@ -499,31 +499,31 @@
       "market": "CRIPTO",
       "symbol": "UNIUSDT",
       "candles": 1399,
-      "signals": 77
+      "signals": 75
     },
     {
       "market": "CRIPTO",
       "symbol": "AAVEUSDT",
       "candles": 1399,
-      "signals": 89
+      "signals": 87
     },
     {
       "market": "CRIPTO",
       "symbol": "SUIUSDT",
       "candles": 1399,
-      "signals": 74
+      "signals": 73
     },
     {
       "market": "CRIPTO",
       "symbol": "NEARUSDT",
       "candles": 1399,
-      "signals": 53
+      "signals": 52
     },
     {
       "market": "CRIPTO",
       "symbol": "APTUSDT",
       "candles": 1399,
-      "signals": 61
+      "signals": 57
     },
     {
       "market": "CRIPTO",
@@ -535,49 +535,49 @@
       "market": "CRIPTO",
       "symbol": "OPUSDT",
       "candles": 1399,
-      "signals": 59
+      "signals": 58
     },
     {
       "market": "CRIPTO",
       "symbol": "XLMUSDT",
       "candles": 1399,
-      "signals": 82
+      "signals": 81
     },
     {
       "market": "CRIPTO",
       "symbol": "HBARUSDT",
       "candles": 1399,
-      "signals": 86
+      "signals": 85
     },
     {
       "market": "CRIPTO",
       "symbol": "PEPEUSDT",
       "candles": 1399,
-      "signals": 71
+      "signals": 72
     },
     {
       "market": "CRIPTO",
       "symbol": "ETCUSDT",
       "candles": 1399,
-      "signals": 75
+      "signals": 72
     },
     {
       "market": "CRIPTO",
       "symbol": "ATOMUSDT",
       "candles": 1399,
-      "signals": 84
+      "signals": 81
     },
     {
       "market": "CRIPTO",
       "symbol": "TIAUSDT",
       "candles": 1399,
-      "signals": 67
+      "signals": 64
     },
     {
       "market": "CRIPTO",
       "symbol": "XTZUSDT",
       "candles": 1399,
-      "signals": 72
+      "signals": 71
     },
     {
       "market": "CRIPTO",
@@ -589,55 +589,55 @@
       "market": "CRIPTO",
       "symbol": "SEIUSDT",
       "candles": 1399,
-      "signals": 81
+      "signals": 82
     },
     {
       "market": "CRIPTO",
       "symbol": "FILUSDT",
       "candles": 1399,
-      "signals": 77
+      "signals": 75
     },
     {
       "market": "CRIPTO",
       "symbol": "INJUSDT",
       "candles": 1399,
-      "signals": 72
+      "signals": 71
     },
     {
       "market": "CRIPTO",
       "symbol": "RUNEUSDT",
       "candles": 1399,
-      "signals": 84
+      "signals": 82
     },
     {
       "market": "CRIPTO",
       "symbol": "ALGOUSDT",
       "candles": 1399,
-      "signals": 64
+      "signals": 63
     },
     {
       "market": "CRIPTO",
       "symbol": "FETUSDT",
       "candles": 1399,
-      "signals": 68
+      "signals": 66
     },
     {
       "market": "CRIPTO",
       "symbol": "GALAUSDT",
       "candles": 1399,
-      "signals": 59
+      "signals": 58
     },
     {
       "market": "CRIPTO",
       "symbol": "SANDUSDT",
       "candles": 1399,
-      "signals": 64
+      "signals": 66
     },
     {
       "market": "CRIPTO",
       "symbol": "MANAUSDT",
       "candles": 1399,
-      "signals": 75
+      "signals": 73
     },
     {
       "market": "CRIPTO",
@@ -649,13 +649,13 @@
       "market": "CRIPTO",
       "symbol": "DYDXUSDT",
       "candles": 1399,
-      "signals": 79
+      "signals": 77
     },
     {
       "market": "CRIPTO",
       "symbol": "JUPUSDT",
       "candles": 1399,
-      "signals": 70
+      "signals": 69
     },
     {
       "market": "CRIPTO",
@@ -667,13 +667,13 @@
       "market": "CRIPTO",
       "symbol": "BONKUSDT",
       "candles": 1399,
-      "signals": 44
+      "signals": 45
     },
     {
       "market": "CRIPTO",
       "symbol": "SHIBUSDT",
       "candles": 1399,
-      "signals": 76
+      "signals": 72
     },
     {
       "market": "CRIPTO",
@@ -685,19 +685,19 @@
       "market": "CRIPTO",
       "symbol": "STXUSDT",
       "candles": 1399,
-      "signals": 51
+      "signals": 53
     },
     {
       "market": "CRIPTO",
       "symbol": "IMXUSDT",
       "candles": 1399,
-      "signals": 60
+      "signals": 63
     },
     {
       "market": "CRIPTO",
       "symbol": "RENDERUSDT",
       "candles": 1399,
-      "signals": 82
+      "signals": 81
     },
     {
       "market": "CRIPTO",
@@ -709,7 +709,7 @@
       "market": "CRIPTO",
       "symbol": "VETUSDT",
       "candles": 1399,
-      "signals": 87
+      "signals": 85
     },
     {
       "market": "CRIPTO",
@@ -720,35 +720,6 @@
   ],
   "errors": [],
   "sample": [
-    {
-      "name": "Rectangle / Trading Range",
-      "family": "BILATERAL",
-      "direction": "SELL",
-      "score": 98,
-      "level": 80502.87,
-      "breakout": true,
-      "retest": false,
-      "stage": "BREAKOUT CONFIRMADO",
-      "volumeRatio": 5.276412572223232,
-      "obv": "CONFIRMADO",
-      "time": 1788523200000,
-      "entryTime": 1788526800000,
-      "entry": 79453.95,
-      "horizon": 96,
-      "bars": 96,
-      "status": "AVALIADO",
-      "mfe": 1.629534824644363,
-      "mae": -1.3729395944562683,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "BTCUSDT"
-    },
     {
       "name": "Rectangle / Trading Range",
       "family": "BILATERAL",
@@ -4000,64 +3971,6 @@
     {
       "name": "Rectangle / Trading Range",
       "family": "BILATERAL",
-      "direction": "SELL",
-      "score": 98,
-      "level": 2488.38,
-      "breakout": true,
-      "retest": false,
-      "stage": "BREAKOUT CONFIRMADO",
-      "volumeRatio": 7.51983467359023,
-      "obv": "CONFIRMADO",
-      "time": 1788523200000,
-      "entryTime": 1788526800000,
-      "entry": 2451.25,
-      "horizon": 96,
-      "bars": 96,
-      "status": "AVALIADO",
-      "mfe": 0.8076953129819264,
-      "mae": -3.3662640343131045,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "ETHUSDT"
-    },
-    {
-      "name": "Rising Wedge",
-      "family": "REVERSAO",
-      "direction": "SELL",
-      "score": 94,
-      "level": 2500.19,
-      "breakout": true,
-      "retest": false,
-      "stage": "BREAKOUT CONFIRMADO",
-      "volumeRatio": 7.51983467359023,
-      "obv": "CONFIRMADO",
-      "time": 1788523200000,
-      "entryTime": 1788526800000,
-      "entry": 2451.25,
-      "horizon": 96,
-      "bars": 96,
-      "status": "AVALIADO",
-      "mfe": 0.8076953129819264,
-      "mae": -3.3662640343131045,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "ETHUSDT"
-    },
-    {
-      "name": "Rectangle / Trading Range",
-      "family": "BILATERAL",
       "direction": "BUY",
       "score": 100,
       "level": 2462,
@@ -6697,35 +6610,6 @@
     {
       "name": "Rectangle / Trading Range",
       "family": "BILATERAL",
-      "direction": "SELL",
-      "score": 98,
-      "level": 103.21,
-      "breakout": true,
-      "retest": false,
-      "stage": "BREAKOUT CONFIRMADO",
-      "volumeRatio": 4.917075215678815,
-      "obv": "CONFIRMADO",
-      "time": 1788523200000,
-      "entryTime": 1788526800000,
-      "entry": 101.58,
-      "horizon": 96,
-      "bars": 96,
-      "status": "AVALIADO",
-      "mfe": 1.266075166982361,
-      "mae": -5.383755588673623,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "market": "CRIPTO",
-      "symbol": "SOLUSDT"
-    },
-    {
-      "name": "Rectangle / Trading Range",
-      "family": "BILATERAL",
       "direction": "BUY",
       "score": 100,
       "level": 102.82,
@@ -7960,6 +7844,122 @@
       "status": "AVALIADO",
       "mfe": 3.0045776113191813,
       "mae": -2.846441947565548,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "SOLUSDT"
+    },
+    {
+      "name": "Rectangle / Trading Range",
+      "family": "BILATERAL",
+      "direction": "BUY",
+      "score": 100,
+      "level": 120.73,
+      "breakout": true,
+      "retest": true,
+      "stage": "RETESTE CONFIRMADO",
+      "volumeRatio": 3.2678625742387224,
+      "obv": "CONFIRMADO",
+      "time": 1790683200000,
+      "entryTime": 1790686800000,
+      "entry": 120.88,
+      "horizon": 96,
+      "bars": 96,
+      "status": "AVALIADO",
+      "mfe": 2.382528127068184,
+      "mae": -3.4331568497683596,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "SOLUSDT"
+    },
+    {
+      "name": "Rising Wedge",
+      "family": "REVERSAO",
+      "direction": "SELL",
+      "score": 94,
+      "level": 118.88,
+      "breakout": true,
+      "retest": false,
+      "stage": "BREAKOUT CONFIRMADO",
+      "volumeRatio": 3.4725482215128123,
+      "obv": "CONFIRMADO",
+      "time": 1790694000000,
+      "entryTime": 1790697600000,
+      "entry": 118.22,
+      "horizon": 96,
+      "bars": 96,
+      "status": "AVALIADO",
+      "mfe": 1.2764499271823881,
+      "mae": -4.476405946994189,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "SOLUSDT"
+    },
+    {
+      "name": "Double Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "score": 100,
+      "level": 120.07,
+      "breakout": true,
+      "retest": true,
+      "stage": "RETESTE CONFIRMADO",
+      "volumeRatio": 4.983663805614288,
+      "obv": "CONFIRMADO",
+      "time": 1790769600000,
+      "entryTime": 1790773200000,
+      "entry": 121.9,
+      "horizon": 96,
+      "bars": 96,
+      "status": "AVALIADO",
+      "mfe": 1.5258408531583223,
+      "mae": -4.241181296144381,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "market": "CRIPTO",
+      "symbol": "SOLUSDT"
+    },
+    {
+      "name": "Head and Shoulders Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "score": 100,
+      "level": 120.07,
+      "breakout": true,
+      "retest": true,
+      "stage": "RETESTE CONFIRMADO",
+      "volumeRatio": 3.3309535544018942,
+      "obv": "CONFIRMADO",
+      "time": 1790773200000,
+      "entryTime": 1790776800000,
+      "entry": 121.04,
+      "horizon": 96,
+      "bars": 96,
+      "status": "AVALIADO",
+      "mfe": 2.2471910112359605,
+      "mae": -3.5608063450099148,
       "targets": {
         "5": false,
         "10": false,
