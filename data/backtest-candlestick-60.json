@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-10-28T16:17:46.052Z",
+  "generatedAt": "2026-10-30T16:14:41.528Z",
   "labVersion": "candlestick-60-v1",
   "market": "CRIPTO",
   "timeframe": "H1",
   "horizonCandles": 96,
   "minimumScore": 80,
   "assetsTested": 25,
-  "totalSignals": 18261,
+  "totalSignals": 18336,
   "errors": [],
   "ranking": [
     {
       "pattern": "Harami Cross de alta",
       "direction": "BUY",
       "stars": 4,
-      "signals": 51,
-      "avgMfePct": 10.336,
-      "avgMaePct": -5.597,
-      "payoff": 1.85,
-      "obvConfirmPct": 62.7,
+      "signals": 50,
+      "avgMfePct": 10.63,
+      "avgMaePct": -5.549,
+      "payoff": 1.92,
+      "obvConfirmPct": 60,
       "hitRates": {
-        "5": 60.8,
-        "10": 43.1,
-        "20": 13.7,
-        "30": 7.8,
+        "5": 62,
+        "10": 44,
+        "20": 14,
+        "30": 8,
         "50": 0
       },
       "hits": {
@@ -61,21 +61,21 @@
       "pattern": "Gravestone Doji em resistência",
       "direction": "SELL",
       "stars": 4,
-      "signals": 53,
-      "avgMfePct": 8.323,
-      "avgMaePct": -7.409,
-      "payoff": 1.12,
-      "obvConfirmPct": 69.8,
+      "signals": 49,
+      "avgMfePct": 8.352,
+      "avgMaePct": -7.232,
+      "payoff": 1.15,
+      "obvConfirmPct": 71.4,
       "hitRates": {
-        "5": 66,
-        "10": 37.7,
-        "20": 5.7,
+        "5": 65.3,
+        "10": 38.8,
+        "20": 6.1,
         "30": 0,
         "50": 0
       },
       "hits": {
-        "5": 35,
-        "10": 20,
+        "5": 32,
+        "10": 19,
         "20": 3,
         "30": 0,
         "50": 0
@@ -106,19 +106,91 @@
       }
     },
     {
+      "pattern": "Harami de baixa (Bearish Harami)",
+      "direction": "SELL",
+      "stars": 3,
+      "signals": 121,
+      "avgMfePct": 8.624,
+      "avgMaePct": -7.532,
+      "payoff": 1.14,
+      "obvConfirmPct": 57,
+      "hitRates": {
+        "5": 67.8,
+        "10": 34.7,
+        "20": 4.1,
+        "30": 0,
+        "50": 0
+      },
+      "hits": {
+        "5": 82,
+        "10": 42,
+        "20": 5,
+        "30": 0,
+        "50": 0
+      }
+    },
+    {
+      "pattern": "Advance Block",
+      "direction": "SELL",
+      "stars": 3,
+      "signals": 44,
+      "avgMfePct": 8.295,
+      "avgMaePct": -6.383,
+      "payoff": 1.3,
+      "obvConfirmPct": 0,
+      "hitRates": {
+        "5": 59.1,
+        "10": 34.1,
+        "20": 9.1,
+        "30": 0,
+        "50": 0
+      },
+      "hits": {
+        "5": 26,
+        "10": 15,
+        "20": 4,
+        "30": 0,
+        "50": 0
+      }
+    },
+    {
+      "pattern": "Breakaway de alta",
+      "direction": "BUY",
+      "stars": 4,
+      "signals": 33,
+      "avgMfePct": 10.374,
+      "avgMaePct": -4.385,
+      "payoff": 2.37,
+      "obvConfirmPct": 48.5,
+      "hitRates": {
+        "5": 54.5,
+        "10": 33.3,
+        "20": 18.2,
+        "30": 9.1,
+        "50": 0
+      },
+      "hits": {
+        "5": 18,
+        "10": 11,
+        "20": 6,
+        "30": 3,
+        "50": 0
+      }
+    },
+    {
       "pattern": "Mat Hold de alta",
       "direction": "BUY",
       "stars": 4,
-      "signals": 14,
-      "avgMfePct": 9.227,
-      "avgMaePct": -4.394,
-      "payoff": 2.1,
+      "signals": 15,
+      "avgMfePct": 8.705,
+      "avgMaePct": -4.36,
+      "payoff": 2,
       "obvConfirmPct": 100,
       "hitRates": {
-        "5": 42.9,
-        "10": 35.7,
-        "20": 7.1,
-        "30": 7.1,
+        "5": 40,
+        "10": 33.3,
+        "20": 6.7,
+        "30": 6.7,
         "50": 0
       },
       "hits": {
@@ -130,49 +202,25 @@
       }
     },
     {
-      "pattern": "Harami de baixa (Bearish Harami)",
+      "pattern": "Deliberation",
       "direction": "SELL",
       "stars": 3,
-      "signals": 120,
-      "avgMfePct": 8.331,
-      "avgMaePct": -7.482,
-      "payoff": 1.11,
-      "obvConfirmPct": 53.3,
-      "hitRates": {
-        "5": 66.7,
-        "10": 33.3,
-        "20": 3.3,
-        "30": 0,
-        "50": 0
-      },
-      "hits": {
-        "5": 80,
-        "10": 40,
-        "20": 4,
-        "30": 0,
-        "50": 0
-      }
-    },
-    {
-      "pattern": "Advance Block",
-      "direction": "SELL",
-      "stars": 3,
-      "signals": 46,
-      "avgMfePct": 8.24,
-      "avgMaePct": -6.129,
-      "payoff": 1.34,
+      "signals": 118,
+      "avgMfePct": 7.469,
+      "avgMaePct": -6.161,
+      "payoff": 1.21,
       "obvConfirmPct": 0,
       "hitRates": {
-        "5": 58.7,
-        "10": 32.6,
-        "20": 8.7,
+        "5": 59.3,
+        "10": 31.4,
+        "20": 2.5,
         "30": 0,
         "50": 0
       },
       "hits": {
-        "5": 27,
-        "10": 15,
-        "20": 4,
+        "5": 70,
+        "10": 37,
+        "20": 3,
         "30": 0,
         "50": 0
       }
@@ -181,20 +229,20 @@
       "pattern": "Piercing Line",
       "direction": "BUY",
       "stars": 4,
-      "signals": 69,
-      "avgMfePct": 9.371,
-      "avgMaePct": -6.644,
-      "payoff": 1.41,
-      "obvConfirmPct": 88.4,
+      "signals": 73,
+      "avgMfePct": 9.132,
+      "avgMaePct": -6.389,
+      "payoff": 1.43,
+      "obvConfirmPct": 84.9,
       "hitRates": {
         "5": 50.7,
-        "10": 31.9,
-        "20": 13,
-        "30": 2.9,
-        "50": 2.9
+        "10": 30.1,
+        "20": 12.3,
+        "30": 2.7,
+        "50": 2.7
       },
       "hits": {
-        "5": 35,
+        "5": 37,
         "10": 22,
         "20": 9,
         "30": 2,
@@ -202,71 +250,23 @@
       }
     },
     {
-      "pattern": "Deliberation",
-      "direction": "SELL",
-      "stars": 3,
-      "signals": 123,
-      "avgMfePct": 7.442,
-      "avgMaePct": -5.973,
-      "payoff": 1.25,
-      "obvConfirmPct": 0,
-      "hitRates": {
-        "5": 59.3,
-        "10": 30.9,
-        "20": 2.4,
-        "30": 0,
-        "50": 0
-      },
-      "hits": {
-        "5": 73,
-        "10": 38,
-        "20": 3,
-        "30": 0,
-        "50": 0
-      }
-    },
-    {
-      "pattern": "Breakaway de alta",
-      "direction": "BUY",
-      "stars": 4,
-      "signals": 37,
-      "avgMfePct": 9.597,
-      "avgMaePct": -4.724,
-      "payoff": 2.03,
-      "obvConfirmPct": 45.9,
-      "hitRates": {
-        "5": 51.4,
-        "10": 29.7,
-        "20": 16.2,
-        "30": 8.1,
-        "50": 0
-      },
-      "hits": {
-        "5": 19,
-        "10": 11,
-        "20": 6,
-        "30": 3,
-        "50": 0
-      }
-    },
-    {
       "pattern": "Harami Cross de baixa",
       "direction": "SELL",
       "stars": 4,
-      "signals": 45,
-      "avgMfePct": 7.505,
-      "avgMaePct": -7.35,
-      "payoff": 1.02,
-      "obvConfirmPct": 57.8,
+      "signals": 44,
+      "avgMfePct": 7.362,
+      "avgMaePct": -7.509,
+      "payoff": 0.98,
+      "obvConfirmPct": 59.1,
       "hitRates": {
-        "5": 60,
-        "10": 28.9,
-        "20": 2.2,
+        "5": 56.8,
+        "10": 29.5,
+        "20": 2.3,
         "30": 0,
         "50": 0
       },
       "hits": {
-        "5": 27,
+        "5": 25,
         "10": 13,
         "20": 1,
         "30": 0,
@@ -274,17 +274,65 @@
       }
     },
     {
+      "pattern": "Breakaway de baixa",
+      "direction": "SELL",
+      "stars": 4,
+      "signals": 60,
+      "avgMfePct": 6.879,
+      "avgMaePct": -7.286,
+      "payoff": 0.94,
+      "obvConfirmPct": 48.3,
+      "hitRates": {
+        "5": 50,
+        "10": 28.3,
+        "20": 3.3,
+        "30": 1.7,
+        "50": 0
+      },
+      "hits": {
+        "5": 30,
+        "10": 17,
+        "20": 2,
+        "30": 1,
+        "50": 0
+      }
+    },
+    {
+      "pattern": "Unique Three River Bottom",
+      "direction": "BUY",
+      "stars": 3,
+      "signals": 159,
+      "avgMfePct": 8.355,
+      "avgMaePct": -6.093,
+      "payoff": 1.37,
+      "obvConfirmPct": 83.6,
+      "hitRates": {
+        "5": 49.7,
+        "10": 27.7,
+        "20": 8.2,
+        "30": 5.7,
+        "50": 0.6
+      },
+      "hits": {
+        "5": 79,
+        "10": 44,
+        "20": 13,
+        "30": 9,
+        "50": 1
+      }
+    },
+    {
       "pattern": "Stick Sandwich",
       "direction": "BUY",
       "stars": 3,
-      "signals": 21,
-      "avgMfePct": 6.236,
-      "avgMaePct": -4.757,
-      "payoff": 1.31,
-      "obvConfirmPct": 9.5,
+      "signals": 22,
+      "avgMfePct": 6.122,
+      "avgMaePct": -4.605,
+      "payoff": 1.33,
+      "obvConfirmPct": 13.6,
       "hitRates": {
-        "5": 38.1,
-        "10": 28.6,
+        "5": 36.4,
+        "10": 27.3,
         "20": 0,
         "30": 0,
         "50": 0
@@ -298,97 +346,49 @@
       }
     },
     {
-      "pattern": "Unique Three River Bottom",
-      "direction": "BUY",
-      "stars": 3,
-      "signals": 157,
-      "avgMfePct": 8.387,
-      "avgMaePct": -6.075,
-      "payoff": 1.38,
-      "obvConfirmPct": 82.2,
-      "hitRates": {
-        "5": 49.7,
-        "10": 28,
-        "20": 8.3,
-        "30": 5.7,
-        "50": 0.6
-      },
-      "hits": {
-        "5": 78,
-        "10": 44,
-        "20": 13,
-        "30": 9,
-        "50": 1
-      }
-    },
-    {
-      "pattern": "Martelo invertido (Inverted Hammer)",
-      "direction": "BUY",
-      "stars": 3,
-      "signals": 37,
-      "avgMfePct": 8.998,
-      "avgMaePct": -5.38,
-      "payoff": 1.67,
-      "obvConfirmPct": 94.6,
-      "hitRates": {
-        "5": 64.9,
-        "10": 27,
-        "20": 10.8,
-        "30": 2.7,
-        "50": 0
-      },
-      "hits": {
-        "5": 24,
-        "10": 10,
-        "20": 4,
-        "30": 1,
-        "50": 0
-      }
-    },
-    {
-      "pattern": "Breakaway de baixa",
-      "direction": "SELL",
-      "stars": 4,
-      "signals": 64,
-      "avgMfePct": 6.761,
-      "avgMaePct": -7.158,
-      "payoff": 0.94,
-      "obvConfirmPct": 45.3,
-      "hitRates": {
-        "5": 51.6,
-        "10": 26.6,
-        "20": 3.1,
-        "30": 1.6,
-        "50": 0
-      },
-      "hits": {
-        "5": 33,
-        "10": 17,
-        "20": 2,
-        "30": 1,
-        "50": 0
-      }
-    },
-    {
       "pattern": "Dark Cloud Cover",
       "direction": "SELL",
       "stars": 4,
       "signals": 136,
-      "avgMfePct": 6.916,
-      "avgMaePct": -7.093,
-      "payoff": 0.98,
-      "obvConfirmPct": 66.2,
+      "avgMfePct": 7.02,
+      "avgMaePct": -7.09,
+      "payoff": 0.99,
+      "obvConfirmPct": 67.6,
       "hitRates": {
-        "5": 55.1,
-        "10": 26.5,
+        "5": 55.9,
+        "10": 27.2,
         "20": 2.9,
         "30": 0,
         "50": 0
       },
       "hits": {
-        "5": 75,
-        "10": 36,
+        "5": 76,
+        "10": 37,
         "20": 4,
+        "30": 0,
+        "50": 0
+      }
+    },
+    {
+      "pattern": "Bearish Belt Hold",
+      "direction": "SELL",
+      "stars": 3,
+      "signals": 166,
+      "avgMfePct": 6.597,
+      "avgMaePct": -6.204,
+      "payoff": 1.06,
+      "obvConfirmPct": 78.9,
+      "hitRates": {
+        "5": 53.6,
+        "10": 26.5,
+        "20": 1.2,
+        "30": 0,
+        "50": 0
+      },
+      "hits": {
+        "5": 89,
+        "10": 44,
+        "20": 2,
         "30": 0,
         "50": 0
       }
@@ -397,20 +397,20 @@
       "pattern": "Concealing Baby Swallow",
       "direction": "BUY",
       "stars": 4,
-      "signals": 76,
-      "avgMfePct": 8.481,
-      "avgMaePct": -5.31,
-      "payoff": 1.6,
-      "obvConfirmPct": 42.1,
+      "signals": 77,
+      "avgMfePct": 8.44,
+      "avgMaePct": -5.15,
+      "payoff": 1.64,
+      "obvConfirmPct": 40.3,
       "hitRates": {
-        "5": 44.7,
-        "10": 26.3,
-        "20": 13.2,
-        "30": 5.3,
+        "5": 45.5,
+        "10": 26,
+        "20": 13,
+        "30": 5.2,
         "50": 0
       },
       "hits": {
-        "5": 34,
+        "5": 35,
         "10": 20,
         "20": 10,
         "30": 4,
@@ -418,168 +418,24 @@
       }
     },
     {
-      "pattern": "Bearish Belt Hold",
-      "direction": "SELL",
+      "pattern": "Martelo invertido (Inverted Hammer)",
+      "direction": "BUY",
       "stars": 3,
-      "signals": 158,
-      "avgMfePct": 6.48,
-      "avgMaePct": -6.276,
-      "payoff": 1.03,
-      "obvConfirmPct": 77.8,
+      "signals": 40,
+      "avgMfePct": 8.744,
+      "avgMaePct": -5.218,
+      "payoff": 1.68,
+      "obvConfirmPct": 95,
       "hitRates": {
-        "5": 52.5,
-        "10": 25.3,
-        "20": 1.3,
-        "30": 0,
-        "50": 0
-      },
-      "hits": {
-        "5": 83,
-        "10": 40,
-        "20": 2,
-        "30": 0,
-        "50": 0
-      }
-    },
-    {
-      "pattern": "Morning Doji Star",
-      "direction": "BUY",
-      "stars": 5,
-      "signals": 267,
-      "avgMfePct": 7.792,
-      "avgMaePct": -5.862,
-      "payoff": 1.33,
-      "obvConfirmPct": 36.3,
-      "hitRates": {
-        "5": 47.2,
-        "10": 25.1,
-        "20": 7.5,
-        "30": 3.4,
-        "50": 0.7
-      },
-      "hits": {
-        "5": 126,
-        "10": 67,
-        "20": 20,
-        "30": 9,
-        "50": 2
-      }
-    },
-    {
-      "pattern": "Morning Star",
-      "direction": "BUY",
-      "stars": 5,
-      "signals": 1028,
-      "avgMfePct": 7.632,
-      "avgMaePct": -5.846,
-      "payoff": 1.31,
-      "obvConfirmPct": 40.7,
-      "hitRates": {
-        "5": 47.1,
-        "10": 24,
-        "20": 7.9,
-        "30": 3.2,
-        "50": 0.6
-      },
-      "hits": {
-        "5": 484,
-        "10": 247,
-        "20": 81,
-        "30": 33,
-        "50": 6
-      }
-    },
-    {
-      "pattern": "Three Outside Up",
-      "direction": "BUY",
-      "stars": 5,
-      "signals": 1387,
-      "avgMfePct": 7.541,
-      "avgMaePct": -5.605,
-      "payoff": 1.35,
-      "obvConfirmPct": 27.1,
-      "hitRates": {
-        "5": 46.4,
-        "10": 23.6,
-        "20": 7.5,
-        "30": 3.2,
-        "50": 0.9
-      },
-      "hits": {
-        "5": 643,
-        "10": 328,
-        "20": 104,
-        "30": 44,
-        "50": 12
-      }
-    },
-    {
-      "pattern": "Engolfo de alta (Bullish Engulfing)",
-      "direction": "BUY",
-      "stars": 5,
-      "signals": 1488,
-      "avgMfePct": 7.468,
-      "avgMaePct": -5.606,
-      "payoff": 1.33,
-      "obvConfirmPct": 27.2,
-      "hitRates": {
-        "5": 46.3,
-        "10": 23.6,
-        "20": 7.3,
-        "30": 3.1,
-        "50": 0.8
-      },
-      "hits": {
-        "5": 689,
-        "10": 351,
-        "20": 109,
-        "30": 46,
-        "50": 12
-      }
-    },
-    {
-      "pattern": "Shooting Star",
-      "direction": "SELL",
-      "stars": 4,
-      "signals": 318,
-      "avgMfePct": 6.743,
-      "avgMaePct": -7.162,
-      "payoff": 0.94,
-      "obvConfirmPct": 85.5,
-      "hitRates": {
-        "5": 54.4,
-        "10": 23.3,
-        "20": 2.5,
-        "30": 0.6,
-        "50": 0
-      },
-      "hits": {
-        "5": 173,
-        "10": 74,
-        "20": 8,
-        "30": 2,
-        "50": 0
-      }
-    },
-    {
-      "pattern": "Long-Legged Doji em topo",
-      "direction": "SELL",
-      "stars": 3,
-      "signals": 109,
-      "avgMfePct": 7.451,
-      "avgMaePct": -7.349,
-      "payoff": 1.01,
-      "obvConfirmPct": 51.4,
-      "hitRates": {
-        "5": 60.6,
-        "10": 22.9,
-        "20": 3.7,
-        "30": 0.9,
-        "50": 0
-      },
-      "hits": {
-        "5": 66,
+        "5": 65,
         "10": 25,
+        "20": 10,
+        "30": 2.5,
+        "50": 0
+      },
+      "hits": {
+        "5": 26,
+        "10": 10,
         "20": 4,
         "30": 1,
         "50": 0
@@ -589,23 +445,191 @@
       "pattern": "Meeting Lines de baixa",
       "direction": "SELL",
       "stars": 3,
-      "signals": 193,
-      "avgMfePct": 6.89,
-      "avgMaePct": -6.024,
-      "payoff": 1.14,
-      "obvConfirmPct": 69.4,
+      "signals": 200,
+      "avgMfePct": 6.937,
+      "avgMaePct": -5.904,
+      "payoff": 1.17,
+      "obvConfirmPct": 71,
       "hitRates": {
-        "5": 54.9,
-        "10": 22.8,
-        "20": 2.1,
+        "5": 54.5,
+        "10": 24.5,
+        "20": 2,
         "30": 0.5,
         "50": 0
       },
       "hits": {
-        "5": 106,
-        "10": 44,
+        "5": 109,
+        "10": 49,
         "20": 4,
         "30": 1,
+        "50": 0
+      }
+    },
+    {
+      "pattern": "Morning Doji Star",
+      "direction": "BUY",
+      "stars": 5,
+      "signals": 282,
+      "avgMfePct": 7.649,
+      "avgMaePct": -6.043,
+      "payoff": 1.27,
+      "obvConfirmPct": 37.6,
+      "hitRates": {
+        "5": 47.2,
+        "10": 24.1,
+        "20": 7.1,
+        "30": 3.2,
+        "50": 0.7
+      },
+      "hits": {
+        "5": 133,
+        "10": 68,
+        "20": 20,
+        "30": 9,
+        "50": 2
+      }
+    },
+    {
+      "pattern": "Long-Legged Doji em topo",
+      "direction": "SELL",
+      "stars": 3,
+      "signals": 106,
+      "avgMfePct": 7.451,
+      "avgMaePct": -7.482,
+      "payoff": 1,
+      "obvConfirmPct": 50.9,
+      "hitRates": {
+        "5": 60.4,
+        "10": 23.6,
+        "20": 3.8,
+        "30": 0.9,
+        "50": 0
+      },
+      "hits": {
+        "5": 64,
+        "10": 25,
+        "20": 4,
+        "30": 1,
+        "50": 0
+      }
+    },
+    {
+      "pattern": "Shooting Star",
+      "direction": "SELL",
+      "stars": 4,
+      "signals": 311,
+      "avgMfePct": 6.731,
+      "avgMaePct": -7.217,
+      "payoff": 0.93,
+      "obvConfirmPct": 86.8,
+      "hitRates": {
+        "5": 53.7,
+        "10": 23.5,
+        "20": 2.6,
+        "30": 0.6,
+        "50": 0
+      },
+      "hits": {
+        "5": 167,
+        "10": 73,
+        "20": 8,
+        "30": 2,
+        "50": 0
+      }
+    },
+    {
+      "pattern": "Morning Star",
+      "direction": "BUY",
+      "stars": 5,
+      "signals": 1042,
+      "avgMfePct": 7.545,
+      "avgMaePct": -5.931,
+      "payoff": 1.27,
+      "obvConfirmPct": 40.9,
+      "hitRates": {
+        "5": 46.6,
+        "10": 23.4,
+        "20": 7.5,
+        "30": 3,
+        "50": 0.6
+      },
+      "hits": {
+        "5": 486,
+        "10": 244,
+        "20": 78,
+        "30": 31,
+        "50": 6
+      }
+    },
+    {
+      "pattern": "Three Outside Up",
+      "direction": "BUY",
+      "stars": 5,
+      "signals": 1394,
+      "avgMfePct": 7.471,
+      "avgMaePct": -5.563,
+      "payoff": 1.34,
+      "obvConfirmPct": 26.9,
+      "hitRates": {
+        "5": 46.1,
+        "10": 23.3,
+        "20": 7.2,
+        "30": 2.9,
+        "50": 0.9
+      },
+      "hits": {
+        "5": 642,
+        "10": 325,
+        "20": 101,
+        "30": 41,
+        "50": 12
+      }
+    },
+    {
+      "pattern": "Engolfo de alta (Bullish Engulfing)",
+      "direction": "BUY",
+      "stars": 5,
+      "signals": 1493,
+      "avgMfePct": 7.386,
+      "avgMaePct": -5.572,
+      "payoff": 1.33,
+      "obvConfirmPct": 27,
+      "hitRates": {
+        "5": 45.9,
+        "10": 23.2,
+        "20": 7,
+        "30": 2.8,
+        "50": 0.8
+      },
+      "hits": {
+        "5": 685,
+        "10": 347,
+        "20": 105,
+        "30": 42,
+        "50": 12
+      }
+    },
+    {
+      "pattern": "Harami de alta (Bullish Harami)",
+      "direction": "BUY",
+      "stars": 3,
+      "signals": 58,
+      "avgMfePct": 5.792,
+      "avgMaePct": -5.938,
+      "payoff": 0.98,
+      "obvConfirmPct": 63.8,
+      "hitRates": {
+        "5": 46.6,
+        "10": 22.4,
+        "20": 0,
+        "30": 0,
+        "50": 0
+      },
+      "hits": {
+        "5": 27,
+        "10": 13,
+        "20": 0,
+        "30": 0,
         "50": 0
       }
     },
@@ -613,15 +637,15 @@
       "pattern": "Three White Soldiers",
       "direction": "BUY",
       "stars": 5,
-      "signals": 88,
-      "avgMfePct": 8.194,
-      "avgMaePct": -5.321,
+      "signals": 90,
+      "avgMfePct": 8.024,
+      "avgMaePct": -5.225,
       "payoff": 1.54,
-      "obvConfirmPct": 76.1,
+      "obvConfirmPct": 76.7,
       "hitRates": {
-        "5": 55.7,
-        "10": 22.7,
-        "20": 10.2,
+        "5": 54.4,
+        "10": 22.2,
+        "20": 10,
         "30": 1.1,
         "50": 0
       },
@@ -637,23 +661,23 @@
       "pattern": "Dragonfly Doji em suporte",
       "direction": "BUY",
       "stars": 4,
-      "signals": 31,
-      "avgMfePct": 6.464,
-      "avgMaePct": -5.976,
-      "payoff": 1.08,
-      "obvConfirmPct": 74.2,
+      "signals": 27,
+      "avgMfePct": 5.725,
+      "avgMaePct": -6.273,
+      "payoff": 0.91,
+      "obvConfirmPct": 81.5,
       "hitRates": {
-        "5": 32.3,
-        "10": 22.6,
-        "20": 6.5,
-        "30": 3.2,
+        "5": 29.6,
+        "10": 22.2,
+        "20": 3.7,
+        "30": 0,
         "50": 0
       },
       "hits": {
-        "5": 10,
-        "10": 7,
-        "20": 2,
-        "30": 1,
+        "5": 8,
+        "10": 6,
+        "20": 1,
+        "30": 0,
         "50": 0
       }
     },
@@ -661,20 +685,20 @@
       "pattern": "Bullish Marubozu",
       "direction": "BUY",
       "stars": 4,
-      "signals": 138,
-      "avgMfePct": 7.726,
-      "avgMaePct": -4.897,
-      "payoff": 1.58,
-      "obvConfirmPct": 92.8,
+      "signals": 142,
+      "avgMfePct": 7.612,
+      "avgMaePct": -4.917,
+      "payoff": 1.55,
+      "obvConfirmPct": 93,
       "hitRates": {
-        "5": 47.1,
-        "10": 22.5,
-        "20": 9.4,
-        "30": 3.6,
+        "5": 46.5,
+        "10": 21.8,
+        "20": 9.2,
+        "30": 3.5,
         "50": 0.7
       },
       "hits": {
-        "5": 65,
+        "5": 66,
         "10": 31,
         "20": 13,
         "30": 5,
@@ -682,50 +706,26 @@
       }
     },
     {
-      "pattern": "Harami de alta (Bullish Harami)",
-      "direction": "BUY",
-      "stars": 3,
-      "signals": 59,
-      "avgMfePct": 5.712,
-      "avgMaePct": -5.96,
-      "payoff": 0.96,
-      "obvConfirmPct": 62.7,
-      "hitRates": {
-        "5": 45.8,
-        "10": 22,
-        "20": 0,
-        "30": 0,
-        "50": 0
-      },
-      "hits": {
-        "5": 27,
-        "10": 13,
-        "20": 0,
-        "30": 0,
-        "50": 0
-      }
-    },
-    {
-      "pattern": "Three Black Crows",
+      "pattern": "Hanging Man",
       "direction": "SELL",
-      "stars": 5,
-      "signals": 32,
-      "avgMfePct": 5.237,
-      "avgMaePct": -4.44,
-      "payoff": 1.18,
-      "obvConfirmPct": 93.8,
+      "stars": 4,
+      "signals": 255,
+      "avgMfePct": 6.615,
+      "avgMaePct": -6.257,
+      "payoff": 1.06,
+      "obvConfirmPct": 87.5,
       "hitRates": {
-        "5": 37.5,
-        "10": 21.9,
-        "20": 0,
-        "30": 0,
+        "5": 58,
+        "10": 21.2,
+        "20": 1.6,
+        "30": 0.4,
         "50": 0
       },
       "hits": {
-        "5": 12,
-        "10": 7,
-        "20": 0,
-        "30": 0,
+        "5": 148,
+        "10": 54,
+        "20": 4,
+        "30": 1,
         "50": 0
       }
     },
@@ -733,21 +733,21 @@
       "pattern": "Evening Doji Star",
       "direction": "SELL",
       "stars": 5,
-      "signals": 321,
-      "avgMfePct": 6.482,
-      "avgMaePct": -6.807,
-      "payoff": 0.95,
-      "obvConfirmPct": 41.7,
+      "signals": 324,
+      "avgMfePct": 6.401,
+      "avgMaePct": -6.79,
+      "payoff": 0.94,
+      "obvConfirmPct": 42.6,
       "hitRates": {
-        "5": 53.6,
-        "10": 21.5,
+        "5": 53.1,
+        "10": 21,
         "20": 0.9,
         "30": 0.3,
         "50": 0
       },
       "hits": {
         "5": 172,
-        "10": 69,
+        "10": 68,
         "20": 3,
         "30": 1,
         "50": 0
@@ -757,47 +757,71 @@
       "pattern": "Evening Star",
       "direction": "SELL",
       "stars": 5,
-      "signals": 1192,
-      "avgMfePct": 6.49,
-      "avgMaePct": -6.82,
+      "signals": 1197,
+      "avgMfePct": 6.496,
+      "avgMaePct": -6.836,
       "payoff": 0.95,
-      "obvConfirmPct": 44.8,
+      "obvConfirmPct": 45.5,
       "hitRates": {
-        "5": 53.4,
-        "10": 20.6,
+        "5": 53,
+        "10": 20.9,
         "20": 2.8,
         "30": 0.3,
         "50": 0
       },
       "hits": {
-        "5": 637,
-        "10": 245,
-        "20": 33,
+        "5": 634,
+        "10": 250,
+        "20": 34,
         "30": 3,
         "50": 0
       }
     },
     {
-      "pattern": "Ladder Bottom",
+      "pattern": "Martelo (Hammer)",
       "direction": "BUY",
       "stars": 4,
-      "signals": 39,
-      "avgMfePct": 8.169,
-      "avgMaePct": -4.796,
-      "payoff": 1.7,
-      "obvConfirmPct": 10.3,
+      "signals": 172,
+      "avgMfePct": 6.341,
+      "avgMaePct": -5.865,
+      "payoff": 1.08,
+      "obvConfirmPct": 90.1,
       "hitRates": {
-        "5": 41,
-        "10": 20.5,
-        "20": 15.4,
-        "30": 5.1,
+        "5": 39,
+        "10": 20.9,
+        "20": 7.6,
+        "30": 1.2,
+        "50": 0.6
+      },
+      "hits": {
+        "5": 67,
+        "10": 36,
+        "20": 13,
+        "30": 2,
+        "50": 1
+      }
+    },
+    {
+      "pattern": "Three Black Crows",
+      "direction": "SELL",
+      "stars": 5,
+      "signals": 34,
+      "avgMfePct": 5.3,
+      "avgMaePct": -4.334,
+      "payoff": 1.22,
+      "obvConfirmPct": 94.1,
+      "hitRates": {
+        "5": 41.2,
+        "10": 20.6,
+        "20": 0,
+        "30": 0,
         "50": 0
       },
       "hits": {
-        "5": 16,
-        "10": 8,
-        "20": 6,
-        "30": 2,
+        "5": 14,
+        "10": 7,
+        "20": 0,
+        "30": 0,
         "50": 0
       }
     },
@@ -826,41 +850,17 @@
       }
     },
     {
-      "pattern": "Tweezer Bottom",
-      "direction": "BUY",
-      "stars": 4,
-      "signals": 856,
-      "avgMfePct": 6.37,
-      "avgMaePct": -5.444,
-      "payoff": 1.17,
-      "obvConfirmPct": 87.7,
-      "hitRates": {
-        "5": 42.6,
-        "10": 20,
-        "20": 5.1,
-        "30": 1.3,
-        "50": 0.2
-      },
-      "hits": {
-        "5": 365,
-        "10": 171,
-        "20": 44,
-        "30": 11,
-        "50": 2
-      }
-    },
-    {
       "pattern": "Bearish Marubozu",
       "direction": "SELL",
       "stars": 4,
-      "signals": 135,
-      "avgMfePct": 5.622,
-      "avgMaePct": -4.534,
+      "signals": 136,
+      "avgMfePct": 5.593,
+      "avgMaePct": -4.51,
       "payoff": 1.24,
-      "obvConfirmPct": 94.8,
+      "obvConfirmPct": 94.9,
       "hitRates": {
-        "5": 45.2,
-        "10": 20,
+        "5": 44.9,
+        "10": 19.9,
         "20": 0.7,
         "30": 0,
         "50": 0
@@ -874,72 +874,48 @@
       }
     },
     {
-      "pattern": "Hanging Man",
-      "direction": "SELL",
-      "stars": 4,
-      "signals": 252,
-      "avgMfePct": 6.496,
-      "avgMaePct": -6.221,
-      "payoff": 1.04,
-      "obvConfirmPct": 87.3,
-      "hitRates": {
-        "5": 57.1,
-        "10": 19.8,
-        "20": 1.6,
-        "30": 0.4,
-        "50": 0
-      },
-      "hits": {
-        "5": 144,
-        "10": 50,
-        "20": 4,
-        "30": 1,
-        "50": 0
-      }
-    },
-    {
-      "pattern": "Martelo (Hammer)",
+      "pattern": "Tweezer Bottom",
       "direction": "BUY",
       "stars": 4,
-      "signals": 188,
-      "avgMfePct": 6.262,
-      "avgMaePct": -5.931,
-      "payoff": 1.06,
-      "obvConfirmPct": 89.9,
+      "signals": 888,
+      "avgMfePct": 6.327,
+      "avgMaePct": -5.329,
+      "payoff": 1.19,
+      "obvConfirmPct": 87.2,
       "hitRates": {
-        "5": 36.7,
+        "5": 42.5,
         "10": 19.7,
-        "20": 8,
-        "30": 1.6,
-        "50": 0.5
+        "20": 5,
+        "30": 1.2,
+        "50": 0.2
       },
       "hits": {
-        "5": 69,
-        "10": 37,
-        "20": 15,
-        "30": 3,
-        "50": 1
+        "5": 377,
+        "10": 175,
+        "20": 44,
+        "30": 11,
+        "50": 2
       }
     },
     {
-      "pattern": "Bullish Belt Hold",
+      "pattern": "Ladder Bottom",
       "direction": "BUY",
-      "stars": 3,
-      "signals": 133,
-      "avgMfePct": 7.056,
-      "avgMaePct": -5.163,
-      "payoff": 1.37,
-      "obvConfirmPct": 88,
+      "stars": 4,
+      "signals": 41,
+      "avgMfePct": 7.848,
+      "avgMaePct": -4.818,
+      "payoff": 1.63,
+      "obvConfirmPct": 9.8,
       "hitRates": {
-        "5": 55.6,
+        "5": 39,
         "10": 19.5,
-        "20": 4.5,
-        "30": 1.5,
+        "20": 14.6,
+        "30": 4.9,
         "50": 0
       },
       "hits": {
-        "5": 74,
-        "10": 26,
+        "5": 16,
+        "10": 8,
         "20": 6,
         "30": 2,
         "50": 0
@@ -970,25 +946,49 @@
       }
     },
     {
-      "pattern": "Long-Legged Doji em fundo",
+      "pattern": "Bullish Belt Hold",
       "direction": "BUY",
       "stars": 3,
-      "signals": 67,
-      "avgMfePct": 5.843,
-      "avgMaePct": -5.85,
-      "payoff": 1,
-      "obvConfirmPct": 50.7,
+      "signals": 135,
+      "avgMfePct": 7.05,
+      "avgMaePct": -5.197,
+      "payoff": 1.36,
+      "obvConfirmPct": 88.1,
       "hitRates": {
-        "5": 43.3,
-        "10": 19.4,
-        "20": 4.5,
+        "5": 55.6,
+        "10": 19.3,
+        "20": 4.4,
+        "30": 1.5,
+        "50": 0
+      },
+      "hits": {
+        "5": 75,
+        "10": 26,
+        "20": 6,
+        "30": 2,
+        "50": 0
+      }
+    },
+    {
+      "pattern": "Three Outside Down",
+      "direction": "SELL",
+      "stars": 5,
+      "signals": 1412,
+      "avgMfePct": 6.175,
+      "avgMaePct": -6.786,
+      "payoff": 0.91,
+      "obvConfirmPct": 31.6,
+      "hitRates": {
+        "5": 50.6,
+        "10": 18.7,
+        "20": 2.3,
         "30": 0,
         "50": 0
       },
       "hits": {
-        "5": 29,
-        "10": 13,
-        "20": 3,
+        "5": 714,
+        "10": 264,
+        "20": 32,
         "30": 0,
         "50": 0
       }
@@ -997,70 +997,70 @@
       "pattern": "Separating Lines de alta",
       "direction": "BUY",
       "stars": 4,
-      "signals": 1635,
-      "avgMfePct": 6.277,
-      "avgMaePct": -5.216,
-      "payoff": 1.2,
-      "obvConfirmPct": 95.2,
+      "signals": 1641,
+      "avgMfePct": 6.289,
+      "avgMaePct": -5.133,
+      "payoff": 1.23,
+      "obvConfirmPct": 95.1,
       "hitRates": {
-        "5": 38.1,
+        "5": 38.6,
         "10": 18.6,
-        "20": 5.3,
+        "20": 5.1,
         "30": 2.4,
         "50": 0.7
       },
       "hits": {
-        "5": 623,
-        "10": 304,
-        "20": 86,
+        "5": 633,
+        "10": 306,
+        "20": 84,
         "30": 40,
         "50": 12
-      }
-    },
-    {
-      "pattern": "Three Outside Down",
-      "direction": "SELL",
-      "stars": 5,
-      "signals": 1419,
-      "avgMfePct": 6.189,
-      "avgMaePct": -6.753,
-      "payoff": 0.92,
-      "obvConfirmPct": 31.2,
-      "hitRates": {
-        "5": 51.2,
-        "10": 18.5,
-        "20": 2.2,
-        "30": 0,
-        "50": 0
-      },
-      "hits": {
-        "5": 727,
-        "10": 263,
-        "20": 31,
-        "30": 0,
-        "50": 0
       }
     },
     {
       "pattern": "Engolfo de baixa (Bearish Engulfing)",
       "direction": "SELL",
       "stars": 5,
-      "signals": 1529,
-      "avgMfePct": 6.16,
-      "avgMaePct": -6.703,
-      "payoff": 0.92,
-      "obvConfirmPct": 31.1,
+      "signals": 1523,
+      "avgMfePct": 6.142,
+      "avgMaePct": -6.727,
+      "payoff": 0.91,
+      "obvConfirmPct": 31.5,
       "hitRates": {
-        "5": 51.1,
-        "10": 18.4,
+        "5": 50.3,
+        "10": 18.6,
         "20": 2.2,
         "30": 0,
         "50": 0
       },
       "hits": {
-        "5": 781,
-        "10": 282,
-        "20": 33,
+        "5": 766,
+        "10": 283,
+        "20": 34,
+        "30": 0,
+        "50": 0
+      }
+    },
+    {
+      "pattern": "Long-Legged Doji em fundo",
+      "direction": "BUY",
+      "stars": 3,
+      "signals": 70,
+      "avgMfePct": 5.859,
+      "avgMaePct": -6.005,
+      "payoff": 0.98,
+      "obvConfirmPct": 50,
+      "hitRates": {
+        "5": 42.9,
+        "10": 18.6,
+        "20": 4.3,
+        "30": 0,
+        "50": 0
+      },
+      "hits": {
+        "5": 30,
+        "10": 13,
+        "20": 3,
         "30": 0,
         "50": 0
       }
@@ -1069,21 +1069,21 @@
       "pattern": "Tweezer Top",
       "direction": "SELL",
       "stars": 4,
-      "signals": 1152,
-      "avgMfePct": 6.145,
-      "avgMaePct": -6.112,
+      "signals": 1147,
+      "avgMfePct": 6.182,
+      "avgMaePct": -6.11,
       "payoff": 1.01,
-      "obvConfirmPct": 78.4,
+      "obvConfirmPct": 78.6,
       "hitRates": {
-        "5": 52.3,
-        "10": 17.8,
+        "5": 52.1,
+        "10": 18.3,
         "20": 1.6,
         "30": 0.1,
         "50": 0
       },
       "hits": {
-        "5": 603,
-        "10": 205,
+        "5": 598,
+        "10": 210,
         "20": 18,
         "30": 1,
         "50": 0
@@ -1094,21 +1094,21 @@
       "direction": "SELL",
       "stars": 4,
       "signals": 1761,
-      "avgMfePct": 5.658,
-      "avgMaePct": -5.14,
-      "payoff": 1.1,
-      "obvConfirmPct": 93.3,
+      "avgMfePct": 5.671,
+      "avgMaePct": -5.105,
+      "payoff": 1.11,
+      "obvConfirmPct": 93.7,
       "hitRates": {
-        "5": 46.6,
-        "10": 15.2,
-        "20": 1.1,
+        "5": 46.5,
+        "10": 15.5,
+        "20": 1.2,
         "30": 0.1,
         "50": 0
       },
       "hits": {
-        "5": 821,
-        "10": 267,
-        "20": 20,
+        "5": 818,
+        "10": 273,
+        "20": 21,
         "30": 1,
         "50": 0
       }
@@ -1117,21 +1117,21 @@
       "pattern": "Identical Three Crows",
       "direction": "SELL",
       "stars": 4,
-      "signals": 1086,
-      "avgMfePct": 5.213,
-      "avgMaePct": -4.609,
-      "payoff": 1.13,
+      "signals": 1097,
+      "avgMfePct": 5.25,
+      "avgMaePct": -4.622,
+      "payoff": 1.14,
       "obvConfirmPct": 99.8,
       "hitRates": {
-        "5": 42.3,
-        "10": 13.4,
+        "5": 42.8,
+        "10": 13.9,
         "20": 1.1,
         "30": 0,
         "50": 0
       },
       "hits": {
-        "5": 459,
-        "10": 146,
+        "5": 469,
+        "10": 152,
         "20": 12,
         "30": 0,
         "50": 0
@@ -1142,22 +1142,22 @@
       "direction": "BUY",
       "stars": 3,
       "signals": 92,
-      "avgMfePct": 4.708,
-      "avgMaePct": -4.708,
-      "payoff": 1,
-      "obvConfirmPct": 1.1,
+      "avgMfePct": 4.442,
+      "avgMaePct": -4.861,
+      "payoff": 0.91,
+      "obvConfirmPct": 2.2,
       "hitRates": {
-        "5": 30.4,
-        "10": 12,
-        "20": 2.2,
-        "30": 2.2,
+        "5": 29.3,
+        "10": 10.9,
+        "20": 1.1,
+        "30": 1.1,
         "50": 0
       },
       "hits": {
-        "5": 28,
-        "10": 11,
-        "20": 2,
-        "30": 2,
+        "5": 27,
+        "10": 10,
+        "20": 1,
+        "30": 1,
         "50": 0
       }
     }
@@ -1166,22 +1166,22 @@
     {
       "symbol": "BTCUSDT",
       "candles": 1599,
-      "signals": 1032
+      "signals": 1036
     },
     {
       "symbol": "ETHUSDT",
       "candles": 1599,
-      "signals": 972
+      "signals": 961
     },
     {
       "symbol": "BNBUSDT",
       "candles": 1599,
-      "signals": 967
+      "signals": 963
     },
     {
       "symbol": "SOLUSDT",
       "candles": 1599,
-      "signals": 838
+      "signals": 854
     },
     {
       "symbol": "XRPUSDT",
@@ -1191,27 +1191,27 @@
     {
       "symbol": "ADAUSDT",
       "candles": 1599,
-      "signals": 668
+      "signals": 679
     },
     {
       "symbol": "DOGEUSDT",
       "candles": 1599,
-      "signals": 814
+      "signals": 830
     },
     {
       "symbol": "AVAXUSDT",
       "candles": 1599,
-      "signals": 814
+      "signals": 811
     },
     {
       "symbol": "LINKUSDT",
       "candles": 1599,
-      "signals": 761
+      "signals": 763
     },
     {
       "symbol": "DOTUSDT",
       "candles": 1599,
-      "signals": 575
+      "signals": 579
     },
     {
       "symbol": "TRXUSDT",
@@ -1221,67 +1221,67 @@
     {
       "symbol": "LTCUSDT",
       "candles": 1599,
-      "signals": 761
+      "signals": 754
     },
     {
       "symbol": "BCHUSDT",
       "candles": 1599,
-      "signals": 699
+      "signals": 716
     },
     {
       "symbol": "XLMUSDT",
       "candles": 1599,
-      "signals": 664
+      "signals": 678
     },
     {
       "symbol": "UNIUSDT",
       "candles": 1599,
-      "signals": 665
+      "signals": 658
     },
     {
       "symbol": "ATOMUSDT",
       "candles": 1599,
-      "signals": 647
+      "signals": 638
     },
     {
       "symbol": "ETCUSDT",
       "candles": 1599,
-      "signals": 630
+      "signals": 633
     },
     {
       "symbol": "NEARUSDT",
       "candles": 1599,
-      "signals": 591
+      "signals": 587
     },
     {
       "symbol": "APTUSDT",
       "candles": 1599,
-      "signals": 570
+      "signals": 587
     },
     {
       "symbol": "FILUSDT",
       "candles": 1599,
-      "signals": 567
+      "signals": 573
     },
     {
       "symbol": "ICPUSDT",
       "candles": 1599,
-      "signals": 658
+      "signals": 660
     },
     {
       "symbol": "ARBUSDT",
       "candles": 1599,
-      "signals": 618
+      "signals": 608
     },
     {
       "symbol": "OPUSDT",
       "candles": 1599,
-      "signals": 532
+      "signals": 543
     },
     {
       "symbol": "SUIUSDT",
       "candles": 1599,
-      "signals": 739
+      "signals": 746
     },
     {
       "symbol": "AAVEUSDT",
@@ -1290,974 +1290,6 @@
     }
   ],
   "sample": [
-    {
-      "name": "Engolfo de baixa (Bearish Engulfing)",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 88,
-      "volumeRatio": 0.8512191955365158,
-      "obv": "CONFIRMADO",
-      "time": 1787788800000,
-      "entry": 78690.01,
-      "horizon": 96,
-      "mfe": 2.343681718863788,
-      "mae": -3.4228015189704974,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Three Outside Down",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 88,
-      "volumeRatio": 0.8512191955365158,
-      "obv": "CONFIRMADO",
-      "time": 1787788800000,
-      "entry": 78690.01,
-      "horizon": 96,
-      "mfe": 2.343681718863788,
-      "mae": -3.4228015189704974,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Tweezer Top",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.8512191955365158,
-      "obv": "CONFIRMADO",
-      "time": 1787788800000,
-      "entry": 78690.01,
-      "horizon": 96,
-      "mfe": 2.343681718863788,
-      "mae": -3.4228015189704974,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Bearish Marubozu",
-      "direction": "SELL",
-      "type": "CONTINUAÇÃO/FORÇA",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.8512191955365158,
-      "obv": "CONFIRMADO",
-      "time": 1787788800000,
-      "entry": 78690.01,
-      "horizon": 96,
-      "mfe": 2.343681718863788,
-      "mae": -3.4228015189704974,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Dark Cloud Cover",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.689078203848802,
-      "obv": "CONFIRMADO",
-      "time": 1787796000000,
-      "entry": 78717.76,
-      "horizon": 96,
-      "mfe": 2.3797731765685004,
-      "mae": -3.3887436092326806,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Tweezer Top",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.689078203848802,
-      "obv": "CONFIRMADO",
-      "time": 1787796000000,
-      "entry": 78717.76,
-      "horizon": 96,
-      "mfe": 2.3797731765685004,
-      "mae": -3.3887436092326806,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de alta",
-      "direction": "BUY",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.5752680972198584,
-      "obv": "CONFIRMADO",
-      "time": 1787799600000,
-      "entry": 78830.68,
-      "horizon": 96,
-      "mfe": 3.359339282624485,
-      "mae": -2.464370470989208,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Tweezer Top",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.29620389853962487,
-      "obv": "CONFIRMADO",
-      "time": 1787803200000,
-      "entry": 78783.99,
-      "horizon": 96,
-      "mfe": 2.4659114556237816,
-      "mae": -3.3074587313250525,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de baixa",
-      "direction": "SELL",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.29620389853962487,
-      "obv": "CONFIRMADO",
-      "time": 1787803200000,
-      "entry": 78783.99,
-      "horizon": 96,
-      "mfe": 2.4659114556237816,
-      "mae": -3.3074587313250525,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de alta",
-      "direction": "BUY",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.5193987629944049,
-      "obv": "CONFIRMADO",
-      "time": 1787806800000,
-      "entry": 78912.55,
-      "horizon": 96,
-      "mfe": 3.252106287276213,
-      "mae": -2.5655614981394015,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Hanging Man",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.7132193422601665,
-      "obv": "CONFIRMADO",
-      "time": 1787810400000,
-      "entry": 78817.49,
-      "horizon": 96,
-      "mfe": 2.50948132348352,
-      "mae": -3.266343777227143,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Tweezer Top",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.7132193422601665,
-      "obv": "CONFIRMADO",
-      "time": 1787810400000,
-      "entry": 78817.49,
-      "horizon": 96,
-      "mfe": 2.50948132348352,
-      "mae": -3.266343777227143,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de baixa",
-      "direction": "SELL",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.7132193422601665,
-      "obv": "CONFIRMADO",
-      "time": 1787810400000,
-      "entry": 78817.49,
-      "horizon": 96,
-      "mfe": 2.50948132348352,
-      "mae": -3.266343777227143,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de alta",
-      "direction": "BUY",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.6163884665936963,
-      "obv": "CONFIRMADO",
-      "time": 1787814000000,
-      "entry": 79082.17,
-      "horizon": 96,
-      "mfe": 3.0306452137061957,
-      "mae": -2.7745445022563264,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Engolfo de baixa (Bearish Engulfing)",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 1.138405689627588,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787824800000,
-      "entry": 79626,
-      "horizon": 96,
-      "mfe": 3.5610238268650507,
-      "mae": -2.274049701474745,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Three Outside Down",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 1.138405689627588,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787824800000,
-      "entry": 79626,
-      "horizon": 96,
-      "mfe": 3.5610238268650507,
-      "mae": -2.274049701474745,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de alta",
-      "direction": "BUY",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 91,
-      "volumeRatio": 1.9924708419810995,
-      "obv": "CONFIRMADO",
-      "time": 1787835600000,
-      "entry": 79533.15,
-      "horizon": 96,
-      "mfe": 2.4464264272193503,
-      "mae": -3.325845889418433,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Deliberation",
-      "direction": "SELL",
-      "type": "ENFRAQUECIMENTO",
-      "stars": 3,
-      "score": 82,
-      "volumeRatio": 2.150730996665234,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787842800000,
-      "entry": 80302.32,
-      "horizon": 96,
-      "mfe": 4.4406409322651275,
-      "mae": -1.4439940072806468,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Engolfo de baixa (Bearish Engulfing)",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 0.8669428273666365,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787853600000,
-      "entry": 80150.69,
-      "horizon": 96,
-      "mfe": 4.243432004994285,
-      "mae": -1.630091335336381,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Evening Star",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 0.8669428273666365,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787853600000,
-      "entry": 80150.69,
-      "horizon": 96,
-      "mfe": 4.243432004994285,
-      "mae": -1.630091335336381,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Three Outside Down",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 0.8669428273666365,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787853600000,
-      "entry": 80150.69,
-      "horizon": 96,
-      "mfe": 4.243432004994285,
-      "mae": -1.630091335336381,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de alta",
-      "direction": "BUY",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.715970380508031,
-      "obv": "CONFIRMADO",
-      "time": 1787875200000,
-      "entry": 80576,
-      "horizon": 96,
-      "mfe": 1.1205197577442316,
-      "mae": -4.577045274027003,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Shooting Star",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 91,
-      "volumeRatio": 1.981693501627728,
-      "obv": "CONFIRMADO",
-      "time": 1787878800000,
-      "entry": 80500.38,
-      "horizon": 96,
-      "mfe": 4.698236395796496,
-      "mae": 0,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Harami de baixa (Bearish Harami)",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 3,
-      "score": 86,
-      "volumeRatio": 1.981693501627728,
-      "obv": "CONFIRMADO",
-      "time": 1787878800000,
-      "entry": 80500.38,
-      "horizon": 96,
-      "mfe": 4.698236395796496,
-      "mae": 0,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Meeting Lines de baixa",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 3,
-      "score": 86,
-      "volumeRatio": 1.981693501627728,
-      "obv": "CONFIRMADO",
-      "time": 1787878800000,
-      "entry": 80500.38,
-      "horizon": 96,
-      "mfe": 4.698236395796496,
-      "mae": 0,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Gravestone Doji em resistência",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 91,
-      "volumeRatio": 1.981693501627728,
-      "obv": "CONFIRMADO",
-      "time": 1787878800000,
-      "entry": 80500.38,
-      "horizon": 96,
-      "mfe": 4.698236395796496,
-      "mae": 0,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Evening Star",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 92,
-      "volumeRatio": 1.4941639876403363,
-      "obv": "CONFIRMADO",
-      "time": 1787882400000,
-      "entry": 79926.11,
-      "horizon": 96,
-      "mfe": 3.951344813234825,
-      "mae": -0.1672495419373421,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Evening Doji Star",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 92,
-      "volumeRatio": 1.4941639876403363,
-      "obv": "CONFIRMADO",
-      "time": 1787882400000,
-      "entry": 79926.11,
-      "horizon": 96,
-      "mfe": 3.951344813234825,
-      "mae": -0.1672495419373421,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Bearish Belt Hold",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 3,
-      "score": 82,
-      "volumeRatio": 1.4941639876403363,
-      "obv": "CONFIRMADO",
-      "time": 1787882400000,
-      "entry": 79926.11,
-      "horizon": 96,
-      "mfe": 3.951344813234825,
-      "mae": -0.1672495419373421,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Morning Star",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 0.48015098450422855,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787896800000,
-      "entry": 79904.21,
-      "horizon": 96,
-      "mfe": 0,
-      "mae": -3.7747823299923877,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Identical Three Crows",
-      "direction": "SELL",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.7198861783336814,
-      "obv": "CONFIRMADO",
-      "time": 1787907600000,
-      "entry": 79285.19,
-      "horizon": 96,
-      "mfe": 3.1177687025283563,
-      "mae": -0.6933226518006874,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Engolfo de alta (Bullish Engulfing)",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 0.759584333154552,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787911200000,
-      "entry": 79565.89,
-      "horizon": 96,
-      "mfe": 0.3429107623882599,
-      "mae": -3.36562564686953,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Three Outside Up",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 0.759584333154552,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787911200000,
-      "entry": 79565.89,
-      "horizon": 96,
-      "mfe": 0.3429107623882599,
-      "mae": -3.36562564686953,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de baixa",
-      "direction": "SELL",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.6394421666146111,
-      "obv": "CONFIRMADO",
-      "time": 1787918400000,
-      "entry": 79421.05,
-      "horizon": 96,
-      "mfe": 3.294467277078361,
-      "mae": -0.5231546143081078,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Martelo (Hammer)",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 4,
-      "score": 95,
-      "volumeRatio": 4.956197882775093,
-      "obv": "CONFIRMADO",
-      "time": 1787925600000,
-      "entry": 79542.44,
-      "horizon": 96,
-      "mfe": 0.3724929735622773,
-      "mae": -3.337136753662573,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Engolfo de alta (Bullish Engulfing)",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 100,
-      "volumeRatio": 4.956197882775093,
-      "obv": "CONFIRMADO",
-      "time": 1787925600000,
-      "entry": 79542.44,
-      "horizon": 96,
-      "mfe": 0.3724929735622773,
-      "mae": -3.337136753662573,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Morning Star",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 100,
-      "volumeRatio": 4.956197882775093,
-      "obv": "CONFIRMADO",
-      "time": 1787925600000,
-      "entry": 79542.44,
-      "horizon": 96,
-      "mfe": 0.3724929735622773,
-      "mae": -3.337136753662573,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Three Outside Up",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 100,
-      "volumeRatio": 4.956197882775093,
-      "obv": "CONFIRMADO",
-      "time": 1787925600000,
-      "entry": 79542.44,
-      "horizon": 96,
-      "mfe": 0.3724929735622773,
-      "mae": -3.337136753662573,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de alta",
-      "direction": "BUY",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 95,
-      "volumeRatio": 4.956197882775093,
-      "obv": "CONFIRMADO",
-      "time": 1787925600000,
-      "entry": 79542.44,
-      "horizon": 96,
-      "mfe": 0.3724929735622773,
-      "mae": -3.337136753662573,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de baixa",
-      "direction": "SELL",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.641112754333004,
-      "obv": "CONFIRMADO",
-      "time": 1787940000000,
-      "entry": 77554,
-      "horizon": 96,
-      "mfe": 1.4839047369798575,
-      "mae": -2.3249370277078074,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Separating Lines de baixa",
-      "direction": "SELL",
-      "type": "CONTINUAÇÃO",
-      "stars": 4,
-      "score": 83,
-      "volumeRatio": 0.29084693685221863,
-      "obv": "CONFIRMADO",
-      "time": 1787947200000,
-      "entry": 77407.34,
-      "horizon": 96,
-      "mfe": 1.2919916252289942,
-      "mae": -2.5096473551637355,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Engolfo de alta (Bullish Engulfing)",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 0.402827517914651,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787954400000,
-      "entry": 77758.69,
-      "horizon": 96,
-      "mfe": 2.1107737283125427,
-      "mae": -1.7215953612387258,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Morning Star",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 0.402827517914651,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787954400000,
-      "entry": 77758.69,
-      "horizon": 96,
-      "mfe": 2.1107737283125427,
-      "mae": -1.7215953612387258,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
-    {
-      "name": "Three Outside Up",
-      "direction": "BUY",
-      "type": "REVERSÃO",
-      "stars": 5,
-      "score": 80,
-      "volumeRatio": 0.402827517914651,
-      "obv": "SEM CONFIRMAÇÃO",
-      "time": 1787954400000,
-      "entry": 77758.69,
-      "horizon": 96,
-      "mfe": 2.1107737283125427,
-      "mae": -1.7215953612387258,
-      "targets": {
-        "5": false,
-        "10": false,
-        "20": false,
-        "30": false,
-        "50": false
-      },
-      "symbol": "BTCUSDT"
-    },
     {
       "name": "Separating Lines de baixa",
       "direction": "SELL",
@@ -6781,6 +5813,974 @@
       "horizon": 96,
       "mfe": 3.3932770168483506,
       "mae": -1.5808597806493907,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Three Outside Up",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 80,
+      "volumeRatio": 0.20517202844738752,
+      "obv": "SEM CONFIRMAÇÃO",
+      "time": 1789070400000,
+      "entry": 77268.08,
+      "horizon": 96,
+      "mfe": 3.3932770168483506,
+      "mae": -1.5808597806493907,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de baixa",
+      "direction": "SELL",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.40721410276954295,
+      "obv": "CONFIRMADO",
+      "time": 1789074000000,
+      "entry": 77144,
+      "horizon": 96,
+      "mfe": 1.443089222421312,
+      "mae": -3.4372261860057596,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Identical Three Crows",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 87,
+      "volumeRatio": 1.2252727572898465,
+      "obv": "CONFIRMADO",
+      "time": 1789081200000,
+      "entry": 76568.72,
+      "horizon": 96,
+      "mfe": 0.6866054988929227,
+      "mae": -4.157316309926151,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de baixa",
+      "direction": "SELL",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.43769769946302345,
+      "obv": "CONFIRMADO",
+      "time": 1789092000000,
+      "entry": 76838.68,
+      "horizon": 96,
+      "mfe": 1.0415984518961752,
+      "mae": -3.8194016773063,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Martelo (Hammer)",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 87,
+      "volumeRatio": 1.4530906567618536,
+      "obv": "CONFIRMADO",
+      "time": 1789095600000,
+      "entry": 76891.8,
+      "horizon": 96,
+      "mfe": 3.8992454331931325,
+      "mae": -1.0992329481167018,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Tweezer Bottom",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 87,
+      "volumeRatio": 1.4530906567618536,
+      "obv": "CONFIRMADO",
+      "time": 1789095600000,
+      "entry": 76891.8,
+      "horizon": 96,
+      "mfe": 3.8992454331931325,
+      "mae": -1.0992329481167018,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de alta",
+      "direction": "BUY",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 87,
+      "volumeRatio": 1.4530906567618536,
+      "obv": "CONFIRMADO",
+      "time": 1789095600000,
+      "entry": 76891.8,
+      "horizon": 96,
+      "mfe": 3.8992454331931325,
+      "mae": -1.0992329481167018,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Morning Star",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 0.5388205233314854,
+      "obv": "CONFIRMADO",
+      "time": 1789099200000,
+      "entry": 77114.01,
+      "horizon": 96,
+      "mfe": 3.5998517000996433,
+      "mae": -1.3842231781228787,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Engolfo de baixa (Bearish Engulfing)",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 80,
+      "volumeRatio": 0.6544963118882972,
+      "obv": "SEM CONFIRMAÇÃO",
+      "time": 1789110000000,
+      "entry": 77230.7,
+      "horizon": 96,
+      "mfe": 1.557098294229653,
+      "mae": -3.328701965202152,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Three Outside Down",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 80,
+      "volumeRatio": 0.6544963118882972,
+      "obv": "SEM CONFIRMAÇÃO",
+      "time": 1789110000000,
+      "entry": 77230.7,
+      "horizon": 96,
+      "mfe": 1.557098294229653,
+      "mae": -3.328701965202152,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de alta",
+      "direction": "BUY",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.4499205659942635,
+      "obv": "CONFIRMADO",
+      "time": 1789113600000,
+      "entry": 77364.93,
+      "horizon": 96,
+      "mfe": 3.263843190965221,
+      "mae": -1.70406668758053,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Engolfo de baixa (Bearish Engulfing)",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 1.0547677036778418,
+      "obv": "CONFIRMADO",
+      "time": 1789117200000,
+      "entry": 77042,
+      "horizon": 96,
+      "mfe": 1.3089609026467608,
+      "mae": -3.5649017398923566,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Three Outside Down",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 1.0547677036778418,
+      "obv": "CONFIRMADO",
+      "time": 1789117200000,
+      "entry": 77042,
+      "horizon": 96,
+      "mfe": 1.3089609026467608,
+      "mae": -3.5649017398923566,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Tweezer Top",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 1.0547677036778418,
+      "obv": "CONFIRMADO",
+      "time": 1789117200000,
+      "entry": 77042,
+      "horizon": 96,
+      "mfe": 1.3089609026467608,
+      "mae": -3.5649017398923566,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de baixa",
+      "direction": "SELL",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 1.0547677036778418,
+      "obv": "CONFIRMADO",
+      "time": 1789117200000,
+      "entry": 77042,
+      "horizon": 96,
+      "mfe": 1.3089609026467608,
+      "mae": -3.5649017398923566,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Shooting Star",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.8411750957188099,
+      "obv": "CONFIRMADO",
+      "time": 1789120800000,
+      "entry": 76993.25,
+      "horizon": 96,
+      "mfe": 1.2448554556957037,
+      "mae": -3.6259231443234397,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Evening Star",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 1.7970244535701114,
+      "obv": "SEM CONFIRMAÇÃO",
+      "time": 1789138800000,
+      "entry": 77732.25,
+      "horizon": 96,
+      "mfe": 2.813636664241792,
+      "mae": -2.346419597989946,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Breakaway de baixa",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 1.7970244535701114,
+      "obv": "SEM CONFIRMAÇÃO",
+      "time": 1789138800000,
+      "entry": 77732.25,
+      "horizon": 96,
+      "mfe": 2.813636664241792,
+      "mae": -2.346419597989946,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Engolfo de baixa (Bearish Engulfing)",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 0.5764143038800955,
+      "obv": "CONFIRMADO",
+      "time": 1789146000000,
+      "entry": 77534,
+      "horizon": 96,
+      "mfe": 2.551418556973739,
+      "mae": -2.595477386934675,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Three Outside Down",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 0.5764143038800955,
+      "obv": "CONFIRMADO",
+      "time": 1789146000000,
+      "entry": 77534,
+      "horizon": 96,
+      "mfe": 2.551418556973739,
+      "mae": -2.595477386934675,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Tweezer Top",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.5764143038800955,
+      "obv": "CONFIRMADO",
+      "time": 1789146000000,
+      "entry": 77534,
+      "horizon": 96,
+      "mfe": 2.551418556973739,
+      "mae": -2.595477386934675,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de baixa",
+      "direction": "SELL",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.5764143038800955,
+      "obv": "CONFIRMADO",
+      "time": 1789146000000,
+      "entry": 77534,
+      "horizon": 96,
+      "mfe": 2.551418556973739,
+      "mae": -2.595477386934675,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de baixa",
+      "direction": "SELL",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.2574632990556146,
+      "obv": "CONFIRMADO",
+      "time": 1789160400000,
+      "entry": 77108.01,
+      "horizon": 96,
+      "mfe": 2.8546057736390518,
+      "mae": -3.1306407035175954,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Tweezer Bottom",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 87,
+      "volumeRatio": 1.2831251088075422,
+      "obv": "CONFIRMADO",
+      "time": 1789164000000,
+      "entry": 77150,
+      "horizon": 96,
+      "mfe": 3.1756318859364807,
+      "mae": -2.8282955281918376,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Morning Star",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 0.5967656360202384,
+      "obv": "CONFIRMADO",
+      "time": 1789167600000,
+      "entry": 77225.7,
+      "horizon": 96,
+      "mfe": 3.0744946306734633,
+      "mae": -2.9235474718908305,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Engolfo de alta (Bullish Engulfing)",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 0.3540380103336911,
+      "obv": "CONFIRMADO",
+      "time": 1789178400000,
+      "entry": 77288,
+      "horizon": 96,
+      "mfe": 2.991408756857461,
+      "mae": -3.0017984680674847,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Three Outside Up",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 0.3540380103336911,
+      "obv": "CONFIRMADO",
+      "time": 1789178400000,
+      "entry": 77288,
+      "horizon": 96,
+      "mfe": 2.991408756857461,
+      "mae": -3.0017984680674847,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Tweezer Bottom",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.3540380103336911,
+      "obv": "CONFIRMADO",
+      "time": 1789178400000,
+      "entry": 77288,
+      "horizon": 96,
+      "mfe": 2.991408756857461,
+      "mae": -3.0017984680674847,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de alta",
+      "direction": "BUY",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.3540380103336911,
+      "obv": "CONFIRMADO",
+      "time": 1789178400000,
+      "entry": 77288,
+      "horizon": 96,
+      "mfe": 2.991408756857461,
+      "mae": -3.0017984680674847,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Evening Star",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 5,
+      "score": 88,
+      "volumeRatio": 0.4600703577333744,
+      "obv": "CONFIRMADO",
+      "time": 1789185600000,
+      "entry": 77222.75,
+      "horizon": 96,
+      "mfe": 3.0076578037260493,
+      "mae": -2.9864949748743763,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Identical Three Crows",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 1.1256317917768657,
+      "obv": "CONFIRMADO",
+      "time": 1789189200000,
+      "entry": 77218,
+      "horizon": 96,
+      "mfe": 3.001321764481557,
+      "mae": -2.9924623115577864,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Shooting Star",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.41556093425466967,
+      "obv": "CONFIRMADO",
+      "time": 1789196400000,
+      "entry": 77269.55,
+      "horizon": 96,
+      "mfe": 3.0700844640717984,
+      "mae": -2.9277010050251184,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Tweezer Top",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.41556093425466967,
+      "obv": "CONFIRMADO",
+      "time": 1789196400000,
+      "entry": 77269.55,
+      "horizon": 96,
+      "mfe": 3.0700844640717984,
+      "mae": -2.9277010050251184,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de baixa",
+      "direction": "SELL",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.41556093425466967,
+      "obv": "CONFIRMADO",
+      "time": 1789196400000,
+      "entry": 77269.55,
+      "horizon": 96,
+      "mfe": 3.0700844640717984,
+      "mae": -2.9277010050251184,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Tweezer Top",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.4195579707598884,
+      "obv": "CONFIRMADO",
+      "time": 1789203600000,
+      "entry": 77349.44,
+      "horizon": 96,
+      "mfe": 3.1766499746491705,
+      "mae": -2.827336683417081,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de baixa",
+      "direction": "SELL",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.4195579707598884,
+      "obv": "CONFIRMADO",
+      "time": 1789203600000,
+      "entry": 77349.44,
+      "horizon": 96,
+      "mfe": 3.1766499746491705,
+      "mae": -2.827336683417081,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Hanging Man",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.7690330411393944,
+      "obv": "CONFIRMADO",
+      "time": 1789214400000,
+      "entry": 77340,
+      "horizon": 96,
+      "mfe": 3.164057930340114,
+      "mae": -2.8391959798995003,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Dark Cloud Cover",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.7690330411393944,
+      "obv": "CONFIRMADO",
+      "time": 1789214400000,
+      "entry": 77340,
+      "horizon": 96,
+      "mfe": 3.164057930340114,
+      "mae": -2.8391959798995003,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Tweezer Top",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.7690330411393944,
+      "obv": "CONFIRMADO",
+      "time": 1789214400000,
+      "entry": 77340,
+      "horizon": 96,
+      "mfe": 3.164057930340114,
+      "mae": -2.8391959798995003,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de baixa",
+      "direction": "SELL",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.7690330411393944,
+      "obv": "CONFIRMADO",
+      "time": 1789214400000,
+      "entry": 77340,
+      "horizon": 96,
+      "mfe": 3.164057930340114,
+      "mae": -2.8391959798995003,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Separating Lines de alta",
+      "direction": "BUY",
+      "type": "CONTINUAÇÃO",
+      "stars": 4,
+      "score": 95,
+      "volumeRatio": 2.5249263477328077,
+      "obv": "CONFIRMADO",
+      "time": 1789218000000,
+      "entry": 77366.52,
+      "horizon": 96,
+      "mfe": 2.8868818191641443,
+      "mae": -3.100242844062262,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Identical Three Crows",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 83,
+      "volumeRatio": 0.7105634385269735,
+      "obv": "CONFIRMADO",
+      "time": 1789236000000,
+      "entry": 77131,
+      "horizon": 96,
+      "mfe": 2.885272203582412,
+      "mae": -3.1017587939698443,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Matching Low",
+      "direction": "BUY",
+      "type": "REVERSÃO",
+      "stars": 3,
+      "score": 82,
+      "volumeRatio": 2.1139784220869515,
+      "obv": "SEM CONFIRMAÇÃO",
+      "time": 1789239600000,
+      "entry": 77114.99,
+      "horizon": 96,
+      "mfe": 3.2224733479184753,
+      "mae": -2.7841798332594037,
+      "targets": {
+        "5": false,
+        "10": false,
+        "20": false,
+        "30": false,
+        "50": false
+      },
+      "symbol": "BTCUSDT"
+    },
+    {
+      "name": "Identical Three Crows",
+      "direction": "SELL",
+      "type": "REVERSÃO",
+      "stars": 4,
+      "score": 95,
+      "volumeRatio": 2.1139784220869515,
+      "obv": "CONFIRMADO",
+      "time": 1789239600000,
+      "entry": 77114.99,
+      "horizon": 96,
+      "mfe": 2.8639164165709774,
+      "mae": -3.1218718592964767,
       "targets": {
         "5": false,
         "10": false,
