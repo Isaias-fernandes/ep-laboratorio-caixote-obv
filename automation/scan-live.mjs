@@ -54,5 +54,5 @@ const all=[...events.values()].filter(e=>Date.parse(e.updated_at)>=Date.now()-7*
 const at=new Date().toISOString(),result={ok:errors.length===0,processed,total:150,recoveredCandles:recovered,errors,at};
 fs.writeFileSync(OUT,JSON.stringify({version:'lab-live-v1',intervals:Object.keys(INTERVALS),symbols:50,state:[...state.values()],events:all.sort((a,b)=>Date.parse(b.updated_at)-Date.parse(a.updated_at)),control:{last_finished_at:at,result},archive:{archived_at:at,location:'data/live-history/',verification:'committed_with_feed'}})+'\n');
 console.log(JSON.stringify({...result,events:all.length}));if(processed===0&&errors.length)process.exitCode=1;
-if(parallel){try{saveParallel(parallel,parallelErrors,at)}catch(e){console.error('Histórico M6 paralelo não foi salvo:',String(e));process.exitCode=1}}
+if(parallel){try{saveParallel(parallel,[...errors.map(e=>({...e,source:'coleta compartilhada'})),...parallelErrors],at)}catch(e){console.error('Histórico M6 paralelo não foi salvo:',String(e));process.exitCode=1}}
 if(parallelErrors.length)console.error(JSON.stringify({parallelErrors}));
