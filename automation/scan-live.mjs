@@ -1,6 +1,10 @@
 import fs from 'node:fs';
 import {reading,advance,INTERVALS,SYMBOLS} from '../lab-live-core.mjs';
 import {closedCandles,contiguous} from '../lab-signal-engine.mjs';
+import {loadParallel,collectParallel,saveParallel} from './m6-parallel-collector.mjs';
+// Independent experiment; reuse each existing request, without changing baseline signals.
+let parallel=null;const parallelErrors=[];
+try{parallel=loadParallel()}catch(e){parallelErrors.push({error:String(e)})}
 const OUT='data/live-signals.json';
 const read=(file,fallback)=>{try{return JSON.parse(fs.readFileSync(file,'utf8'))}catch{return fallback}};
 const old=read(OUT,{state:[],events:[]}),previous=new Map(old.state.map(s=>[s.symbol+'|'+s.interval,s]));
@@ -36,6 +40,8 @@ async function worker(){while(cursor<tasks.length){
   for(const e of touched.values())events.set(e.id,e);
   state.set(symbol+'|'+interval,{symbol,interval,candle_time:new Date(x.candleTime).toISOString(),observed_at:new Date(now).toISOString(),data:{...x,model:interval==='1h'?'H1_96_80':'EXPERIMENTAL_M5_M15',recoveredCandles:Math.max(0,count-1)}});
   processed++;recovered+=Math.max(0,count-1);
+  if(parallel){try{collectParallel(parallel,symbol,interval,rows,ms,new Date(now).toISOString())}
+    catch(e){parallelErrors.push({symbol,interval,error:String(e)})}}
  }catch(e){errors.push({symbol,interval,error:String(e)})}
 }}
 await Promise.all(Array.from({length:5},worker));
@@ -48,3 +54,5 @@ const all=[...events.values()].filter(e=>Date.parse(e.updated_at)>=Date.now()-7*
 const at=new Date().toISOString(),result={ok:errors.length===0,processed,total:150,recoveredCandles:recovered,errors,at};
 fs.writeFileSync(OUT,JSON.stringify({version:'lab-live-v1',intervals:Object.keys(INTERVALS),symbols:50,state:[...state.values()],events:all.sort((a,b)=>Date.parse(b.updated_at)-Date.parse(a.updated_at)),control:{last_finished_at:at,result},archive:{archived_at:at,location:'data/live-history/',verification:'committed_with_feed'}})+'\n');
 console.log(JSON.stringify({...result,events:all.length}));if(processed===0&&errors.length)process.exitCode=1;
+if(parallel){try{saveParallel(parallel,parallelErrors,at)}catch(e){console.error('Histórico M6 paralelo não foi salvo:',String(e));process.exitCode=1}}
+if(parallelErrors.length)console.error(JSON.stringify({parallelErrors}));

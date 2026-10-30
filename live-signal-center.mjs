@@ -89,6 +89,7 @@ async function readNow(){
   const raw=await getJson(`https://data-api.binance.vision/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=120`);if(g!==generation)return;
   const now=Date.now(),rows=raw.map(x=>({t:+x[0],o:+x[1],h:+x[2],l:+x[3],c:+x[4],v:+x[5]})),x=reading(rows,interval,now);
   context=rows.filter(c=>c.t+INTERVALS[interval]<=now).slice(-96);
+  window.dispatchEvent(new CustomEvent('lab-closed-candles',{detail:{symbol,interval,candles:context,now}}));
   currentDirection=x.direction;
   renderFlow(symbol,currentDirection);
   $('labLiveNowTitle').textContent=symbol+' · '+interval+' · '+labels[x.stage];

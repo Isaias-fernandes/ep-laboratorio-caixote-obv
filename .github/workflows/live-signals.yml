@@ -9,6 +9,9 @@ on:
       - 'automation/scan-live.mjs'
       - 'lab-live-core.mjs'
       - 'lab-signal-engine.mjs'
+      - 'm6-parallel-core.mjs'
+      - 'automation/m6-parallel-collector.mjs'
+      - 'structural-pattern-detectors-v1.js'
 permissions:
   contents: write
 concurrency:
@@ -26,14 +29,14 @@ jobs:
         with:
           node-version: '24'
       - name: Validate signal lifecycle
-        run: node --test tests/lab-live.test.mjs
+        run: node --test tests/lab-live.test.mjs tests/m6-parallel.test.mjs
       - name: Scan closed candles and archive every event
         run: node automation/scan-live.mjs
       - name: Publish feed and permanent archive together
         run: |
           git config user.name laboratorio-live-bot
           git config user.email actions@users.noreply.github.com
-          git add data/live-signals.json data/live-history
+          git add data/live-signals.json data/live-history data/m6-parallel.json data/m6-parallel-history
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "data: laboratory M5 M15 H1 signals and permanent archive"
           for attempt in 1 2 3; do
