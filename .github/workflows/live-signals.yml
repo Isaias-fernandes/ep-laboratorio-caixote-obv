@@ -10,6 +10,7 @@ on:
       - 'lab-live-core.mjs'
       - 'lab-signal-engine.mjs'
       - 'm6-parallel-core.mjs'
+      - 'm6-long-tracking.mjs'
       - 'automation/m6-parallel-collector.mjs'
       - 'structural-pattern-detectors-v1.js'
 permissions:
@@ -29,7 +30,7 @@ jobs:
         with:
           node-version: '24'
       - name: Validate signal lifecycle
-        run: node --test tests/lab-live.test.mjs tests/m6-parallel.test.mjs
+        run: node --test tests/lab-live.test.mjs tests/m6-parallel.test.mjs tests/m6-long-tracking.test.mjs
       - name: Scan closed candles and archive every event
         run: node automation/scan-live.mjs
       - name: Publish feed and permanent archive together
@@ -45,3 +46,4 @@ jobs:
             sleep $((attempt * 3))
           done
           exit 1
+
