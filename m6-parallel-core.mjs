@@ -58,6 +58,8 @@ function emptyArmStats(){return{signals:0,targets:0,stops:0,timeouts:0,ambiguous
 export function newStore(){return{version:VERSION,config:CONFIG,generatedAt:null,state:{},episodes:[],stats:newStats(),statsByInterval:{}};}
 
 function pendingArm(reading,t){return{signalTime:t,score:reading.score,pattern:reading.pattern,
+  cmf20:reading.cmf20??null,volumeRatio:reading.volumeRatio??null,obv:reading.obv??null,
+  liquidityGate:reading.gates?.liquidity??null,
   entry:null,entryTime:null,observed:0,status:'PENDING',outcome:null,netPct:null,
   mfe:0,mae:0,finalReturnPct:null,targetFirst:null,targetHours:null,lastCandleTime:t};}
 
