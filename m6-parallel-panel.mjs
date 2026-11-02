@@ -1,9 +1,10 @@
-import {compareReading,CONFIG,VERSION,statsView} from './m6-parallel-core.mjs';
+import {compareReading,CONFIG,VERSION,statsView} from './m6-parallel-core.mjs?v=m6-liquidez-cmf-v2';
 
 const panel=document.createElement('section');panel.className='panel interpretation-center';panel.id='m6ParallelPanel';
 panel.innerHTML=`<span class="eyebrow">MOTOR PARALELO · EXPERIMENTO DE COMPRA</span>
-<h2>M6 Paralelo — Estrutura Confirmada v1</h2>
-<p>Compara o Motor 6 atual com três vales ascendentes e flâmula de alta, volume, OBV e momentum. Nenhuma ordem é enviada.</p>
+<h2>M6 Paralelo — Estrutura + Fluxo CMF20</h2>
+<p>Compara o Motor 6 atual com três vales ascendentes e flâmula de alta, volume relativo, OBV, momentum e CMF de 20 candles. CMF precisa estar ≥ 0 para confirmar o candidato. Nenhuma ordem é enviada.</p>
+<p class="small">O CMF é calculado com os candles já coletados. Spread e profundidade do book ficam fora desta versão porque exigiriam dados adicionais; o histórico anterior é preservado e as métricas começam separadas nesta versão.</p>
 <p id="m6ParallelStatus" role="status">Carregando acompanhamento…</p>
 <div class="notice" id="m6ParallelCurrent" role="status">Selecione um ativo na central de sinais atuais para comparar as duas leituras.</div>
 <div class="table-wrap"><table><thead><tr><th>Modelo</th><th>Entradas concluídas</th><th>Alvo antes do stop</th><th>Resultado líquido médio¹</th><th>Alta / queda máxima média</th><th>Ambíguos / parciais</th></tr></thead><tbody id="m6ParallelSummary"></tbody></table></div>
@@ -21,7 +22,7 @@ const $=id=>document.getElementById(id),fmt=(n,d=2)=>Number.isFinite(n)?n.toLoca
 const names={baseline:'Motor 6 atual',candidate:'M6 paralelo'},outcomes={TARGET:'ALVO',STOP:'STOP',TIMEOUT:'FIM DO PRAZO',AMBIGUOUS:'ORDEM INDETERMINADA'};
 let feed=null;
 function row(body,values){const tr=document.createElement('tr');for(const value of values){const td=document.createElement('td');td.textContent=value;tr.append(td)}body.append(tr)}
-function armText(a){return !a?'Sem entrada':a.entry==null?'Aguardando abertura':`${a.pattern} · entrada ${fmt(a.entry,8)} · ${outcomes[a.outcome]||'ACOMPANHANDO'} · líquido ${fmt(a.netPct)}% · ${a.observed}/96 velas`;}
+function armText(a){if(!a)return'Sem entrada';const flow=Number.isFinite(a.cmf20)?` · CMF20 ${fmt(a.cmf20,3)} · vol ${fmt(a.volumeRatio,2)}× · OBV ${a.obv||'—'}`:'';return a.entry==null?`Aguardando abertura${flow}`:`${a.pattern} · entrada ${fmt(a.entry,8)} · ${outcomes[a.outcome]||'ACOMPANHANDO'} · líquido ${fmt(a.netPct)}% · ${a.observed}/96 velas${flow}`;}
 function render(){
   const interval=$('m6ParallelInterval').value,summary=$('m6ParallelSummary');summary.replaceChildren();
   const stats=feed?.statsByInterval?.[interval];
@@ -55,7 +56,7 @@ window.addEventListener('lab-closed-candles',event=>{
   const {symbol,interval,candles,now}=event.detail;
   try{const ms={'5m':300000,'15m':900000,'1h':3600000}[interval],r=compareReading(candles,ms,now),c=r.candidate;
     const missing=Object.entries(c.gates).filter(([,v])=>!v).map(([k])=>({pattern:'padrão preferencial',breakout:'rompimento',momentum:'momentum',volume:'volume',obv:'OBV',antiStretch:'preço sem esticamento'}[k]));
-    $('m6ParallelCurrent').textContent=`${symbol} ${interval} · Motor 6 atual: ${r.baseline.approved?'COMPRA':r.baseline.direction==='SELL'?'VENDA (fora desta comparação)':'SEM COMPRA'} ${r.baseline.score}/100 · M6 paralelo: ${c.approved?'COMPRA':'OBSERVAÇÃO'} ${c.score}/100 · ${c.pattern||'Sem padrão preferencial'} · ${c.stage}${missing.length?' · Falta: '+missing.join(', '):''}. Leitura direta; o registro permanente é feito pelo coletor.`;
+    $('m6ParallelCurrent').textContent=`${symbol} ${interval} · Motor 6 atual: ${r.baseline.approved?'COMPRA':r.baseline.direction==='SELL'?'VENDA (fora desta comparação)':'SEM COMPRA'} ${r.baseline.score}/100 · M6 paralelo: ${c.approved?'COMPRA':'OBSERVAÇÃO'} ${c.score}/100 · ${c.pattern||'Sem padrão preferencial'} · ${Number.isFinite(c.cmf20)?`CMF20 ${fmt(c.cmf20,3)} ${c.gates.liquidity?'OK':'BLOQUEIA'}`:'CMF20 indisponível'} · ${c.stage}${missing.length?' · Falta: '+missing.map(k=>k==='liquidity'?'CMF20 positivo':k).join(', '):''}. Leitura direta; o registro permanente é feito pelo coletor.`;
   }catch(e){$('m6ParallelCurrent').textContent='Comparação direta indisponível: '+String(e);}
 });
 $('m6ParallelInterval').onchange=render;

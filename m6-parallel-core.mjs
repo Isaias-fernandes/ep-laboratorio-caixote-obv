@@ -2,29 +2,44 @@ import {analyze, closedCandles, contiguous} from './lab-signal-engine.mjs';
 import * as structuralModule from './structural-pattern-detectors-v1.js';
 
 const detector=structuralModule.default || globalThis.EPStructuralPatternDetectors;
-export const VERSION='m6-estrutura-confirmada-v1';
+export const VERSION='m6-liquidez-cmf-v2';
 export const CONFIG=Object.freeze({version:VERSION,context:96,horizon:96,entryWindow:24,
-  targetPct:5,stopPct:3,costPct:0.20,quietBars:3,minimumScore:80,
+  targetPct:5,stopPct:3,costPct:0.20,quietBars:3,minimumScore:80,cmfPeriod:20,minimumCmf:0,
   patterns:['Three Rising Valleys','Bull Pennant'],direction:'BUY',
   maxRsi:74,maxMove6Pct:5});
 
-// Pure calculation: receives the candles that the existing collector already loaded.
-export function candidateReading(technical,patterns,move6Pct){
+// Pure calculations use only candles already loaded by the existing collector.
+export function chaikinMoneyFlow(candles,period=CONFIG.cmfPeriod){
+  if(!Array.isArray(candles)||candles.length<period)return null;
+  let moneyFlowVolume=0,totalVolume=0;
+  for(const candle of candles.slice(-period)){
+    const high=Number(candle.h),low=Number(candle.l),close=Number(candle.c),volume=Number(candle.v);
+    if(![high,low,close,volume].every(Number.isFinite)||volume<0)return null;
+    const range=high-low;
+    const multiplier=range>0?(2*close-high-low)/range:0;
+    moneyFlowVolume+=multiplier*volume;totalVolume+=volume;
+  }
+  return totalVolume>0?moneyFlowVolume/totalVolume:null;
+}
+export function candidateReading(technical,patterns,move6Pct,candles){
   const preferred=patterns.filter(p=>p.direction==='BUY'&&CONFIG.patterns.includes(p.name));
   const pattern=preferred.slice().sort((a,b)=>Number(b.breakout)-Number(a.breakout)||b.score-a.score)[0];
   const momentum=technical.rsi>=50&&technical.cci>0&&technical.macd.histogram>0;
   const obv=technical.obv.trend==='SUBINDO';
   const volume=technical.volumeRatio>=1.2;
+  const cmf20=chaikinMoneyFlow(candles);
+  // Legacy direct callers without candles keep their prior behavior; live readings always pass candles.
+  const liquidity=candles===undefined||(Number.isFinite(cmf20)&&cmf20>=CONFIG.minimumCmf);
   const stretched=technical.rsi>=CONFIG.maxRsi||move6Pct>=CONFIG.maxMove6Pct;
   const parts={base:pattern?50:0,pattern:pattern?(pattern.name==='Bull Pennant'?20:16):0,
     momentum:momentum?10:0,volume:technical.volumeRatio>=2?12:technical.volumeRatio>=1.5?8:volume?4:0,
-    obv:obv?8:0,retest:pattern?.retest?4:0};
-  const gates={pattern:!!pattern,breakout:!!pattern?.breakout,momentum,volume,obv,antiStretch:!stretched};
+    obv:obv?8:0,retest:pattern?.retest?4:0,cmf:liquidity?4:0};
+  const gates={pattern:!!pattern,breakout:!!pattern?.breakout,momentum,volume,obv,liquidity,antiStretch:!stretched};
   let score=pattern?Math.min(100,Object.values(parts).reduce((a,b)=>a+b,0)):0;
   if(!Object.values(gates).every(Boolean))score=Math.min(score,79);
   return{score,approved:score>=CONFIG.minimumScore&&Object.values(gates).every(Boolean),
     pattern:pattern?.name||null,stage:!pattern?'OBSERVAÇÃO':!pattern.breakout?'FORMAÇÃO':pattern.retest?'RETESTE':'ROMPIMENTO',
-    level:pattern?.level??null,parts,gates,rsi:technical.rsi,move6Pct,volumeRatio:technical.volumeRatio,obv:technical.obv.trend};
+    level:pattern?.level??null,parts,gates,rsi:technical.rsi,move6Pct,volumeRatio:technical.volumeRatio,obv:technical.obv.trend,cmf20};
 }
 
 export function compareReading(rows,intervalMs,now){
@@ -33,7 +48,7 @@ export function compareReading(rows,intervalMs,now){
   const technical=analyze(c),patterns=detector.detect(c);
   return{version:VERSION,candleTime:c.at(-1).t,closedAt:c.at(-1).t+intervalMs,price:c.at(-1).c,
     baseline:{approved:technical.classification==='SINAL_COMPRA',score:technical.score,pattern:technical.pattern.name,direction:technical.pattern.direction},
-    candidate:candidateReading(technical,patterns,(c.at(-1).c/c.at(-7).c-1)*100)};
+    candidate:candidateReading(technical,patterns,(c.at(-1).c/c.at(-7).c-1)*100,c)};
 }
 
 export function newStats(){return{completedEpisodes:0,partialEpisodes:0,

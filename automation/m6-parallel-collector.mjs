@@ -4,8 +4,15 @@ import {updateLong} from '../m6-long-tracking.mjs';
 const OUT='data/m6-parallel.json';
 export function loadParallel(){
   if(!fs.existsSync(OUT))return newStore();
-  const store=JSON.parse(fs.readFileSync(OUT,'utf8'));
-  if(store.version!==VERSION)throw Error('Versão do histórico paralelo incompatível; histórico preservado');
+  let store=JSON.parse(fs.readFileSync(OUT,'utf8'));
+  if(store.version!==VERSION){
+    const previous=store;
+    store=newStore();
+    store.episodes=Array.isArray(previous.episodes)?previous.episodes:[];
+    store.legacy={version:previous.version,config:previous.config,stats:previous.stats,
+      statsByInterval:previous.statsByInterval,
+      openEpisodes:Object.values(previous.state||{}).map(s=>s.episode).filter(Boolean)};
+  }
   // Recover retained episode identities from permanent archives during migration.
   store.longTracking??={};
   if(fs.existsSync('data/m6-parallel-history'))for(const file of fs.readdirSync('data/m6-parallel-history')){
