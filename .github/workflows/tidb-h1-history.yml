@@ -1,0 +1,60 @@
+name: Archive EP Laboratory H1 signals to TiDB
+
+on:
+  workflow_dispatch:
+    inputs:
+      create_tables:
+        description: "Create the TiDB tables before archiving signals"
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    - cron: "17 * * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ep-lab-tidb-h1-archive
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Build a batch from already collected H1 data
+        run: node automation/export-tidb-batch.mjs
+
+      - name: Create TiDB tables once when requested
+        if: github.event_name == 'workflow_dispatch' && inputs.create_tables == true
+        env:
+          EP_SIGNAL_INGEST_TOKEN: ${{ secrets.EP_SIGNAL_INGEST_TOKEN }}
+        run: |
+          set -euo pipefail
+          curl --fail-with-body --silent --show-error \
+            -X POST "https://ep-whale-api.isaiasf59.workers.dev/admin/migrate" \
+            -H "Authorization: Bearer ${EP_SIGNAL_INGEST_TOKEN}"
+
+      - name: Store the hourly batch
+        env:
+          EP_SIGNAL_INGEST_TOKEN: ${{ secrets.EP_SIGNAL_INGEST_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [[ ! -s /tmp/ep-h1-batch.json ]]; then
+            echo "No H1 batch to store."
+            exit 0
+          fi
+          curl --fail-with-body --silent --show-error \
+            -X POST "https://ep-whale-api.isaiasf59.workers.dev/ingest/h1" \
+            -H "Authorization: Bearer ${EP_SIGNAL_INGEST_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data-binary @/tmp/ep-h1-batch.json
