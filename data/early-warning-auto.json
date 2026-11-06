@@ -1,10 +1,231 @@
 {
-  "generatedAt": "2026-11-05T18:49:06.095Z",
+  "generatedAt": "2026-11-06T00:19:32.732Z",
   "version": "early-warning-patterns-v1",
   "preLegVersion": "pre-leg-score-v1",
   "timeframe": "H1",
   "minimumEarlyScore": 65,
-  "signals": [],
+  "signals": [
+    {
+      "name": "Double Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
+      "score": 88,
+      "level": 0.3189,
+      "distanceToBreakoutPct": 0.157,
+      "volumeRatio": 1.381,
+      "obvSlope": 302480.6311188815,
+      "obvConfirm": true,
+      "compression": false,
+      "bottomGapPct": 0.69,
+      "market": "CRIPTO",
+      "symbol": "TRXUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-05T23:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 49.7,
+        "avgLead": 7.97,
+        "hit10": 16.6,
+        "hit20": 7.1
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 43,
+        "phase": "OBSERVAÇÃO",
+        "price": 0.3184,
+        "resistance": 0.32,
+        "support": 0.3158,
+        "distanceToBreakoutPct": 0.503,
+        "compressionRatio": 1.076,
+        "volumeAcceleration": 0.708,
+        "obvLead": false,
+        "obvSlope": 302480.6311188815,
+        "attacks": 2,
+        "higherLows": 5,
+        "rsi": 48.39,
+        "move6Pct": 0.44,
+        "penalty": 0,
+        "parts": {
+          "compression": 0,
+          "obv": 12,
+          "attacks": 8,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 11
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 43
+        }
+      }
+    },
+    {
+      "name": "Rectangle Accumulation",
+      "family": "BILATERAL",
+      "direction": "BUY",
+      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
+      "score": 82,
+      "level": 0.32,
+      "distanceToBreakoutPct": 0.503,
+      "volumeRatio": 1.381,
+      "obvSlope": 302480.6311188815,
+      "obvConfirm": true,
+      "compression": false,
+      "boxRangePct": 1.33,
+      "boxPosition": 0.619,
+      "market": "CRIPTO",
+      "symbol": "TRXUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-05T23:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 46.4,
+        "avgLead": 8.29,
+        "hit10": 15.9,
+        "hit20": 7.8
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 43,
+        "phase": "OBSERVAÇÃO",
+        "price": 0.3184,
+        "resistance": 0.32,
+        "support": 0.3158,
+        "distanceToBreakoutPct": 0.503,
+        "compressionRatio": 1.076,
+        "volumeAcceleration": 0.708,
+        "obvLead": false,
+        "obvSlope": 302480.6311188815,
+        "attacks": 2,
+        "higherLows": 5,
+        "rsi": 48.39,
+        "move6Pct": 0.44,
+        "penalty": 0,
+        "parts": {
+          "compression": 0,
+          "obv": 12,
+          "attacks": 8,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 11
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 43
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 72,
+      "level": 10.889,
+      "distanceToBreakoutPct": 1.986,
+      "volumeRatio": 1.647,
+      "obvSlope": -47046.07143356642,
+      "obvConfirm": false,
+      "compression": false,
+      "structure": {
+        "rise1Pct": 0.34,
+        "rise2Pct": 0.21
+      },
+      "market": "CRIPTO",
+      "symbol": "LINKUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-05T23:00:00.000Z",
+      "confluence": 1,
+      "priority": 93,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 8,
+        "phase": "OBSERVAÇÃO",
+        "price": 10.677,
+        "resistance": 11.651,
+        "support": 10.589,
+        "distanceToBreakoutPct": 9.122,
+        "compressionRatio": 1.429,
+        "volumeAcceleration": 0.744,
+        "obvLead": false,
+        "obvSlope": -47046.07143356642,
+        "attacks": 1,
+        "higherLows": 3,
+        "rsi": 18.9,
+        "move6Pct": 0.07,
+        "penalty": 0,
+        "parts": {
+          "compression": 0,
+          "obv": 0,
+          "attacks": 0,
+          "volume": 0,
+          "structure": 8,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 8
+        }
+      }
+    }
+  ],
   "preLegRadar": [],
   "earlyLegMotorVersion": "early-leg-motor-v1",
   "earlyLegMotorRadar": [],
