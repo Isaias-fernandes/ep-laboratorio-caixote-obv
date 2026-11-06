@@ -38,7 +38,14 @@ async function worker(){while(cursor<tasks.length){
   }
   // Commit only after the entire recovered interval has been validated.
   for(const e of touched.values())events.set(e.id,e);
-  state.set(symbol+'|'+interval,{symbol,interval,candle_time:new Date(x.candleTime).toISOString(),observed_at:new Date(now).toISOString(),data:{...x,model:interval==='1h'?'H1_96_80':'EXPERIMENTAL_M5_M15',recoveredCandles:Math.max(0,count-1)}});
+  const last=rows.at(-1);
+  const context=rows.slice(-96);
+  let ema20=context[0].c;const alpha=2/(20+1);
+  for(const candle of context.slice(1))ema20=candle.c*alpha+ema20*(1-alpha);
+  const h1Snapshot=interval==='1h'?{
+    candleTime:new Date(last.t).toISOString(),open:last.o,high:last.h,low:last.l,close:last.c,volume:last.v,ema20
+  }:undefined;
+  state.set(symbol+'|'+interval,{symbol,interval,candle_time:new Date(x.candleTime).toISOString(),observed_at:new Date(now).toISOString(),data:{...x,model:interval==='1h'?'H1_96_80':'EXPERIMENTAL_M5_M15',recoveredCandles:Math.max(0,count-1),...(h1Snapshot?{h1Snapshot}:{})}});
   processed++;recovered+=Math.max(0,count-1);
   if(parallel){try{collectParallel(parallel,symbol,interval,rows,ms,new Date(now).toISOString())}
     catch(e){parallelErrors.push({symbol,interval,error:String(e)})}}
@@ -49,10 +56,10 @@ await Promise.all(Array.from({length:5},worker));
 const byDay=new Map();
 for(const e of events.values()){const day=e.created_at.slice(0,10);if(!byDay.has(day))byDay.set(day,[]);byDay.get(day).push(e)}
 fs.mkdirSync('data/live-history',{recursive:true});
-for(const [day,list] of byDay){const file=`data/live-history/${day}.json`,archive=read(file,{version:1,records:[]});const merged=new Map(archive.records.map(e=>[e.id,e]));for(const e of list)merged.set(e.id,e);fs.writeFileSync(file,JSON.stringify({version:1,updatedAt:new Date().toISOString(),records:[...merged.values()]})+'\n')}
+for(const [day,list] of byDay){const file=`data/live-history/${day}.json`,archive=read(file,{version:1,records:[]});const merged=new Map(archive.records.map(e=>[e.id,e]));for(const e of list)merged.set(e.id,e);fs.writeFileSync(file,JSON.stringify({version:1,updatedAt:new Date().toISOString(),records:[...merged.values()]})+'\\n')}
 const all=[...events.values()].filter(e=>Date.parse(e.updated_at)>=Date.now()-7*86400000||e.data.trackingStatus==='COLLECTING');
 const at=new Date().toISOString(),result={ok:errors.length===0,processed,total:150,recoveredCandles:recovered,errors,at};
-fs.writeFileSync(OUT,JSON.stringify({version:'lab-live-v1',intervals:Object.keys(INTERVALS),symbols:50,state:[...state.values()],events:all.sort((a,b)=>Date.parse(b.updated_at)-Date.parse(a.updated_at)),control:{last_finished_at:at,result},archive:{archived_at:at,location:'data/live-history/',verification:'committed_with_feed'}})+'\n');
+fs.writeFileSync(OUT,JSON.stringify({version:'lab-live-v1',intervals:Object.keys(INTERVALS),symbols:50,state:[...state.values()],events:all.sort((a,b)=>Date.parse(b.updated_at)-Date.parse(a.updated_at)),control:{last_finished_at:at,result},archive:{archived_at:at,location:'data/live-history/',verification:'committed_with_feed'}})+'\\n');
 console.log(JSON.stringify({...result,events:all.length}));if(processed===0&&errors.length)process.exitCode=1;
 if(parallel){try{saveParallel(parallel,[...errors.map(e=>({...e,source:'coleta compartilhada'})),...parallelErrors],at)}catch(e){console.error('Histórico M6 paralelo não foi salvo:',String(e));process.exitCode=1}}
 if(parallelErrors.length)console.error(JSON.stringify({parallelErrors}));
