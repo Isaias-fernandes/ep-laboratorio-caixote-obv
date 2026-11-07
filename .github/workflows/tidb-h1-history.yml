@@ -32,6 +32,17 @@ jobs:
       - uses: actions/checkout@v5
         with:
           ref: main
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/data/
+            /data/live-signals.json
+            /data/live-history/
+            /data/m6-parallel.json
+            /data/m6-parallel-history/
+            /data/quality/
+            /data/tidb-export-checkpoint.json
 
       - uses: actions/setup-node@v5
         with:
