@@ -30,7 +30,13 @@ for (const event of feed.events || []) {
   if (event.interval !== '1h') continue;
   const recentlyUpdated = Date.parse(event.updated_at) >= cutoff;
   const stillTracking = event.data?.trackingStatus === 'COLLECTING';
-  if (recentlyUpdated || stillTracking) signals.set(event.id, event);
+  if (recentlyUpdated || stillTracking) {
+    const pattern = event.pattern ?? event.data?.pattern;
+    if (typeof pattern !== 'string') {
+      throw new Error('Sinal sem pattern: ' + event.id);
+    }
+    signals.set(event.id, { ...event, pattern });
+  }
 }
 const selectedSignals = [...signals.values()]
   .sort((a, b) => Date.parse(b.updated_at) - Date.parse(a.updated_at))
