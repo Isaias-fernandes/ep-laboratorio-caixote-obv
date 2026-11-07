@@ -4,7 +4,7 @@ const avg=a=>a.length?a.reduce((s,v)=>s+v,0)/a.length:0,clamp=(n,a=0,b=100)=>Mat
 function normalize(rows){
   const unique=new Map();
   for(const r of rows){const x={t:Number(r.t??r.time??r.timestamp),o:Number(r.o??r.open),h:Number(r.h??r.high),l:Number(r.l??r.low),c:Number(r.c??r.close),v:Number(r.v??r.volume)};
-    if([x.t,x.o,x.h,x.l,x.c,x.v].every(Number.isFinite)&&x.t>=0&&x.o>0&&x.c>0&&x.h>=Math.max(x.o,x.c)&&x.l<=Math.min(x.o,x.c)&&x.l>0&&x.v>=0)unique.set(x.t,x);
+    if([x.t,x.o,x.h,x.l,x.c,x.v].every(Number.isFinite)&&x.t>=0&&x.o>0&&x.c>0&&x.h>=Math.max(x.o,x.c)&&x.l<=Math.min(x.o,x.c)&&x.l>0&&x.v>=0)unique.set(x.t,{...x,...(Number.isFinite(r.q)?{q:r.q}:{}),...(Number.isFinite(r.tq)?{tq:r.tq}:{})});
   }
   return [...unique.values()].sort((a,b)=>a.t-b.t);
 }

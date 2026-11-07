@@ -1,0 +1,25 @@
+name: EP quality regression
+on:
+  pull_request:
+  push:
+    paths:
+      - 'quality/**'
+      - 'automation/**'
+      - 'tests/**'
+      - 'candlestick-patterns-lab.js'
+      - 'lab-signal-engine.mjs'
+      - 'quality-panel.mjs'
+      - '.github/workflows/quality-tests.yml'
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+      - run: node --test tests/*.test.mjs
+      - run: node --check quality-panel.mjs
+      - run: node --check automation/scan-live.mjs

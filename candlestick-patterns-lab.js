@@ -1,7 +1,7 @@
 /* Laboratório isolado de padrões de candles. Não acessa EP Whale, Supabase ou motores oficiais. */
 (() => {
   'use strict';
-  const VERSION='candlestick-60-v1', TARGETS=[5,10,20,30,50], HORIZON=96, MIN_SCORE=80;
+  const VERSION='candlestick-60-v2', TARGETS=[5,10,20,30,50], HORIZON=96, MIN_SCORE=80;
   const avg=a=>a.length?a.reduce((s,x)=>s+x,0)/a.length:0;
   const body=x=>Math.abs(x.c-x.o), range=x=>Math.max(x.h-x.l,1e-12), bull=x=>x.c>x.o, bear=x=>x.c<x.o;
   const upper=x=>x.h-Math.max(x.o,x.c), lower=x=>Math.min(x.o,x.c)-x.l;
@@ -28,8 +28,8 @@
     const morning=bear(d)&&small(a)&&bull(b)&&b.c>mid(d), evening=bull(d)&&small(a)&&bear(b)&&b.c<mid(d);
     const morningDoji=bear(d)&&doji(a)&&bull(b)&&b.c>mid(d), eveningDoji=bull(d)&&doji(a)&&bear(b)&&b.c<mid(d);
     const white3=[d,a,b].every(bull)&&d.c<a.c&&a.c<b.c&&[d,a,b].every(longBody), black3=[d,a,b].every(bear)&&d.c>a.c&&a.c>b.c&&[d,a,b].every(longBody);
-    const threeInsideUp=bullHarami&&bull(b)&&b.c>a.o, threeInsideDown=bearHarami&&bear(b)&&b.c<a.o;
-    const threeOutsideUp=bullEng&&bull(b)&&b.c>a.o, threeOutsideDown=bearEng&&bear(b)&&b.c<a.o;
+    const threeInsideUp=bear(d)&&bull(a)&&a.o>d.c&&a.c<d.o&&bull(b)&&b.c>d.o, threeInsideDown=bull(d)&&bear(a)&&a.o<d.c&&a.c>d.o&&bear(b)&&b.c<d.o;
+    const threeOutsideUp=bear(d)&&bull(a)&&a.o<=d.c&&a.c>=d.o&&bull(b)&&b.c>a.c, threeOutsideDown=bull(d)&&bear(a)&&a.o>=d.c&&a.c<=d.o&&bear(b)&&b.c<a.c;
     const tweezerBottom=bull(b)&&bear(a)&&near(a.l,b.l,.0025), tweezerTop=bear(b)&&bull(a)&&near(a.h,b.h,.0025);
     const bullBelt=bull(b)&&longBody(b)&&lower(b)<=range(b)*.05, bearBelt=bear(b)&&longBody(b)&&upper(b)<=range(b)*.05;
     const bullKicker=bear(a)&&bull(b)&&gapUp(a,b), bearKicker=bull(a)&&bear(b)&&gapDown(a,b);

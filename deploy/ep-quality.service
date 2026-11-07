@@ -1,0 +1,17 @@
+[Unit]
+Description=EP quality H1 stream and evaluator
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=simple
+User=ep
+WorkingDirectory=/opt/ep-laboratorio
+ExecStart=/usr/bin/node automation/quality-stream.mjs
+Restart=on-failure
+RestartSec=10
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/ep-laboratorio/data
+[Install]
+WantedBy=multi-user.target

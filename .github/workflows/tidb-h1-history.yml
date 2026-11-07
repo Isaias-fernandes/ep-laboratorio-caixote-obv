@@ -1,6 +1,12 @@
 name: Archive EP Laboratory H1 signals to TiDB
 
 on:
+  push:
+    paths:
+      - '.github/workflows/tidb-h1-history.yml'
+      - 'automation/send-quality-batch.mjs'
+      - 'automation/send-h1-batch.mjs'
+      - 'automation/export-tidb-batch.mjs'
   workflow_dispatch:
     inputs:
       create_tables:
@@ -12,7 +18,7 @@ on:
     - cron: "17 * * * *"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: ep-lab-tidb-h1-archive
@@ -21,13 +27,13 @@ concurrency:
 jobs:
   archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: main
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: "24"
 
@@ -44,17 +50,29 @@ jobs:
             -X POST "https://ep-whale-api.isaiasf59.workers.dev/admin/migrate" \
             -H "Authorization: Bearer ${EP_SIGNAL_INGEST_TOKEN}"
 
-      - name: Store the hourly batch
+      - name: Store all H1 pages with acknowledgements
         env:
           EP_SIGNAL_INGEST_TOKEN: ${{ secrets.EP_SIGNAL_INGEST_TOKEN }}
+        run: node automation/send-h1-batch.mjs
+
+      - name: Store quality births and evaluations
+        env:
+          EP_SIGNAL_INGEST_TOKEN: ${{ secrets.EP_SIGNAL_INGEST_TOKEN }}
+        run: node automation/send-quality-batch.mjs
+
+      - name: Persist successful acknowledgements
+        if: always() && !cancelled()
         run: |
-          set -euo pipefail
-          if [[ ! -s /tmp/ep-h1-batch.json ]]; then
-            echo "No H1 batch to store."
-            exit 0
-          fi
-          curl --fail-with-body --silent --show-error \
-            -X POST "https://ep-whale-api.isaiasf59.workers.dev/ingest/h1" \
-            -H "Authorization: Bearer ${EP_SIGNAL_INGEST_TOKEN}" \
-            -H "Content-Type: application/json" \
-            --data-binary @/tmp/ep-h1-batch.json
+          git config user.name laboratorio-archive-bot
+          git config user.email actions@users.noreply.github.com
+          for file in data/tidb-export-checkpoint.json data/quality/ingest-checkpoint.json; do
+            if [ -f "$file" ]; then git add "$file"; fi
+          done
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data: checkpoint acknowledged H1 and quality batches"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then exit 0; fi
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 3))
+          done
+          exit 1
