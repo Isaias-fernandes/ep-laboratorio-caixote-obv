@@ -3,7 +3,7 @@ import {compareReading,CONFIG,VERSION,statsView} from './m6-parallel-core.mjs?v=
 const panel=document.createElement('section');panel.className='panel interpretation-center';panel.id='m6ParallelPanel';
 panel.innerHTML=`<span class="eyebrow">MOTOR PARALELO · EXPERIMENTO DE COMPRA</span>
 <h2>M6 Paralelo — Estrutura + Fluxo CMF20</h2>
-<p>Compara o Motor 6 atual com três vales ascendentes e flâmula de alta, volume relativo, OBV, momentum e CMF de 20 candles. CMF precisa estar ≥ 0 para confirmar o candidato. Nenhuma ordem é enviada.</p>
+<p>Compara o controle técnico do Laboratório com três vales ascendentes e flâmula de alta, volume relativo, OBV, momentum e CMF de 20 candles. CMF precisa estar ≥ 0 para confirmar o candidato. Esse controle não é o Motor 6 completo do Analítico. Nenhuma ordem é enviada.</p>
 <p class="small">O CMF é calculado com os candles já coletados. Spread e profundidade do book ficam fora desta versão porque exigiriam dados adicionais; o histórico anterior é preservado e as métricas começam separadas nesta versão.</p>
 <p id="m6ParallelStatus" role="status">Carregando acompanhamento…</p>
 <div class="notice" id="m6ParallelCurrent" role="status">Selecione um ativo na central de sinais atuais para comparar as duas leituras.</div>
@@ -15,11 +15,11 @@ panel.innerHTML=`<span class="eyebrow">MOTOR PARALELO · EXPERIMENTO DE COMPRA</
 <p class="small">Variação desde a entrada original, independente do alvo, stop ou fim das 96 velas. Marcos: 1h, 6h, 12h, 24h, 2, 3, 5, 7 e 10 dias. Usa a coleta existente, sem novas consultas. Lacunas são identificadas; tempo até alvos tem precisão de uma vela.</p>
 <div class="table-wrap"><table><thead><tr><th>Ativo / modelo</th><th>Tempo / cobertura</th><th>Última variação</th><th>Máxima / mínima</th><th>Marcos desde a entrada</th><th>Primeira alta atingida</th></tr></thead><tbody id="m6LongRows"></tbody></table></div>
 <p id="m6ParallelCount"></p>
-<div class="table-wrap"><table><thead><tr><th>Episódio / ativo</th><th>Período</th><th>Motor 6 atual</th><th>M6 paralelo</th><th>Acompanhamento</th></tr></thead><tbody id="m6ParallelEpisodes"></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>Episódio / ativo</th><th>Período</th><th>Controle técnico do Laboratório</th><th>M6 paralelo</th><th>Acompanhamento</th></tr></thead><tbody id="m6ParallelEpisodes"></tbody></table></div>
 <small>A coleta usa os candles do agendamento existente. Resultados persistem no GitHub; a leitura direta funciona com a página aberta. Experimento prospectivo: ainda não há eficácia comprovada. <a href="https://github.com/Isaias-fernandes/ep-laboratorio-caixote-obv/tree/main/data/m6-parallel-history" target="_blank" rel="noopener">Histórico completo de episódios concluídos</a>.</small>`;
 const host=document.getElementById('labLiveSignals');if(host)host.after(panel);else document.querySelector('main').prepend(panel);
 const $=id=>document.getElementById(id),fmt=(n,d=2)=>Number.isFinite(n)?n.toLocaleString('pt-BR',{maximumFractionDigits:d}):'—';
-const names={baseline:'Motor 6 atual',candidate:'M6 paralelo'},outcomes={TARGET:'ALVO',STOP:'STOP',TIMEOUT:'FIM DO PRAZO',AMBIGUOUS:'ORDEM INDETERMINADA'};
+const names={baseline:'Controle técnico do Laboratório',candidate:'M6 paralelo'},outcomes={TARGET:'ALVO',STOP:'STOP',TIMEOUT:'FIM DO PRAZO',AMBIGUOUS:'ORDEM INDETERMINADA'};
 let feed=null;
 function row(body,values){const tr=document.createElement('tr');for(const value of values){const td=document.createElement('td');td.textContent=value;tr.append(td)}body.append(tr)}
 function armText(a){if(!a)return'Sem entrada';const flow=Number.isFinite(a.cmf20)?` · CMF20 ${fmt(a.cmf20,3)} · vol ${fmt(a.volumeRatio,2)}× · OBV ${a.obv||'—'}`:'';return a.entry==null?`Aguardando abertura${flow}`:`${a.pattern} · entrada ${fmt(a.entry,8)} · ${outcomes[a.outcome]||'ACOMPANHANDO'} · líquido ${fmt(a.netPct)}% · ${a.observed}/96 velas${flow}`;}
@@ -56,10 +56,11 @@ window.addEventListener('lab-closed-candles',event=>{
   const {symbol,interval,candles,now}=event.detail;
   try{const ms={'5m':300000,'15m':900000,'1h':3600000}[interval],r=compareReading(candles,ms,now),c=r.candidate;
     const missing=Object.entries(c.gates).filter(([,v])=>!v).map(([k])=>({pattern:'padrão preferencial',breakout:'rompimento',momentum:'momentum',volume:'volume',obv:'OBV',antiStretch:'preço sem esticamento'}[k]));
-    $('m6ParallelCurrent').textContent=`${symbol} ${interval} · Motor 6 atual: ${r.baseline.approved?'COMPRA':r.baseline.direction==='SELL'?'VENDA (fora desta comparação)':'SEM COMPRA'} ${r.baseline.score}/100 · M6 paralelo: ${c.approved?'COMPRA':'OBSERVAÇÃO'} ${c.score}/100 · ${c.pattern||'Sem padrão preferencial'} · ${Number.isFinite(c.cmf20)?`CMF20 ${fmt(c.cmf20,3)} ${c.gates.liquidity?'OK':'BLOQUEIA'}`:'CMF20 indisponível'} · ${c.stage}${missing.length?' · Falta: '+missing.map(k=>k==='liquidity'?'CMF20 positivo':k).join(', '):''}. Leitura direta; o registro permanente é feito pelo coletor.`;
+    $('m6ParallelCurrent').textContent=`${symbol} ${interval} · Controle técnico do Laboratório: ${r.baseline.approved?'COMPRA':r.baseline.direction==='SELL'?'VENDA (fora desta comparação)':'SEM COMPRA'} ${r.baseline.score}/100 · M6 paralelo: ${c.approved?'COMPRA':'OBSERVAÇÃO'} ${c.score}/100 · ${c.pattern||'Sem padrão preferencial'} · ${Number.isFinite(c.cmf20)?`CMF20 ${fmt(c.cmf20,3)} ${c.gates.liquidity?'OK':'BLOQUEIA'}`:'CMF20 indisponível'} · ${c.stage}${missing.length?' · Falta: '+missing.map(k=>k==='liquidity'?'CMF20 positivo':k).join(', '):''}. Leitura direta; o registro permanente é feito pelo coletor.`;
   }catch(e){$('m6ParallelCurrent').textContent='Comparação direta indisponível: '+String(e);}
 });
 $('m6ParallelInterval').onchange=render;
 $('m6ParallelExport').onclick=()=>{if(!feed)return;const blob=new Blob([JSON.stringify({...feed,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`m6-paralelo-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
 load();setInterval(()=>{if(!document.hidden)load()},300000);
+
 

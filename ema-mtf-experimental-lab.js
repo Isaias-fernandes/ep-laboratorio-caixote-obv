@@ -1,3 +1,4 @@
+import {classify as sharedClassify} from './ema-mtf-core.mjs?v=ema-mtf-v3-closed';
 /*
  * LABORATORIO EXPERIMENTAL EMA MULTI-TIMEFRAME
  * Isolado: nao altera engine.js, score, Centrais 1-3 ou outros experimentos.
@@ -63,40 +64,24 @@
       : recent.some(x=>x.h>=s.e21*.997 && x.c<=s.e21);
   }
   async function getKlines(symbol,interval,limit=260){
-    const url=`https://api.binance.com/api/v3/klines?symbol=${encodeURIComponent(symbol)}&interval=${interval}&limit=${limit}`;
-    const r=await fetch(url); if(!r.ok) throw new Error(`Binance ${interval}: HTTP ${r.status}`);
-    const j=await r.json(); if(!Array.isArray(j)) throw new Error('Resposta inválida da Binance.');
-    return j.map(x=>({t:+x[0],o:+x[1],h:+x[2],l:+x[3],c:+x[4],v:+x[5]})).filter(x=>Number.isFinite(x.c));
+    let error;for(const host of ['https://data-api.binance.vision','https://api.binance.com'])try{
+      const r=await fetch(`${host}/api/v3/klines?symbol=${encodeURIComponent(symbol)}&interval=${interval}&limit=${limit}`,{signal:AbortSignal.timeout(10000)});
+      if(!r.ok)throw Error(`Binance ${interval}: HTTP ${r.status}`);const j=await r.json();if(!Array.isArray(j))throw Error('Resposta inválida da Binance.');
+      return j.map(x=>({t:+x[0],o:+x[1],h:+x[2],l:+x[3],c:+x[4],v:+x[5]})).filter(x=>Number.isFinite(x.c));
+    }catch(e){error=e;}throw error;
   }
+
   function sideH1(s){
     if(s.close>s.e200 && s.e50>s.e200) return 'BUY';
     if(s.close<s.e200 && s.e50<s.e200) return 'SELL';
     return 'NEUTRAL';
   }
-  function configA(c5,c15,c60){
-    const m5=snapshot(c5),m15=snapshot(c15),h1=snapshot(c60),bias=sideH1(h1);
-    const m15Buy=m15.e9>m15.e21, m15Sell=m15.e9<m15.e21;
-    const trigBuy=m5.e9>m5.e21 && m5.close>m5.e21 && recentRetest(c5,m5,'BUY');
-    const trigSell=m5.e9<m5.e21 && m5.close<m5.e21 && recentRetest(c5,m5,'SELL');
-    let verdict='NÃO ENTRAR';
-    if(bias==='BUY'&&m15Buy&&trigBuy) verdict='COMPRA';
-    else if(bias==='SELL'&&m15Sell&&trigSell) verdict='VENDA';
-    else if((bias==='BUY'&&m15Buy)||(bias==='SELL'&&m15Sell)) verdict='PREPARAÇÃO';
-    return {verdict,bias,m5,m15,h1,m15State:m15Buy?'ALTA':m15Sell?'BAIXA':'NEUTRO',m5State:trigBuy?'GATILHO ALTA':trigSell?'GATILHO BAIXA':'SEM GATILHO'};
-  }
-  function configB(c5,c15,c60){
-    const a=configA(c5,c15,c60),dir=a.bias;
-    const rsiOk=dir==='BUY'?a.m15.rsi>50&&a.m15.rsi<75:dir==='SELL'?a.m15.rsi<50&&a.m15.rsi>25:false;
-    const obvOk=dir==='BUY'?a.m15.obvSlope>0:dir==='SELL'?a.m15.obvSlope<0:false;
-    const volumeOk=(a.m5.volRatio||0)>=1.20;
-    const emaOk=(dir==='BUY'&&a.m15.e9>a.m15.e21&&a.m15.e21>a.m15.e50)||(dir==='SELL'&&a.m15.e9<a.m15.e21&&a.m15.e21<a.m15.e50);
-    const confirms=[emaOk,rsiOk,obvOk,volumeOk].filter(Boolean).length;
-    let verdict='NÃO ENTRAR';
-    const trigger=a.m5State.startsWith('GATILHO');
-    if(dir!=='NEUTRAL'&&trigger&&confirms>=3) verdict=dir==='BUY'?'COMPRA':'VENDA';
-    else if(dir!=='NEUTRAL'&&confirms>=2) verdict='PREPARAÇÃO';
-    return {...a,verdict,rsiOk,obvOk,volumeOk,emaOk,confirms};
-  }
+  function shared(c5,c15,c60){return sharedClassify(c5,c15,c60,Date.now());}
+  function configA(c5,c15,c60){const r=shared(c5,c15,c60);return{...r,verdict:r.configA==='NEUTRO'?'NÃO ENTRAR':r.configA.startsWith('PREPARAÇÃO')?'PREPARAÇÃO':r.configA,
+    m15State:r.m15.e9>r.m15.e21?'ALTA':r.m15.e9<r.m15.e21?'BAIXA':'NEUTRO',
+    m5State:r.trigger?(r.bias==='BUY'?'GATILHO ALTA':'GATILHO BAIXA'):'SEM GATILHO'};}
+  function configB(c5,c15,c60){const r=shared(c5,c15,c60),a=configA(c5,c15,c60);return{...a,verdict:r.configB==='NEUTRO'?'NÃO ENTRAR':r.configB.startsWith('PREPARAÇÃO')?'PREPARAÇÃO':r.configB,
+    rsiOk:r.gates.rsi,obvOk:r.gates.obv,volumeOk:r.gates.volume,emaOk:r.gates.ema,confirms:r.confirms};}
   function store(symbol,name,r){
     const h=JSON.parse(localStorage.getItem(KEY)||'[]');
     h.unshift({ts:Date.now(),date:new Date().toLocaleString('pt-BR'),symbol,name,verdict:r.verdict,bias:r.bias,m15:r.m15State,m5:r.m5State,rsi:r.m15.rsi,obvSlope:r.m15.obvSlope,volRatio:r.m5.volRatio});
@@ -125,3 +110,4 @@
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensureUI);else ensureUI();
   window.EMAMtfExperimentalLab={run,getHistory:()=>JSON.parse(localStorage.getItem(KEY)||'[]')};
 })();
+

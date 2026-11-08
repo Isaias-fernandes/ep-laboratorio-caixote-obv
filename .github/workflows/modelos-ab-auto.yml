@@ -8,6 +8,9 @@ on:
     paths:
       - 'automation/scan-modelos-ab-all-assets.mjs'
       - '.github/workflows/modelos-ab-auto.yml'
+      - 'automation/experiment-storage.mjs'
+      - 'automation/recover-candles.mjs'
+      - 'automation/track-experiment.mjs'
 
 permissions:
   contents: write
@@ -22,24 +25,36 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/data/
+            /data/modelos-ab-auto.json
+            /data/quality/state.json
+            /data/experiment-history/models-ab/
       - name: Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '24'
       - name: Analisar 50 criptos em M1 M5 M15 M30 H1
         run: node automation/scan-modelos-ab-all-assets.mjs
       - name: Publicar somente dados dos Modelos A-B
         run: |
-          if [ -z "$(git status --porcelain -- data/modelos-ab-auto.json)" ]; then
+          if [ -z "$(git status --porcelain -- data/modelos-ab-auto.json data/experiment-history/models-ab)" ]; then
             echo "Sem alteracoes nos dados A/B."
             exit 0
           fi
           git config user.name "modelos-ab-lab-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/modelos-ab-auto.json
+          git add data/modelos-ab-auto.json data/experiment-history/models-ab
           git commit -m "data: atualizar Modelos A-B automaticos"
-          git pull --rebase origin main
-          git push
+          for attempt in 1 2 3; do
+            git pull --rebase origin main || exit 1
+            if git push; then exit 0; fi
+          done
+          exit 1
+

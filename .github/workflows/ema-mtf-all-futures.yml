@@ -1,4 +1,4 @@
-name: EMA MTF - Todos Futuros USDT
+name: EMA MTF - 50 ativos Spot e candles fechados
 
 on:
   workflow_dispatch:
@@ -8,6 +8,9 @@ on:
     paths:
       - 'automation/scan-ema-mtf-all-futures.mjs'
       - '.github/workflows/ema-mtf-all-futures.yml'
+      - 'ema-mtf-core.mjs'
+      - 'automation/experiment-storage.mjs'
+      - 'automation/track-experiment.mjs'
 
 permissions:
   contents: write
@@ -22,24 +25,36 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: main
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/data/
+            /data/ema-mtf-auto.json
+            /data/quality/state.json
+            /data/experiment-history/ema-mtf/
       - name: Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '24'
-      - name: Varrer todos os contratos USDT perpetuos
+      - name: Coletar 50 ativos com núcleo EMA compartilhado
         run: node automation/scan-ema-mtf-all-futures.mjs
       - name: Publicar coleta somente se houver mudanca
         run: |
-          if [ -z "$(git status --porcelain -- data/ema-mtf-auto.json)" ]; then
+          if [ -z "$(git status --porcelain -- data/ema-mtf-auto.json data/experiment-history/ema-mtf)" ]; then
             echo "Sem alteracoes na coleta EMA."
             exit 0
           fi
           git config user.name "ema-mtf-lab-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/ema-mtf-auto.json
-          git commit -m "data: atualizar coleta EMA MTF de todos os futuros USDT"
-          git pull --rebase origin main
-          git push
+          git add data/ema-mtf-auto.json data/experiment-history/ema-mtf
+          git commit -m "data: atualizar EMA MTF Spot de 50 ativos"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main || exit 1
+            if git push; then exit 0; fi
+          done
+          exit 1
+

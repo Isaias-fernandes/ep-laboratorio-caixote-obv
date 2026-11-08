@@ -1,31 +1,16 @@
 import fs from 'node:fs';
-import path from 'node:path';
-import {gunzipSync} from 'node:zlib';
-
-/*
-  SNAPSHOT DIARIO DOS DADOS EXPERIMENTAIS
-  - Somente backup: nao calcula nem altera sinais.
-  - Preserva H1 96/80 e Modelos A/B em arquivos datados.
-  - Mantem 90 dias para cobrir os marcos 7/14/21/30 e validacao posterior.
-*/
-const DAY = new Date().toISOString().slice(0,10);
-const DIR = path.resolve('data/daily-snapshots');
-const SOURCES = [
-  ['h1-history', path.resolve('data/h1-history.json')],
-  ['modelos-ab-auto', path.resolve('data/modelos-ab-auto.json')]
-];
-fs.mkdirSync(DIR,{recursive:true});
-for (const [name,src] of SOURCES) {
-  if (!fs.existsSync(src) && !fs.existsSync(src+'.gz')) { console.warn('ausente:',src); continue; }
-  const dst=path.join(DIR,`${DAY}-${name}.json`);
-  if (!fs.existsSync(dst) && !fs.existsSync(dst+'.gz')) {
-    if(fs.existsSync(src)) fs.copyFileSync(src,dst);
-    else fs.writeFileSync(dst,gunzipSync(fs.readFileSync(src+'.gz')));
-    console.log('snapshot criado:',dst);
-  } else console.log('snapshot diario ja existe:',dst);
+import {createHash} from 'node:crypto';
+import {readJson,writeJson} from './json-store.mjs';
+import {archiveEvents} from './experiment-storage.mjs';
+// Incremental archives preserve records. Daily manifests replace repeated full-file copies.
+// Existing daily snapshots are retained; this script never deletes historical backups.
+const day=new Date().toISOString().slice(0,10),manifest={version:2,day,createdAt:new Date().toISOString(),files:[],archives:['data/experiment-history/','data/live-history/','data/quality/births/','data/quality/outcomes/']};
+for(const [kind,file,key] of [['h1','data/h1-history.json','records'],['models-ab','data/modelos-ab-auto.json','events']]){
+  if(!fs.existsSync(file))continue;
+  const raw=fs.readFileSync(file),data=readJson(file,{}),records=data[key]||[];
+  if(kind==='h1')archiveEvents(kind,records); // A/B has its own sole archive writer.
+  manifest.files.push({path:file,bytes:raw.length,sha256:createHash('sha256').update(raw).digest('hex'),records:records.length,archive:`data/experiment-history/${kind}/`});
 }
-const cutoff=Date.now()-90*86400000;
-for (const f of fs.readdirSync(DIR)) {
-  const m=f.match(/^(\d{4}-\d{2}-\d{2})-/);
-  if (m && Date.parse(m[1]+'T00:00:00Z') < cutoff) fs.unlinkSync(path.join(DIR,f));
-}
+const output=`data/daily-manifests/${day}.json`;
+if(!fs.existsSync(output))writeJson(output,manifest);
+console.log(JSON.stringify({manifest:output,files:manifest.files.map(x=>({path:x.path,records:x.records,bytes:x.bytes})),previousSnapshotsPreserved:true}));

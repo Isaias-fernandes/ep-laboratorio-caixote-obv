@@ -9,6 +9,9 @@ on:
       - 'candlestick-patterns-lab.js'
       - 'lab-signal-engine.mjs'
       - 'quality-panel.mjs'
+      - 'ema-mtf-core.mjs'
+      - 'ema-mtf-experimental-lab.js'
+      - 'm6-parallel-panel.mjs'
       - '.github/workflows/quality-tests.yml'
 permissions:
   contents: read
@@ -29,3 +32,7 @@ jobs:
       - run: node --test tests/*.test.mjs
       - run: node --check quality-panel.mjs
       - run: node --check automation/scan-live.mjs
+
+      - run: node --check ema-mtf-experimental-lab.js
+      - run: node --check automation/scan-modelos-ab-all-assets.mjs
+      - run: node --check automation/scan-ema-mtf-all-futures.mjs
