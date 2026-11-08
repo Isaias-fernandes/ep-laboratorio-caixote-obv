@@ -1,3 +1,4 @@
+import {selectionWindows,collectIntraday,compactIntraday} from './intraday-candles.mjs';
 import fs from 'node:fs';
 import {fetchClosedCandles} from './market-candles.mjs';
 import {readJson,writeJson,repairDirectory} from './json-store.mjs';
@@ -11,7 +12,9 @@ try{parallel=loadParallel()}catch(e){parallelErrors.push({error:String(e)})}
 const OUT='data/live-signals.json';
 const read=readJson;
 const repairedArchives=repairDirectory('data/live-history');
+const intraday=readJson('data/intraday/buffer.json',{version:1,rows:{},last:{}}),intradayAck=readJson('data/intraday/checkpoint.json',{sent:{}}),intradayInputs=[];
 const quality=loadQuality(),qualityErrors=[];let qualityChanged=false;const h1Errors=[];
+const initialQuality=Object.values(quality.active);
 const old=read(OUT,{state:[],events:[]}),previous=new Map(old.state.map(s=>[s.symbol+'|'+s.interval,s]));
 const state=new Map(previous),events=new Map(old.events.map(e=>[e.id,e])),errors=[];
 const tasks=SYMBOLS.flatMap(symbol=>Object.keys(INTERVALS).map(interval=>({symbol,interval})));let cursor=0,processed=0,recovered=0;
@@ -19,10 +22,12 @@ const candles=(symbol,interval,limit,now)=>fetchClosedCandles(symbol,interval,li
 async function worker(){while(cursor<tasks.length){
  const {symbol,interval}=tasks[cursor++],ms=INTERVALS[interval],now=Date.now(),lastClosed=Math.floor(now/ms)*ms-ms;
  const prior=previous.get(symbol+'|'+interval),checkpoint=prior?Date.parse(prior.candle_time):null;
- if(checkpoint!=null&&checkpoint>=lastClosed)continue;
+ const bootstrap=(interval==='15m'||(interval==='5m'&&selectionWindows(initialQuality).some(w=>w.symbol===symbol)))&&intraday.last[symbol+'|'+interval]==null;
+ if(checkpoint!=null&&checkpoint>=lastClosed&&!bootstrap)continue;
  try{
   const gap=checkpoint==null?1:Math.ceil((lastClosed-checkpoint)/ms),rows=await candles(symbol,interval,(interval==='1h'?qualityLimit(quality,symbol,Math.min(1000,Math.max(120,96+gap+2))):Math.min(1000,Math.max(120,96+gap+2))),now);
   if(rows.at(-1)?.t<lastClosed)throw Error('Última vela indisponível');
+  if(checkpoint!=null&&checkpoint>=lastClosed){if(interval==='5m'||interval==='15m')intradayInputs.push({symbol,interval,rows});continue;}
   if(checkpoint!=null&&rows[95]?.t>checkpoint+ms)throw Error('Lacuna excede janela de recuperação; checkpoint preservado');
   let pair=[...events.values()].filter(e=>e.symbol===symbol&&e.interval===interval&&(['PRE_SIGNAL','CONFIRMED'].includes(e.status)||e.data.trackingStatus==='COLLECTING'));
   const first=checkpoint==null?rows.length-1:Math.max(95,rows.findIndex(c=>c.t>checkpoint));
@@ -35,6 +40,7 @@ async function worker(){while(cursor<tasks.length){
   }
   // Commit only after the entire recovered interval has been validated.
   for(const e of touched.values())events.set(e.id,e);
+  if(interval==='5m'||interval==='15m')intradayInputs.push({symbol,interval,rows});
   const last=rows.at(-1);
   const context=rows.slice(-96);
   let ema20=context[0].c;const alpha=2/(20+1);
@@ -50,6 +56,10 @@ async function worker(){while(cursor<tasks.length){
  }catch(e){errors.push({symbol,interval,error:String(e)});if(interval==='1h')h1Errors.push({symbol,error:String(e)});}
 }}
 await Promise.all(Array.from({length:5},worker));
+const eligible=new Map([...initialQuality,...Object.values(quality.active),...quality.completed].map(e=>[e.id,e]));
+const windows=selectionWindows([...eligible.values()]);
+for(const item of intradayInputs)try{collectIntraday(intraday,item.symbol,item.interval,item.rows,windows);}catch(error){errors.push({symbol:item.symbol,interval:item.interval,error:String(error)});}
+try{writeJson('data/intraday/buffer.json',compactIntraday(intraday,intradayAck));}catch(error){errors.push({source:'intraday-buffer',error:String(error)});process.exitCode=1;}
 // Permanent Git archive first; the online feed retains seven days plus pending follow-up.
 const byDay=new Map();
 for(const e of events.values()){const day=e.created_at.slice(0,10);if(!byDay.has(day))byDay.set(day,[]);byDay.get(day).push(e)}

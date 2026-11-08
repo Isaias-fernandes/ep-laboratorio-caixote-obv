@@ -20,6 +20,7 @@ on:
       - 'quality/**'
       - 'automation/quality-collector.mjs'
       - 'automation/json-store.mjs'
+      - 'automation/intraday-candles.mjs'
       - 'tests/**'
 permissions:
   contents: write
@@ -51,6 +52,7 @@ jobs:
             /data/m6-parallel-history/
             /data/quality/
             /data/tidb-export-checkpoint.json
+            /data/intraday/
       - uses: actions/setup-node@v5
         with:
           node-version: '24'
@@ -63,7 +65,7 @@ jobs:
         run: |
           git config user.name laboratorio-live-bot
           git config user.email actions@users.noreply.github.com
-          git add data/live-signals.json data/live-history data/m6-parallel.json data/m6-parallel-history data/quality
+          git add data/live-signals.json data/live-history data/m6-parallel.json data/m6-parallel-history data/quality data/intraday/buffer.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "data: laboratory M5 M15 H1 signals and permanent archive"
           for attempt in 1 2 3; do

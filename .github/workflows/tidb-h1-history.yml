@@ -11,6 +11,7 @@ on:
       - 'automation/send-quality-batch.mjs'
       - 'automation/send-h1-batch.mjs'
       - 'automation/export-tidb-batch.mjs'
+      - 'automation/send-intraday-batch.mjs'
   workflow_dispatch:
     inputs:
       create_tables:
@@ -53,6 +54,7 @@ jobs:
             /data/m6-parallel-history/
             /data/quality/
             /data/tidb-export-checkpoint.json
+            /data/intraday/
 
       - uses: actions/setup-node@v5
         with:
@@ -81,12 +83,17 @@ jobs:
           EP_SIGNAL_INGEST_TOKEN: ${{ secrets.EP_SIGNAL_INGEST_TOKEN }}
         run: node automation/send-quality-batch.mjs
 
+      - name: Store M15 continuous and selected M5 candles
+        env:
+          EP_SIGNAL_INGEST_TOKEN: ${{ secrets.EP_SIGNAL_INGEST_TOKEN }}
+        run: node automation/send-intraday-batch.mjs
+
       - name: Persist successful acknowledgements
         if: always() && !cancelled()
         run: |
           git config user.name laboratorio-archive-bot
           git config user.email actions@users.noreply.github.com
-          for file in data/tidb-export-checkpoint.json data/quality/ingest-checkpoint.json; do
+          for file in data/tidb-export-checkpoint.json data/quality/ingest-checkpoint.json data/intraday/checkpoint.json; do
             if [ -f "$file" ]; then git add "$file"; fi
           done
           if git diff --cached --quiet; then exit 0; fi
