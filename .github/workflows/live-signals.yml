@@ -1,5 +1,9 @@
 name: Laboratory M5 M15 H1 signals
 on:
+  workflow_run:
+    workflows: ['Laboratorio H1 Automatico']
+    types: [completed]
+    branches: [main]
   workflow_dispatch:
   schedule:
     - cron: '*/5 * * * *'
@@ -24,6 +28,12 @@ concurrency:
   cancel-in-progress: false
 jobs:
   scan:
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.head_repository.full_name == github.repository &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.event != 'pull_request' &&
+       github.event.workflow_run.conclusion == 'success')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:

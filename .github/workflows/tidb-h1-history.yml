@@ -1,6 +1,10 @@
 name: Archive EP Laboratory H1 signals to TiDB
 
 on:
+  workflow_run:
+    workflows: ['Laboratory M5 M15 H1 signals']
+    types: [completed]
+    branches: [main]
   push:
     paths:
       - '.github/workflows/tidb-h1-history.yml'
@@ -26,6 +30,12 @@ concurrency:
 
 jobs:
   archive:
+    if: >-
+      github.event_name != 'workflow_run' ||
+      (github.event.workflow_run.head_repository.full_name == github.repository &&
+       github.event.workflow_run.head_branch == 'main' &&
+       github.event.workflow_run.event != 'pull_request' &&
+       github.event.workflow_run.conclusion != 'cancelled')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
