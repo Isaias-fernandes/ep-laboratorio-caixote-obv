@@ -30,3 +30,13 @@ test('H1 export recovers every cached candle after acknowledged checkpoint',()=>
   const result=buildH1Export(feed,[],{candles:{BTCUSDT:0}},{pairs:{BTCUSDT:{cache:rows}}});assert.equal(result.candles.length,2);
   assert.throws(()=>buildH1Export(feed,[],{candles:{BTCUSDT:0}},{pairs:{BTCUSDT:{cache:rows.slice(-1)}}}));
 });
+
+test('historical H1 recovery reuses cached bars with warmup and safely resumes partial acknowledgements',()=>{
+  const rows=bars(720),last=rows.at(-1),snapshot={candleTime:new Date(last.t).toISOString(),open:100,high:101,low:99,close:100,volume:100,ema20:100};
+  const feed={state:[{symbol:'BTCUSDT',interval:'1h',data:{h1Snapshot:snapshot}}]},state={pairs:{BTCUSDT:{cache:rows}}};
+  const output=buildH1Export(feed,[],{candles:{BTCUSDT:last.t}},state);assert.equal(output.candles.length,625);assert.equal(Date.parse(output.candles[0].candleTime),last.t);
+  const ack=output.candles.slice(0,500),start=Date.parse(ack.at(-1).candleTime);
+  const retry=buildH1Export(feed,[],{candles:{BTCUSDT:last.t},backfillStart:{BTCUSDT:start}},state);assert.equal(retry.candles.length,125);
+  assert.ok(retry.candles.every(c=>Date.parse(c.candleTime)<start));
+  const complete=buildH1Export(feed,[],{candles:{BTCUSDT:last.t},backfillStart:{BTCUSDT:95*ms}},state);assert.equal(complete.candles.length,0);
+});

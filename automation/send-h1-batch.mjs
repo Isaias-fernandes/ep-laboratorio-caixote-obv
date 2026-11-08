@@ -9,7 +9,7 @@ for(const key of ['candles','signals']){
     const body={source:'ep-lab-h1-v1',observedAt:batch.observedAt,candles:key==='candles'?page:[],signals:key==='signals'?page:[]};
     const r=await fetch('https://ep-whale-api.isaiasf59.workers.dev/ingest/h1',{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify(body),signal:AbortSignal.timeout(60000)});
     const result=await r.json();if(!r.ok||result.ok!==true)throw Error('Falha de ingestão H1: HTTP '+r.status+' '+JSON.stringify(result));
-    for(const record of page){if(key==='candles')checkpoint.candles[record.symbol]=Math.max(checkpoint.candles[record.symbol]||0,Date.parse(record.candleTime));else checkpoint.signals[record.id]=recordHash(record);}
+    for(const record of page){if(key==='candles'){const t=Date.parse(record.candleTime);checkpoint.candles[record.symbol]=Math.max(checkpoint.candles[record.symbol]||0,t);checkpoint.backfillStart??={};checkpoint.backfillStart[record.symbol]=Math.min(checkpoint.backfillStart[record.symbol]??Infinity,t);}else checkpoint.signals[record.id]=recordHash(record);}
     writeJson(checkpointFile,checkpoint);
   }
 }
