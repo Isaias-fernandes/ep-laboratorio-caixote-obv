@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {fetchClosedCandles} from './market-candles.mjs';
 import {readJson,writeJson,repairDirectory} from './json-store.mjs';
 import {loadQuality,qualityLimit,collectQuality,saveQuality} from './quality-collector.mjs';
 import {reading,advance,INTERVALS,SYMBOLS} from '../lab-live-core.mjs';
@@ -14,15 +15,7 @@ const quality=loadQuality(),qualityErrors=[];let qualityChanged=false;const h1Er
 const old=read(OUT,{state:[],events:[]}),previous=new Map(old.state.map(s=>[s.symbol+'|'+s.interval,s]));
 const state=new Map(previous),events=new Map(old.events.map(e=>[e.id,e])),errors=[];
 const tasks=SYMBOLS.flatMap(symbol=>Object.keys(INTERVALS).map(interval=>({symbol,interval})));let cursor=0,processed=0,recovered=0;
-async function candles(symbol,interval,limit,now){
- let lastError;
- for(const host of ['https://data-api.binance.vision','https://api.binance.com']){
-  const ctl=new AbortController(),timer=setTimeout(()=>ctl.abort(),10000);
-  try{const r=await fetch(`${host}/api/v3/klines?symbol=${symbol}&interval=${interval}&limit=${limit}`,{signal:ctl.signal});if(!r.ok)throw Error('HTTP '+r.status);
-   const raw=await r.json();return closedCandles(raw.map(x=>({t:+x[0],o:+x[1],h:+x[2],l:+x[3],c:+x[4],v:+x[5],q:+x[7],tq:+x[10]})),INTERVALS[interval],now);
-  }catch(e){lastError=e}finally{clearTimeout(timer)}
- }throw lastError;
-}
+const candles=(symbol,interval,limit,now)=>fetchClosedCandles(symbol,interval,limit,now,INTERVALS[interval]);
 async function worker(){while(cursor<tasks.length){
  const {symbol,interval}=tasks[cursor++],ms=INTERVALS[interval],now=Date.now(),lastClosed=Math.floor(now/ms)*ms-ms;
  const prior=previous.get(symbol+'|'+interval),checkpoint=prior?Date.parse(prior.candle_time):null;
