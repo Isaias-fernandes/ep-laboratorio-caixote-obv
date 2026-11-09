@@ -14,6 +14,7 @@ const read=readJson;
 const repairedArchives=repairDirectory('data/live-history');
 const intraday=readJson('data/intraday/buffer.json',{version:1,rows:{},last:{}}),intradayAck=readJson('data/intraday/checkpoint.json',{sent:{}}),intradayInputs=[];
 const quality=loadQuality(),qualityErrors=[];let qualityChanged=false;const h1Errors=[];
+const qualityUniverseChanged=quality.health?.expected!==SYMBOLS.length;
 const initialQuality=Object.values(quality.active);
 const old=read(OUT,{state:[],events:[]}),previous=new Map(old.state.map(s=>[s.symbol+'|'+s.interval,s]));
 const state=new Map(previous),events=new Map(old.events.map(e=>[e.id,e])),errors=[];
@@ -72,5 +73,5 @@ console.log(JSON.stringify({...result,events:all.length}));if(processed===0&&err
 if(parallel){try{saveParallel(parallel,[...errors.map(e=>({...e,source:'coleta compartilhada'})),...parallelErrors],at)}catch(e){console.error('Histórico M6 paralelo não foi salvo:',String(e));process.exitCode=1}}
 if(parallelErrors.length)console.error(JSON.stringify({parallelErrors}));
 
-if(qualityChanged||qualityErrors.length||h1Errors.length){try{saveQuality(quality,[...h1Errors,...qualityErrors],at)}catch(e){console.error('quality_archive_failed',String(e));process.exitCode=1;}}
+if(qualityChanged||qualityErrors.length||h1Errors.length||qualityUniverseChanged){try{saveQuality(quality,[...h1Errors,...qualityErrors],at)}catch(e){console.error('quality_archive_failed',String(e));process.exitCode=1;}}
 if(errors.length||qualityErrors.length||parallelErrors.length)process.exitCode=1;
