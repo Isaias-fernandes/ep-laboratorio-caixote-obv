@@ -1,4 +1,4 @@
-import {SYMBOLS} from '../market-universe.mjs';
+import {SYMBOLS,UNIVERSE_VERSION,ADDED_AT} from '../market-universe.mjs';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {CONFIG,features,detect,baselineHour,createEvaluation,advanceEvaluation,rate} from '../quality/core.ts';
@@ -37,7 +37,8 @@ export function collectQuality(store,symbol,rows,observedAt,context={}){
     for(const s of signals){
       const id=`${CONFIG.version}|${symbol}|${s.strategy}|${c.t}`;
       const birth={...s,id,symbol,interval:'1h',direction:'BUY',detectedAt:observedAt,
-        retroactive:Date.parse(observedAt)-s.closedAt>2*CONFIG.intervalMs,
+        universeVersion:UNIVERSE_VERSION,
+        retroactive:Date.parse(observedAt)-s.closedAt>2*CONFIG.intervalMs||(ADDED_AT[symbol]!=null&&s.closedAt<Date.parse(ADDED_AT[symbol])),
         source:'Binance Spot H1',referenceEntry:'NEXT_CANDLE_OPEN',
         // Freeze only what was available at signal close; later outcomes live in a separate record.
         features:{...s.features,patternReadings:s.features.patternReadings.filter(p=>['Three Rising Valleys','Bull Flag'].includes(p.name))}};
@@ -92,7 +93,7 @@ export function saveQuality(store,errors,at){
   const evaluations=[...completedRecords(),...Object.values(store.active)];
   const pairs=Object.entries(store.pairs).filter(([symbol])=>SYMBOLS.includes(symbol)).map(([symbol,p])=>({symbol,lastCandle:p.lastCandle,observedAt:p.reading?.observedAt,history:p.cache.length,flowAvailable:p.reading?.features.flowAvailable}));
   const stale=pairs.filter(p=>Date.parse(at)-(p.lastCandle+CONFIG.intervalMs)>2*CONFIG.intervalMs);
-  const health={at,ok:errors.length===0&&stale.length===0&&pairs.length===SYMBOLS.length,expected:SYMBOLS.length,available:pairs.length,stale:stale.map(p=>p.symbol),errors,pairs};
+  const health={at,universeVersion:UNIVERSE_VERSION,ok:errors.length===0&&stale.length===0&&pairs.length===SYMBOLS.length,expected:SYMBOLS.length,available:pairs.length,stale:stale.map(p=>p.symbol),errors,pairs};
   const birthMap=new Map(births.map(b=>[b.id,b])),view=evaluations.filter(e=>e.strategy!=='BASELINE').sort((a,b)=>b.signalTime-a.signalTime).slice(0,100).map(e=>({birth:birthMap.get(e.id),evaluation:e}));
   writeJson(`${DIR}/summary.json`,{version:CONFIG.version,mode:CONFIG.mode,at,health,config:CONFIG,stats:buildSummary(births,evaluations),signals:view,
     notices:['Validação prospectiva: ainda não há probabilidade aprovada.','Resultados sobrepostos e controles reutilizados não são amostras independentes.','Sem integração de pré-pernada com cobertura comprovada, esse filtro fica indisponível.']});
