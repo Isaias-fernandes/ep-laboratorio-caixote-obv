@@ -1,6 +1,6 @@
 import {analyze,closedCandles,contiguous} from './lab-signal-engine.mjs';
 export const INTERVALS={'5m':300000,'15m':900000,'1h':3600000};
-export const SYMBOLS=['BTCUSDT','ETHUSDT','SOLUSDT','BNBUSDT','XRPUSDT','ADAUSDT','DOGEUSDT','AVAXUSDT','LINKUSDT','DOTUSDT','LTCUSDT','BCHUSDT','TRXUSDT','UNIUSDT','AAVEUSDT','SUIUSDT','NEARUSDT','APTUSDT','ARBUSDT','OPUSDT','XLMUSDT','HBARUSDT','PEPEUSDT','ETCUSDT','ATOMUSDT','TIAUSDT','XTZUSDT','LDOUSDT','SEIUSDT','FILUSDT','INJUSDT','RUNEUSDT','ALGOUSDT','FETUSDT','GALAUSDT','SANDUSDT','MANAUSDT','CRVUSDT','DYDXUSDT','JUPUSDT','WIFUSDT','BONKUSDT','SHIBUSDT','TONUSDT','STXUSDT','IMXUSDT','RENDERUSDT','THETAUSDT','VETUSDT','ZECUSDT'];
+export {SYMBOLS} from './market-universe.mjs';
 export function reading(rows,interval,now=Date.now()){
   const ms=INTERVALS[interval];if(!ms)throw Error('Período inválido');
   const c=closedCandles(rows,ms,now).slice(-96);

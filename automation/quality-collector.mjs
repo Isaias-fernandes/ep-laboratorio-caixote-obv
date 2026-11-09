@@ -1,3 +1,4 @@
+import {SYMBOLS} from '../market-universe.mjs';
 import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {CONFIG,features,detect,baselineHour,createEvaluation,advanceEvaluation,rate} from '../quality/core.ts';
@@ -89,9 +90,9 @@ export function saveQuality(store,errors,at){
   archiveBirths(store.newBirths);archiveCompleted(store.completed);
   const birthsDir=`${DIR}/births`,births=fs.existsSync(birthsDir)?fs.readdirSync(birthsDir).filter(f=>f.endsWith('.json')).flatMap(f=>readJson(`${birthsDir}/${f}`,{records:[]}).records):[];
   const evaluations=[...completedRecords(),...Object.values(store.active)];
-  const pairs=Object.entries(store.pairs).map(([symbol,p])=>({symbol,lastCandle:p.lastCandle,observedAt:p.reading?.observedAt,history:p.cache.length,flowAvailable:p.reading?.features.flowAvailable}));
+  const pairs=Object.entries(store.pairs).filter(([symbol])=>SYMBOLS.includes(symbol)).map(([symbol,p])=>({symbol,lastCandle:p.lastCandle,observedAt:p.reading?.observedAt,history:p.cache.length,flowAvailable:p.reading?.features.flowAvailable}));
   const stale=pairs.filter(p=>Date.parse(at)-(p.lastCandle+CONFIG.intervalMs)>2*CONFIG.intervalMs);
-  const health={at,ok:errors.length===0&&stale.length===0&&pairs.length===50,expected:50,available:pairs.length,stale:stale.map(p=>p.symbol),errors,pairs};
+  const health={at,ok:errors.length===0&&stale.length===0&&pairs.length===SYMBOLS.length,expected:SYMBOLS.length,available:pairs.length,stale:stale.map(p=>p.symbol),errors,pairs};
   const birthMap=new Map(births.map(b=>[b.id,b])),view=evaluations.filter(e=>e.strategy!=='BASELINE').sort((a,b)=>b.signalTime-a.signalTime).slice(0,100).map(e=>({birth:birthMap.get(e.id),evaluation:e}));
   writeJson(`${DIR}/summary.json`,{version:CONFIG.version,mode:CONFIG.mode,at,health,config:CONFIG,stats:buildSummary(births,evaluations),signals:view,
     notices:['Validação prospectiva: ainda não há probabilidade aprovada.','Resultados sobrepostos e controles reutilizados não são amostras independentes.','Sem integração de pré-pernada com cobertura comprovada, esse filtro fica indisponível.']});

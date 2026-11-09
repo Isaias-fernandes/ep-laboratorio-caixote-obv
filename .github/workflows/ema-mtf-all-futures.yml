@@ -1,4 +1,4 @@
-name: EMA MTF - 50 ativos Spot e candles fechados
+name: EMA MTF - ativos Spot do EP e candles fechados
 
 on:
   workflow_dispatch:
@@ -6,6 +6,7 @@ on:
     - cron: '2,17,32,47 * * * *'
   push:
     paths:
+      - 'market-universe.mjs'
       - 'automation/scan-ema-mtf-all-futures.mjs'
       - '.github/workflows/ema-mtf-all-futures.yml'
       - 'ema-mtf-core.mjs'
@@ -40,7 +41,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: '24'
-      - name: Coletar 50 ativos com núcleo EMA compartilhado
+      - name: Coletar ativos do universo EP com núcleo EMA compartilhado
         run: node automation/scan-ema-mtf-all-futures.mjs
       - name: Publicar coleta somente se houver mudanca
         run: |

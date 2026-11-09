@@ -6,6 +6,7 @@ on:
     - cron: '7 * * * *'
   push:
     paths:
+      - 'market-universe.mjs'
       - 'lab-signal-engine.mjs'
       - 'lab-live-core.mjs'
       - 'automation/scan-h1.mjs'

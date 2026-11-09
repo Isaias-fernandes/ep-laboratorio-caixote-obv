@@ -5,7 +5,7 @@ import preLeg from '../pre-leg-score-v1.js';
 import futures from '../pre-leg-futures-v1.js';
 import earlyMotor from '../early-leg-motor-v1.js';
 
-const CRYPTO=['BTCUSDT','ETHUSDT','SOLUSDT','BNBUSDT','XRPUSDT','ADAUSDT','DOGEUSDT','AVAXUSDT','LINKUSDT','DOTUSDT','LTCUSDT','BCHUSDT','TRXUSDT','UNIUSDT','AAVEUSDT','SUIUSDT','NEARUSDT','APTUSDT','ARBUSDT','OPUSDT','XLMUSDT','HBARUSDT','PEPEUSDT','ETCUSDT','ATOMUSDT','TIAUSDT','XTZUSDT','LDOUSDT','SEIUSDT','FILUSDT','INJUSDT','RUNEUSDT','ALGOUSDT','FETUSDT','GALAUSDT','SANDUSDT','MANAUSDT','CRVUSDT','DYDXUSDT','JUPUSDT','WIFUSDT','BONKUSDT','SHIBUSDT','TONUSDT','STXUSDT','IMXUSDT','RENDERUSDT','THETAUSDT','VETUSDT','ZECUSDT'];
+import {SYMBOLS as CRYPTO} from '../market-universe.mjs';
  
 const OUT=path.resolve('data/early-warning-auto.json');
 const HOUR=3600000;

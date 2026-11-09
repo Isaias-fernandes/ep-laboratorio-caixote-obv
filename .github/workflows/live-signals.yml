@@ -9,6 +9,7 @@ on:
     - cron: '*/5 * * * *'
   push:
     paths:
+      - 'market-universe.mjs'
       - '.github/workflows/live-signals.yml'
       - 'automation/scan-live.mjs'
       - 'lab-live-core.mjs'
