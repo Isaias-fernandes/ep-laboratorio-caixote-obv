@@ -1,29 +1,402 @@
 {
-  "generatedAt": "2026-11-15T10:56:18.900Z",
+  "generatedAt": "2026-11-15T17:45:49.935Z",
   "version": "early-warning-patterns-v1",
   "preLegVersion": "pre-leg-score-v1",
   "timeframe": "H1",
   "minimumEarlyScore": 65,
   "signals": [
     {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 95,
+      "level": 1.323,
+      "distanceToBreakoutPct": 0.685,
+      "volumeRatio": 1.56,
+      "obvSlope": 30323.900454545445,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 3.76,
+        "rise2Pct": 1.57
+      },
+      "market": "CRIPTO",
+      "symbol": "ATOMUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 69,
+        "phase": "PRESSÃO",
+        "price": 1.314,
+        "resistance": 1.323,
+        "support": 1.218,
+        "distanceToBreakoutPct": 0.685,
+        "compressionRatio": 0.688,
+        "volumeAcceleration": 0.91,
+        "obvLead": false,
+        "obvSlope": 30323.900454545445,
+        "attacks": 3,
+        "higherLows": 5,
+        "rsi": 63.95,
+        "move6Pct": 0.77,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 11
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 69
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 87,
+      "level": 0.3637,
+      "distanceToBreakoutPct": 1.056,
+      "volumeRatio": 0.882,
+      "obvSlope": 233469.34884615388,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 1.81,
+        "rise2Pct": 1.75
+      },
+      "market": "CRIPTO",
+      "symbol": "TIAUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 60,
+        "phase": "PREPARAÇÃO",
+        "price": 0.3599,
+        "resistance": 0.3637,
+        "support": 0.3278,
+        "distanceToBreakoutPct": 1.056,
+        "compressionRatio": 0.846,
+        "volumeAcceleration": 1.267,
+        "obvLead": false,
+        "obvSlope": 233469.34884615388,
+        "attacks": 3,
+        "higherLows": 4,
+        "rsi": 73.41,
+        "move6Pct": 2.65,
+        "penalty": 8,
+        "parts": {
+          "compression": 14,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 10,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 60
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 84,
+      "level": 0.00000408,
+      "distanceToBreakoutPct": 3.553,
+      "volumeRatio": 0.96,
+      "obvSlope": 23526940098.9021,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 2.93,
+        "rise2Pct": 3.37
+      },
+      "market": "CRIPTO",
+      "symbol": "PEPEUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 58,
+        "phase": "PREPARAÇÃO",
+        "price": 0.00000394,
+        "resistance": 0.00000408,
+        "support": 0.00000369,
+        "distanceToBreakoutPct": 3.553,
+        "compressionRatio": 0.705,
+        "volumeAcceleration": 0.623,
+        "obvLead": false,
+        "obvSlope": 23526940098.9021,
+        "attacks": 5,
+        "higherLows": 3,
+        "rsi": 52.94,
+        "move6Pct": -1.75,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 8,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "name": "Rectangle Accumulation",
+      "family": "BILATERAL",
+      "direction": "BUY",
+      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
+      "score": 83,
+      "level": 3839.45,
+      "distanceToBreakoutPct": 0.235,
+      "volumeRatio": 0.406,
+      "obvSlope": 15.630019580419589,
+      "obvConfirm": true,
+      "compression": true,
+      "boxRangePct": 2.02,
+      "boxPosition": 0.882,
+      "market": "CRIPTO",
+      "symbol": "PAXGUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 46.4,
+        "avgLead": 8.29,
+        "hit10": 15.9,
+        "hit20": 7.8
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 73,
+        "phase": "PRESSÃO",
+        "price": 3830.46,
+        "resistance": 3839.45,
+        "support": 3763.57,
+        "distanceToBreakoutPct": 0.235,
+        "compressionRatio": 0.354,
+        "volumeAcceleration": 0.271,
+        "obvLead": false,
+        "obvSlope": 15.630019580419589,
+        "attacks": 9,
+        "higherLows": 3,
+        "rsi": 49.22,
+        "move6Pct": 0.02,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 8,
+          "proximity": 15
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 73
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 82,
+      "level": 73.28,
+      "distanceToBreakoutPct": 2.604,
+      "volumeRatio": 0.734,
+      "obvSlope": 33381.601255244655,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 3.1,
+        "rise2Pct": 2.16
+      },
+      "market": "CRIPTO",
+      "symbol": "SOLUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 52,
+        "phase": "PREPARAÇÃO",
+        "price": 71.42,
+        "resistance": 73.28,
+        "support": 67.41,
+        "distanceToBreakoutPct": 2.604,
+        "compressionRatio": 0.618,
+        "volumeAcceleration": 0.549,
+        "obvLead": false,
+        "obvSlope": 33381.601255244655,
+        "attacks": 2,
+        "higherLows": 5,
+        "rsi": 50.65,
+        "move6Pct": -1.05,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 8,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      }
+    },
+    {
       "name": "Double Bottom",
       "family": "REVERSAO",
       "direction": "BUY",
       "stage": "FUNDO DUPLO PRÉ-NECKLINE",
-      "score": 83,
-      "level": 0.3083,
-      "distanceToBreakoutPct": 0.195,
-      "volumeRatio": 0.698,
-      "obvSlope": 56382.531818182426,
+      "score": 81,
+      "level": 0.6277,
+      "distanceToBreakoutPct": 2.616,
+      "volumeRatio": 0.761,
+      "obvSlope": 25753.07251748207,
       "obvConfirm": true,
-      "compression": false,
-      "bottomGapPct": 0.29,
+      "compression": true,
+      "bottomGapPct": 0.41,
       "market": "CRIPTO",
-      "symbol": "TRXUSDT",
+      "symbol": "FILUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 3,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
       "priority": 100,
       "historical": {
         "breakout24": 49.7,
@@ -33,610 +406,24 @@
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
-        "score": 50,
-        "phase": "PREPARAÇÃO",
-        "price": 0.3077,
-        "resistance": 0.313,
-        "support": 0.305,
-        "distanceToBreakoutPct": 1.722,
-        "compressionRatio": 0.693,
-        "volumeAcceleration": 0.48,
-        "obvLead": false,
-        "obvSlope": 56382.531818182426,
-        "attacks": 0,
-        "higherLows": 4,
-        "rsi": 46.02,
-        "move6Pct": 0.07,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 12,
-          "proximity": 6
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 50
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 83,
-      "level": 0.7267,
-      "distanceToBreakoutPct": 0.193,
-      "volumeRatio": 0.984,
-      "obvSlope": 75627.36293706331,
-      "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.0012011351909184719,
-      "loSlope": -0.0006000000000000007,
-      "market": "CRIPTO",
-      "symbol": "SUIUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 100,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 40,
+        "score": 48,
         "phase": "OBSERVAÇÃO",
-        "price": 0.7253,
-        "resistance": 0.7663,
-        "support": 0.6755,
-        "distanceToBreakoutPct": 5.653,
-        "compressionRatio": 0.513,
-        "volumeAcceleration": 0.428,
-        "obvLead": false,
-        "obvSlope": 75627.36293706331,
-        "attacks": 0,
-        "higherLows": 3,
-        "rsi": 49.85,
-        "move6Pct": 0.53,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 8,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 40
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 83,
-      "level": 0.2746,
-      "distanceToBreakoutPct": 0.993,
-      "volumeRatio": 1.348,
-      "obvSlope": 76913.33947552444,
-      "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.0005309597523219818,
-      "loSlope": -0.00022311661506707896,
-      "market": "CRIPTO",
-      "symbol": "LDOUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 100,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 40,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.2719,
-        "resistance": 0.2886,
-        "support": 0.2556,
-        "distanceToBreakoutPct": 6.142,
-        "compressionRatio": 0.444,
-        "volumeAcceleration": 0.638,
-        "obvLead": false,
-        "obvSlope": 76913.33947552444,
-        "attacks": 0,
-        "higherLows": 3,
-        "rsi": 49.33,
-        "move6Pct": -0.44,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 8,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 40
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 81,
-      "level": 7.265,
-      "distanceToBreakoutPct": 0.484,
-      "volumeRatio": 0.864,
-      "obvSlope": 29457.92010489505,
-      "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.028628482972136233,
-      "loSlope": -0.024936016511867894,
-      "market": "CRIPTO",
-      "symbol": "AVAXUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 100,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 40,
-        "phase": "OBSERVAÇÃO",
-        "price": 7.23,
-        "resistance": 8.012,
-        "support": 6.743,
-        "distanceToBreakoutPct": 10.816,
-        "compressionRatio": 0.619,
-        "volumeAcceleration": 0.493,
-        "obvLead": false,
-        "obvSlope": 29457.92010489505,
-        "attacks": 0,
-        "higherLows": 3,
-        "rsi": 42.67,
-        "move6Pct": 1.03,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 8,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 40
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 81,
-      "level": 0.3083,
-      "distanceToBreakoutPct": 0.195,
-      "volumeRatio": 0.698,
-      "obvSlope": 56382.531818182426,
-      "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.00014726522187822417,
-      "loSlope": -0.00012187822497420111,
-      "market": "CRIPTO",
-      "symbol": "TRXUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 3,
-      "priority": 100,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 50,
-        "phase": "PREPARAÇÃO",
-        "price": 0.3077,
-        "resistance": 0.313,
-        "support": 0.305,
-        "distanceToBreakoutPct": 1.722,
-        "compressionRatio": 0.693,
-        "volumeAcceleration": 0.48,
-        "obvLead": false,
-        "obvSlope": 56382.531818182426,
-        "attacks": 0,
-        "higherLows": 4,
-        "rsi": 46.02,
-        "move6Pct": 0.07,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 12,
-          "proximity": 6
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 50
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 81,
-      "level": 0.3513,
-      "distanceToBreakoutPct": 0.171,
-      "volumeRatio": 0.702,
-      "obvSlope": 90378.18709790225,
-      "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.0005991744066047477,
-      "loSlope": -0.00017884416924664507,
-      "market": "CRIPTO",
-      "symbol": "TIAUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 100,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 32,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.3507,
-        "resistance": 0.369,
-        "support": 0.3278,
-        "distanceToBreakoutPct": 5.218,
-        "compressionRatio": 0.52,
-        "volumeAcceleration": 0.38,
-        "obvLead": false,
-        "obvSlope": 90378.18709790225,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 52.26,
-        "move6Pct": 0.2,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 32
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 81,
-      "level": 0.516,
-      "distanceToBreakoutPct": 0.194,
-      "volumeRatio": 0.864,
-      "obvSlope": 8670.927972027943,
-      "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.0009494324045407645,
-      "loSlope": -0.0005614035087719303,
-      "market": "CRIPTO",
-      "symbol": "RUNEUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 100,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 32,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.515,
-        "resistance": 0.541,
-        "support": 0.491,
-        "distanceToBreakoutPct": 5.049,
-        "compressionRatio": 0.549,
-        "volumeAcceleration": 0.411,
-        "obvLead": false,
-        "obvSlope": 8670.927972027943,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 49.3,
-        "move6Pct": 0.98,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 32
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 78,
-      "level": 0.6269,
-      "distanceToBreakoutPct": 1.146,
-      "volumeRatio": 0.706,
-      "obvSlope": 67316.0842657339,
-      "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.0030054695562435536,
-      "loSlope": -0.0023879256965944275,
-      "market": "CRIPTO",
-      "symbol": "FILUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 100,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 32,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.6198,
-        "resistance": 0.6838,
+        "price": 0.6117,
+        "resistance": 0.6451,
         "support": 0.5863,
-        "distanceToBreakoutPct": 10.326,
-        "compressionRatio": 0.562,
-        "volumeAcceleration": 0.315,
-        "obvLead": false,
-        "obvSlope": 67316.0842657339,
+        "distanceToBreakoutPct": 5.46,
+        "compressionRatio": 0.665,
+        "volumeAcceleration": 0.583,
+        "obvLead": true,
+        "obvSlope": 25753.07251748207,
         "attacks": 0,
-        "higherLows": 2,
-        "rsi": 41.53,
-        "move6Pct": -0.77,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 32
-        }
-      }
-    },
-    {
-      "name": "Three Rising Valleys",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "PRÉ-ROMPIMENTO",
-      "score": 78,
-      "level": 930.49,
-      "distanceToBreakoutPct": 2.523,
-      "volumeRatio": 1.054,
-      "obvSlope": 2386.178423076924,
-      "obvConfirm": true,
-      "compression": false,
-      "structure": {
-        "rise1Pct": 4.83,
-        "rise2Pct": 5.37
-      },
-      "market": "CRIPTO",
-      "symbol": "ZECUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 100,
-      "historical": {
-        "breakout24": 63.7,
-        "avgLead": 6.69,
-        "hit10": 24.3,
-        "hit20": 12.2
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 40,
-        "phase": "OBSERVAÇÃO",
-        "price": 907.59,
-        "resistance": 930.49,
-        "support": 801.52,
-        "distanceToBreakoutPct": 2.523,
-        "compressionRatio": 0.506,
-        "volumeAcceleration": 0.587,
-        "obvLead": false,
-        "obvSlope": 2386.178423076924,
-        "attacks": 1,
         "higherLows": 3,
-        "rsi": 66.46,
-        "move6Pct": -0.49,
+        "rsi": 49.06,
+        "move6Pct": -1.83,
         "penalty": 0,
         "parts": {
           "compression": 20,
-          "obv": 12,
+          "obv": 20,
           "attacks": 0,
           "volume": 0,
           "structure": 8,
@@ -659,80 +446,7 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 40
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 78,
-      "level": 151.96,
-      "distanceToBreakoutPct": 1.138,
-      "volumeRatio": 0.727,
-      "obvSlope": 642.4780454545452,
-      "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.39691434468524267,
-      "loSlope": -0.3008565531475747,
-      "market": "CRIPTO",
-      "symbol": "QNTUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 100,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 32,
-        "phase": "OBSERVAÇÃO",
-        "price": 150.25,
-        "resistance": 158.37,
-        "support": 138.89,
-        "distanceToBreakoutPct": 5.404,
-        "compressionRatio": 0.599,
-        "volumeAcceleration": 0.284,
-        "obvLead": false,
-        "obvSlope": 642.4780454545452,
-        "attacks": 0,
-        "higherLows": 1,
-        "rsi": 51.71,
-        "move6Pct": 1.89,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 32
+          "technical": 48
         }
       }
     },
@@ -741,23 +455,23 @@
       "family": "REVERSAO",
       "direction": "BUY",
       "stage": "PRÉ-ROMPIMENTO",
-      "score": 76,
-      "level": 0.03639,
-      "distanceToBreakoutPct": 0.22,
-      "volumeRatio": 0.362,
-      "obvSlope": 67479.43006993007,
+      "score": 79,
+      "level": 108.36,
+      "distanceToBreakoutPct": 1.148,
+      "volumeRatio": 0.575,
+      "obvSlope": 1347.856122377623,
       "obvConfirm": true,
-      "compression": false,
+      "compression": true,
       "structure": {
-        "rise1Pct": 1.69,
-        "rise2Pct": 4.36
+        "rise1Pct": 7.47,
+        "rise2Pct": 1.83
       },
       "market": "CRIPTO",
-      "symbol": "SANDUSDT",
+      "symbol": "AAVEUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 2,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
       "priority": 100,
       "historical": {
         "breakout24": 63.7,
@@ -767,28 +481,28 @@
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
-        "score": 32,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.03631,
-        "resistance": 0.03824,
-        "support": 0.0338,
-        "distanceToBreakoutPct": 5.315,
-        "compressionRatio": 0.5,
-        "volumeAcceleration": 0.319,
+        "score": 60,
+        "phase": "PREPARAÇÃO",
+        "price": 107.13,
+        "resistance": 108.36,
+        "support": 96.6,
+        "distanceToBreakoutPct": 1.148,
+        "compressionRatio": 0.515,
+        "volumeAcceleration": 0.533,
         "obvLead": false,
-        "obvSlope": 67479.43006993007,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 53.32,
-        "move6Pct": 0.75,
-        "penalty": 0,
+        "obvSlope": 1347.856122377623,
+        "attacks": 4,
+        "higherLows": 5,
+        "rsi": 72.92,
+        "move6Pct": 0.07,
+        "penalty": 8,
         "parts": {
           "compression": 20,
           "obv": 12,
-          "attacks": 0,
+          "attacks": 18,
           "volume": 0,
-          "structure": 0,
-          "proximity": 0
+          "structure": 12,
+          "proximity": 6
         }
       },
       "futures": {
@@ -807,7 +521,7 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 32
+          "technical": 60
         }
       }
     },
@@ -816,22 +530,22 @@
       "family": "REVERSAO",
       "direction": "BUY",
       "stage": "PRÉ-ROMPIMENTO",
-      "score": 76,
-      "level": 3839.45,
-      "distanceToBreakoutPct": 0.309,
-      "volumeRatio": 0.31,
-      "obvSlope": 2.0869860139861687,
+      "score": 78,
+      "level": 3838.59,
+      "distanceToBreakoutPct": 0.212,
+      "volumeRatio": 0.406,
+      "obvSlope": 15.630019580419589,
       "obvConfirm": true,
-      "compression": false,
+      "compression": true,
       "structure": {
-        "rise1Pct": 0.61,
-        "rise2Pct": 0.67
+        "rise1Pct": 0.06,
+        "rise2Pct": 0.23
       },
       "market": "CRIPTO",
       "symbol": "PAXGUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-15T16:00:00.000Z",
       "confluence": 2,
       "priority": 100,
       "historical": {
@@ -842,28 +556,28 @@
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
-        "score": 38,
-        "phase": "OBSERVAÇÃO",
-        "price": 3827.63,
-        "resistance": 3869.1,
+        "score": 73,
+        "phase": "PRESSÃO",
+        "price": 3830.46,
+        "resistance": 3839.45,
         "support": 3763.57,
-        "distanceToBreakoutPct": 1.083,
-        "compressionRatio": 0.316,
-        "volumeAcceleration": 0.258,
+        "distanceToBreakoutPct": 0.235,
+        "compressionRatio": 0.354,
+        "volumeAcceleration": 0.271,
         "obvLead": false,
-        "obvSlope": 2.0869860139861687,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 47.59,
-        "move6Pct": 0.07,
+        "obvSlope": 15.630019580419589,
+        "attacks": 9,
+        "higherLows": 3,
+        "rsi": 49.22,
+        "move6Pct": 0.02,
         "penalty": 0,
         "parts": {
           "compression": 20,
           "obv": 12,
-          "attacks": 0,
+          "attacks": 18,
           "volume": 0,
-          "structure": 0,
-          "proximity": 6
+          "structure": 8,
+          "proximity": 15
         }
       },
       "futures": {
@@ -882,58 +596,60 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 38
+          "technical": 73
         }
       }
     },
     {
-      "name": "Rectangle Accumulation",
-      "family": "BILATERAL",
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
       "direction": "BUY",
-      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
-      "score": 74,
-      "level": 0.313,
-      "distanceToBreakoutPct": 1.722,
-      "volumeRatio": 0.698,
-      "obvSlope": 56382.531818182426,
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 76,
+      "level": 5.221,
+      "distanceToBreakoutPct": 1.28,
+      "volumeRatio": 0.499,
+      "obvSlope": 3131.20395104914,
       "obvConfirm": true,
-      "compression": false,
-      "boxRangePct": 2.62,
-      "boxPosition": 0.337,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 5.36,
+        "rise2Pct": 2.82
+      },
       "market": "CRIPTO",
-      "symbol": "TRXUSDT",
+      "symbol": "UNIUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 3,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
       "priority": 100,
       "historical": {
-        "breakout24": 46.4,
-        "avgLead": 8.29,
-        "hit10": 15.9,
-        "hit20": 7.8
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
-        "score": 50,
-        "phase": "PREPARAÇÃO",
-        "price": 0.3077,
-        "resistance": 0.313,
-        "support": 0.305,
-        "distanceToBreakoutPct": 1.722,
-        "compressionRatio": 0.693,
-        "volumeAcceleration": 0.48,
+        "score": 68,
+        "phase": "PRESSÃO",
+        "price": 5.155,
+        "resistance": 5.221,
+        "support": 4.619,
+        "distanceToBreakoutPct": 1.28,
+        "compressionRatio": 0.571,
+        "volumeAcceleration": 0.559,
         "obvLead": false,
-        "obvSlope": 56382.531818182426,
-        "attacks": 0,
-        "higherLows": 4,
-        "rsi": 46.02,
-        "move6Pct": 0.07,
+        "obvSlope": 3131.20395104914,
+        "attacks": 4,
+        "higherLows": 5,
+        "rsi": 67.07,
+        "move6Pct": 0.04,
         "penalty": 0,
         "parts": {
           "compression": 20,
           "obv": 12,
-          "attacks": 0,
+          "attacks": 18,
           "volume": 0,
           "structure": 12,
           "proximity": 6
@@ -955,7 +671,7 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 50
+          "technical": 68
         }
       }
     },
@@ -964,23 +680,23 @@
       "family": "REVERSAO",
       "direction": "BUY",
       "stage": "PRÉ-ROMPIMENTO",
-      "score": 74,
-      "level": 0.2101,
-      "distanceToBreakoutPct": 2.288,
-      "volumeRatio": 5.353,
-      "obvSlope": -151993.9188811189,
-      "obvConfirm": false,
-      "compression": false,
+      "score": 76,
+      "level": 6.05,
+      "distanceToBreakoutPct": 1.51,
+      "volumeRatio": 0.427,
+      "obvSlope": 730.6738811188825,
+      "obvConfirm": true,
+      "compression": true,
       "structure": {
-        "rise1Pct": 0.87,
-        "rise2Pct": 4.3
+        "rise1Pct": 2.65,
+        "rise2Pct": 1.9
       },
       "market": "CRIPTO",
-      "symbol": "CRVUSDT",
+      "symbol": "ETCUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 2,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
       "priority": 100,
       "historical": {
         "breakout24": 63.7,
@@ -990,27 +706,321 @@
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
-        "score": 30,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.2054,
-        "resistance": 0.2255,
-        "support": 0.1959,
-        "distanceToBreakoutPct": 9.786,
-        "compressionRatio": 0.482,
-        "volumeAcceleration": 1.224,
+        "score": 68,
+        "phase": "PRESSÃO",
+        "price": 5.96,
+        "resistance": 6.05,
+        "support": 5.62,
+        "distanceToBreakoutPct": 1.51,
+        "compressionRatio": 0.576,
+        "volumeAcceleration": 0.696,
         "obvLead": false,
-        "obvSlope": -151993.9188811189,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 43.31,
-        "move6Pct": -1.49,
+        "obvSlope": 730.6738811188825,
+        "attacks": 4,
+        "higherLows": 5,
+        "rsi": 55.81,
+        "move6Pct": -0.83,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 68
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 76,
+      "level": 0.08186,
+      "distanceToBreakoutPct": 1.917,
+      "volumeRatio": 1.071,
+      "obvSlope": -426758.282867132,
+      "obvConfirm": false,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 2.97,
+        "rise2Pct": 0.92
+      },
+      "market": "CRIPTO",
+      "symbol": "POLUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 52,
+        "phase": "PREPARAÇÃO",
+        "price": 0.08032,
+        "resistance": 0.08186,
+        "support": 0.07616,
+        "distanceToBreakoutPct": 1.917,
+        "compressionRatio": 0.529,
+        "volumeAcceleration": 0.644,
+        "obvLead": false,
+        "obvSlope": -426758.282867132,
+        "attacks": 5,
+        "higherLows": 3,
+        "rsi": 52.67,
+        "move6Pct": -1.45,
         "penalty": 0,
         "parts": {
           "compression": 20,
           "obv": 0,
-          "attacks": 0,
-          "volume": 10,
-          "structure": 0,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 8,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      }
+    },
+    {
+      "name": "Double Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
+      "score": 75,
+      "level": 0.0829,
+      "distanceToBreakoutPct": 1.968,
+      "volumeRatio": 0.597,
+      "obvSlope": 270157.17419580335,
+      "obvConfirm": true,
+      "compression": true,
+      "bottomGapPct": 0.5,
+      "market": "CRIPTO",
+      "symbol": "OPUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 49.7,
+        "avgLead": 7.97,
+        "hit10": 16.6,
+        "hit20": 7.1
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 76,
+        "phase": "PRESSÃO",
+        "price": 0.0813,
+        "resistance": 0.0829,
+        "support": 0.0757,
+        "distanceToBreakoutPct": 1.968,
+        "compressionRatio": 0.552,
+        "volumeAcceleration": 0.513,
+        "obvLead": true,
+        "obvSlope": 270157.17419580335,
+        "attacks": 5,
+        "higherLows": 4,
+        "rsi": 45.83,
+        "move6Pct": -1.33,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 20,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 76
+        }
+      }
+    },
+    {
+      "name": "Double Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
+      "score": 75,
+      "level": 0.2681,
+      "distanceToBreakoutPct": 1.63,
+      "volumeRatio": 0.496,
+      "obvSlope": 123770.20909090881,
+      "obvConfirm": true,
+      "compression": true,
+      "bottomGapPct": 0.43,
+      "market": "CRIPTO",
+      "symbol": "WLDUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 49.7,
+        "avgLead": 7.97,
+        "hit10": 16.6,
+        "hit20": 7.1
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 64,
+        "phase": "PREPARAÇÃO",
+        "price": 0.2638,
+        "resistance": 0.2681,
+        "support": 0.243,
+        "distanceToBreakoutPct": 1.63,
+        "compressionRatio": 0.608,
+        "volumeAcceleration": 0.43,
+        "obvLead": false,
+        "obvSlope": 123770.20909090881,
+        "attacks": 3,
+        "higherLows": 4,
+        "rsi": 52.04,
+        "move6Pct": 0.11,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 64
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 74,
+      "level": 0.1567,
+      "distanceToBreakoutPct": 2.418,
+      "volumeRatio": 0.353,
+      "obvSlope": 2605076.7569930055,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 4.07,
+        "rise2Pct": 2.36
+      },
+      "market": "CRIPTO",
+      "symbol": "ADAUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 62,
+        "phase": "PREPARAÇÃO",
+        "price": 0.153,
+        "resistance": 0.1567,
+        "support": 0.1426,
+        "distanceToBreakoutPct": 2.418,
+        "compressionRatio": 0.605,
+        "volumeAcceleration": 0.403,
+        "obvLead": false,
+        "obvSlope": 2605076.7569930055,
+        "attacks": 4,
+        "higherLows": 4,
+        "rsi": 62.18,
+        "move6Pct": -1.16,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
           "proximity": 0
         }
       },
@@ -1030,60 +1040,506 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 30
+          "technical": 62
         }
       }
     },
     {
-      "name": "Falling Wedge",
+      "name": "Three Rising Valleys",
       "family": "REVERSAO",
       "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 73,
-      "level": 0.03893,
-      "distanceToBreakoutPct": 0.154,
-      "volumeRatio": 0.534,
-      "obvSlope": 272632.5465034961,
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 74,
+      "level": 212.5,
+      "distanceToBreakoutPct": 2.213,
+      "volumeRatio": 0.314,
+      "obvSlope": 131.53154895104868,
       "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.00007569659442724472,
-      "loSlope": -0.000040804953560371544,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 3.42,
+        "rise2Pct": 1.83
+      },
       "market": "CRIPTO",
-      "symbol": "SEIUSDT",
+      "symbol": "BCHUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-15T16:00:00.000Z",
       "confluence": 1,
       "priority": 100,
       "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 52,
+        "phase": "PREPARAÇÃO",
+        "price": 207.9,
+        "resistance": 212.5,
+        "support": 195.7,
+        "distanceToBreakoutPct": 2.213,
+        "compressionRatio": 0.61,
+        "volumeAcceleration": 0.459,
+        "obvLead": false,
+        "obvSlope": 131.53154895104868,
+        "attacks": 2,
+        "higherLows": 4,
+        "rsi": 56.25,
+        "move6Pct": -0.43,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 8,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 74,
+      "level": 0.2773,
+      "distanceToBreakoutPct": 2.174,
+      "volumeRatio": 0.489,
+      "obvSlope": 126637.85234265741,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 3.17,
+        "rise2Pct": 0.6
+      },
+      "market": "CRIPTO",
+      "symbol": "LDOUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 58,
+        "phase": "PREPARAÇÃO",
+        "price": 0.2714,
+        "resistance": 0.2773,
+        "support": 0.2556,
+        "distanceToBreakoutPct": 2.174,
+        "compressionRatio": 0.603,
+        "volumeAcceleration": 0.506,
+        "obvLead": false,
+        "obvSlope": 126637.85234265741,
+        "attacks": 3,
+        "higherLows": 5,
+        "rsi": 47.75,
+        "move6Pct": -1.17,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 74,
+      "level": 0.2695,
+      "distanceToBreakoutPct": 3.059,
+      "volumeRatio": 0.328,
+      "obvSlope": 6461.15769230773,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 3.58,
+        "rise2Pct": 2.32
+      },
+      "market": "CRIPTO",
+      "symbol": "JUPUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 58,
+        "phase": "PREPARAÇÃO",
+        "price": 0.2615,
+        "resistance": 0.2695,
+        "support": 0.2348,
+        "distanceToBreakoutPct": 3.059,
+        "compressionRatio": 0.503,
+        "volumeAcceleration": 0.83,
+        "obvLead": false,
+        "obvSlope": 6461.15769230773,
+        "attacks": 4,
+        "higherLows": 3,
+        "rsi": 45.73,
+        "move6Pct": -0.95,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 8,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 74,
+      "level": 0.00000398,
+      "distanceToBreakoutPct": 2.051,
+      "volumeRatio": 0.258,
+      "obvSlope": 10106628837.818182,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 4.05,
+        "rise2Pct": 0.78
+      },
+      "market": "CRIPTO",
+      "symbol": "SHIBUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 62,
+        "phase": "PREPARAÇÃO",
+        "price": 0.0000039,
+        "resistance": 0.00000398,
+        "support": 0.0000037,
+        "distanceToBreakoutPct": 2.051,
+        "compressionRatio": 0.588,
+        "volumeAcceleration": 0.387,
+        "obvLead": false,
+        "obvSlope": 10106628837.818182,
+        "attacks": 5,
+        "higherLows": 4,
+        "rsi": 50,
+        "move6Pct": -1.02,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 62
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 74,
+      "level": 0.2738,
+      "distanceToBreakoutPct": 2.355,
+      "volumeRatio": 0.365,
+      "obvSlope": 74644.85874125865,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 2.6,
+        "rise2Pct": 1.73
+      },
+      "market": "CRIPTO",
+      "symbol": "STXUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 46,
+        "phase": "OBSERVAÇÃO",
+        "price": 0.2675,
+        "resistance": 0.2738,
+        "support": 0.2531,
+        "distanceToBreakoutPct": 2.355,
+        "compressionRatio": 0.722,
+        "volumeAcceleration": 0.557,
+        "obvLead": false,
+        "obvSlope": 74644.85874125865,
+        "attacks": 2,
+        "higherLows": 5,
+        "rsi": 51.17,
+        "move6Pct": 0.3,
+        "penalty": 0,
+        "parts": {
+          "compression": 14,
+          "obv": 12,
+          "attacks": 8,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 46
+        }
+      }
+    },
+    {
+      "name": "Double Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
+      "score": 73,
+      "level": 3.213,
+      "distanceToBreakoutPct": 2.13,
+      "volumeRatio": 0.315,
+      "obvSlope": 217121.16468531365,
+      "obvConfirm": true,
+      "compression": true,
+      "bottomGapPct": 0.32,
+      "market": "CRIPTO",
+      "symbol": "NEARUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 49.7,
+        "avgLead": 7.97,
+        "hit10": 16.6,
+        "hit20": 7.1
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 58,
+        "phase": "PREPARAÇÃO",
+        "price": 3.146,
+        "resistance": 3.213,
+        "support": 2.87,
+        "distanceToBreakoutPct": 2.13,
+        "compressionRatio": 0.56,
+        "volumeAcceleration": 0.371,
+        "obvLead": false,
+        "obvSlope": 217121.16468531365,
+        "attacks": 5,
+        "higherLows": 3,
+        "rsi": 51.7,
+        "move6Pct": -1.19,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 8,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "name": "Double Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
+      "score": 73,
+      "level": 0.4623,
+      "distanceToBreakoutPct": 2.848,
+      "volumeRatio": 0.525,
+      "obvSlope": 41604.69818181827,
+      "obvConfirm": true,
+      "compression": true,
+      "bottomGapPct": 0.13,
+      "market": "CRIPTO",
+      "symbol": "APTUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 49.7,
+        "avgLead": 7.97,
+        "hit10": 16.6,
+        "hit20": 7.1
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
         "score": 40,
         "phase": "OBSERVAÇÃO",
-        "price": 0.03887,
-        "resistance": 0.04091,
-        "support": 0.03631,
-        "distanceToBreakoutPct": 5.248,
-        "compressionRatio": 0.538,
-        "volumeAcceleration": 0.322,
-        "obvLead": false,
-        "obvSlope": 272632.5465034961,
+        "price": 0.4495,
+        "resistance": 0.4703,
+        "support": 0.4283,
+        "distanceToBreakoutPct": 4.627,
+        "compressionRatio": 0.606,
+        "volumeAcceleration": 0.628,
+        "obvLead": true,
+        "obvSlope": 41604.69818181827,
         "attacks": 0,
-        "higherLows": 3,
-        "rsi": 49.62,
-        "move6Pct": 0.54,
+        "higherLows": 2,
+        "rsi": 39.06,
+        "move6Pct": -2.28,
         "penalty": 0,
         "parts": {
           "compression": 20,
-          "obv": 12,
+          "obv": 20,
           "attacks": 0,
           "volume": 0,
-          "structure": 8,
+          "structure": 0,
           "proximity": 0
         }
       },
@@ -1108,55 +1564,54 @@
       }
     },
     {
-      "name": "Falling Wedge",
+      "name": "Double Bottom",
       "family": "REVERSAO",
       "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
+      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
       "score": 73,
-      "level": 0.03639,
-      "distanceToBreakoutPct": 0.22,
-      "volumeRatio": 0.362,
-      "obvSlope": 67479.43006993007,
+      "level": 0.2773,
+      "distanceToBreakoutPct": 2.174,
+      "volumeRatio": 0.489,
+      "obvSlope": 126637.85234265741,
       "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.00003109391124871008,
-      "loSlope": -7.22394220847815e-8,
+      "compression": true,
+      "bottomGapPct": 0.6,
       "market": "CRIPTO",
-      "symbol": "SANDUSDT",
+      "symbol": "LDOUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-15T16:00:00.000Z",
       "confluence": 2,
       "priority": 100,
       "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
+        "breakout24": 49.7,
+        "avgLead": 7.97,
+        "hit10": 16.6,
+        "hit20": 7.1
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
-        "score": 32,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.03631,
-        "resistance": 0.03824,
-        "support": 0.0338,
-        "distanceToBreakoutPct": 5.315,
-        "compressionRatio": 0.5,
-        "volumeAcceleration": 0.319,
+        "score": 58,
+        "phase": "PREPARAÇÃO",
+        "price": 0.2714,
+        "resistance": 0.2773,
+        "support": 0.2556,
+        "distanceToBreakoutPct": 2.174,
+        "compressionRatio": 0.603,
+        "volumeAcceleration": 0.506,
         "obvLead": false,
-        "obvSlope": 67479.43006993007,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 53.32,
-        "move6Pct": 0.75,
+        "obvSlope": 126637.85234265741,
+        "attacks": 3,
+        "higherLows": 5,
+        "rsi": 47.75,
+        "move6Pct": -1.17,
         "penalty": 0,
         "parts": {
           "compression": 20,
           "obv": 12,
-          "attacks": 0,
+          "attacks": 14,
           "volume": 0,
-          "structure": 0,
+          "structure": 12,
           "proximity": 0
         }
       },
@@ -1176,7 +1631,151 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 32
+          "technical": 58
+        }
+      }
+    },
+    {
+      "name": "Double Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
+      "score": 73,
+      "level": 0.00000398,
+      "distanceToBreakoutPct": 2.051,
+      "volumeRatio": 0.258,
+      "obvSlope": 10106628837.818182,
+      "obvConfirm": true,
+      "compression": true,
+      "bottomGapPct": 0.77,
+      "market": "CRIPTO",
+      "symbol": "SHIBUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 49.7,
+        "avgLead": 7.97,
+        "hit10": 16.6,
+        "hit20": 7.1
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 62,
+        "phase": "PREPARAÇÃO",
+        "price": 0.0000039,
+        "resistance": 0.00000398,
+        "support": 0.0000037,
+        "distanceToBreakoutPct": 2.051,
+        "compressionRatio": 0.588,
+        "volumeAcceleration": 0.387,
+        "obvLead": false,
+        "obvSlope": 10106628837.818182,
+        "attacks": 5,
+        "higherLows": 4,
+        "rsi": 50,
+        "move6Pct": -1.02,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 62
+        }
+      }
+    },
+    {
+      "name": "Double Bottom",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "FUNDO DUPLO PRÉ-NECKLINE",
+      "score": 73,
+      "level": 1.42,
+      "distanceToBreakoutPct": 3.198,
+      "volumeRatio": 0.435,
+      "obvSlope": 19333.00230769231,
+      "obvConfirm": true,
+      "compression": true,
+      "bottomGapPct": 0.59,
+      "market": "CRIPTO",
+      "symbol": "RENDERUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 49.7,
+        "avgLead": 7.97,
+        "hit10": 16.6,
+        "hit20": 7.1
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 52,
+        "phase": "PREPARAÇÃO",
+        "price": 1.376,
+        "resistance": 1.42,
+        "support": 1.311,
+        "distanceToBreakoutPct": 3.198,
+        "compressionRatio": 0.723,
+        "volumeAcceleration": 0.614,
+        "obvLead": false,
+        "obvSlope": 19333.00230769231,
+        "attacks": 3,
+        "higherLows": 4,
+        "rsi": 44.36,
+        "move6Pct": -1.78,
+        "penalty": 0,
+        "parts": {
+          "compression": 14,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
         }
       }
     },
@@ -1186,21 +1785,21 @@
       "direction": "BUY",
       "stage": "PRÉ-ROMPIMENTO",
       "score": 72,
-      "level": 0.1393,
-      "distanceToBreakoutPct": 0.433,
-      "volumeRatio": 0.586,
-      "obvSlope": 876274.486013986,
+      "level": 45.8,
+      "distanceToBreakoutPct": 1.959,
+      "volumeRatio": 0.434,
+      "obvSlope": 5881.602741258743,
       "obvConfirm": true,
-      "compression": false,
+      "compression": true,
       "structure": {
-        "rise1Pct": 0.31,
-        "rise2Pct": 4.68
+        "rise1Pct": 0.2,
+        "rise2Pct": 1.64
       },
       "market": "CRIPTO",
-      "symbol": "XLMUSDT",
+      "symbol": "LTCUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-15T16:00:00.000Z",
       "confluence": 1,
       "priority": 100,
       "historical": {
@@ -1211,98 +1810,25 @@
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
-        "score": 44,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.1387,
-        "resistance": 0.1426,
-        "support": 0.13,
-        "distanceToBreakoutPct": 2.812,
-        "compressionRatio": 0.464,
-        "volumeAcceleration": 0.367,
+        "score": 56,
+        "phase": "PREPARAÇÃO",
+        "price": 44.92,
+        "resistance": 45.8,
+        "support": 42.67,
+        "distanceToBreakoutPct": 1.959,
+        "compressionRatio": 0.57,
+        "volumeAcceleration": 0.494,
         "obvLead": false,
-        "obvSlope": 876274.486013986,
-        "attacks": 0,
-        "higherLows": 4,
-        "rsi": 55.19,
-        "move6Pct": 0.58,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 12,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 44
-        }
-      }
-    },
-    {
-      "name": "Rectangle Accumulation",
-      "family": "BILATERAL",
-      "direction": "BUY",
-      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
-      "score": 69,
-      "level": 3869.1,
-      "distanceToBreakoutPct": 1.083,
-      "volumeRatio": 0.31,
-      "obvSlope": 2.0869860139861687,
-      "obvConfirm": true,
-      "compression": false,
-      "boxRangePct": 2.8,
-      "boxPosition": 0.607,
-      "market": "CRIPTO",
-      "symbol": "PAXGUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 2,
-      "priority": 100,
-      "historical": {
-        "breakout24": 46.4,
-        "avgLead": 8.29,
-        "hit10": 15.9,
-        "hit20": 7.8
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 38,
-        "phase": "OBSERVAÇÃO",
-        "price": 3827.63,
-        "resistance": 3869.1,
-        "support": 3763.57,
-        "distanceToBreakoutPct": 1.083,
-        "compressionRatio": 0.316,
-        "volumeAcceleration": 0.258,
-        "obvLead": false,
-        "obvSlope": 2.0869860139861687,
-        "attacks": 0,
+        "obvSlope": 5881.602741258743,
+        "attacks": 5,
         "higherLows": 2,
-        "rsi": 47.59,
-        "move6Pct": 0.07,
+        "rsi": 51.43,
+        "move6Pct": -1.71,
         "penalty": 0,
         "parts": {
           "compression": 20,
           "obv": 12,
-          "attacks": 0,
+          "attacks": 18,
           "volume": 0,
           "structure": 0,
           "proximity": 6
@@ -1324,7 +1850,82 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 38
+          "technical": 56
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 72,
+      "level": 0.2681,
+      "distanceToBreakoutPct": 1.63,
+      "volumeRatio": 0.496,
+      "obvSlope": 123770.20909090881,
+      "obvConfirm": true,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 3.48,
+        "rise2Pct": 0.43
+      },
+      "market": "CRIPTO",
+      "symbol": "WLDUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 64,
+        "phase": "PREPARAÇÃO",
+        "price": 0.2638,
+        "resistance": 0.2681,
+        "support": 0.243,
+        "distanceToBreakoutPct": 1.63,
+        "compressionRatio": 0.608,
+        "volumeAcceleration": 0.43,
+        "obvLead": false,
+        "obvSlope": 123770.20909090881,
+        "attacks": 3,
+        "higherLows": 4,
+        "rsi": 52.04,
+        "move6Pct": 0.11,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 64
         }
       }
     },
@@ -1334,21 +1935,96 @@
       "direction": "BUY",
       "stage": "PRÉ-ROMPIMENTO",
       "score": 70,
-      "level": 0.9794,
-      "distanceToBreakoutPct": 1.65,
-      "volumeRatio": 0.58,
-      "obvSlope": 4578939.089860136,
+      "level": 0.4623,
+      "distanceToBreakoutPct": 2.848,
+      "volumeRatio": 0.525,
+      "obvSlope": 41604.69818181827,
       "obvConfirm": true,
-      "compression": false,
+      "compression": true,
       "structure": {
-        "rise1Pct": 0.69,
-        "rise2Pct": 4.88
+        "rise1Pct": 2.56,
+        "rise2Pct": 0.14
       },
       "market": "CRIPTO",
-      "symbol": "XRPUSDT",
+      "symbol": "APTUSDT",
       "timeframe": "H1",
       "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "confluence": 2,
+      "priority": 100,
+      "historical": {
+        "breakout24": 63.7,
+        "avgLead": 6.69,
+        "hit10": 24.3,
+        "hit20": 12.2
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 40,
+        "phase": "OBSERVAÇÃO",
+        "price": 0.4495,
+        "resistance": 0.4703,
+        "support": 0.4283,
+        "distanceToBreakoutPct": 4.627,
+        "compressionRatio": 0.606,
+        "volumeAcceleration": 0.628,
+        "obvLead": true,
+        "obvSlope": 41604.69818181827,
+        "attacks": 0,
+        "higherLows": 2,
+        "rsi": 39.06,
+        "move6Pct": -2.28,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 20,
+          "attacks": 0,
+          "volume": 0,
+          "structure": 0,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 40
+        }
+      }
+    },
+    {
+      "name": "Three Rising Valleys",
+      "family": "REVERSAO",
+      "direction": "BUY",
+      "stage": "PRÉ-ROMPIMENTO",
+      "score": 72,
+      "level": 0.001362,
+      "distanceToBreakoutPct": 2.176,
+      "volumeRatio": 0.717,
+      "obvSlope": -204036.9346153936,
+      "obvConfirm": false,
+      "compression": true,
+      "structure": {
+        "rise1Pct": 2.49,
+        "rise2Pct": 1.98
+      },
+      "market": "CRIPTO",
+      "symbol": "RSRUSDT",
+      "timeframe": "H1",
+      "contextCandles": 96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
       "confluence": 1,
       "priority": 98,
       "historical": {
@@ -1359,98 +2035,25 @@
       },
       "preLeg": {
         "version": "pre-leg-score-v1",
-        "score": 40,
+        "score": 34,
         "phase": "OBSERVAÇÃO",
-        "price": 0.9635,
-        "resistance": 0.9983,
-        "support": 0.893,
-        "distanceToBreakoutPct": 3.612,
-        "compressionRatio": 0.656,
-        "volumeAcceleration": 0.378,
+        "price": 0.001333,
+        "resistance": 0.001364,
+        "support": 0.001284,
+        "distanceToBreakoutPct": 2.326,
+        "compressionRatio": 0.614,
+        "volumeAcceleration": 0.525,
         "obvLead": false,
-        "obvSlope": 4578939.089860136,
-        "attacks": 0,
-        "higherLows": 3,
-        "rsi": 52.53,
-        "move6Pct": -0.37,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 12,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 8,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 40
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 73,
-      "level": 0.2709,
-      "distanceToBreakoutPct": 2.265,
-      "volumeRatio": 0.721,
-      "obvSlope": 53959.68496503499,
-      "obvConfirm": true,
-      "compression": false,
-      "hiSlope": -0.00042951496388028855,
-      "loSlope": -0.00026057791537667616,
-      "market": "CRIPTO",
-      "symbol": "STXUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 97,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 32,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.2649,
-        "resistance": 0.2786,
-        "support": 0.2531,
-        "distanceToBreakoutPct": 5.172,
-        "compressionRatio": 0.538,
-        "volumeAcceleration": 0.353,
-        "obvLead": false,
-        "obvSlope": 53959.68496503499,
-        "attacks": 0,
+        "obvSlope": -204036.9346153936,
+        "attacks": 3,
         "higherLows": 1,
-        "rsi": 45.95,
-        "move6Pct": -1.45,
+        "rsi": 45.1,
+        "move6Pct": -1.33,
         "penalty": 0,
         "parts": {
           "compression": 20,
-          "obv": 12,
-          "attacks": 0,
+          "obv": 0,
+          "attacks": 14,
           "volume": 0,
           "structure": 0,
           "proximity": 0
@@ -1472,599 +2075,7 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 32
-        }
-      }
-    },
-    {
-      "name": "Three Rising Valleys",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "PRÉ-ROMPIMENTO",
-      "score": 67,
-      "level": 0.05917,
-      "distanceToBreakoutPct": 0.869,
-      "volumeRatio": 0.747,
-      "obvSlope": -373915.986013986,
-      "obvConfirm": false,
-      "compression": false,
-      "structure": {
-        "rise1Pct": 0.05,
-        "rise2Pct": 3.07
-      },
-      "market": "CRIPTO",
-      "symbol": "DOGEUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 94,
-      "historical": {
-        "breakout24": 63.7,
-        "avgLead": 6.69,
-        "hit10": 24.3,
-        "hit20": 12.2
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 20,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.05866,
-        "resistance": 0.06278,
-        "support": 0.05543,
-        "distanceToBreakoutPct": 7.024,
-        "compressionRatio": 0.539,
-        "volumeAcceleration": 0.466,
-        "obvLead": false,
-        "obvSlope": -373915.986013986,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 45.14,
-        "move6Pct": -0.34,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 0,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 20
-        }
-      }
-    },
-    {
-      "name": "Three Rising Valleys",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "PRÉ-ROMPIMENTO",
-      "score": 66,
-      "level": 0.0799,
-      "distanceToBreakoutPct": 0.251,
-      "volumeRatio": 0.416,
-      "obvSlope": -226159.92307692306,
-      "obvConfirm": false,
-      "compression": false,
-      "structure": {
-        "rise1Pct": 1.07,
-        "rise2Pct": 3.31
-      },
-      "market": "CRIPTO",
-      "symbol": "ALGOUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 93,
-      "historical": {
-        "breakout24": 63.7,
-        "avgLead": 6.69,
-        "hit10": 24.3,
-        "hit20": 12.2
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 28,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.0797,
-        "resistance": 0.0824,
-        "support": 0.0748,
-        "distanceToBreakoutPct": 3.388,
-        "compressionRatio": 0.685,
-        "volumeAcceleration": 0.479,
-        "obvLead": false,
-        "obvSlope": -226159.92307692306,
-        "attacks": 0,
-        "higherLows": 3,
-        "rsi": 55.17,
-        "move6Pct": 0.38,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 0,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 8,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 28
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 66,
-      "level": 0.2101,
-      "distanceToBreakoutPct": 2.288,
-      "volumeRatio": 5.353,
-      "obvSlope": -151993.9188811189,
-      "obvConfirm": false,
-      "compression": false,
-      "hiSlope": -0.00042972136222910217,
-      "loSlope": -0.00023725490196078425,
-      "market": "CRIPTO",
-      "symbol": "CRVUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 2,
-      "priority": 93,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 30,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.2054,
-        "resistance": 0.2255,
-        "support": 0.1959,
-        "distanceToBreakoutPct": 9.786,
-        "compressionRatio": 0.482,
-        "volumeAcceleration": 1.224,
-        "obvLead": false,
-        "obvSlope": -151993.9188811189,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 43.31,
-        "move6Pct": -1.49,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 0,
-          "attacks": 0,
-          "volume": 10,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 30
-        }
-      }
-    },
-    {
-      "name": "Three Rising Valleys",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "PRÉ-ROMPIMENTO",
-      "score": 66,
-      "level": 0.07962,
-      "distanceToBreakoutPct": 0.366,
-      "volumeRatio": 0.417,
-      "obvSlope": -61173.59475524472,
-      "obvConfirm": false,
-      "compression": false,
-      "structure": {
-        "rise1Pct": 2.45,
-        "rise2Pct": 4.57
-      },
-      "market": "CRIPTO",
-      "symbol": "DYDXUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 93,
-      "historical": {
-        "breakout24": 63.7,
-        "avgLead": 6.69,
-        "hit10": 24.3,
-        "hit20": 12.2
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 20,
-        "phase": "OBSERVAÇÃO",
-        "price": 0.07933,
-        "resistance": 0.08385,
-        "support": 0.07333,
-        "distanceToBreakoutPct": 5.698,
-        "compressionRatio": 0.423,
-        "volumeAcceleration": 0.32,
-        "obvLead": false,
-        "obvSlope": -61173.59475524472,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 55.8,
-        "move6Pct": 0.27,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 0,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 20
-        }
-      }
-    },
-    {
-      "name": "Three Rising Valleys",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "PRÉ-ROMPIMENTO",
-      "score": 66,
-      "level": 191.9,
-      "distanceToBreakoutPct": 0.419,
-      "volumeRatio": 0.438,
-      "obvSlope": -858.6375905594392,
-      "obvConfirm": false,
-      "compression": false,
-      "structure": {
-        "rise1Pct": 0.73,
-        "rise2Pct": 3.8
-      },
-      "market": "CRIPTO",
-      "symbol": "TAOUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 93,
-      "historical": {
-        "breakout24": 63.7,
-        "avgLead": 6.69,
-        "hit10": 24.3,
-        "hit20": 12.2
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 20,
-        "phase": "OBSERVAÇÃO",
-        "price": 191.1,
-        "resistance": 205.9,
-        "support": 177.5,
-        "distanceToBreakoutPct": 7.745,
-        "compressionRatio": 0.466,
-        "volumeAcceleration": 0.293,
-        "obvLead": false,
-        "obvSlope": -858.6375905594392,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 47.55,
-        "move6Pct": 0.79,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 0,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 20
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 68,
-      "level": 72.03,
-      "distanceToBreakoutPct": 0.432,
-      "volumeRatio": 1.037,
-      "obvSlope": -48013.1926678321,
-      "obvConfirm": false,
-      "compression": false,
-      "hiSlope": -0.17600619195046432,
-      "loSlope": -0.14851393188854498,
-      "market": "CRIPTO",
-      "symbol": "SOLUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 91,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 20,
-        "phase": "OBSERVAÇÃO",
-        "price": 71.72,
-        "resistance": 75.8,
-        "support": 67.41,
-        "distanceToBreakoutPct": 5.689,
-        "compressionRatio": 0.688,
-        "volumeAcceleration": 0.67,
-        "obvLead": false,
-        "obvSlope": -48013.1926678321,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 48.05,
-        "move6Pct": 0.49,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 0,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 20
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 66,
-      "level": 208.2,
-      "distanceToBreakoutPct": 0.048,
-      "volumeRatio": 0.665,
-      "obvSlope": -81.31541258741281,
-      "obvConfirm": false,
-      "compression": false,
-      "hiSlope": -0.33209494324045363,
-      "loSlope": -0.1771929824561399,
-      "market": "CRIPTO",
-      "symbol": "BCHUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 89,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 28,
-        "phase": "OBSERVAÇÃO",
-        "price": 208.1,
-        "resistance": 217.2,
-        "support": 195.7,
-        "distanceToBreakoutPct": 4.373,
-        "compressionRatio": 0.509,
-        "volumeAcceleration": 0.314,
-        "obvLead": false,
-        "obvSlope": -81.31541258741281,
-        "attacks": 0,
-        "higherLows": 3,
-        "rsi": 50.44,
-        "move6Pct": 0.43,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 0,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 8,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 28
-        }
-      }
-    },
-    {
-      "name": "Falling Wedge",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "CUNHA EM FORMAÇÃO",
-      "score": 65,
-      "level": 1834.41,
-      "distanceToBreakoutPct": 0.653,
-      "volumeRatio": 1.167,
-      "obvSlope": -1665.7360339160866,
-      "obvConfirm": false,
-      "compression": false,
-      "hiSlope": -2.7939215686274514,
-      "loSlope": -2.0958307533539724,
-      "market": "CRIPTO",
-      "symbol": "ETHUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-15T09:00:00.000Z",
-      "confluence": 1,
-      "priority": 88,
-      "historical": {
-        "breakout24": 56.2,
-        "avgLead": 8.03,
-        "hit10": 15.7,
-        "hit20": 7.5
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 20,
-        "phase": "OBSERVAÇÃO",
-        "price": 1822.5,
-        "resistance": 1900.07,
-        "support": 1711.08,
-        "distanceToBreakoutPct": 4.256,
-        "compressionRatio": 0.66,
-        "volumeAcceleration": 0.553,
-        "obvLead": false,
-        "obvSlope": -1665.7360339160866,
-        "attacks": 0,
-        "higherLows": 2,
-        "rsi": 48.02,
-        "move6Pct": 0.2,
-        "penalty": 0,
-        "parts": {
-          "compression": 20,
-          "obv": 0,
-          "attacks": 0,
-          "volume": 0,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 20
+          "technical": 34
         }
       }
     }
@@ -2072,20 +2083,69 @@
   "preLegRadar": [
     {
       "version": "pre-leg-score-v1",
-      "score": 69,
+      "score": 76,
       "phase": "PRESSÃO",
-      "price": 0.2622,
-      "resistance": 0.2647,
-      "support": 0.2348,
-      "distanceToBreakoutPct": 0.953,
-      "compressionRatio": 0.519,
-      "volumeAcceleration": 0.394,
+      "price": 0.0813,
+      "resistance": 0.0829,
+      "support": 0.0757,
+      "distanceToBreakoutPct": 1.968,
+      "compressionRatio": 0.552,
+      "volumeAcceleration": 0.513,
+      "obvLead": true,
+      "obvSlope": 270157.17419580335,
+      "attacks": 5,
+      "higherLows": 4,
+      "rsi": 45.83,
+      "move6Pct": -1.33,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 20,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "OPUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 76
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 73,
+      "phase": "PRESSÃO",
+      "price": 3830.46,
+      "resistance": 3839.45,
+      "support": 3763.57,
+      "distanceToBreakoutPct": 0.235,
+      "compressionRatio": 0.354,
+      "volumeAcceleration": 0.271,
       "obvLead": false,
-      "obvSlope": 29014.591258741213,
-      "attacks": 4,
+      "obvSlope": 15.630019580419589,
+      "attacks": 9,
       "higherLows": 3,
-      "rsi": 54.18,
-      "move6Pct": 0.19,
+      "rsi": 49.22,
+      "move6Pct": 0.02,
       "penalty": 0,
       "parts": {
         "compression": 20,
@@ -2093,12 +2153,61 @@
         "attacks": 18,
         "volume": 0,
         "structure": 8,
+        "proximity": 15
+      },
+      "market": "CRIPTO",
+      "symbol": "PAXGUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 73
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 69,
+      "phase": "PRESSÃO",
+      "price": 1.314,
+      "resistance": 1.323,
+      "support": 1.218,
+      "distanceToBreakoutPct": 0.685,
+      "compressionRatio": 0.688,
+      "volumeAcceleration": 0.91,
+      "obvLead": false,
+      "obvSlope": 30323.900454545445,
+      "attacks": 3,
+      "higherLows": 5,
+      "rsi": 63.95,
+      "move6Pct": 0.77,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 14,
+        "volume": 0,
+        "structure": 12,
         "proximity": 11
       },
       "market": "CRIPTO",
-      "symbol": "JUPUSDT",
+      "symbol": "ATOMUSDT",
       "timeframe": "H1",
-      "createdAt": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-15T16:00:00.000Z",
       "futures": {
         "available": false,
         "oi": null,
@@ -2121,33 +2230,33 @@
     },
     {
       "version": "pre-leg-score-v1",
-      "score": 59,
-      "phase": "PREPARAÇÃO",
-      "price": 106.03,
-      "resistance": 106.69,
-      "support": 96.6,
-      "distanceToBreakoutPct": 0.622,
-      "compressionRatio": 0.73,
-      "volumeAcceleration": 0.619,
+      "score": 68,
+      "phase": "PRESSÃO",
+      "price": 1815.01,
+      "resistance": 1845.18,
+      "support": 1711.08,
+      "distanceToBreakoutPct": 1.662,
+      "compressionRatio": 0.653,
+      "volumeAcceleration": 0.585,
       "obvLead": false,
-      "obvSlope": 4580.1947972027965,
-      "attacks": 3,
-      "higherLows": 3,
-      "rsi": 60.87,
-      "move6Pct": 1.8,
+      "obvSlope": 3405.0052489510554,
+      "attacks": 4,
+      "higherLows": 4,
+      "rsi": 49.88,
+      "move6Pct": -0.91,
       "penalty": 0,
       "parts": {
-        "compression": 14,
+        "compression": 20,
         "obv": 12,
-        "attacks": 14,
+        "attacks": 18,
         "volume": 0,
-        "structure": 8,
-        "proximity": 11
+        "structure": 12,
+        "proximity": 6
       },
       "market": "CRIPTO",
-      "symbol": "AAVEUSDT",
+      "symbol": "ETHUSDT",
       "timeframe": "H1",
-      "createdAt": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-15T16:00:00.000Z",
       "futures": {
         "available": false,
         "oi": null,
@@ -2164,7 +2273,1722 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 59
+          "technical": 68
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 68,
+      "phase": "PRESSÃO",
+      "price": 5.155,
+      "resistance": 5.221,
+      "support": 4.619,
+      "distanceToBreakoutPct": 1.28,
+      "compressionRatio": 0.571,
+      "volumeAcceleration": 0.559,
+      "obvLead": false,
+      "obvSlope": 3131.20395104914,
+      "attacks": 4,
+      "higherLows": 5,
+      "rsi": 67.07,
+      "move6Pct": 0.04,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "UNIUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 68
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 68,
+      "phase": "PRESSÃO",
+      "price": 5.96,
+      "resistance": 6.05,
+      "support": 5.62,
+      "distanceToBreakoutPct": 1.51,
+      "compressionRatio": 0.576,
+      "volumeAcceleration": 0.696,
+      "obvLead": false,
+      "obvSlope": 730.6738811188825,
+      "attacks": 4,
+      "higherLows": 5,
+      "rsi": 55.81,
+      "move6Pct": -0.83,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "ETCUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 68
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 68,
+      "phase": "PRESSÃO",
+      "price": 0.1306,
+      "resistance": 0.1329,
+      "support": 0.1234,
+      "distanceToBreakoutPct": 1.761,
+      "compressionRatio": 0.578,
+      "volumeAcceleration": 0.62,
+      "obvLead": false,
+      "obvSlope": 13870.603496503287,
+      "attacks": 5,
+      "higherLows": 4,
+      "rsi": 43.2,
+      "move6Pct": -0.91,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "THETAUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 68
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 68,
+      "phase": "PRESSÃO",
+      "price": 0.1202,
+      "resistance": 0.1219,
+      "support": 0.11,
+      "distanceToBreakoutPct": 1.414,
+      "compressionRatio": 0.583,
+      "volumeAcceleration": 0.544,
+      "obvLead": false,
+      "obvSlope": 3208331.175524473,
+      "attacks": 6,
+      "higherLows": 5,
+      "rsi": 60.18,
+      "move6Pct": -0.5,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "ENAUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 68
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 68,
+      "phase": "PRESSÃO",
+      "price": 0.3051,
+      "resistance": 0.3112,
+      "support": 0.2852,
+      "distanceToBreakoutPct": 1.999,
+      "compressionRatio": 0.548,
+      "volumeAcceleration": 0.431,
+      "obvLead": false,
+      "obvSlope": 233831.3059440561,
+      "attacks": 5,
+      "higherLows": 4,
+      "rsi": 53.62,
+      "move6Pct": -1.68,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "ONDOUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 68
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 66,
+      "phase": "PRESSÃO",
+      "price": 0.0784,
+      "resistance": 0.08009,
+      "support": 0.07333,
+      "distanceToBreakoutPct": 2.156,
+      "compressionRatio": 0.604,
+      "volumeAcceleration": 0.306,
+      "obvLead": true,
+      "obvSlope": 13066.839405594277,
+      "attacks": 6,
+      "higherLows": 3,
+      "rsi": 42.94,
+      "move6Pct": -1.28,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 20,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "DYDXUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 66
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 64,
+      "phase": "PREPARAÇÃO",
+      "price": 591.74,
+      "resistance": 599.72,
+      "support": 566,
+      "distanceToBreakoutPct": 1.349,
+      "compressionRatio": 0.525,
+      "volumeAcceleration": 0.431,
+      "obvLead": false,
+      "obvSlope": 748.4834930069901,
+      "attacks": 5,
+      "higherLows": 3,
+      "rsi": 46.88,
+      "move6Pct": -1.08,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "BNBUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 64
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 64,
+      "phase": "PREPARAÇÃO",
+      "price": 9.193,
+      "resistance": 9.374,
+      "support": 8.574,
+      "distanceToBreakoutPct": 1.969,
+      "compressionRatio": 0.614,
+      "volumeAcceleration": 0.39,
+      "obvLead": false,
+      "obvSlope": 13796.903041958096,
+      "attacks": 3,
+      "higherLows": 4,
+      "rsi": 56.97,
+      "move6Pct": -0.87,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 14,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "LINKUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 64
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 64,
+      "phase": "PREPARAÇÃO",
+      "price": 0.2638,
+      "resistance": 0.2681,
+      "support": 0.243,
+      "distanceToBreakoutPct": 1.63,
+      "compressionRatio": 0.608,
+      "volumeAcceleration": 0.43,
+      "obvLead": false,
+      "obvSlope": 123770.20909090881,
+      "attacks": 3,
+      "higherLows": 4,
+      "rsi": 52.04,
+      "move6Pct": 0.11,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 14,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "WLDUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 64
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 62,
+      "phase": "PREPARAÇÃO",
+      "price": 0.153,
+      "resistance": 0.1567,
+      "support": 0.1426,
+      "distanceToBreakoutPct": 2.418,
+      "compressionRatio": 0.605,
+      "volumeAcceleration": 0.403,
+      "obvLead": false,
+      "obvSlope": 2605076.7569930055,
+      "attacks": 4,
+      "higherLows": 4,
+      "rsi": 62.18,
+      "move6Pct": -1.16,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "ADAUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 62
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 62,
+      "phase": "PREPARAÇÃO",
+      "price": 0.133,
+      "resistance": 0.1358,
+      "support": 0.1236,
+      "distanceToBreakoutPct": 2.105,
+      "compressionRatio": 0.629,
+      "volumeAcceleration": 0.707,
+      "obvLead": false,
+      "obvSlope": 119967.85545454557,
+      "attacks": 6,
+      "higherLows": 4,
+      "rsi": 58.18,
+      "move6Pct": -1.41,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "WIFUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 62
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 62,
+      "phase": "PREPARAÇÃO",
+      "price": 0.0000039,
+      "resistance": 0.00000398,
+      "support": 0.0000037,
+      "distanceToBreakoutPct": 2.051,
+      "compressionRatio": 0.588,
+      "volumeAcceleration": 0.387,
+      "obvLead": false,
+      "obvSlope": 10106628837.818182,
+      "attacks": 5,
+      "higherLows": 4,
+      "rsi": 50,
+      "move6Pct": -1.02,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "SHIBUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 62
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 61,
+      "phase": "PREPARAÇÃO",
+      "price": 0.1361,
+      "resistance": 0.1371,
+      "support": 0.1229,
+      "distanceToBreakoutPct": 0.735,
+      "compressionRatio": 0.661,
+      "volumeAcceleration": 0.774,
+      "obvLead": false,
+      "obvSlope": 831077.3650349661,
+      "attacks": 5,
+      "higherLows": 3,
+      "rsi": 75,
+      "move6Pct": 0.44,
+      "penalty": 8,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 11
+      },
+      "market": "CRIPTO",
+      "symbol": "ARBUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 61
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 60,
+      "phase": "PREPARAÇÃO",
+      "price": 107.13,
+      "resistance": 108.36,
+      "support": 96.6,
+      "distanceToBreakoutPct": 1.148,
+      "compressionRatio": 0.515,
+      "volumeAcceleration": 0.533,
+      "obvLead": false,
+      "obvSlope": 1347.856122377623,
+      "attacks": 4,
+      "higherLows": 5,
+      "rsi": 72.92,
+      "move6Pct": 0.07,
+      "penalty": 8,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "AAVEUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 60
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 60,
+      "phase": "PREPARAÇÃO",
+      "price": 0.3599,
+      "resistance": 0.3637,
+      "support": 0.3278,
+      "distanceToBreakoutPct": 1.056,
+      "compressionRatio": 0.846,
+      "volumeAcceleration": 1.267,
+      "obvLead": false,
+      "obvSlope": 233469.34884615388,
+      "attacks": 3,
+      "higherLows": 4,
+      "rsi": 73.41,
+      "move6Pct": 2.65,
+      "penalty": 8,
+      "parts": {
+        "compression": 14,
+        "obv": 12,
+        "attacks": 14,
+        "volume": 10,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "TIAUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 60
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 0.9517,
+      "resistance": 0.9794,
+      "support": 0.893,
+      "distanceToBreakoutPct": 2.911,
+      "compressionRatio": 0.537,
+      "volumeAcceleration": 0.383,
+      "obvLead": false,
+      "obvSlope": 1293844.7790209805,
+      "attacks": 6,
+      "higherLows": 3,
+      "rsi": 48.73,
+      "move6Pct": -1.42,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "XRPUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 0.7185,
+      "resistance": 0.7371,
+      "support": 0.6755,
+      "distanceToBreakoutPct": 2.589,
+      "compressionRatio": 0.562,
+      "volumeAcceleration": 0.592,
+      "obvLead": false,
+      "obvSlope": 177697.56608391574,
+      "attacks": 5,
+      "higherLows": 3,
+      "rsi": 50.17,
+      "move6Pct": -1.88,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "SUIUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 3.146,
+      "resistance": 3.213,
+      "support": 2.87,
+      "distanceToBreakoutPct": 2.13,
+      "compressionRatio": 0.56,
+      "volumeAcceleration": 0.371,
+      "obvLead": false,
+      "obvSlope": 217121.16468531365,
+      "attacks": 5,
+      "higherLows": 3,
+      "rsi": 51.7,
+      "move6Pct": -1.19,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "NEARUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 0.1383,
+      "resistance": 0.1411,
+      "support": 0.13,
+      "distanceToBreakoutPct": 2.025,
+      "compressionRatio": 0.512,
+      "volumeAcceleration": 0.632,
+      "obvLead": false,
+      "obvSlope": 591485.2937062937,
+      "attacks": 3,
+      "higherLows": 4,
+      "rsi": 53.73,
+      "move6Pct": -0.5,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 14,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "XLMUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 0.00000394,
+      "resistance": 0.00000408,
+      "support": 0.00000369,
+      "distanceToBreakoutPct": 3.553,
+      "compressionRatio": 0.705,
+      "volumeAcceleration": 0.623,
+      "obvLead": false,
+      "obvSlope": 23526940098.9021,
+      "attacks": 5,
+      "higherLows": 3,
+      "rsi": 52.94,
+      "move6Pct": -1.75,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "PEPEUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 0.2714,
+      "resistance": 0.2773,
+      "support": 0.2556,
+      "distanceToBreakoutPct": 2.174,
+      "compressionRatio": 0.603,
+      "volumeAcceleration": 0.506,
+      "obvLead": false,
+      "obvSlope": 126637.85234265741,
+      "attacks": 3,
+      "higherLows": 5,
+      "rsi": 47.75,
+      "move6Pct": -1.17,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 14,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "LDOUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 0.001345,
+      "resistance": 0.001374,
+      "support": 0.001258,
+      "distanceToBreakoutPct": 2.156,
+      "compressionRatio": 0.581,
+      "volumeAcceleration": 0.317,
+      "obvLead": false,
+      "obvSlope": 3312707.202797203,
+      "attacks": 5,
+      "higherLows": 3,
+      "rsi": 49.47,
+      "move6Pct": -1.47,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "GALAUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 0.03589,
+      "resistance": 0.03664,
+      "support": 0.0338,
+      "distanceToBreakoutPct": 2.09,
+      "compressionRatio": 0.552,
+      "volumeAcceleration": 0.434,
+      "obvLead": true,
+      "obvSlope": 100240.40559440559,
+      "attacks": 5,
+      "higherLows": 2,
+      "rsi": 49.33,
+      "move6Pct": -1.32,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 20,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 0,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "SANDUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 0.2615,
+      "resistance": 0.2695,
+      "support": 0.2348,
+      "distanceToBreakoutPct": 3.059,
+      "compressionRatio": 0.503,
+      "volumeAcceleration": 0.83,
+      "obvLead": false,
+      "obvSlope": 6461.15769230773,
+      "attacks": 4,
+      "higherLows": 3,
+      "rsi": 45.73,
+      "move6Pct": -0.95,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "JUPUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 0.00000237,
+      "resistance": 0.00000243,
+      "support": 0.00000219,
+      "distanceToBreakoutPct": 2.532,
+      "compressionRatio": 0.583,
+      "volumeAcceleration": 0.368,
+      "obvLead": false,
+      "obvSlope": 13503186209.856644,
+      "attacks": 3,
+      "higherLows": 5,
+      "rsi": 56.25,
+      "move6Pct": -1.25,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 14,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "BONKUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 900.48,
+      "resistance": 930.49,
+      "support": 801.52,
+      "distanceToBreakoutPct": 3.333,
+      "compressionRatio": 0.57,
+      "volumeAcceleration": 0.643,
+      "obvLead": false,
+      "obvSlope": 566.2554650349637,
+      "attacks": 5,
+      "higherLows": 3,
+      "rsi": 43.81,
+      "move6Pct": -2.12,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "ZECUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 58,
+      "phase": "PREPARAÇÃO",
+      "price": 154.2,
+      "resistance": 157.19,
+      "support": 138.89,
+      "distanceToBreakoutPct": 1.939,
+      "compressionRatio": 0.656,
+      "volumeAcceleration": 0.458,
+      "obvLead": false,
+      "obvSlope": 770.6743356643351,
+      "attacks": 2,
+      "higherLows": 4,
+      "rsi": 58.94,
+      "move6Pct": 1.15,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 8,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "QNTUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 56,
+      "phase": "PREPARAÇÃO",
+      "price": 44.92,
+      "resistance": 45.8,
+      "support": 42.67,
+      "distanceToBreakoutPct": 1.959,
+      "compressionRatio": 0.57,
+      "volumeAcceleration": 0.494,
+      "obvLead": false,
+      "obvSlope": 5881.602741258743,
+      "attacks": 5,
+      "higherLows": 2,
+      "rsi": 51.43,
+      "move6Pct": -1.71,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 0,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "LTCUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 56
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 52,
+      "phase": "PREPARAÇÃO",
+      "price": 71.42,
+      "resistance": 73.28,
+      "support": 67.41,
+      "distanceToBreakoutPct": 2.604,
+      "compressionRatio": 0.618,
+      "volumeAcceleration": 0.549,
+      "obvLead": false,
+      "obvSlope": 33381.601255244655,
+      "attacks": 2,
+      "higherLows": 5,
+      "rsi": 50.65,
+      "move6Pct": -1.05,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 8,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "SOLUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 52,
+      "phase": "PREPARAÇÃO",
+      "price": 207.9,
+      "resistance": 212.5,
+      "support": 195.7,
+      "distanceToBreakoutPct": 2.213,
+      "compressionRatio": 0.61,
+      "volumeAcceleration": 0.459,
+      "obvLead": false,
+      "obvSlope": 131.53154895104868,
+      "attacks": 2,
+      "higherLows": 4,
+      "rsi": 56.25,
+      "move6Pct": -0.43,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 8,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "BCHUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 52,
+      "phase": "PREPARAÇÃO",
+      "price": 0.05793,
+      "resistance": 0.05941,
+      "support": 0.05484,
+      "distanceToBreakoutPct": 2.555,
+      "compressionRatio": 0.649,
+      "volumeAcceleration": 0.597,
+      "obvLead": false,
+      "obvSlope": 2249569.213286713,
+      "attacks": 2,
+      "higherLows": 4,
+      "rsi": 54,
+      "move6Pct": -1.09,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 8,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "HBARUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 52,
+      "phase": "PREPARAÇÃO",
+      "price": 0.03889,
+      "resistance": 0.03976,
+      "support": 0.03631,
+      "distanceToBreakoutPct": 2.237,
+      "compressionRatio": 0.63,
+      "volumeAcceleration": 0.656,
+      "obvLead": false,
+      "obvSlope": 306023.83636363497,
+      "attacks": 2,
+      "higherLows": 4,
+      "rsi": 54.14,
+      "move6Pct": -1.27,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 8,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "SEIUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 52,
+      "phase": "PREPARAÇÃO",
+      "price": 1.376,
+      "resistance": 1.42,
+      "support": 1.311,
+      "distanceToBreakoutPct": 3.198,
+      "compressionRatio": 0.723,
+      "volumeAcceleration": 0.614,
+      "obvLead": false,
+      "obvSlope": 19333.00230769231,
+      "attacks": 3,
+      "higherLows": 4,
+      "rsi": 44.36,
+      "move6Pct": -1.78,
+      "penalty": 0,
+      "parts": {
+        "compression": 14,
+        "obv": 12,
+        "attacks": 14,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "RENDERUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 52,
+      "phase": "PREPARAÇÃO",
+      "price": 0.08032,
+      "resistance": 0.08186,
+      "support": 0.07616,
+      "distanceToBreakoutPct": 1.917,
+      "compressionRatio": 0.529,
+      "volumeAcceleration": 0.644,
+      "obvLead": false,
+      "obvSlope": -426758.282867132,
+      "attacks": 5,
+      "higherLows": 3,
+      "rsi": 52.67,
+      "move6Pct": -1.45,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 0,
+        "attacks": 18,
+        "volume": 0,
+        "structure": 8,
+        "proximity": 6
+      },
+      "market": "CRIPTO",
+      "symbol": "POLUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 52,
+      "phase": "PREPARAÇÃO",
+      "price": 0.05608,
+      "resistance": 0.05741,
+      "support": 0.05152,
+      "distanceToBreakoutPct": 2.372,
+      "compressionRatio": 0.581,
+      "volumeAcceleration": 0.453,
+      "obvLead": false,
+      "obvSlope": 116950.62272727299,
+      "attacks": 2,
+      "higherLows": 4,
+      "rsi": 48.11,
+      "move6Pct": -0.02,
+      "penalty": 0,
+      "parts": {
+        "compression": 20,
+        "obv": 12,
+        "attacks": 8,
+        "volume": 0,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "PYTHUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
         }
       }
     },
@@ -2172,31 +3996,80 @@
       "version": "pre-leg-score-v1",
       "score": 50,
       "phase": "PREPARAÇÃO",
-      "price": 0.3077,
-      "resistance": 0.313,
-      "support": 0.305,
-      "distanceToBreakoutPct": 1.722,
-      "compressionRatio": 0.693,
-      "volumeAcceleration": 0.48,
+      "price": 0.1312,
+      "resistance": 0.1351,
+      "support": 0.1209,
+      "distanceToBreakoutPct": 2.973,
+      "compressionRatio": 0.577,
+      "volumeAcceleration": 0.539,
       "obvLead": false,
-      "obvSlope": 56382.531818182426,
-      "attacks": 0,
-      "higherLows": 4,
-      "rsi": 46.02,
-      "move6Pct": 0.07,
+      "obvSlope": 200633.72902097914,
+      "attacks": 5,
+      "higherLows": 2,
+      "rsi": 53.1,
+      "move6Pct": -2.53,
       "penalty": 0,
       "parts": {
         "compression": 20,
         "obv": 12,
-        "attacks": 0,
+        "attacks": 18,
         "volume": 0,
-        "structure": 12,
-        "proximity": 6
+        "structure": 0,
+        "proximity": 0
       },
       "market": "CRIPTO",
-      "symbol": "TRXUSDT",
+      "symbol": "FETUSDT",
       "timeframe": "H1",
-      "createdAt": "2026-11-15T09:00:00.000Z",
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 50
+        }
+      }
+    },
+    {
+      "version": "pre-leg-score-v1",
+      "score": 50,
+      "phase": "PREPARAÇÃO",
+      "price": 0.004819,
+      "resistance": 0.004933,
+      "support": 0.004456,
+      "distanceToBreakoutPct": 2.366,
+      "compressionRatio": 0.801,
+      "volumeAcceleration": 1.015,
+      "obvLead": false,
+      "obvSlope": 2942152.1241258774,
+      "attacks": 2,
+      "higherLows": 5,
+      "rsi": 62.85,
+      "move6Pct": -0.23,
+      "penalty": 0,
+      "parts": {
+        "compression": 14,
+        "obv": 12,
+        "attacks": 8,
+        "volume": 4,
+        "structure": 12,
+        "proximity": 0
+      },
+      "market": "CRIPTO",
+      "symbol": "VETUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-15T16:00:00.000Z",
       "futures": {
         "available": false,
         "oi": null,
@@ -2219,7 +4092,1132 @@
     }
   ],
   "earlyLegMotorVersion": "early-leg-motor-v1",
-  "earlyLegMotorRadar": [],
+  "earlyLegMotorRadar": [
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 47,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 76,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 22,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "UNIUSDT",
+      "timeframe": "H1",
+      "price": 5.155,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 68,
+        "phase": "PRESSÃO",
+        "price": 5.155,
+        "resistance": 5.221,
+        "support": 4.619,
+        "distanceToBreakoutPct": 1.28,
+        "compressionRatio": 0.571,
+        "volumeAcceleration": 0.559,
+        "obvLead": false,
+        "obvSlope": 3131.20395104914,
+        "attacks": 4,
+        "higherLows": 5,
+        "rsi": 67.07,
+        "move6Pct": 0.04,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 68
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 47,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 76,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 22,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "ETCUSDT",
+      "timeframe": "H1",
+      "price": 5.96,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 68,
+        "phase": "PRESSÃO",
+        "price": 5.96,
+        "resistance": 6.05,
+        "support": 5.62,
+        "distanceToBreakoutPct": 1.51,
+        "compressionRatio": 0.576,
+        "volumeAcceleration": 0.696,
+        "obvLead": false,
+        "obvSlope": 730.6738811188825,
+        "attacks": 4,
+        "higherLows": 5,
+        "rsi": 55.81,
+        "move6Pct": -0.83,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 68
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 47,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 95,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 22,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "ATOMUSDT",
+      "timeframe": "H1",
+      "price": 1.314,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 69,
+        "phase": "PRESSÃO",
+        "price": 1.314,
+        "resistance": 1.323,
+        "support": 1.218,
+        "distanceToBreakoutPct": 0.685,
+        "compressionRatio": 0.688,
+        "volumeAcceleration": 0.91,
+        "obvLead": false,
+        "obvSlope": 30323.900454545445,
+        "attacks": 3,
+        "higherLows": 5,
+        "rsi": 63.95,
+        "move6Pct": 0.77,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 11
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 69
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 47,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 78,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 22,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "PAXGUSDT",
+      "timeframe": "H1",
+      "price": 3830.46,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 73,
+        "phase": "PRESSÃO",
+        "price": 3830.46,
+        "resistance": 3839.45,
+        "support": 3763.57,
+        "distanceToBreakoutPct": 0.235,
+        "compressionRatio": 0.354,
+        "volumeAcceleration": 0.271,
+        "obvLead": false,
+        "obvSlope": 15.630019580419589,
+        "attacks": 9,
+        "higherLows": 3,
+        "rsi": 49.22,
+        "move6Pct": 0.02,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 8,
+          "proximity": 15
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 73
+        }
+      },
+      "patterns": [
+        "Rectangle Accumulation",
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 41,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Double Bottom",
+      "patternScore": 75,
+      "parts": {
+        "pattern": 14,
+        "preLeg": 22,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "OPUSDT",
+      "timeframe": "H1",
+      "price": 0.0813,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 76,
+        "phase": "PRESSÃO",
+        "price": 0.0813,
+        "resistance": 0.0829,
+        "support": 0.0757,
+        "distanceToBreakoutPct": 1.968,
+        "compressionRatio": 0.552,
+        "volumeAcceleration": 0.513,
+        "obvLead": true,
+        "obvSlope": 270157.17419580335,
+        "attacks": 5,
+        "higherLows": 4,
+        "rsi": 45.83,
+        "move6Pct": -1.33,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 20,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 76
+        }
+      },
+      "patterns": [
+        "Double Bottom"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 82,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "SOLUSDT",
+      "timeframe": "H1",
+      "price": 71.42,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 52,
+        "phase": "PREPARAÇÃO",
+        "price": 71.42,
+        "resistance": 73.28,
+        "support": 67.41,
+        "distanceToBreakoutPct": 2.604,
+        "compressionRatio": 0.618,
+        "volumeAcceleration": 0.549,
+        "obvLead": false,
+        "obvSlope": 33381.601255244655,
+        "attacks": 2,
+        "higherLows": 5,
+        "rsi": 50.65,
+        "move6Pct": -1.05,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 8,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 74,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "ADAUSDT",
+      "timeframe": "H1",
+      "price": 0.153,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 62,
+        "phase": "PREPARAÇÃO",
+        "price": 0.153,
+        "resistance": 0.1567,
+        "support": 0.1426,
+        "distanceToBreakoutPct": 2.418,
+        "compressionRatio": 0.605,
+        "volumeAcceleration": 0.403,
+        "obvLead": false,
+        "obvSlope": 2605076.7569930055,
+        "attacks": 4,
+        "higherLows": 4,
+        "rsi": 62.18,
+        "move6Pct": -1.16,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 62
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 72,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "LTCUSDT",
+      "timeframe": "H1",
+      "price": 44.92,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 56,
+        "phase": "PREPARAÇÃO",
+        "price": 44.92,
+        "resistance": 45.8,
+        "support": 42.67,
+        "distanceToBreakoutPct": 1.959,
+        "compressionRatio": 0.57,
+        "volumeAcceleration": 0.494,
+        "obvLead": false,
+        "obvSlope": 5881.602741258743,
+        "attacks": 5,
+        "higherLows": 2,
+        "rsi": 51.43,
+        "move6Pct": -1.71,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 0,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 56
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 74,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "BCHUSDT",
+      "timeframe": "H1",
+      "price": 207.9,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 52,
+        "phase": "PREPARAÇÃO",
+        "price": 207.9,
+        "resistance": 212.5,
+        "support": 195.7,
+        "distanceToBreakoutPct": 2.213,
+        "compressionRatio": 0.61,
+        "volumeAcceleration": 0.459,
+        "obvLead": false,
+        "obvSlope": 131.53154895104868,
+        "attacks": 2,
+        "higherLows": 4,
+        "rsi": 56.25,
+        "move6Pct": -0.43,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 8,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 52
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 79,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "AAVEUSDT",
+      "timeframe": "H1",
+      "price": 107.13,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 60,
+        "phase": "PREPARAÇÃO",
+        "price": 107.13,
+        "resistance": 108.36,
+        "support": 96.6,
+        "distanceToBreakoutPct": 1.148,
+        "compressionRatio": 0.515,
+        "volumeAcceleration": 0.533,
+        "obvLead": false,
+        "obvSlope": 1347.856122377623,
+        "attacks": 4,
+        "higherLows": 5,
+        "rsi": 72.92,
+        "move6Pct": 0.07,
+        "penalty": 8,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 60
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 84,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "PEPEUSDT",
+      "timeframe": "H1",
+      "price": 0.00000394,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 58,
+        "phase": "PREPARAÇÃO",
+        "price": 0.00000394,
+        "resistance": 0.00000408,
+        "support": 0.00000369,
+        "distanceToBreakoutPct": 3.553,
+        "compressionRatio": 0.705,
+        "volumeAcceleration": 0.623,
+        "obvLead": false,
+        "obvSlope": 23526940098.9021,
+        "attacks": 5,
+        "higherLows": 3,
+        "rsi": 52.94,
+        "move6Pct": -1.75,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 8,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 87,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "TIAUSDT",
+      "timeframe": "H1",
+      "price": 0.3599,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 60,
+        "phase": "PREPARAÇÃO",
+        "price": 0.3599,
+        "resistance": 0.3637,
+        "support": 0.3278,
+        "distanceToBreakoutPct": 1.056,
+        "compressionRatio": 0.846,
+        "volumeAcceleration": 1.267,
+        "obvLead": false,
+        "obvSlope": 233469.34884615388,
+        "attacks": 3,
+        "higherLows": 4,
+        "rsi": 73.41,
+        "move6Pct": 2.65,
+        "penalty": 8,
+        "parts": {
+          "compression": 14,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 10,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 60
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 74,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "LDOUSDT",
+      "timeframe": "H1",
+      "price": 0.2714,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 58,
+        "phase": "PREPARAÇÃO",
+        "price": 0.2714,
+        "resistance": 0.2773,
+        "support": 0.2556,
+        "distanceToBreakoutPct": 2.174,
+        "compressionRatio": 0.603,
+        "volumeAcceleration": 0.506,
+        "obvLead": false,
+        "obvSlope": 126637.85234265741,
+        "attacks": 3,
+        "higherLows": 5,
+        "rsi": 47.75,
+        "move6Pct": -1.17,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys",
+        "Double Bottom"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 74,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "JUPUSDT",
+      "timeframe": "H1",
+      "price": 0.2615,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 58,
+        "phase": "PREPARAÇÃO",
+        "price": 0.2615,
+        "resistance": 0.2695,
+        "support": 0.2348,
+        "distanceToBreakoutPct": 3.059,
+        "compressionRatio": 0.503,
+        "volumeAcceleration": 0.83,
+        "obvLead": false,
+        "obvSlope": 6461.15769230773,
+        "attacks": 4,
+        "higherLows": 3,
+        "rsi": 45.73,
+        "move6Pct": -0.95,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 8,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 58
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 74,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "SHIBUSDT",
+      "timeframe": "H1",
+      "price": 0.0000039,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 62,
+        "phase": "PREPARAÇÃO",
+        "price": 0.0000039,
+        "resistance": 0.00000398,
+        "support": 0.0000037,
+        "distanceToBreakoutPct": 2.051,
+        "compressionRatio": 0.588,
+        "volumeAcceleration": 0.387,
+        "obvLead": false,
+        "obvSlope": 10106628837.818182,
+        "attacks": 5,
+        "higherLows": 4,
+        "rsi": 50,
+        "move6Pct": -1.02,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 18,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 0
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 62
+        }
+      },
+      "patterns": [
+        "Three Rising Valleys",
+        "Double Bottom"
+      ]
+    },
+    {
+      "version": "early-leg-motor-v1",
+      "direction": "BUY",
+      "score": 39,
+      "phase": "ACUMULAÇÃO",
+      "pattern": "Three Rising Valleys",
+      "patternScore": 72,
+      "parts": {
+        "pattern": 20,
+        "preLeg": 14,
+        "futures": 0,
+        "obv": 8,
+        "compression": 5,
+        "antiStretch": -8
+      },
+      "shadowMode": true,
+      "market": "CRIPTO",
+      "symbol": "WLDUSDT",
+      "timeframe": "H1",
+      "price": 0.2638,
+      "createdAt": "2026-11-15T16:00:00.000Z",
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 64,
+        "phase": "PREPARAÇÃO",
+        "price": 0.2638,
+        "resistance": 0.2681,
+        "support": 0.243,
+        "distanceToBreakoutPct": 1.63,
+        "compressionRatio": 0.608,
+        "volumeAcceleration": 0.43,
+        "obvLead": false,
+        "obvSlope": 123770.20909090881,
+        "attacks": 3,
+        "higherLows": 4,
+        "rsi": 52.04,
+        "move6Pct": 0.11,
+        "penalty": 0,
+        "parts": {
+          "compression": 20,
+          "obv": 12,
+          "attacks": 14,
+          "volume": 0,
+          "structure": 12,
+          "proximity": 6
+        }
+      },
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 64
+        }
+      },
+      "patterns": [
+        "Double Bottom",
+        "Three Rising Valleys"
+      ]
+    }
+  ],
   "stats": {
     "crypto": {
       "ok": 60,
