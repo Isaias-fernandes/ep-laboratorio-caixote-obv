@@ -5,11 +5,43 @@
 
   const LEVERAGES = [1, 5, 10, 20, 50, 100];
   const MAX_ROWS = 80;
-  const state = { signals: [], generatedAt: null };
+  const state = { signals: [], rawCount: 0, groupedCount: 0, generatedAt: null };
 
   const n = v => Number.isFinite(+v) ? +v : 0;
   const pct = v => `${n(v) >= 0 ? '+' : ''}${n(v).toFixed(2)}%`;
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  function eventTime(signal){
+    const fields = ['candleTime','candle_time','entryTime','entry_time','signalTime','signal_time','timestamp','createdAt','created_at','time'];
+    for(const field of fields){
+      const value = signal?.[field];
+      if(value == null || value === '') continue;
+      const numeric = typeof value === 'number' || /^\d+(\.\d+)?$/.test(String(value).trim());
+      if(numeric){
+        const number = Number(value);
+        if(Number.isFinite(number) && number > 0) return String(Math.trunc(number < 1e12 ? number * 1000 : number));
+      }
+      const parsed = Date.parse(value);
+      if(Number.isFinite(parsed)) return String(parsed);
+    }
+    return null;
+  }
+
+  function uniqueEvents(signals){
+    const seen = new Set();
+    return signals.filter(signal => {
+      const symbol = String(signal?.symbol ?? signal?.asset ?? signal?.pair ?? '').trim().toUpperCase();
+      const direction = String(signal?.direction ?? signal?.side ?? '').trim().toUpperCase();
+      const interval = String(signal?.interval ?? signal?.timeframe ?? '').trim().toLowerCase();
+      const time = eventTime(signal);
+      // Sem ativo, direção e horário da vela/entrada, não há base segura para agrupar.
+      if(!symbol || !direction || !time) return true;
+      const key = JSON.stringify([symbol, interval, direction, time]);
+      if(seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    });
+  }
 
   function theoreticalLiquidationMove(leverage){
     return leverage > 0 ? -(100 / leverage) : -100;
@@ -45,8 +77,8 @@
         <div><span class="eyebrow">SIMULADOR EXPERIMENTAL</span><h2>Futuros · Alavancagem e risco de liquidação</h2></div>
         <span class="pill watch">SEM ORDENS REAIS</span>
       </div>
-      <p>Simulação observacional dos sinais já gerados pelo laboratório. Não altera motores, score, padrões ou sinais. Usa a melhor/pior excursão registrada para estimar o efeito da alavancagem.</p>
-      <div class="notice"><strong>Atenção:</strong> a liquidação abaixo é uma aproximação simplificada usando 100/alavancagem. Exchanges usam margem de manutenção, taxas, funding, slippage e regras próprias; a liquidação real pode ocorrer antes.</div>
+      <p>Simulação observacional dos sinais já gerados pelo laboratório. Não altera motores, scores, padrões ou sinais. Agrupa registros repetidos do mesmo ativo, direção, período e horário de vela/entrada, quando esses campos estão disponíveis.</p>
+      <div class="notice"><strong>Limite da estimativa:</strong> a liquidação usa a aproximação simplificada 100/alavancagem aplicada à pior excursão registrada. Exchanges usam margem de manutenção, taxas, funding, slippage e regras próprias; a liquidação real pode ocorrer antes. Registros sem horário não são agrupados.</div>
       <section class="summary" id="futuresSummary"></section>
       <div class="panel" style="margin-top:12px">
         <div class="center-title"><div><h2>Análise por alavancagem</h2></div>
@@ -71,14 +103,15 @@
     if (summary) {
       summary.innerHTML = LEVERAGES.map(l => {
         const s = summaryFor(l);
-        return `<article><span>${l}x · sobrevivência teórica</span><strong>${s.total ? s.survivalPct.toFixed(1)+'%' : '—'}</strong><small>${s.liquidated}/${s.total} atingiriam a zona de liquidação simplificada</small></article>`;
+        return `<article><span>${l}x · sobrevivência teórica</span><strong>${s.total ? s.survivalPct.toFixed(1)+'%' : '—'}</strong><small>${s.liquidated}/${s.total} eventos atingiriam a zona de liquidação simplificada</small></article>`;
       }).join('');
     }
 
     const sm = summaryFor(lev);
     const levBox = document.getElementById('futuresLevSummary');
     if (levBox) levBox.innerHTML = `
-      <div class="fact"><span>Sinais analisados</span><strong>${sm.total}</strong></div>
+      <div class="fact"><span>Eventos após agrupamento</span><strong>${sm.total}</strong></div>
+      <div class="fact"><span>Registros originais / repetidos agrupados</span><strong>${state.rawCount} / ${state.groupedCount}</strong></div>
       <div class="fact"><span>Sobreviveriam à pior excursão</span><strong>${sm.survived} (${sm.survivalPct.toFixed(1)}%)</strong></div>
       <div class="fact"><span>Atingiriam zona de liquidação teórica</span><strong>${sm.liquidated}</strong></div>
       <div class="fact"><span>Média da melhor excursão × ${lev}</span><strong>${pct(sm.avgBest)}</strong></div>
@@ -100,7 +133,7 @@
 
     const up = document.getElementById('futuresUpdated');
     if (up) up.textContent = state.generatedAt
-      ? `Dados: data/auto-signals.json · geração ${new Date(state.generatedAt).toLocaleString('pt-BR')} · ${state.signals.length} sinais. Simulação sem execução de ordens.`
+      ? `Dados: data/auto-signals.json · geração ${new Date(state.generatedAt).toLocaleString('pt-BR')} · ${state.rawCount} registros, ${state.signals.length} eventos após agrupamento (${state.groupedCount} repetidos agrupados). Simulação sem execução de ordens.`
       : 'Aguardando dados...';
   }
 
@@ -110,7 +143,10 @@
       const res = await fetch(`data/auto-signals.json?futuresSim=${Date.now()}`, { cache:'no-store' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      state.signals = Array.isArray(data.signals) ? data.signals.filter(s => Number.isFinite(+s.best) && Number.isFinite(+s.worst)) : [];
+      const raw = Array.isArray(data.signals) ? data.signals.filter(s => Number.isFinite(+s.best) && Number.isFinite(+s.worst)) : [];
+      state.rawCount = raw.length;
+      state.signals = uniqueEvents(raw);
+      state.groupedCount = raw.length - state.signals.length;
       state.generatedAt = data.generatedAt || null;
       render();
     } catch (err) {
@@ -123,6 +159,7 @@
   window.EPLabFuturesSimulator = {
     simulateSignal,
     theoreticalLiquidationMove,
+    uniqueEvents,
     getSignals: () => [...state.signals],
     reload: load,
     render
