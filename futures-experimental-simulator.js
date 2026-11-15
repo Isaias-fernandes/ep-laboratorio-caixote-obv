@@ -44,7 +44,7 @@
       const prior = grouped.get(key);
       if(prior){
         const event = result[prior];
-        event.best = Math.max(n(event.best), n(signal.best));
+        event.best = Math.min(n(event.best), n(signal.best));
         event.worst = Math.min(n(event.worst), n(signal.worst));
         event._groupedCount = (event._groupedCount || 1) + 1;
         const patterns = new Set([...(event._groupedPatterns || [event.pattern]), signal.pattern].filter(Boolean));
@@ -93,7 +93,7 @@
         <div><span class="eyebrow">SIMULADOR EXPERIMENTAL</span><h2>Futuros · Alavancagem e risco de liquidação</h2></div>
         <span class="pill watch">SEM ORDENS REAIS</span>
       </div>
-      <p>Simulação observacional dos sinais já gerados pelo laboratório. Não altera motores, scores, padrões ou sinais. Agrupa registros repetidos do mesmo ativo, direção, período e horário de vela/entrada, quando esses campos estão disponíveis.</p>
+      <p>Simulação observacional dos sinais já gerados pelo laboratório. Não altera motores, scores, padrões ou sinais. Agrupa registros repetidos do mesmo ativo, direção, período e horário de vela/entrada, quando esses campos estão disponíveis; preserva a menor excursão favorável e a pior excursão adversa do grupo.</p>
       <div class="notice"><strong>Limite da estimativa:</strong> a liquidação usa a aproximação simplificada 100/alavancagem aplicada à pior excursão registrada. Exchanges usam margem de manutenção, taxas, funding, slippage e regras próprias; a liquidação real pode ocorrer antes. Registros sem horário não são agrupados.</div>
       <section class="summary" id="futuresSummary"></section>
       <div class="panel" style="margin-top:12px">
