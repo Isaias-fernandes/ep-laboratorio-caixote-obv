@@ -1,86 +1,10 @@
 {
-  "generatedAt": "2026-11-14T22:26:34.837Z",
+  "generatedAt": "2026-11-15T02:41:49.426Z",
   "version": "early-warning-patterns-v1",
   "preLegVersion": "pre-leg-score-v1",
   "timeframe": "H1",
   "minimumEarlyScore": 65,
-  "signals": [
-    {
-      "name": "Three Rising Valleys",
-      "family": "REVERSAO",
-      "direction": "BUY",
-      "stage": "PRÉ-ROMPIMENTO",
-      "score": 70,
-      "level": 8.102,
-      "distanceToBreakoutPct": 14.209,
-      "volumeRatio": 2.99,
-      "obvSlope": -144519.35615384617,
-      "obvConfirm": false,
-      "compression": false,
-      "structure": {
-        "rise1Pct": 0.2,
-        "rise2Pct": 0.25
-      },
-      "market": "CRIPTO",
-      "symbol": "AVAXUSDT",
-      "timeframe": "H1",
-      "contextCandles": 96,
-      "createdAt": "2026-11-14T21:00:00.000Z",
-      "confluence": 1,
-      "priority": 91,
-      "historical": {
-        "breakout24": 63.7,
-        "avgLead": 6.69,
-        "hit10": 24.3,
-        "hit20": 12.2
-      },
-      "preLeg": {
-        "version": "pre-leg-score-v1",
-        "score": 15,
-        "phase": "OBSERVAÇÃO",
-        "price": 7.094,
-        "resistance": 8.253,
-        "support": 7.086,
-        "distanceToBreakoutPct": 16.338,
-        "compressionRatio": 2.014,
-        "volumeAcceleration": 2.082,
-        "obvLead": false,
-        "obvSlope": -144519.35615384617,
-        "attacks": 0,
-        "higherLows": 0,
-        "rsi": 9.85,
-        "move6Pct": -7.63,
-        "penalty": 0,
-        "parts": {
-          "compression": 0,
-          "obv": 0,
-          "attacks": 0,
-          "volume": 15,
-          "structure": 0,
-          "proximity": 0
-        }
-      },
-      "futures": {
-        "available": false,
-        "oi": null,
-        "oiChangePct": null,
-        "fundingPct": null,
-        "takerBuySellRatio": null,
-        "takerImbalance": null,
-        "source": "binance-usdm"
-      },
-      "futuresValidation": {
-        "score": null,
-        "phase": "DADOS INDISPONÍVEIS",
-        "parts": {
-          "oi": null,
-          "taker": null,
-          "funding": null,
-          "technical": 15
-        }
-      }
-    }
-  ],
+  "signals": [],
   "preLegRadar": [],
   "earlyLegMotorVersion": "early-leg-motor-v1",
   "earlyLegMotorRadar": [],
