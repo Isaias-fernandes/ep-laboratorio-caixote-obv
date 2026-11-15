@@ -28,19 +28,35 @@
   }
 
   function uniqueEvents(signals){
-    const seen = new Set();
-    return signals.filter(signal => {
+    const grouped = new Map();
+    const result = [];
+    for(const signal of signals){
       const symbol = String(signal?.symbol ?? signal?.asset ?? signal?.pair ?? '').trim().toUpperCase();
       const direction = String(signal?.direction ?? signal?.side ?? '').trim().toUpperCase();
       const interval = String(signal?.interval ?? signal?.timeframe ?? '').trim().toLowerCase();
       const time = eventTime(signal);
       // Sem ativo, direção e horário da vela/entrada, não há base segura para agrupar.
-      if(!symbol || !direction || !time) return true;
+      if(!symbol || !direction || !time){
+        result.push(signal);
+        continue;
+      }
       const key = JSON.stringify([symbol, interval, direction, time]);
-      if(seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
+      const prior = grouped.get(key);
+      if(prior){
+        const event = result[prior];
+        event.best = Math.max(n(event.best), n(signal.best));
+        event.worst = Math.min(n(event.worst), n(signal.worst));
+        event._groupedCount = (event._groupedCount || 1) + 1;
+        const patterns = new Set([...(event._groupedPatterns || [event.pattern]), signal.pattern].filter(Boolean));
+        event._groupedPatterns = [...patterns];
+        event.pattern = patterns.size > 1 ? `Agrupado: ${[...patterns].join(' / ')}` : (event.pattern || signal.pattern);
+      }else{
+        const index = result.length;
+        result.push({...signal, _groupedCount: 1, _groupedPatterns: signal.pattern ? [signal.pattern] : []});
+        grouped.set(key, index);
+      }
+    }
+    return result;
   }
 
   function theoreticalLiquidationMove(leverage){
