@@ -4,7 +4,7 @@ export const CONFIG = Object.freeze({
   volumeMinimum: 1.2, aggressionMinimum: 0.55, breakoutAtr: 0.15,
   minimumDistancePct: 0.5, confirmationHours: 6, confirmationExtensionPct: 3,
   targets: [3, 5, 10, 20, 50],
-  experiments: ['BASE', 'BOLLINGER', 'NO_PRELEG_24H'],
+  experiments: ['BASE', 'BOLLINGER', 'NO_PRELEG_24H', 'BTC_24H_POSITIVE', 'ALT_OUTPERFORM_BTC_24H'],
   objectives: [{name:'96h_stop3', bars:96, stop:3},
     {name:'30d_stop3', bars:720, stop:3}, {name:'30d_stop10', bars:720, stop:10}],
   fees: {binanceReference: {buyPct:0.1, sellPct:0.1, slippagePct:0, spreadPct:0},

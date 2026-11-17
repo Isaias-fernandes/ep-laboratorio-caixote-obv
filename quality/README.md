@@ -30,6 +30,14 @@ The baseline chooses one seeded UTC hour per symbol/day without future prices. C
 
 The public panel reads the bounded summary once per hour, offers per-platform cost inputs and exports selected records. The full archive remains in `data/quality/births` and `outcomes`; pending state and candles are in `state.json`. The API `/analytics/quality` provides paginated database reads.
 
+## BTC regime and relative-strength audit
+
+New prospective births also freeze the BTC H1 context available at the signal close: BTC return over 24h/7d, its EMA200 regime when enough candles exist, the asset return over the same windows, and asset-minus-BTC excess return. The BTC H1 task is processed before other H1 quality tasks, reusing the scheduled candle request; there is no extra market request or schedule change. When aligned BTC history is missing, fields and filters stay null.
+
+Two shadow-only comparisons are available: `BTC_24H_POSITIVE` and `ALT_OUTPERFORM_BTC_24H`. They do not block or change existing engine signals. Baseline controls for either comparison are matched only when the same context condition is true, in addition to the existing symbol, UTC-month and six-hour stratum. These are descriptive experiments; correlated observations do not establish significance or future probability.
+
+The full values are stored inside each immutable birth record under `context.btcContext`, alongside its filter flags and hash. Daily Git archives retain the records, and the existing authenticated quality-ingest workflow sends them to the existing database as JSON payloads. No schema migration or credential change is required. The summary and panel expose the same fields; missing history is displayed as unavailable.
+
 ## Reproduction and optional continuous host
 
 Run tests: `node --test tests/*.test.mjs` (Node 24).
