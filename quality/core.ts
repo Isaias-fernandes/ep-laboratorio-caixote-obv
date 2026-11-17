@@ -40,7 +40,10 @@ export function features(rows:Candle[]){
 export function detect(rows:Candle[],state:Json={},context:Json={}){
   const f=features(rows),last=rows.at(-1)!,t=last.t,previous=structuredClone(state);
   const knownPreleg=context.prelegKnown===true;
-  const filters={BOLLINGER:f.notStretched,NO_PRELEG_24H:knownPreleg?context.prelegIn24h===false:null};
+  const btc=context.btcContext||{};
+  const filters={BOLLINGER:f.notStretched,NO_PRELEG_24H:knownPreleg?context.prelegIn24h===false:null,
+    BTC_24H_POSITIVE:Number.isFinite(btc.btcReturn24hPct)?btc.btcReturn24hPct>0:null,
+    ALT_OUTPERFORM_BTC_24H:context.symbol==='BTCUSDT'?null:(Number.isFinite(btc.excessReturn24hPct)?btc.excessReturn24hPct>0:null)};
   const ready=f.volumeRatio!=null&&f.volumeRatio>=CONFIG.volumeMinimum&&f.obv3>0&&f.obv10>0;
   const trv=f.patternReadings.find((p:Json)=>p.name==='Three Rising Valleys'&&p.dir==='BUY');
   const flag=f.patternReadings.find((p:Json)=>p.name==='Bull Flag'&&p.dir==='BUY');
@@ -67,7 +70,7 @@ export function detect(rows:Candle[],state:Json={},context:Json={}){
     previous.lastSignal[candidate.strategy]=t;
     if(candidate.strategy==='MIN30_FLOW')previous.minimumArm=null;
   }
-  return {signals,state:previous,features:f};
+  return {signals,state:previous,features:f,filters};
 }
 // Deterministic preselected sample; the selection depends only on date, symbol and fixed seed.
 export function baselineHour(symbol:string,day:string){let h=2166136261;for(const c of `ep-quality-baseline-v1|${symbol}|${day}`){h^=c.charCodeAt(0);h=Math.imul(h,16777619);}return(h>>>0)%24;}
