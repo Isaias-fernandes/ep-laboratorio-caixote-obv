@@ -18,13 +18,17 @@ const qualityUniverseChanged=quality.health?.expected!==SYMBOLS.length;
 const initialQuality=Object.values(quality.active);
 const old=read(OUT,{state:[],events:[]}),previous=new Map(old.state.map(s=>[s.symbol+'|'+s.interval,s]));
 const state=new Map(previous),events=new Map(old.events.map(e=>[e.id,e])),errors=[];
-const tasks=SYMBOLS.flatMap(symbol=>Object.keys(INTERVALS).map(interval=>({symbol,interval})));let cursor=0,processed=0,recovered=0;
+const tasks=SYMBOLS.flatMap(symbol=>Object.keys(INTERVALS).map(interval=>({symbol,interval}))).sort((a,b)=>Number(!(a.symbol==='BTCUSDT'&&a.interval==='1h'))-Number(!(b.symbol==='BTCUSDT'&&b.interval==='1h'));
+let cursor=0,processed=0,recovered=0,btcReleased=false,releaseBtcReady;
+const btcReady=new Promise(resolve=>{releaseBtcReady=resolve;});
+function releaseBtc(){if(!btcReleased){btcReleased=true;releaseBtcReady();}}
 const candles=(symbol,interval,limit,now)=>fetchClosedCandles(symbol,interval,limit,now,INTERVALS[interval]);
 async function worker(){while(cursor<tasks.length){
  const {symbol,interval}=tasks[cursor++],ms=INTERVALS[interval],now=Date.now(),lastClosed=Math.floor(now/ms)*ms-ms;
+ if(interval==='1h'&&symbol!=='BTCUSDT')await btcReady;
  const prior=previous.get(symbol+'|'+interval),checkpoint=prior?Date.parse(prior.candle_time):null;
  const bootstrap=(interval==='15m'||(interval==='5m'&&selectionWindows(initialQuality).some(w=>w.symbol===symbol)))&&intraday.last[symbol+'|'+interval]==null;
- if(checkpoint!=null&&checkpoint>=lastClosed&&!bootstrap)continue;
+ if(checkpoint!=null&&checkpoint>=lastClosed&&!bootstrap){if(symbol==='BTCUSDT'&&interval==='1h')releaseBtc();continue;}
  try{
   const gap=checkpoint==null?1:Math.ceil((lastClosed-checkpoint)/ms),rows=await candles(symbol,interval,(interval==='1h'?qualityLimit(quality,symbol,Math.min(1000,Math.max(120,96+gap+2))):Math.min(1000,Math.max(120,96+gap+2))),now);
   if(rows.at(-1)?.t<lastClosed)throw Error('Última vela indisponível');
@@ -51,10 +55,11 @@ async function worker(){while(cursor<tasks.length){
   }:undefined;
   state.set(symbol+'|'+interval,{symbol,interval,candle_time:new Date(x.candleTime).toISOString(),observed_at:new Date(now).toISOString(),data:{...x,model:interval==='1h'?'H1_96_80':'EXPERIMENTAL_M5_M15',recoveredCandles:Math.max(0,count-1),...(h1Snapshot?{h1Snapshot}:{})}});
   processed++;recovered+=Math.max(0,count-1);
-  if(interval==='1h'){try{collectQuality(quality,symbol,rows,new Date(now).toISOString());qualityChanged=true;}catch(e){qualityErrors.push({symbol,error:String(e)});}}
+  if(interval==='1h'){try{collectQuality(quality,symbol,rows,new Date(now).toISOString(),{symbol,btcRows:quality.pairs.BTCUSDT?.cache||[]});qualityChanged=true;}catch(e){qualityErrors.push({symbol,error:String(e)});}}
   if(parallel){try{collectParallel(parallel,symbol,interval,rows,ms,new Date(now).toISOString())}
     catch(e){parallelErrors.push({symbol,interval,error:String(e)})}}
  }catch(e){errors.push({symbol,interval,error:String(e)});if(interval==='1h')h1Errors.push({symbol,error:String(e)});}
+ if(symbol==='BTCUSDT'&&interval==='1h')releaseBtc();
 }}
 await Promise.all(Array.from({length:5},worker));
 const eligible=new Map([...initialQuality,...Object.values(quality.active),...quality.completed].map(e=>[e.id,e]));
