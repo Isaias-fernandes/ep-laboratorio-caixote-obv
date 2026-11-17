@@ -13,6 +13,28 @@ export function qualityLimit(store,symbol,base){
   return Math.min(1000,Math.max(base,(store?.pairs[symbol]?.cache?.length||0)<720?724:base));
 }
 function hash(birth){return createHash('sha256').update(JSON.stringify(birth)).digest('hex')}
+function ema(values,period){
+  if(values.length<period)return null;
+  const alpha=2/(period+1);let value=values[0];
+  for(const next of values.slice(1))value=next*alpha+value*(1-alpha);
+  return value;
+}
+function marketContext(symbol,rows,index,btcRows,btcIndex){
+  const candle=rows[index],bi=btcIndex.get(candle.t),btcNow=bi==null?null:btcRows[bi];
+  const pct=(now,then)=>now&&then&&then.c>0?(now.c/then.c-1)*100:null;
+  const btc24=bi!=null&&bi>=24?pct(btcNow,btcRows[bi-24]):null;
+  const btc7d=bi!=null&&bi>=168?pct(btcNow,btcRows[bi-168]):null;
+  const btcEma=bi!=null&&bi>=199?ema(btcRows.slice(bi-199,bi+1).map(x=>x.c),200):null;
+  const asset24=index>=24?pct(candle,rows[index-24]):null;
+  const asset7d=index>=168?pct(candle,rows[index-168]):null;
+  const excess24=symbol==='BTCUSDT'||asset24==null||btc24==null?null:asset24-btc24;
+  const excess7d=symbol==='BTCUSDT'||asset7d==null||btc7d==null?null:asset7d-btc7d;
+  return {symbol,btcContext:{known:btcNow!=null&&bi>=24,candleTime:candle.t,
+    btcReturn24hPct:btc24,btcReturn7dPct:btc7d,btcEma200:btcEma,
+    btcAboveEma200:btcEma==null?null:btcNow.c>btcEma,
+    assetReturn24hPct:asset24,assetReturn7dPct:asset7d,
+    excessReturn24hPct:excess24,excessReturn7dPct:excess7d}};
+}
 export function collectQuality(store,symbol,rows,observedAt,context={}){
   const original=store.pairs[symbol]||{lastCandle:null,detector:{},cache:[]};
   if(original.lastCandle!=null&&rows.at(-1).t<=original.lastCandle)return;
@@ -22,10 +44,13 @@ export function collectQuality(store,symbol,rows,observedAt,context={}){
   if(first<0)return;
   if(pair.lastCandle!=null&&merged[first].t!==pair.lastCandle+CONFIG.intervalMs)throw Error('Lacuna da qualidade: checkpoint preservado');
   const births=[],completed=[];
+  const btcRows=symbol==='BTCUSDT'?merged:(store.pairs.BTCUSDT?.cache||[]);
+  const btcIndex=new Map(btcRows.map((c,i)=>[c.t,i]));
   for(let i=first;i<merged.length;i++){
     const history=merged.slice(Math.max(0,i-719),i+1),c=merged[i];
     if(history.length<96)throw Error('Contexto de qualidade menor que 96 candles');
-    const reading=detect(history,pair.detector,context);pair.detector=reading.state;
+    const market=marketContext(symbol,merged,i,btcRows,btcIndex);
+    const reading=detect(history,pair.detector,{...context,...market});pair.detector=reading.state;
     // Every observation runs before births at this candle. Signal-close prices never enter their own outcome.
     for(const [id,e] of Object.entries(active)){
       const next=advanceEvaluation(e,c,reading.features.atr);active[id]=next;
@@ -33,7 +58,7 @@ export function collectQuality(store,symbol,rows,observedAt,context={}){
     }
     const day=new Date(c.t).toISOString().slice(0,10),hour=new Date(c.t).getUTCHours();
     const signals=[...reading.signals];
-    if(hour===baselineHour(symbol,day))signals.push({version:CONFIG.version,strategy:'BASELINE',pattern:'Referência amostrada',signalTime:c.t,closedAt:c.t+CONFIG.intervalMs,features:reading.features,mode:'SHADOW',filters:{BOLLINGER:reading.features.notStretched,NO_PRELEG_24H:null},context:{}});
+    if(hour===baselineHour(symbol,day))signals.push({version:CONFIG.version,strategy:'BASELINE',pattern:'Referência amostrada',signalTime:c.t,closedAt:c.t+CONFIG.intervalMs,features:reading.features,mode:'SHADOW',filters:reading.filters,context:{...context,...market}});
     for(const s of signals){
       const id=`${CONFIG.version}|${symbol}|${s.strategy}|${c.t}`;
       const birth={...s,id,symbol,interval:'1h',direction:'BUY',detectedAt:observedAt,
@@ -80,7 +105,7 @@ export function buildSummary(births,evaluations){
     const cells=Object.fromEntries(CONFIG.objectives.flatMap(g=>CONFIG.targets.map(target=>{
       const key=`${g.name}_target${target}`,signal=rate(chosen,key);
       let weighted=0,weight=0,matchedSignals=0,matchedHits=0;
-      for(const e of chosen){if(!rate([e],key).n)continue;const controls=rate(bucket.get(stratum(born.get(e.id)))||[],key);if(controls.n){weighted+=controls.pct;weight++;matchedSignals++;if(e.cells[key].outcome==='TARGET')matchedHits++;}}
+      for(const e of chosen){if(!rate([e],key).n)continue;const controlsForStratum=bucket.get(stratum(born.get(e.id)))||[];const controlsInSameContext=arm==='BASE'?controlsForStratum:controlsForStratum.filter(control=>born.get(control.id)?.filters?.[arm]===true);const controls=rate(controlsInSameContext,key);if(controls.n){weighted+=controls.pct;weight++;matchedSignals++;if(e.cells[key].outcome==='TARGET')matchedHits++;}}
       const baselinePct=weight?weighted/weight:null,matchedSignalPct=matchedSignals?100*matchedHits/matchedSignals:null;
       return[key,{...signal,baselinePct,matchedSignals,matchedSignalPct,lift:baselinePct>0?matchedSignalPct/baselinePct:null}];
     })));
