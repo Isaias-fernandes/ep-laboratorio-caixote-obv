@@ -15,8 +15,9 @@ export function qualityLimit(store,symbol,base){
 function hash(birth){return createHash('sha256').update(JSON.stringify(birth)).digest('hex')}
 function ema(values,period){
   if(values.length<period)return null;
-  const alpha=2/(period+1);let value=values[0];
-  for(const next of values.slice(1))value=next*alpha+value*(1-alpha);
+  const alpha=2/(period+1);
+  let value=values.slice(0,period).reduce((sum,x)=>sum+x,0)/period;
+  for(const next of values.slice(period))value=next*alpha+value*(1-alpha);
   return value;
 }
 function marketContext(symbol,rows,index,btcRows,btcIndex){
@@ -24,7 +25,8 @@ function marketContext(symbol,rows,index,btcRows,btcIndex){
   const pct=(now,then)=>now&&then&&then.c>0?(now.c/then.c-1)*100:null;
   const btc24=bi!=null&&bi>=24?pct(btcNow,btcRows[bi-24]):null;
   const btc7d=bi!=null&&bi>=168?pct(btcNow,btcRows[bi-168]):null;
-  const btcEma=bi!=null&&bi>=199?ema(btcRows.slice(bi-199,bi+1).map(x=>x.c),200):null;
+  const btcWindow=bi==null?[]:btcRows.slice(Math.max(0,bi-599),bi+1).map(x=>x.c);
+  const btcEma=btcWindow.length>=200?ema(btcWindow,200):null;
   const asset24=index>=24?pct(candle,rows[index-24]):null;
   const asset7d=index>=168?pct(candle,rows[index-168]):null;
   const excess24=symbol==='BTCUSDT'||asset24==null||btc24==null?null:asset24-btc24;
