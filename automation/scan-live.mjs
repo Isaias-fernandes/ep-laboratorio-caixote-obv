@@ -55,7 +55,7 @@ async function worker(){while(cursor<tasks.length){
   }:undefined;
   state.set(symbol+'|'+interval,{symbol,interval,candle_time:new Date(x.candleTime).toISOString(),observed_at:new Date(now).toISOString(),data:{...x,model:interval==='1h'?'H1_96_80':'EXPERIMENTAL_M5_M15',recoveredCandles:Math.max(0,count-1),...(h1Snapshot?{h1Snapshot}:{})}});
   processed++;recovered+=Math.max(0,count-1);
-  if(interval==='1h'){try{collectQuality(quality,symbol,rows,new Date(now).toISOString(),{symbol,btcRows:quality.pairs.BTCUSDT?.cache||[]});qualityChanged=true;}catch(e){qualityErrors.push({symbol,error:String(e)});}}
+  if(interval==='1h'){try{collectQuality(quality,symbol,rows,new Date(now).toISOString(),{symbol});qualityChanged=true;}catch(e){qualityErrors.push({symbol,error:String(e)});}}
   if(parallel){try{collectParallel(parallel,symbol,interval,rows,ms,new Date(now).toISOString())}
     catch(e){parallelErrors.push({symbol,interval,error:String(e)})}}
  }catch(e){errors.push({symbol,interval,error:String(e)});if(interval==='1h')h1Errors.push({symbol,error:String(e)});}
