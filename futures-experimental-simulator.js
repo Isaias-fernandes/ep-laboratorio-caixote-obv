@@ -63,7 +63,8 @@
     const walletBalance = Math.max(0, n(document.getElementById('futuresBank')?.value ?? 100));
     const marginPct = Math.min(100, Math.max(0, n(document.getElementById('futuresMarginPct')?.value ?? 10)));
     const maintenancePct = Math.max(0, n(document.getElementById('futuresMaintenancePct')?.value ?? 0.5));
-    return { walletBalance, marginPct, maintenancePct };
+    const minAlignedMotors = Math.min(5,Math.max(1,Math.round(n(document.getElementById('futuresMotorThreshold')?.value ?? 3))));
+    return { walletBalance, marginPct, maintenancePct, minAlignedMotors };
   }
 
   function simulateSignal(signal, leverage, config = readConfig()){
@@ -120,10 +121,12 @@
           <label>Banca (USDT) <input id="futuresBank" type="number" min="0" step="10" value="100" style="width:100px"></label>
           <label>Margem inicial (%) <input id="futuresMarginPct" type="number" min="0" max="100" step="1" value="10" style="width:78px"></label>
           <label>Manutenção estimada (%) <input id="futuresMaintenancePct" type="number" min="0" step="0.1" value="0.5" style="width:78px"></label>
+          <label>Motores alinhados <select id="futuresMotorThreshold"><option value="1">1 de 5</option><option value="2">2 de 5</option><option value="3" selected>3 de 5</option><option value="4">4 de 5</option><option value="5">5 de 5</option></select></label>
         </div>
         <p class="notice">Exemplo padrão: 100 USDT de banca, 10 USDT de margem inicial e 90 USDT de reserva; a 10x, a posição simulada é de 100 USDT. A taxa de manutenção padrão de 0,5% é apenas uma hipótese editável: a taxa real varia por contrato e faixa de posição.</p>
       </div>
-      <div class="notice"><strong>Limites:</strong> a estimativa considera banca total + P&amp;L não realizado contra a margem de manutenção estimada sobre o notional no pior ponto. A corretora pode liquidar antes por taxas, funding, slippage, regras de faixa e outras posições/ordens. O cálculo não reconstrói o caminho intr candle nem o fechamento real; não interprete excursões como lucro realizado. Cada sinal recomeça com a mesma banca, sem posições simultâneas.</div>
+      <div class="notice"><strong>Regra dos motores:</strong> entram apenas episódios H1 nos quais motores M1–M5 com score ≥80 concordam na mesma direção. O padrão é 3 de 5, ajustável entre 1 e 5. A simulação começa ao atingir o limite e fecha quando cai abaixo dele. Score não é probabilidade; nenhuma ordem real é enviada.</div>
+      <div class="notice"><strong>Limites:</strong> a estimativa usa banca total + P&amp;L não realizado contra a manutenção no pior ponto. A corretora pode liquidar antes por taxas, funding e slippage. Excursões são medidas nos scans H1, sem reconstruir cada movimento intrahora. Cada episódio é isolado e não representa lucro realizado nem operações simultâneas compartilhando a reserva.</div>
       <section class="summary" id="futuresSummary"></section>
       <div class="panel" style="margin-top:12px">
         <div class="center-title"><div><h2>Análise por alavancagem</h2></div>
@@ -143,6 +146,8 @@
       document.getElementById(id)?.addEventListener('change', render);
       document.getElementById(id)?.addEventListener('input', render);
     });
+    document.getElementById('futuresMotorThreshold')?.addEventListener('change', load);
+    window.addEventListener('lab-leverage-data-updated', load);
   }
 
   function render(){
@@ -160,7 +165,7 @@
     const sm = summaryFor(lev, config);
     const levBox = document.getElementById('futuresLevSummary');
     if (levBox) levBox.innerHTML = `
-      <div class="fact"><span>Sinais após agrupamento</span><strong>${sm.total}</strong></div>
+      <div class="fact"><span>Episódios aprovados · ${config.minAlignedMotors}/5 motores</span><strong>${sm.total}</strong></div>
       <div class="fact"><span>Registros originais / repetidos agrupados</span><strong>${state.rawCount} / ${state.groupedCount}</strong></div>
       <div class="fact"><span>Banca total em cada simulação</span><strong>${balance(config.walletBalance)}</strong></div>
       <div class="fact"><span>Margem inicial por sinal</span><strong>${balance(sm.initialMargin)}</strong></div>
@@ -188,7 +193,7 @@
 
     const up = document.getElementById('futuresUpdated');
     if (up) up.textContent = state.generatedAt
-      ? `Dados: data/auto-signals.json · geração ${new Date(state.generatedAt).toLocaleString('pt-BR')} · ${state.rawCount} registros, ${state.signals.length} eventos após agrupamento (${state.groupedCount} repetidos agrupados). Cenários independentes, sem execução de ordens.`
+      ? `Dados: ${state.generatedAt} · ${state.rawCount} episódios considerados, ${state.signals.length} após agrupamento. Sem execução de ordens.`
       : 'Aguardando dados...';
   }
 
@@ -198,11 +203,16 @@
       const res = await fetch(`data/auto-signals.json?futuresSim=${Date.now()}`, { cache:'no-store' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      const raw = Array.isArray(data.signals) ? data.signals.filter(s => Number.isFinite(+s.best) && Number.isFinite(+s.worst)) : [];
-      state.rawCount = raw.length;
-      state.signals = uniqueEvents(raw);
-      state.groupedCount = raw.length - state.signals.length;
-      state.generatedAt = data.generatedAt || null;
+      const minMotors=readConfig().minAlignedMotors;
+      const experimental=window.EPExperimentalActivationRecorder?.getLeverageEpisodes?.(minMotors)||[];
+      const legacy=Array.isArray(data.signals)?data.signals.filter(x=>{
+        const count=Number(x.motorCount??x.motor_count??x.alignedMotorCount??x.aligned_motor_count??(Array.isArray(x.alignedMotorIds)?x.alignedMotorIds.length:NaN));
+        return Number.isFinite(+x.best)&&Number.isFinite(+x.worst)&&count>=minMotors;
+      }):[];
+      const raw=experimental.length?experimental:legacy;
+      state.rawCount=raw.length;state.signals=uniqueEvents(raw);
+      state.groupedCount=raw.length-state.signals.length;
+      state.generatedAt=experimental.length?'M1–M5 · score ≥80 · H1/96':(data.generatedAt||'Aguardando confluência suficiente');
       render();
     } catch (err) {
       const up = document.getElementById('futuresUpdated');
