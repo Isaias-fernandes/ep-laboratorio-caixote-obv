@@ -7,7 +7,7 @@
 const KEY='ep_lab_experimental_activation_v1', LIMIT=160, EVENT_LIMIT=500;
 const MOTOR_NAMES={1:'Padrões/Breakout',2:'Tendência/Estrutura',3:'Volume/Acumulação',4:'Volatilidade/Expansão',5:'Fluxo/Baleias'};
 const now=()=>Date.now();
-const load=()=>{try{const x=JSON.parse(localStorage.getItem(KEY)||'null');return x&&typeof x==='object'?{open:x.open||{},closed:Array.isArray(x.closed)?x.closed:[],patternEvents:Array.isArray(x.patternEvents)?x.patternEvents:[]}:{open:{},closed:[],patternEvents:[]}}catch{return{open:{},closed:[],patternEvents:[]}}};
+const load=()=>{try{const x=JSON.parse(localStorage.getItem(KEY)||'null');return x&&typeof x==='object'?{open:x.open||{},closed:Array.isArray(x.closed)?x.closed:[],patternEvents:Array.isArray(x.patternEvents)?x.patternEvents:[],leverageOpen:x.leverageOpen||{},leverageClosed:Array.isArray(x.leverageClosed)?x.leverageClosed:[]}:{open:{},closed:[],patternEvents:[],leverageOpen:{},leverageClosed:[]}}catch{return{open:{},closed:[],patternEvents:[],leverageOpen:{},leverageClosed:[]}}};
 let db=load();
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(db))}catch{}};
 const priceOf=c=>{const x=c?.at?.(-1);return +(x?.c??x?.close)};
@@ -33,10 +33,54 @@ function recordPatterns(sym,c,p,ts,motors){
   return pats;
 }
 function closeEpisode(k,e,p,ts,reason){e.endTs=ts;e.finalPrice=p;e.reason=reason;delete db.open[k];db.closed.unshift(e);db.closed=db.closed.slice(0,LIMIT)}
+function numberOrUndefined(v){return v==null||v===''||!Number.isFinite(Number(v))?undefined:Number(v)}
+function flowFor(sym){
+  const row=root.EPLabCapitalFlow?.get?.(sym)||{};
+  const history=(root.EPLabCapitalFlow?.history?.()||[]).filter(x=>x.symbol===sym&&x.tapeDeltaUsd!=null&&Number.isFinite(Number(x.tapeDeltaUsd))).slice(-21);
+  let cvdZ;
+  if(history.length>=5){
+    const values=history.slice(0,-1).map(x=>Number(x.tapeDeltaUsd));
+    const mean=values.reduce((a,b)=>a+b,0)/values.length;
+    const sd=Math.sqrt(values.reduce((a,b)=>a+(b-mean)**2,0)/values.length);
+    if(sd>0)cvdZ=(Number(history.at(-1).tapeDeltaUsd)-mean)/sd;
+  }
+  return {cvd:numberOrUndefined(row.tapeDeltaUsd),oiChange:numberOrUndefined(row.oiChangePct),
+    bookImbalance:numberOrUndefined(row.bookImbalance),cvdZ};
+}
+function trackLeverageEpisodes(sym,dir,motors,p,ts){
+  const active=motors.filter(x=>x.direction===dir).sort((a,b)=>a.id-b.id);
+  for(let threshold=1;threshold<=5;threshold++){
+    const k=`${sym}|${dir}|${threshold}`;let e=db.leverageOpen[k];
+    if(active.length>=threshold){
+      if(!e){e={id:`${k}|${ts}`,symbol:sym,interval:intervalOf(),direction:dir,minMotors:threshold,
+        startTs:ts,lastTs:ts,entryPrice:p,currentPrice:p,motorCountAtEntry:active.length,peakMotors:active.length,
+        motorIdsAtEntry:active.map(x=>x.id),motorScoresAtEntry:active.map(x=>({id:x.id,name:x.name,score:x.score})),
+        bestMovePct:0,worstMovePct:0,status:'OPEN',source:'five-motor-experimental-v1'};db.leverageOpen[k]=e}
+      const move=(p/e.entryPrice-1)*100*(dir==='SELL'?-1:1);
+      e.currentPrice=p;e.lastTs=ts;e.peakMotors=Math.max(e.peakMotors,active.length);
+      e.bestMovePct=Math.max(e.bestMovePct,move);e.worstMovePct=Math.min(e.worstMovePct,move);
+      e.motorIdsLast=active.map(x=>x.id);
+    }else if(e){
+      e.currentPrice=p;e.lastTs=ts;e.endTs=ts;e.exitPrice=p;e.status='CLOSED';e.closeReason='motores alinhados abaixo do limite';
+      db.leverageClosed.unshift(e);delete db.leverageOpen[k];db.leverageClosed=db.leverageClosed.slice(0,500);
+    }
+  }
+}
+function leverageEpisodes(minMotors=3){
+  const all=[...db.leverageClosed,...Object.values(db.leverageOpen)];
+  return all.filter(e=>e.minMotors===Number(minMotors)).map(e=>({
+    id:e.id,symbol:e.symbol,market:'CRIPTO',interval:e.interval,direction:e.direction,
+    score:Math.round((e.motorScoresAtEntry||[]).reduce((a,x)=>a+Number(x.score||0),0)/Math.max(1,(e.motorScoresAtEntry||[]).length)),
+    pattern:`Confluência ${e.minMotors}/5 motores`,motorCount:e.minMotors,alignedMotorIds:e.motorIdsAtEntry||[],
+    best:e.bestMovePct,worst:e.worstMovePct,candleTime:e.startTs,entryPrice:e.entryPrice,price:e.currentPrice,
+    status:e.status,exitPrice:e.exitPrice,closeReason:e.closeReason,peakMotors:e.peakMotors
+  }));
+}
 function process(candles){
   if(intervalOf()!=='1h'||!Array.isArray(candles)||candles.length<96||!root.EPExperimentalMotors?.evaluate)return;
   const sym=symbolOf(),p=priceOf(candles),ts=timeOf(candles);if(!Number.isFinite(p)||p<=0)return;
-  const raw=root.EPExperimentalMotors.evaluate(candles),sigs=active(raw),dirs=['BUY','SELL'];
+  const raw=root.EPExperimentalMotors.evaluate(candles,{flow:flowFor(sym)}),sigs=active(raw),dirs=['BUY','SELL'];
+  trackLeverageEpisodes(sym,'BUY',sigs,p,ts);trackLeverageEpisodes(sym,'SELL',sigs,p,ts);
   for(const dir of dirs){
     const m=sigs.filter(x=>x.direction===dir).sort((a,b)=>a.id-b.id),k=id(sym,dir);let e=db.open[k];
     if(!m.length){if(e)closeEpisode(k,e,p,ts,'sem motor score>=80 na direção');continue}
@@ -48,7 +92,7 @@ function process(candles){
     const pats=recordPatterns(sym,candles,p,ts,m);
     for(const pat of pats){const pk=[pat.source,pat.name,pat.direction].join('|');if(!e.patternFirst[pk])e.patternFirst[pk]={...pat,time:ts,price:p,activeMotorIds:m.map(x=>x.id)}}
   }
-  save();render();
+  save();render();root.dispatchEvent(new CustomEvent('lab-leverage-data-updated'));
 }
 function stage(e,n){const s=e.stages?.[n];if(!s)return'<span class="ear-empty">não observado</span>';return `<b>${fmt(s.price)}</b><small>${dt(s.time)}</small><small>${s.activeMotorIds.map(x=>'M'+x).join(' + ')}</small>`}
 function row(e){return `<tr><td><b>${esc(e.symbol)}</b><small>${esc(e.direction)}</small></td><td>${stage(e,1)}</td><td>${stage(e,2)}</td><td>${stage(e,3)}</td><td>${stage(e,4)}</td><td>${stage(e,5)}</td><td><b>${e.peakMotors||0}/5</b><small>${fmt(e.currentPrice)}</small></td></tr>`}
@@ -65,5 +109,5 @@ function render(){ensure();const rootEl=document.getElementById('earBody');if(!r
 function scan(){try{const candles=root.LabData?.candles;process(candles)}catch{} }
 document.addEventListener('DOMContentLoaded',()=>{render();const btn=document.getElementById('analyze');if(btn)btn.addEventListener('click',()=>setTimeout(scan,0));setTimeout(scan,1200)});
 root.addEventListener('lab-experimental-scan',scan);
-root.EPExperimentalActivationRecorder={scan,get:()=>db,KEY};
+root.EPExperimentalActivationRecorder={scan,get:()=>db,getLeverageEpisodes:leverageEpisodes,KEY};
 })(window);
