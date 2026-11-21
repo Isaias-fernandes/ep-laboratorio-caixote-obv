@@ -1,40 +1,63 @@
 {
-  "generatedAt": "2026-11-21T02:16:49.123Z",
+  "generatedAt": "2026-11-21T11:03:15.164Z",
   "version": "early-warning-patterns-v1",
   "preLegVersion": "pre-leg-score-v1",
   "timeframe": "H1",
   "minimumEarlyScore": 65,
-  "signals": [],
-  "preLegRadar": [
+  "signals": [
     {
-      "version": "pre-leg-score-v1",
-      "score": 54,
-      "phase": "PREPARAÇÃO",
-      "price": 59030.85,
-      "resistance": 62341.94,
-      "support": 57778.35,
-      "distanceToBreakoutPct": 5.609,
-      "compressionRatio": 0.749,
-      "volumeAcceleration": 0.703,
-      "obvLead": true,
-      "obvSlope": 37.20531136363596,
-      "attacks": 2,
-      "higherLows": 4,
-      "rsi": 24.33,
-      "move6Pct": 0.81,
-      "penalty": 0,
-      "parts": {
-        "compression": 14,
-        "obv": 20,
-        "attacks": 8,
-        "volume": 0,
-        "structure": 12,
-        "proximity": 0
-      },
+      "name": "Rectangle Accumulation",
+      "family": "BILATERAL",
+      "direction": "BUY",
+      "stage": "ACUMULAÇÃO / PRÉ-ROMPIMENTO",
+      "score": 77,
+      "level": 0.3061,
+      "distanceToBreakoutPct": 0.89,
+      "volumeRatio": 0.715,
+      "obvSlope": 1360549.2520979017,
+      "obvConfirm": true,
+      "compression": false,
+      "boxRangePct": 2.48,
+      "boxPosition": 0.635,
       "market": "CRIPTO",
-      "symbol": "BTCUSDT",
+      "symbol": "TRXUSDT",
       "timeframe": "H1",
-      "createdAt": "2026-11-21T01:00:00.000Z",
+      "contextCandles": 96,
+      "createdAt": "2026-11-21T10:00:00.000Z",
+      "confluence": 1,
+      "priority": 100,
+      "historical": {
+        "breakout24": 46.4,
+        "avgLead": 8.29,
+        "hit10": 15.9,
+        "hit20": 7.8
+      },
+      "preLeg": {
+        "version": "pre-leg-score-v1",
+        "score": 50,
+        "phase": "PREPARAÇÃO",
+        "price": 0.3034,
+        "resistance": 0.3061,
+        "support": 0.2987,
+        "distanceToBreakoutPct": 0.89,
+        "compressionRatio": 1.13,
+        "volumeAcceleration": 1.481,
+        "obvLead": false,
+        "obvSlope": 1360549.2520979017,
+        "attacks": 0,
+        "higherLows": 4,
+        "rsi": 59.43,
+        "move6Pct": 1.47,
+        "penalty": 0,
+        "parts": {
+          "compression": 0,
+          "obv": 12,
+          "attacks": 0,
+          "volume": 15,
+          "structure": 12,
+          "proximity": 11
+        }
+      },
       "futures": {
         "available": false,
         "oi": null,
@@ -51,7 +74,58 @@
           "oi": null,
           "taker": null,
           "funding": null,
-          "technical": 54
+          "technical": 50
+        }
+      }
+    }
+  ],
+  "preLegRadar": [
+    {
+      "version": "pre-leg-score-v1",
+      "score": 50,
+      "phase": "PREPARAÇÃO",
+      "price": 0.3034,
+      "resistance": 0.3061,
+      "support": 0.2987,
+      "distanceToBreakoutPct": 0.89,
+      "compressionRatio": 1.13,
+      "volumeAcceleration": 1.481,
+      "obvLead": false,
+      "obvSlope": 1360549.2520979017,
+      "attacks": 0,
+      "higherLows": 4,
+      "rsi": 59.43,
+      "move6Pct": 1.47,
+      "penalty": 0,
+      "parts": {
+        "compression": 0,
+        "obv": 12,
+        "attacks": 0,
+        "volume": 15,
+        "structure": 12,
+        "proximity": 11
+      },
+      "market": "CRIPTO",
+      "symbol": "TRXUSDT",
+      "timeframe": "H1",
+      "createdAt": "2026-11-21T10:00:00.000Z",
+      "futures": {
+        "available": false,
+        "oi": null,
+        "oiChangePct": null,
+        "fundingPct": null,
+        "takerBuySellRatio": null,
+        "takerImbalance": null,
+        "source": "binance-usdm"
+      },
+      "futuresValidation": {
+        "score": null,
+        "phase": "DADOS INDISPONÍVEIS",
+        "parts": {
+          "oi": null,
+          "taker": null,
+          "funding": null,
+          "technical": 50
         }
       }
     }
