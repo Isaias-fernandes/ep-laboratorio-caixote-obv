@@ -19,13 +19,31 @@ async function getSession(){if(!supabaseClient)return null;const r=await supabas
 async function syncRemote(symbol,rows){
  const session=await getSession();
  if(!session)return 'Histórico salvo neste navegador. Entre na Gestão Farmacêutica para enviar ao histórico remoto.';
- const payload=rows.filter(x=>x.ready).map(x=>({symbol,timeframe:x.label,phase:x.phase,direction:x.direction,price:x.price,change_pct:x.change,volume_ratio:x.vol,range_pct:x.range,candle_time:new Date(x.time).toISOString()}));
- if(!payload.length)return 'Sem candles suficientes para registrar.';
+ const payload=readHistory().map(x=>{
+  const candleTime=new Date(x?.candleTime??x?.candle_time??x?.time??NaN);
+  const number=v=>v===null||v===undefined||v===''?null:(Number.isFinite(Number(v))?Number(v):null);
+  return {
+   symbol:String(x?.symbol||symbol||'').trim().toUpperCase(),
+   timeframe:String(x?.timeframe||x?.label||'').trim().toUpperCase(),
+   phase:String(x?.phase||'').trim().toUpperCase(),
+   direction:String(x?.direction||'').trim().toUpperCase(),
+   price:number(x?.price),
+   change_pct:number(x?.change_pct??x?.change20??x?.change),
+   volume_ratio:number(x?.volume_ratio??x?.volumeRatio??x?.vol),
+   range_pct:number(x?.range_pct??x?.rangePct??x?.range),
+   candle_time:Number.isNaN(candleTime.getTime())?'':candleTime.toISOString()
+  };
+ }).filter(x=>x.symbol&&x.timeframe&&x.phase&&x.direction&&x.candle_time);
+ if(!payload.length)return 'Sem registros locais válidos para enviar.';
+ let saved=0;
  try{
-  const r=await fetch(HISTORY_API,{method:'POST',headers:{'content-type':'application/json','authorization':'Bearer '+session.access_token},body:JSON.stringify({rows:payload})});
-  const data=await r.json();if(!r.ok)throw Error(data.error||'HTTP '+r.status);
-  return 'Histórico salvo na Gestão Farmacêutica ('+data.saved+' novo(s) período(s)).';
- }catch(e){return 'Histórico local salvo; falha no remoto: '+(e.message||'conexão indisponível')+'.'}
+  for(let i=0;i<payload.length;i+=100){
+   const r=await fetch(HISTORY_API,{method:'POST',headers:{'content-type':'application/json','authorization':'Bearer '+session.access_token},body:JSON.stringify({rows:payload.slice(i,i+100)})});
+   const data=await r.json();if(!r.ok)throw Error(data.error||'HTTP '+r.status);
+   saved+=Number(data.saved)||0;
+  }
+  return 'Histórico remoto sincronizado: '+saved+' novo(s) registro(s); '+payload.length+' conferido(s).';
+ }catch(e){return 'Histórico local preservado; falha ao sincronizar o remoto: '+(e.message||'conexão indisponível')+'.'}
 }
 async function initAuth(){
  const cfg=root.APP_CONFIG||{},api=root.supabase;
